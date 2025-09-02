@@ -1,63 +1,103 @@
-"use client"
+"use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Code, Database, Smartphone, Globe, Server, Palette } from "lucide-react"
-import { ScrollAnimation, StaggerContainer } from "@/components/scroll-animations"
-import { useEffect, useRef, useState } from "react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Code, Database, Server, Palette, Brain, Zap } from "lucide-react";
+import {
+  ScrollAnimation,
+  StaggerContainer,
+} from "@/components/scroll-animations";
+import { useEffect, useRef, useState } from "react";
 
 export function Skills() {
   const skillCategories = [
     {
-      title: "Frontend Development",
-      icon: Globe,
-      skills: ["React.js", "Next.js", "Vue.js", "Nuxt.js v3", "HTML5", "CSS3", "JavaScript", "TypeScript"],
+      title: "Languages & Frameworks",
+      icon: Code,
+      skills: [
+        "JavaScript",
+        "TypeScript",
+        "React.js",
+        "Next.js",
+        "Vue.js",
+        "Flutter",
+      ],
       color: "from-blue-500 to-cyan-500",
     },
     {
-      title: "Backend Development",
-      icon: Server,
-      skills: ["Node.js", "Express.js", "PHP", "Laravel", "Python", "Django", "Smart Contract", "Solidity"],
-      color: "from-green-500 to-emerald-500",
+      title: "Libraries & UI",
+      icon: Palette,
+      skills: [
+        "shadcn/ui",
+        "Mantine",
+        "TailwindCSS",
+        "React Query",
+        "Material-UI",
+        "Ant Design",
+      ],
+      color: "from-purple-500 to-pink-500",
     },
     {
-      title: "Mobile & Desktop Development",
-      icon: Smartphone,
-      skills: ["Flutter", "Dart", "Electron.js", "React Native", "Responsive Design", "Cross-platform Development"],
-      color: "from-purple-500 to-pink-500",
+      title: "Backend & APIs",
+      icon: Server,
+      skills: [
+        "Node.js",
+        "Express.js",
+        "Nest.js",
+        "GraphQL",
+        "REST API",
+        "PostgreSQL",
+        "Prisma",
+      ],
+      color: "from-green-500 to-emerald-500",
     },
     {
       title: "Database & Tools",
       icon: Database,
-      skills: ["MongoDB", "PostgreSQL", "MySQL", "Git", "Docker", "Headless CMS", "API Development"],
+      skills: [
+        "SQL",
+        "PostgreSQL",
+        "Prisma",
+        "Redis",
+        "Auth0",
+        "Git",
+        "Docker",
+      ],
       color: "from-orange-500 to-red-500",
     },
     {
-      title: "SEO & Digital Marketing",
-      icon: Palette,
+      title: "AI & Modern Tools",
+      icon: Brain,
       skills: [
-        "SEO Optimization",
-        "Google Ads",
-        "Digital Marketing",
-        "Analytics",
-        "Content Strategy",
-        "Conversion Optimization",
+        "GPT",
+        "Claude",
+        "LangChain",
+        "GitHub Copilot",
+        "V0",
+        "Prompt Engineering",
       ],
       color: "from-indigo-500 to-purple-500",
     },
     {
-      title: "UI/UX & Styling",
-      icon: Code,
-      skills: ["Bootstrap", "Tailwind CSS", "SASS", "Material-UI", "Responsive Design", "User Experience"],
+      title: "Performance & SEO",
+      icon: Zap,
+      skills: [
+        "Technical SEO",
+        "Performance Optimization",
+        "Google Analytics",
+        "Google Ads",
+        "Digital Marketing",
+        "Site Performance",
+      ],
       color: "from-teal-500 to-blue-500",
     },
-  ]
+  ];
 
   const languages = [
-    { name: "English", level: "Fluent", percentage: 90 },
-    { name: "German", level: "Fluent", percentage: 85 },
+    { name: "English", level: "C1", percentage: 95 },
+    { name: "German", level: "B2", percentage: 80 },
     { name: "Persian", level: "Native", percentage: 100 },
-  ]
+  ];
 
   return (
     <section id="skills" className="py-20 px-4 bg-gray-800/50">
@@ -65,13 +105,20 @@ export function Skills() {
         <ScrollAnimation animation="fadeIn">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-              Skills & Expertise
+              Skills & Technologies
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto mb-6"></div>
+            <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+              Comprehensive technical expertise spanning frontend, backend, AI
+              tools, and performance optimization
+            </p>
           </div>
         </ScrollAnimation>
 
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16" staggerDelay={0.1}>
+        <StaggerContainer
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
+          staggerDelay={0.1}
+        >
           {skillCategories.map((category, index) => (
             <Card
               key={index}
@@ -84,7 +131,9 @@ export function Skills() {
                   >
                     <category.icon className="h-6 w-6 text-white" />
                   </div>
-                  <CardTitle className="text-lg text-white">{category.title}</CardTitle>
+                  <CardTitle className="text-lg text-white">
+                    {category.title}
+                  </CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
@@ -106,7 +155,9 @@ export function Skills() {
 
         <ScrollAnimation animation="slideInUp" delay={0.3}>
           <div className="bg-gray-800/30 rounded-lg p-8">
-            <h3 className="text-2xl font-semibold mb-8 text-white text-center">Languages</h3>
+            <h3 className="text-2xl font-semibold mb-8 text-white text-center">
+              Languages
+            </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {languages.map((lang, index) => (
                 <LanguageBar key={index} language={lang} delay={index * 0.2} />
@@ -116,15 +167,18 @@ export function Skills() {
         </ScrollAnimation>
       </div>
     </section>
-  )
+  );
 }
 
 function LanguageBar({
   language,
   delay,
-}: { language: { name: string; level: string; percentage: number }; delay: number }) {
-  const [width, setWidth] = useState(0)
-  const barRef = useRef<HTMLDivElement>(null)
+}: {
+  language: { name: string; level: string; percentage: number };
+  delay: number;
+}) {
+  const [width, setWidth] = useState(0);
+  const barRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -132,21 +186,21 @@ function LanguageBar({
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setTimeout(() => {
-              setWidth(language.percentage)
-            }, delay * 1000)
-            observer.unobserve(entry.target)
+              setWidth(language.percentage);
+            }, delay * 1000);
+            observer.unobserve(entry.target);
           }
-        })
+        });
       },
-      { threshold: 0.5 },
-    )
+      { threshold: 0.5 }
+    );
 
     if (barRef.current) {
-      observer.observe(barRef.current)
+      observer.observe(barRef.current);
     }
 
-    return () => observer.disconnect()
-  }, [language.percentage, delay])
+    return () => observer.disconnect();
+  }, [language.percentage, delay]);
 
   return (
     <div ref={barRef} className="text-center">
@@ -160,5 +214,5 @@ function LanguageBar({
       </div>
       <p className="text-sm text-gray-500 mt-2">{language.percentage}%</p>
     </div>
-  )
+  );
 }

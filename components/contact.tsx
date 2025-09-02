@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Linkedin, Send, Globe } from "lucide-react"
+import { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Mail, Phone, MapPin, Linkedin, Send, Globe } from "lucide-react";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -15,23 +15,27 @@ export function Contact() {
     email: "",
     subject: "",
     message: "",
-  })
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Create mailto link with form data
-    const mailtoLink = `mailto:maxbehzadi82@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`,
-    )}`
-    window.location.href = mailtoLink
-  }
+    const mailtoLink = `mailto:maxbehzadi82@gmail.com?subject=${encodeURIComponent(
+      formData.subject
+    )}&body=${encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    )}`;
+    window.location.href = mailtoLink;
+  };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-    })
-  }
+    });
+  };
 
   const contactInfo = [
     {
@@ -61,10 +65,10 @@ export function Contact() {
     {
       icon: Globe,
       label: "Portfolio",
-      value: "www.maxbehzadi.info",
-      link: "https://www.maxbehzadi.info",
+      value: "maxbehzadi.online",
+      link: "https://maxbehzadi.online",
     },
-  ]
+  ];
 
   return (
     <section id="contact" className="py-20 px-4 bg-gray-800/50">
@@ -75,15 +79,17 @@ export function Contact() {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto mb-6"></div>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            I'm always interested in new opportunities and exciting projects. Let's discuss how we can work together to
-            bring your ideas to life.
+            I'm always interested in new opportunities and exciting projects.
+            Let's discuss how we can work together to bring your ideas to life.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div>
-            <h3 className="text-2xl font-semibold mb-8 text-white">Contact Information</h3>
+            <h3 className="text-2xl font-semibold mb-8 text-white">
+              Contact Information
+            </h3>
             <div className="space-y-6">
               {contactInfo.map((info, index) => (
                 <div
@@ -98,8 +104,14 @@ export function Contact() {
                     {info.link ? (
                       <a
                         href={info.link}
-                        target={info.link.startsWith("http") ? "_blank" : undefined}
-                        rel={info.link.startsWith("http") ? "noopener noreferrer" : undefined}
+                        target={
+                          info.link.startsWith("http") ? "_blank" : undefined
+                        }
+                        rel={
+                          info.link.startsWith("http")
+                            ? "noopener noreferrer"
+                            : undefined
+                        }
                         className="text-white hover:text-blue-400 transition-colors"
                       >
                         {info.value}
@@ -113,16 +125,21 @@ export function Contact() {
             </div>
 
             <div className="mt-8 p-6 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg border border-blue-500/20">
-              <h4 className="text-lg font-semibold text-white mb-2">Currently Available</h4>
+              <h4 className="text-lg font-semibold text-white mb-2">
+                Currently Available
+              </h4>
               <p className="text-gray-300 mb-4">
-                I'm open to new opportunities and freelance projects. Whether you need a full-stack developer or want to
-                discuss a specific project, I'd love to hear from you.
+                I'm open to new opportunities and freelance projects. Whether
+                you need a full-stack developer or want to discuss a specific
+                project, I'd love to hear from you.
               </p>
               <div className="flex flex-wrap gap-2">
                 <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm">
                   Available for Hire
                 </span>
-                <span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">Remote Work</span>
+                <span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">
+                  Remote Work
+                </span>
                 <span className="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm">
                   Freelance Projects
                 </span>
@@ -133,13 +150,18 @@ export function Contact() {
           {/* Contact Form */}
           <Card className="bg-gray-800/50 border-gray-700">
             <CardHeader>
-              <CardTitle className="text-2xl text-white">Send a Message</CardTitle>
+              <CardTitle className="text-2xl text-white">
+                Send a Message
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-300 mb-2"
+                    >
                       Name
                     </label>
                     <Input
@@ -153,7 +175,10 @@ export function Contact() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-300 mb-2"
+                    >
                       Email
                     </label>
                     <Input
@@ -170,7 +195,10 @@ export function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label
+                    htmlFor="subject"
+                    className="block text-sm font-medium text-gray-300 mb-2"
+                  >
                     Subject
                   </label>
                   <Input
@@ -185,7 +213,10 @@ export function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-300 mb-2"
+                  >
                     Message
                   </label>
                   <Textarea
@@ -214,10 +245,12 @@ export function Contact() {
 
         <div className="mt-16 text-center">
           <div className="bg-gray-800/30 rounded-lg p-8">
-            <h3 className="text-xl font-semibold text-white mb-4">Let's Build Something Amazing Together</h3>
+            <h3 className="text-xl font-semibold text-white mb-4">
+              Let's Build Something Amazing Together
+            </h3>
             <p className="text-gray-300 mb-6">
-              Whether you have a project in mind or just want to connect, I'm always excited to discuss new
-              opportunities.
+              Whether you have a project in mind or just want to connect, I'm
+              always excited to discuss new opportunities.
             </p>
             <div className="flex justify-center space-x-4">
               <Button
@@ -231,7 +264,12 @@ export function Contact() {
               <Button
                 variant="outline"
                 className="bg-transparent border-gray-600 text-gray-300 hover:bg-gray-700"
-                onClick={() => window.open("https://www.linkedin.com/in/max-behzadi-1857b7193", "_blank")}
+                onClick={() =>
+                  window.open(
+                    "https://www.linkedin.com/in/max-behzadi-1857b7193",
+                    "_blank"
+                  )
+                }
               >
                 <Linkedin className="mr-2 h-4 w-4" />
                 Connect on LinkedIn
@@ -241,5 +279,5 @@ export function Contact() {
         </div>
       </div>
     </section>
-  )
+  );
 }

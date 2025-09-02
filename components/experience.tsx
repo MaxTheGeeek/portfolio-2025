@@ -1,95 +1,123 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Calendar, MapPin, Building } from "lucide-react"
-import { ScrollAnimation, StaggerContainer } from "@/components/scroll-animations"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Calendar, MapPin, Building } from "lucide-react";
+import {
+  ScrollAnimation,
+  StaggerContainer,
+} from "@/components/scroll-animations";
 
 export function Experience() {
   const experiences = [
     {
-      title: "Software Developer & SEO Specialist",
-      company: "Stereum Service FlexCo (Rocklogic GmbH)",
+      title: "Fullstack Developer",
+      company: "Rocklogic GmbH",
       location: "Vienna, Austria",
-      period: "2022 - Present",
+      period: "Sep 2025 – Present",
       description: [
-        "Spearheading frontend and backend development of the DApp Stereum, utilizing Vue.js and Node.js within the Electron.js framework",
-        "Engineered multiple company websites (stereumplus.com, stereum.com, rocklogic.at) leveraging React.js/Next.js & TypeScript, focusing on responsive design and user experience",
-        "Developed the Stereum Launcher desktop application using Electron.js for seamless blockchain node management",
-        "Developed a mobile monitoring app for the Stereum application, employing Flutter and Dart to deliver real-time application insights",
-        "Implemented comprehensive SEO strategies and Google-based ad campaigns to improve organic search rankings and meet budget specifications",
-        "Applied certified Digital Marketing techniques to enhance online presence and user acquisition",
-        "Oversaw technical issues and troubleshooting requests to resolve user problems",
+        "Maintain and improve all products built under Rocklogic Holdings, including stereumplus.com, stereum.com, stereumlab.com, rocklogic.at, and fungl.com",
+        "Focus on full-stack development with emphasis on performance optimization and user experience",
+        "Implement technical SEO strategies and performance improvements across all company products",
+        "Lead development initiatives for Ethereum-related web platforms and blockchain solutions",
       ],
       technologies: [
-        "Vue.js",
-        "Node.js",
-        "Electron.js",
+        "JavaScript",
+        "TypeScript",
         "React.js",
         "Next.js",
-        "TypeScript",
-        "Flutter",
-        "Dart",
-        "SEO",
-        "Digital Marketing",
-        "Google Ads",
+        "Vue.js",
+        "Node.js",
+        "PostgreSQL",
+        "Technical SEO",
       ],
       contact: "office@rocklogic.at",
     },
     {
-      title: "Web Developer & Digital Marketing Specialist",
-      company: "Freelance",
+      title: "Frontend Developer",
+      company: "Stereum Services FlexCo",
       location: "Vienna, Austria",
-      period: "2020 - 2021",
+      period: "Sep 2024 – Sep 2025",
       description: [
-        "Designed, implemented, and monitored web pages, plugins, and functionality for continuous improvement",
-        "Planned website development, converting mockups into usable web presence with HTML, JavaScript, AJAX, and JSON coding",
-        "Implemented comprehensive SEO strategies and Google-based ad campaigns to meet budget specifications",
-        "Applied certified Digital Marketing techniques to enhance client online presence and conversion rates",
-        "Developed technical solutions required to accommodate specific user-facing assets",
-        "Provided SEO consultation and digital marketing strategy for various clients",
+        "Built the Stereum Launcher 2.0 desktop app with Electron.js, Vue 3, and TailwindCSS, creating the full UI and wiring backend YAML configs with Node.js",
+        "Developed stereum.com (desktop app website) and rocklogic.at (company site) from scratch using Next.js 13, TypeScript, Mantine 6",
+        "Integrated Contentful CMS for news/blog functionality and content management",
+        "Focused on creating responsive, user-friendly interfaces for blockchain node management applications",
+      ],
+      technologies: [
+        "Electron.js",
+        "Vue 3",
+        "TailwindCSS",
+        "Next.js 13",
+        "TypeScript",
+        "Mantine 6",
+        "Contentful",
+        "Node.js",
+      ],
+      contact: "Stereum Services FlexCo",
+    },
+    {
+      title: "Software Developer",
+      company: "Rocklogic GmbH",
+      location: "Vienna, Austria",
+      period: "Jan 2022 – Sep 2024",
+      description: [
+        "Built stereumplus.com from scratch: frontend (Next.js 15, TypeScript, Mantine 7) and backend (Nest.js, Node.js, PostgreSQL, Prisma, Redis, Auth0), including API design, server functions, and caching",
+        "Developed the stereumplus back office for admins using Nest.js backend and React/Refine with Ant Design UI",
+        "Redesigned and rebuilt stereum.com with Next.js 15, Mantine 8, GitHub API integration (releases & contributors), and wagmi wallet connection for donations",
+        "Created fungl.com, a DeFi platform website, using Next.js 15, shadcn/ui, TailwindCSS",
+        "Led technical SEO & performance optimization across products (Google Analytics, Ads, Search Console)",
+      ],
+      technologies: [
+        "Next.js 15",
+        "TypeScript",
+        "Mantine 7/8",
+        "Nest.js",
+        "Node.js",
+        "PostgreSQL",
+        "Prisma",
+        "Redis",
+        "Auth0",
+        "React",
+        "shadcn/ui",
+        "GitHub API",
+        "wagmi",
+      ],
+      contact: "office@rocklogic.at",
+    },
+    {
+      title: "Frontend Developer",
+      company: "IRMALL",
+      location: "Remote",
+      period: "Jun 2021 – Jan 2022",
+      description: [
+        "Worked 100% remote as a contract frontend developer for a Persian e-commerce platform",
+        "Built product cards and detail pages using React.js and Material-UI",
+        "Developed responsive components for e-commerce functionality",
+        "Collaborated with remote team to deliver user-focused solutions",
+      ],
+      technologies: ["React.js", "Material-UI", "JavaScript", "Remote Work"],
+      contact: "Remote Contract Position",
+    },
+    {
+      title: "Junior Frontend Developer",
+      company: "TastyDay",
+      location: "Rotterdam, Netherlands",
+      period: "Jan 2018 – March 2019",
+      description: [
+        "Built mobile-first pages for a diet food platform using HTML, CSS, and vanilla JavaScript",
+        "Learned core frontend skills while developing responsive layouts and adding basic interactivity",
+        "Focused on creating mobile-optimized user interfaces for food and nutrition platform",
+        "Gained foundational experience in web development and responsive design principles",
       ],
       technologies: [
         "HTML",
         "CSS",
         "JavaScript",
-        "AJAX",
-        "JSON",
-        "SEO",
-        "Google Ads",
-        "Digital Marketing",
-        "Analytics",
+        "Responsive Design",
+        "Mobile-First Development",
       ],
-      contact: "maxbehzadi82@gmail.com",
-    },
-    {
-      title: "Web Developer",
-      company: "IR Mall",
-      location: "Remote",
-      period: "2018 - 2019",
-      description: [
-        "Coded websites using HTML, CSS, JavaScript, and jQuery languages",
-        "Used regulatory and compliance standards for user interface designs",
-        "Cooperated with designers to create clean interfaces and simple, intuitive interactions and experiences",
-        "Produced websites compatible with multiple browsers",
-        "Implemented basic SEO practices to improve website visibility",
-      ],
-      technologies: ["HTML", "CSS", "JavaScript", "jQuery", "UI/UX Design", "SEO"],
-      contact: "Remote Position",
-    },
-    {
-      title: "Web Developer",
-      company: "Tasty Day",
-      location: "Rotterdam, Netherlands",
-      period: "2017 - 2018",
-      description: [
-        "Coded using HTML, CSS and JavaScript to develop features for both mobile and desktop platforms",
-        "Produced websites compatible with multiple browsers",
-        "Teamed on user-centric design strategy in translation of UX and business requirements into coded solutions",
-        "Implemented responsive design principles for optimal user experience across devices",
-      ],
-      technologies: ["HTML", "CSS", "JavaScript", "Responsive Design", "Cross-browser Compatibility"],
       contact: "+31 618 880017 | office@tastyday.nl",
     },
-  ]
+  ];
 
   return (
     <section id="experience" className="py-20 px-4 bg-gray-900">
@@ -99,7 +127,13 @@ export function Experience() {
             <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
               Professional Experience
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto mb-6"></div>
+            <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+              6+ years of software development experience, mainly focused on
+              frontend development and API integration. Skilled in
+              JavaScript/TypeScript and Web, currently building Ethereum-related
+              web platforms.
+            </p>
           </div>
         </ScrollAnimation>
 
@@ -112,7 +146,9 @@ export function Experience() {
               <CardHeader>
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                   <div>
-                    <CardTitle className="text-xl text-white mb-2">{exp.title}</CardTitle>
+                    <CardTitle className="text-xl text-white mb-2">
+                      {exp.title}
+                    </CardTitle>
                     <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-gray-400">
                       <div className="flex items-center gap-1">
                         <Building className="h-4 w-4" />
@@ -141,7 +177,9 @@ export function Experience() {
                 </ul>
 
                 <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-gray-400 mb-2">Technologies Used:</h4>
+                  <h4 className="text-sm font-semibold text-gray-400 mb-2">
+                    Technologies Used:
+                  </h4>
                   <div className="flex flex-wrap gap-2">
                     {exp.technologies.map((tech, idx) => (
                       <Badge
@@ -164,5 +202,5 @@ export function Experience() {
         </StaggerContainer>
       </div>
     </section>
-  )
+  );
 }
