@@ -12,9 +12,9 @@ export default function Portfolio() {
     <div className="min-h-screen bg-gray-900 text-white">
       <Navigation />
       <Hero />
-      <About />
-      <Experience />
       <Projects />
+      <Experience />
+      <About />
       <Skills />
       <Education />
       <Contact />

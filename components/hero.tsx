@@ -1,15 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ChevronDown, Linkedin, Mail, Phone } from "lucide-react";
+import { ChevronDown, Linkedin, Mail, Phone, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 export function Hero() {
   const [text, setText] = useState("");
+  const fullText = "Software Developer";
 
   useEffect(() => {
-    const fullText = "Software Developer";
     let index = 0;
     const timer = setInterval(() => {
       setText(fullText.slice(0, index));
@@ -29,124 +29,98 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
     >
-      {/* Background image with low opacity */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 mt-20"
-        style={{
-          backgroundImage: "url('/marsi.jpg?height=1080&width=1920')",
-        }}
-      ></div>
+      {/* Full Screen Background */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/marsi.jpg"
+          alt="Background"
+          fill
+          className="object-cover object-center"
+          priority
+          quality={100}
+        />
+        {/* Professional Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/80 to-gray-900/60 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-black/40" />
+      </div>
 
-      {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-gray-900/60"></div>
+      <div className="container mx-auto px-4 z-10 flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20 pt-20">
 
-      <div className="text-center z-10 px-4 relative">
-        <div className="mb-8">
-          <div className="w-52 h-52 mx-auto mb-6 rounded-md bg-gradient-to-r from-blue-500 to-purple-600 p-1">
-            <div className="w-full h-full  bg-gray-900 flex items-center justify-center">
-              <Image
-                src="/me.jpg"
-                alt="Profile Picture"
-                width={208}
-                height={208}
-              />
-            </div>
+        {/* Profile Image Section - Modern Design */}
+        <div className="relative group shrink-0">
+          <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-amber-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />
+          <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full p-1 bg-gray-900 overflow-hidden ring-4 ring-gray-800/50 shadow-2xl">
+            <Image
+              src="/me.jpg"
+              alt="Max Behzadi"
+              fill
+              className="object-cover rounded-full transition-transform duration-500 group-hover:scale-110"
+              priority
+            />
           </div>
         </div>
 
-        <h1
-          className="text-5xl md:text-7xl font-bold mb-4 relative text-amber-500 drop-shadow-[0_0_10px_rgba(255,193,7,0.2)]"
-          style={{
-            textShadow:
-              "0 0 10px rgba(255,193,7,0.4), 0 0 20px rgba(255,193,7,0.2), 0 0 30px rgba(255,193,7,0.1)",
-          }}
-        >
-          Max Behzadi
-          <span
-            className="absolute inset-0 pointer-events-none"
-            aria-hidden="true"
-            style={{
-              zIndex: -1,
-              filter: "blur(12px)",
-              opacity: 0.2,
-              background:
-                "radial-gradient(circle, rgba(255,193,7,0.2) 0%, rgba(255,193,7,0.1) 50%, transparent 100%)",
-            }}
-          ></span>
-        </h1>
+        {/* Text Content */}
+        <div className="text-center md:text-left max-w-2xl">
+          <div className="mb-2 inline-block px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full backdrop-blur-sm">
+            <span className="text-blue-400 text-sm font-medium tracking-wide uppercase">Available for work</span>
+          </div>
 
-        <div className="text-xl md:text-2xl text-gray-300 mb-8 h-8">
-          <span>{text}</span>
-          <span className="border-r-2 border-blue-400 animate-pulse ml-1">
-            |
-          </span>
-        </div>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white tracking-tight drop-shadow-lg">
+            Max <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">Behzadi</span>
+          </h1>
 
-        <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in">
-          Skilled full-stack developer with expertise in JavaScript, Vue.js,
-          React.js, and Node.js. Passionate about creating dynamic web
-          applications, blockchain solutions, and implementing effective SEO
-          strategies.
-        </p>
+          <div className="text-2xl md:text-3xl text-gray-200 mb-6 font-light h-10 flex items-center justify-center md:justify-start">
+            <span className="mr-2">{text}</span>
+            <span className="w-[3px] h-8 bg-blue-500 animate-pulse" />
+          </div>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          <Button
-            variant="outline"
-            size="lg"
-            className="bg-transparent border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"
-            onClick={() => window.open("mailto:maxbehzadi82@gmail.com")}
-          >
-            <Mail className="mr-2 h-4 w-4" />
-            Get In Touch
-          </Button>
+          <p className="text-lg text-gray-300 mb-8 leading-relaxed max-w-lg mx-auto md:mx-0 drop-shadow-md">
+            Skilled full-stack developer specializing in JavaScript, React.js, and Node.js.
+            Building scalable blockchain solutions and dynamic web applications with a focus on
+            performance and user experience.
+          </p>
 
-          <Button
-            variant="outline"
-            size="lg"
-            className="bg-transparent border-gray-600 text-gray-300 hover:bg-gray-700"
-            onClick={() =>
-              window.open(
-                "https://www.linkedin.com/in/max-behzadi-1857b7193",
-                "_blank"
-              )
-            }
-          >
-            <Linkedin className="mr-2 h-4 w-4" />
-            LinkedIn
-          </Button>
-        </div>
+          <div className="flex flex-wrap justify-center md:justify-start gap-4">
+            <Button
+              size="lg"
+              className="bg-blue-600 hover:bg-blue-700 text-white border-0 shadow-lg shadow-blue-500/20 transition-all hover:scale-105"
+              onClick={() => window.open("mailto:maxbehzadi82@gmail.com")}
+            >
+              <Mail className="mr-2 h-5 w-5" />
+              Get In Touch
+            </Button>
 
-        <div className="flex justify-center space-x-6 text-gray-400">
-          <a
-            href="mailto:maxbehzadi82@gmail.com"
-            className="hover:text-blue-400 transition-colors"
-          >
-            <Mail className="h-6 w-6" />
-          </a>
-          <a
-            href="tel:+4367697018 20"
-            className="hover:text-blue-400 transition-colors"
-          >
-            <Phone className="h-6 w-6" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/max-behzadi-1857b7193"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-blue-400 transition-colors"
-          >
-            <Linkedin className="h-6 w-6" />
-          </a>
+            <Button
+              variant="outline"
+              size="lg"
+              className="bg-white/5 border-white/10 text-white hover:bg-white/10 hover:border-white/20 backdrop-blur-sm transition-all hover:scale-105"
+              onClick={() =>
+                window.open(
+                  "https://www.linkedin.com/in/max-behzadi-1857b7193",
+                  "_blank"
+                )
+              }
+            >
+              <Linkedin className="mr-2 h-5 w-5" />
+              LinkedIn Profile
+            </Button>
+          </div>
         </div>
       </div>
 
+      {/* Scroll Down Indicator */}
       <button
         onClick={scrollToAbout}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gray-400 hover:text-white transition-colors animate-bounce z-10"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gray-400 hover:text-white transition-all duration-300 animate-bounce cursor-pointer z-10"
+        aria-label="Scroll to content"
       >
-        <ChevronDown className="h-8 w-8" />
+        <div className="flex flex-col items-center gap-2">
+          <span className="text-xs uppercase tracking-widest opacity-70">Scroll</span>
+          <ChevronDown className="h-6 w-6" />
+        </div>
       </button>
     </section>
   );
