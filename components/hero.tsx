@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ChevronDown, Linkedin, Mail, Phone, ExternalLink, Download } from "lucide-react";
+import { ChevronDown, Linkedin, Github, Phone, ExternalLink, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
@@ -83,50 +83,54 @@ export function Hero() {
             performance and user experience.
           </p>
 
-          <div className="flex flex-wrap justify-center md:justify-start gap-4">
-            <Button
-              size="lg"
-              className="bg-blue-600 hover:bg-blue-700 text-white border-0 shadow-lg shadow-blue-500/20 transition-all hover:scale-105"
-              onClick={() => window.open("mailto:maxbehzadi82@gmail.com")}
-            >
-              <Mail className="mr-2 h-5 w-5" />
-              Get In Touch
-            </Button>
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-wrap justify-center md:justify-start gap-4">
+              <Button
+                size="lg"
+                className="bg-blue-600 hover:bg-blue-700 text-white border-0 shadow-lg shadow-blue-500/20 transition-all hover:scale-105"
+                onClick={() => window.open("https://github.com/MaxTheGeeek", "_blank")}
+              >
+                <Github className="mr-2 h-5 w-5" />
+                GitHub Profile
+              </Button>
 
-            <Button
-              variant="outline"
-              size="lg"
-              className="bg-white/5 border-white/10 text-white hover:bg-white/10 hover:border-white/20 backdrop-blur-sm transition-all hover:scale-105"
-              onClick={() =>
-                window.open(
-                  "https://www.linkedin.com/in/max-behzadi-1857b7193",
-                  "_blank"
-                )
-              }
-            >
-              <Linkedin className="mr-2 h-5 w-5" />
-              LinkedIn Profile
-            </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="bg-white/5 border-white/10 text-white hover:bg-white/10 hover:border-white/20 backdrop-blur-sm transition-all hover:scale-105"
+                onClick={() =>
+                  window.open(
+                    "https://www.linkedin.com/in/max-behzadi-1857b7193",
+                    "_blank"
+                  )
+                }
+              >
+                <Linkedin className="mr-2 h-5 w-5" />
+                LinkedIn Profile
+              </Button>
+            </div>
             
-            <Button
-              variant="outline"
-              size="lg"
-              className="bg-white/5 border-white/10 text-white hover:bg-white/10 hover:border-white/20 backdrop-blur-sm transition-all hover:scale-105"
-              onClick={() => window.open("/Majid_Behzadi_Resume.pdf", "_blank")}
-            >
-              <Download className="mr-2 h-5 w-5" />
-              Resume (EN)
-            </Button>
+            <div className="flex flex-wrap justify-center md:justify-start gap-4">
+              <Button
+                variant="outline"
+                size="lg"
+                className="bg-white/5 border-white/10 text-white hover:bg-white/10 hover:border-white/20 backdrop-blur-sm transition-all hover:scale-105"
+                onClick={() => window.open("/Majid_Behzadi_Resume.pdf", "_blank")}
+              >
+                <Download className="mr-2 h-5 w-5" />
+                Resume (EN)
+              </Button>
 
-            <Button
-              variant="outline"
-              size="lg"
-              className="bg-white/5 border-white/10 text-white hover:bg-white/10 hover:border-white/20 backdrop-blur-sm transition-all hover:scale-105"
-              onClick={() => window.open("/Majid_Behzadi_Lebenslauf_DE.pdf", "_blank")}
-            >
-              <Download className="mr-2 h-5 w-5" />
-              Lebenslauf (DE)
-            </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="bg-white/5 border-white/10 text-white hover:bg-white/10 hover:border-white/20 backdrop-blur-sm transition-all hover:scale-105"
+                onClick={() => window.open("/Majid_Behzadi_Lebenslauf_DE.pdf", "_blank")}
+              >
+                <Download className="mr-2 h-5 w-5" />
+                Lebenslauf (DE)
+              </Button>
+            </div>
           </div>
         </div>
       </div>

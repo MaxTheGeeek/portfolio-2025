@@ -135,11 +135,11 @@ export function Projects() {
           </div>
         </ScrollAnimation>
 
-        <div className="flex flex-col gap-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {projects.map((project, index) => (
             <ScrollAnimation key={index} animation="slideInUp">
               <div
-                className={`relative w-full h-[600px] rounded-2xl overflow-hidden group ${project.url ? 'cursor-pointer' : 'cursor-default'
+                className={`relative w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden group ${project.url ? 'cursor-pointer' : 'cursor-default'
                   }`}
                 onClick={() => project.url && window.open(project.url, "_blank")}
               >
@@ -178,39 +178,39 @@ export function Projects() {
                 </div>
 
                 {/* Content Overlay - Top Left */}
-                <div className="absolute top-0 left-0 z-20 p-8 md:p-12 max-w-2xl">
+                <div className="absolute top-0 left-0 z-20 p-6 md:p-8 max-w-full">
                   {/* Period Badge */}
-                  <div className="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 text-sm font-medium mb-6">
+                  <div className="inline-block px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 text-xs md:text-sm font-medium mb-4">
                     {project.period}
                   </div>
 
                   {/* Title & Link Icon */}
-                  <div className="flex items-center gap-4 mb-4">
-                    <h3 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
+                  <div className="flex items-center gap-3 mb-3">
+                    <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
                       {project.title}
                     </h3>
                     {project.url && (
-                      <ExternalLink className="h-6 w-6 text-gray-400 group-hover:text-amber-500 transition-colors opacity-0 group-hover:opacity-100" />
+                      <ExternalLink className="h-5 w-5 text-gray-400 group-hover:text-amber-500 transition-colors opacity-0 group-hover:opacity-100" />
                     )}
                   </div>
 
                   {/* Description */}
-                  <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-lg">
+                  <p className="text-lg md:text-xl text-gray-300 mb-6 leading-relaxed max-w-sm md:max-w-md">
                     {project.description}
                   </p>
 
                   <div>
-                    <span className="text-sm font-medium text-gray-500 uppercase tracking-widest leading-loose">
+                    <span className="text-xs md:text-sm font-medium text-gray-500 uppercase tracking-widest leading-loose">
                       {project.category}
                     </span>
                   </div>
                 </div>
 
                 {/* Technologies - Bottom */}
-                <div className="absolute bottom-0 left-0 w-full z-20 p-8 md:p-12">
+                <div className="absolute bottom-0 left-0 w-full z-20 p-6 md:p-8">
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, i) => (
-                      <span key={i} className="text-sm font-medium text-white bg-blue-600 px-4 py-2 rounded-lg shadow-lg">
+                      <span key={i} className="text-xs md:text-sm font-medium text-white bg-blue-600 px-3 py-1.5 rounded-lg shadow-lg">
                         {tech}
                       </span>
                     ))}
