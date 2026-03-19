@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ChevronDown, Linkedin, Mail, Phone, ExternalLink } from "lucide-react";
+import { ChevronDown, Linkedin, Mail, Phone, ExternalLink, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
@@ -106,6 +106,26 @@ export function Hero() {
             >
               <Linkedin className="mr-2 h-5 w-5" />
               LinkedIn Profile
+            </Button>
+            
+            <Button
+              variant="outline"
+              size="lg"
+              className="bg-white/5 border-white/10 text-white hover:bg-white/10 hover:border-white/20 backdrop-blur-sm transition-all hover:scale-105"
+              onClick={() => window.open("/Majid_Behzadi_Resume.pdf", "_blank")}
+            >
+              <Download className="mr-2 h-5 w-5" />
+              Resume (EN)
+            </Button>
+
+            <Button
+              variant="outline"
+              size="lg"
+              className="bg-white/5 border-white/10 text-white hover:bg-white/10 hover:border-white/20 backdrop-blur-sm transition-all hover:scale-105"
+              onClick={() => window.open("/Majid_Behzadi_Lebenslauf_DE.pdf", "_blank")}
+            >
+              <Download className="mr-2 h-5 w-5" />
+              Lebenslauf (DE)
             </Button>
           </div>
         </div>

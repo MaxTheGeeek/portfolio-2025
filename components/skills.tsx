@@ -16,7 +16,6 @@ export function Skills() {
       "Next.js": "bg-white/10 text-gray-100 border-white/20 hover:bg-white/20",
       "Vue.js": "bg-[#4FC08D]/10 text-gray-100 border-[#4FC08D]/20 hover:bg-[#4FC08D]/20",
       "Angular": "bg-[#DD0031]/10 text-gray-100 border-[#DD0031]/20 hover:bg-[#DD0031]/20",
-      "Flutter": "bg-[#02569B]/10 text-gray-100 border-[#42A5F5]/20 hover:bg-[#02569B]/20",
       "TypeScript": "bg-[#3178C6]/10 text-gray-100 border-[#3178C6]/20 hover:bg-[#3178C6]/20",
       "TailwindCSS": "bg-[#38B2AC]/10 text-gray-100 border-[#38B2AC]/20 hover:bg-[#38B2AC]/20",
 
@@ -24,8 +23,7 @@ export function Skills() {
       "Node.js": "bg-[#339933]/10 text-gray-100 border-[#339933]/20 hover:bg-[#339933]/20",
       "Nest.js": "bg-[#E0234E]/10 text-gray-100 border-[#E0234E]/20 hover:bg-[#E0234E]/20",
       "Go": "bg-[#00ADD8]/10 text-gray-100 border-[#00ADD8]/20 hover:bg-[#00ADD8]/20",
-      "Docker": "bg-[#2496ED]/10 text-gray-100 border-[#2496ED]/20 hover:bg-[#2496ED]/20",
-      "CI/CD": "bg-orange-500/10 text-gray-100 border-orange-500/20 hover:bg-orange-500/20",
+      "C# .NET": "bg-[#512BD4]/10 text-gray-100 border-[#512BD4]/20 hover:bg-[#512BD4]/20",
       "Express": "bg-gray-500/10 text-gray-100 border-gray-500/20 hover:bg-gray-500/20",
       "GraphQL": "bg-[#E10098]/10 text-gray-100 border-[#E10098]/20 hover:bg-[#E10098]/20",
       "REST API": "bg-green-500/10 text-gray-100 border-green-500/20 hover:bg-green-500/20",
@@ -36,6 +34,8 @@ export function Skills() {
       "Redis": "bg-[#DC382D]/10 text-gray-100 border-[#DC382D]/20 hover:bg-[#DC382D]/20",
       "SQL": "bg-blue-600/10 text-gray-100 border-blue-600/20 hover:bg-blue-600/20",
       "Database Design": "bg-purple-500/10 text-gray-100 border-purple-500/20 hover:bg-purple-500/20",
+      "AWS RDS": "bg-[#527FFF]/10 text-gray-100 border-[#527FFF]/20 hover:bg-[#527FFF]/20",
+      "Azure SQL": "bg-[#0078D4]/10 text-gray-100 border-[#0078D4]/20 hover:bg-[#0078D4]/20",
 
       // Design
       "Figma": "bg-[#F24E1E]/10 text-gray-100 border-[#F24E1E]/20 hover:bg-[#F24E1E]/20",
@@ -53,12 +53,14 @@ export function Skills() {
       "Prompt Eng.": "bg-pink-500/10 text-gray-100 border-pink-500/20 hover:bg-pink-500/20",
       "Copilot": "bg-blue-600/10 text-gray-100 border-blue-600/20 hover:bg-blue-600/20",
 
-      // Tools
-      "Auth0": "bg-[#EB5424]/10 text-gray-100 border-[#EB5424]/20 hover:bg-[#EB5424]/20",
-      "Git": "bg-[#F05032]/10 text-gray-100 border-[#F05032]/20 hover:bg-[#F05032]/20",
+      // DevOps & Cloud
+      "AWS": "bg-[#FF9900]/10 text-gray-100 border-[#FF9900]/20 hover:bg-[#FF9900]/20",
+      "Azure": "bg-[#0089D6]/10 text-gray-100 border-[#0089D6]/20 hover:bg-[#0089D6]/20",
+      "Docker": "bg-[#2496ED]/10 text-gray-100 border-[#2496ED]/20 hover:bg-[#2496ED]/20",
+      "CI/CD": "bg-orange-500/10 text-gray-100 border-orange-500/20 hover:bg-orange-500/20",
+      "AWS CodeDeploy": "bg-[#527FFF]/10 text-gray-100 border-[#527FFF]/20 hover:bg-[#527FFF]/20",
+      "Azure DevOps": "bg-[#0078D4]/10 text-gray-100 border-[#0078D4]/20 hover:bg-[#0078D4]/20",
       "Electron": "bg-[#47848F]/10 text-gray-100 border-[#47848F]/20 hover:bg-[#47848F]/20",
-      "SEO": "bg-green-600/10 text-gray-100 border-green-600/20 hover:bg-green-600/20",
-      "Analytics": "bg-yellow-600/10 text-gray-100 border-yellow-600/20 hover:bg-yellow-600/20",
     };
 
     return brandColors[skill] || "bg-gray-800 text-gray-300 border-gray-700 hover:bg-gray-700";
@@ -68,7 +70,7 @@ export function Skills() {
     {
       title: "Frontend",
       icon: Code,
-      skills: ["React.js", "Next.js", "Vue.js", "Angular", "Flutter", "TypeScript", "TailwindCSS"],
+      skills: ["React.js", "Next.js", "Vue.js", "Angular", "TypeScript", "TailwindCSS"],
       color: "text-blue-400",
       bg: "bg-blue-500/10",
       border: "border-blue-500/20",
@@ -76,7 +78,7 @@ export function Skills() {
     {
       title: "Backend",
       icon: Server,
-      skills: ["Node.js", "Go", "Nest.js", "Express", "Docker", "CI/CD", "GraphQL"],
+      skills: ["Node.js", "C# .NET", "Go", "Nest.js", "Express", "GraphQL", "REST API"],
       color: "text-emerald-400",
       bg: "bg-emerald-500/10",
       border: "border-emerald-500/20",
@@ -84,7 +86,7 @@ export function Skills() {
     {
       title: "Database",
       icon: Database,
-      skills: ["PostgreSQL", "Database Design", "Prisma", "Redis", "SQL"],
+      skills: ["PostgreSQL", "Database Design", "Prisma", "AWS RDS", "Azure SQL", "Redis", "SQL"],
       color: "text-purple-400",
       bg: "bg-purple-500/10",
       border: "border-purple-500/20",
@@ -106,9 +108,9 @@ export function Skills() {
       border: "border-amber-500/20",
     },
     {
-      title: "Tools & Perf",
+      title: "DevOps & Cloud",
       icon: Zap,
-      skills: ["Auth0", "Git", "Electron", "SEO", "Analytics"],
+      skills: ["AWS", "Azure", "Docker", "CI/CD", "AWS CodeDeploy", "Azure DevOps", "Electron"],
       color: "text-cyan-400",
       bg: "bg-cyan-500/10",
       border: "border-cyan-500/20",
