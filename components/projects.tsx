@@ -11,6 +11,28 @@ import {
 export function Projects() {
   const projects = [
     {
+      title: "Cover-Letter.work",
+      description:
+        "A platform to generate cover letters by filling out a form, and merge up to 3 PDFs.",
+      period: "2026",
+      url: "https://cover-letter.work",
+      type: "Utility Platform",
+      images: ["/cover-1.png", "/cover-2.png"],
+      technologies: ["React", "Next.js", "TypeScript", "shadcn UI", "Supabase"],
+      category: "Utility Platform",
+    },
+    {
+      title: "Docshow.org",
+      description:
+        "A document sharing platform via link with view-only access, no downloads required.",
+      period: "In Progress",
+      image: "/processing.png",
+      url: "https://docshow.org",
+      type: "Document Sharing",
+      technologies: ["C#", ".NET 10", "Angular 20", "AWS", "Entity Framework Core", "Ollama", "LLM API"],
+      category: "Document Sharing",
+    },
+    {
       title: "Stereum Labs",
       description:
         "Experimental projects and research initiatives pushing the boundaries of Ethereum infrastructure.",
