@@ -1,226 +1,149 @@
 "use client";
 
-import Image from "next/image";
-import { Badge } from "@/components/ui/badge";
-import { ExternalLink, ShoppingCart, Utensils, Monitor } from "lucide-react";
-import {
-  ScrollAnimation,
-  StaggerContainer,
-} from "@/components/scroll-animations";
+import React, { useState, useEffect } from "react";
+import { PROJECTS } from "@/lib/data";
+import { ArrowRight, Github, X } from "lucide-react";
 
-export function Projects() {
-  const projects = [
-    {
-      title: "Docshow.org",
-      description:
-        "A document sharing platform via link with view-only access, no downloads required.",
-      period: "In Progress",
-      image: "/processing.png",
-      url: "https://docshow.org",
-      type: "Document Sharing",
-      technologies: ["C#", ".NET 10", "Angular 20", "AWS", "Entity Framework Core", "Ollama", "LLM API"],
-      category: "Document Sharing",
-    },
-    {
-      title: "Cover-Letter.work",
-      description:
-        "A platform to generate cover letters by filling out a form, and merge up to 3 PDFs.",
-      period: "2026",
-      url: "https://cover-letter.work",
-      type: "Utility Platform",
-      images: ["/cover-1.png", "/cover-2.png"],
-      technologies: ["React", "Next.js", "TypeScript", "shadcn UI", "Supabase"],
-      category: "Utility Platform",
-    },
-    {
-      title: "Stereum Labs",
-      description:
-        "Experimental projects and research initiatives pushing the boundaries of Ethereum infrastructure.",
-      period: "2025 - Present",
-      image: "/labs.png",
-      url: "https://stereumlabs.com",
-      type: "Research Initiative",
-      technologies: ["Nest.js", "PostgreSQL", "React.js", "Next.js", "Mantine"],
-      category: "Research",
-    },
-    {
-      title: "Stereum Plus",
-      description:
-        "Advanced tools and analytics for professional stakers and node operators.",
-      period: "2024 - Present",
-      image: "/plus.png",
-      url: "https://stereumplus.com",
-      type: "Professional Platform",
-      technologies: ["Nest.js", "PostgreSQL", "React.js", "Next.js", "Mantine"],
-      category: "Analytics Platform",
-    },
-    {
-      title: "Fungl.com",
-      description:
-        "A sophisticated DeFi platform providing financial tools and analytics.",
-      period: "2024",
-      image: "/fungl.png",
-      url: "https://fungl.com",
-      type: "DeFi Platform",
-      technologies: ["React", "Next.js", "Tailwind"],
-      category: "FinTech",
-    },
-    {
-      title: "Stereum.com",
-      description:
-        "The official website for Stereum, providing resources, guides, and updates.",
-      period: "2023",
-      image: "/stereum.png",
-      url: "https://stereum.com",
-      type: "Web Platform",
-      technologies: ["React", "Next.js", "Mantine"],
-      category: "Web Platform",
-    },
-    {
-      title: "Stereum Launcher",
-      description:
-        "A desktop application for managing Ethereum nodes with ease.",
-      period: "2022 - 2024",
-      url: "https://stereum.net",
-      type: "Desktop Application",
-      images: ["/launcher-node.png", "/laucher-staking.png"],
-      technologies: ["Vue.js", "TailwindCSS"],
-      category: "Desktop Application",
-    },
-    {
-      title: "Persian Score",
-      description:
-        "Comprehensive sports scoring and statistics platform for Persian sports enthusiasts.",
-      period: "2024",
-      image: "/score.png",
-      url: "https://www.persianscore.com",
-      type: "Web Application",
-      technologies: ["React", "Next.js", "Supabase", "Edge Functions"],
-      category: "Sports Platform",
-    },
-    {
-      title: "IRMall",
-      description:
-        "A Persian language online shop providing a wide range of products.",
-      period: "2021 - 2022",
-      image: "/irmall.png",
-      type: "E-Commerce",
-      technologies: ["React.js", "HTML", "CSS"],
-      category: "E-Commerce",
-    },
-    {
-      title: "TastyDay",
-      description:
-        "Diet food ordering platform serving the Netherlands.",
-      period: "2018 - 2019",
-      image: "/tastyday.png",
-      type: "Food Tech",
-      technologies: ["HTML", "CSS", "JavaScript"],
-      category: "Delivery Platform",
-    },
-  ];
-
+function SceneHead({ num, title, sub }: { num: string; title: string; sub: string }) {
   return (
-    <section id="projects" className="py-20 px-4 bg-gray-950 border-t border-gray-900">
-      <div className="max-w-7xl mx-auto">
-        <ScrollAnimation animation="fadeIn">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold mb-4 text-white">
-              Featured <span className="text-amber-500">Projects</span>
-            </h2>
-            <div className="w-24 h-1 bg-amber-500 mx-auto mb-6 rounded-full"></div>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              A showcase of innovative applications and platforms.
-            </p>
-          </div>
-        </ScrollAnimation>
+    <div className="scene-head">
+      <span className="scene-num">{num}</span>
+      <h2 className="scene-title">{title}</h2>
+      <span className="scene-sub">{sub}</span>
+    </div>
+  );
+}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-          {projects.map((project, index) => (
-            <ScrollAnimation key={index} animation="slideInUp">
-              <div
-                className={`relative w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden group ${project.url ? 'cursor-pointer' : 'cursor-default'
-                  }`}
-                onClick={() => project.url && window.open(project.url, "_blank")}
-              >
-                {/* Full Width Background Image */}
-                <div className="absolute inset-0 z-0">
-                  {project.images ? (
-                    <div className="relative w-full h-full bg-gray-900">
-                      <Image
-                        src={project.images[0]}
-                        alt={project.title}
-                        fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-60"
-                      />
-                      {/* Secondary image for Launcher */}
-                      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                        <Image
-                          src={project.images[1]}
-                          alt={project.title}
-                          width={400}
-                          height={1200}
-                          className="object-contain drop-shadow-2xl translate-y-10 group-hover:translate-y-5 transition-transform duration-500"
-                        />
-                      </div>
-                    </div>
-                  ) : (
-                    <Image
-                      src={project.image || "/placeholder.jpg"}
-                      alt={project.title}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-60"
-                    />
-                  )}
-                  {/* Global Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-gray-950/90 via-gray-950/40 to-transparent z-10" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-950/90 via-transparent to-transparent z-10" />
-                </div>
-
-                {/* Content Overlay - Top Left */}
-                <div className="absolute top-0 left-0 z-20 p-6 md:p-8 max-w-full">
-                  {/* Period Badge */}
-                  <div className="inline-block px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 text-xs md:text-sm font-medium mb-4">
-                    {project.period}
-                  </div>
-
-                  {/* Title & Link Icon */}
-                  <div className="flex items-center gap-3 mb-3">
-                    <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
-                      {project.title}
-                    </h3>
-                    {project.url && (
-                      <ExternalLink className="h-5 w-5 text-gray-400 group-hover:text-amber-500 transition-colors opacity-0 group-hover:opacity-100" />
-                    )}
-                  </div>
-
-                  {/* Description */}
-                  <p className="text-lg md:text-xl text-gray-300 mb-6 leading-relaxed max-w-sm md:max-w-md">
-                    {project.description}
-                  </p>
-
-                  <div>
-                    <span className="text-xs md:text-sm font-medium text-gray-500 uppercase tracking-widest leading-loose">
-                      {project.category}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Technologies - Bottom */}
-                <div className="absolute bottom-0 left-0 w-full z-20 p-6 md:p-8">
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, i) => (
-                      <span key={i} className="text-xs md:text-sm font-medium text-white bg-blue-600 px-3 py-1.5 rounded-lg shadow-lg">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+function ProjectShot({ accent, idx }: { accent: string; idx: number }) {
+  const variants = idx % 3;
+  return (
+    <div className="project-shot">
+      <div className="project-shot-stripes"></div>
+      <div className="project-shot-label">Placeholder · screen #{String(idx + 1).padStart(2, '0')}</div>
+      <div className="project-shot-mock" style={{ borderColor: `var(--${accent}-glow, var(--line))` }}>
+        <div className="project-shot-bar">
+          <i></i><i></i><i></i>
+        </div>
+        <div className="project-shot-body">
+          {variants === 0 && (
+            <>
+              <div className="project-shot-row w70"></div>
+              <div className="project-shot-row w50"></div>
+              <div className="project-shot-grid">
+                <div className="project-shot-tile"></div>
+                <div className="project-shot-tile alt"></div>
+                <div className="project-shot-tile"></div>
+                <div className="project-shot-tile alt"></div>
+                <div className="project-shot-tile"></div>
+                <div className="project-shot-tile alt"></div>
               </div>
-            </ScrollAnimation>
-          ))}
+            </>
+          )}
+          {variants === 1 && (
+            <>
+              <div className="project-shot-row w90"></div>
+              <div className="project-shot-row w70"></div>
+              <div className="project-shot-row w50"></div>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: 8, marginTop: 8 }}>
+                <div className="project-shot-tile" style={{ aspectRatio: "auto", height: 60 }}></div>
+                <div className="project-shot-tile alt" style={{ aspectRatio: "auto", height: 60 }}></div>
+              </div>
+            </>
+          )}
+          {variants === 2 && (
+            <>
+              <div style={{ display: "flex", gap: 6 }}>
+                <div className="project-shot-row w50" style={{ flex: 1 }}></div>
+                <div className="project-shot-row w50" style={{ flex: 1, background: "rgba(34, 211, 238, 0.15)" }}></div>
+              </div>
+              <div className="project-shot-row w90"></div>
+              <div className="project-shot-row w70"></div>
+              <div className="project-shot-grid" style={{ gridTemplateColumns: "repeat(4, 1fr)" }}>
+                <div className="project-shot-tile alt"></div>
+                <div className="project-shot-tile"></div>
+                <div className="project-shot-tile alt"></div>
+                <div className="project-shot-tile"></div>
+              </div>
+            </>
+          )}
         </div>
       </div>
+    </div>
+  );
+}
+
+function ProjectModal({ project, onClose }: { project: any; onClose: () => void }) {
+  if (!project) return null;
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    window.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [onClose]);
+
+  const idx = PROJECTS.findIndex(p => p.name === project.name);
+  return (
+    <div className="modal-backdrop" onClick={onClose}>
+      <div className="glass modal" onClick={(e) => e.stopPropagation()}>
+        <button className="modal-close" onClick={onClose}><X size={16} /></button>
+        <ProjectShot accent={project.accent} idx={idx} />
+        <div className="modal-body">
+          <div className="modal-sub">{project.cat} · {project.role} · {project.timeline}</div>
+          <h3 className="modal-title">{project.name}</h3>
+          <p className="modal-desc">{project.desc}</p>
+
+          <div className="modal-section">
+            <h4>Stack</h4>
+            <div className="project-tags">
+              {project.stack.map((s: string) => <span key={s} className="tag cyan">{s}</span>)}
+            </div>
+          </div>
+          <div className="modal-section">
+            <h4>Highlights</h4>
+            <div className="modal-features">
+              {project.features.map((f: string, i: number) => <div key={i} className="modal-feature">{f}</div>)}
+            </div>
+          </div>
+          <div style={{ display: "flex", gap: 10, marginTop: 24 }}>
+            <button className="btn primary">Visit project <ArrowRight size={16} style={{ marginLeft: 8 }} /></button>
+            <button className="btn"><Github size={16} style={{ marginRight: 8 }} /> Source</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function Projects() {
+  const [openProject, setOpenProject] = useState<any>(null);
+
+  return (
+    <section className="scene" data-screen-label="04 Projects" id="projects">
+      <SceneHead num="// 03" title="Projects" sub={`${PROJECTS.length} selected`} />
+      <div className="projects-grid">
+        {PROJECTS.map((p, i) => (
+          <article key={p.name} className="glass project" onClick={() => setOpenProject(p)}>
+            <ProjectShot accent={p.accent} idx={i} />
+            <div className="project-meta">
+              <div className="project-row">
+                <h3 className="project-name">{p.name}</h3>
+                <span className="project-num">{String(i + 1).padStart(2, '0')} / {String(PROJECTS.length).padStart(2, '0')}</span>
+              </div>
+              <p style={{ fontFamily: "var(--mono)", fontSize: 11, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--ink-mute)", marginBottom: 10 }}>
+                {p.cat}
+              </p>
+              <p className="project-desc">{p.desc}</p>
+              <div className="project-tags">
+                {p.tags.map(t => <span key={t} className="tag">{t}</span>)}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+      <ProjectModal project={openProject} onClose={() => setOpenProject(null)} />
     </section>
   );
 }
