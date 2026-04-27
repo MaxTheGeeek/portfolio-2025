@@ -16,7 +16,6 @@ export function Hero() {
 
   return (
     <section className="hero relative" data-screen-label="01 Hero" id="hero">
-      <img src="/marsi.jpg" alt="background" className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen pointer-events-none" style={{ filter: "grayscale(100%) blur(4px)" }} />
       <div className="hero-inner relative z-10 flex">
         <div className="hero-left relative z-20">
           <div className="text-cyan-400 font-mono text-sm tracking-widest uppercase mb-4 z-20 relative">

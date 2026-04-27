@@ -17,6 +17,15 @@ export default function Portfolio() {
       <div className="app relative z-10 text-white min-h-screen">
         <TopNav />
         <Hero />
+        
+        <div className="flex justify-center w-full py-16 relative z-30 opacity-90 hover:opacity-100 transition-opacity">
+          <img 
+            src="/marsi.jpg" 
+            alt="My dog Marsi" 
+            className="w-[400px] h-auto rounded-2xl shadow-2xl border border-white/10 object-cover" 
+          />
+        </div>
+
         <About />
         <Experience />
         <Projects />
