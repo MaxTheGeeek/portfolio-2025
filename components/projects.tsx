@@ -44,6 +44,8 @@ function SwipeCard({
   return (
     <motion.div
       style={{ 
+        position: 'absolute',
+        top: 0,
         x: isTop ? x : 0, 
         rotate: isTop ? rotate : randRot, 
         zIndex: 50 - index,
@@ -74,7 +76,7 @@ function SwipeCard({
       exit="exit"
       custom={x.get() > 0 ? "right" : "left"}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className="absolute glass rounded-2xl flex flex-col overflow-hidden shadow-2xl cursor-grab active:cursor-grabbing border border-white/10"
+      className="glass rounded-2xl flex flex-col overflow-hidden shadow-2xl cursor-grab active:cursor-grabbing border border-white/10"
     >
       <div className="relative h-56 w-full bg-[#0b0d18] border-b border-white/10 overflow-hidden">
         <img 
