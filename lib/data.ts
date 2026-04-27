@@ -111,7 +111,8 @@ export const PROJECTS = [
     timeline: "Completed",
     stack: ["React", "Next.js", "TypeScript", "shadcn UI", "Supabase"],
     features: ["Cover letter AI generation", "PDF merging tools", "User Authentication via Supabase"],
-    image: "/cover-1.png"
+    image: "/cover-1.png",
+    url: "https://cover-letter.work"
   },
   {
     name: "docshow.org",
@@ -159,7 +160,8 @@ export const PROJECTS = [
     timeline: "Shipped",
     stack: ["Vue.js", "Electron", "Node.js"],
     features: ["Ethereum Node Management", "Cross-OS Execution", "High scale reach"],
-    image: "/launcher-node.png"
+    image: "/launcher-node.png",
+    url: "https://stereum.com"
   },
   {
     name: "Stereum Plus",
@@ -171,7 +173,8 @@ export const PROJECTS = [
     timeline: "Shipped",
     stack: ["React", "Web3", "ThreeJS"],
     features: ["Node analytics", "Interactive monitoring", "Blockchain sync"],
-    image: "/plus.png"
+    image: "/plus.png",
+    url: "https://stereumplus.com"
   },
   {
     name: "Stereum Labs",
@@ -183,7 +186,8 @@ export const PROJECTS = [
     timeline: "Ongoing",
     stack: ["R3F", "Three.js", "GSAP"],
     features: ["Spatial UI concepts", "WebGL visualizations"],
-    image: "/labs.png"
+    image: "/labs.png",
+    url: "https://stereumlabs.com"
   },
   {
     name: "Stereum Monitor",

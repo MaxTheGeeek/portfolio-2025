@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { PROJECTS } from "@/lib/data";
-import { X, Heart } from "lucide-react";
+import { X, Heart, ExternalLink } from "lucide-react";
 import { motion, AnimatePresence, useMotionValue, useTransform } from "framer-motion";
 
 function SceneHead({ num, title, sub }: { num: string; title: string; sub: string }) {
@@ -51,8 +51,8 @@ function SwipeCard({
         zIndex: 50 - index,
         transformOrigin: "bottom center",
         width: '100%', 
-        maxWidth: '450px', 
-        height: '650px', 
+        maxWidth: '540px', 
+        height: '780px', 
         left: 0, 
         right: 0, 
         margin: '0 auto'
@@ -76,9 +76,9 @@ function SwipeCard({
       exit="exit"
       custom={x.get() > 0 ? "right" : "left"}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className="glass bg-black/90 rounded-2xl flex flex-col overflow-hidden shadow-2xl cursor-grab active:cursor-grabbing border border-white/10"
+      className="glass bg-[#0b0d18] rounded-2xl flex flex-col overflow-hidden shadow-2xl cursor-grab active:cursor-grabbing border border-white/10"
     >
-      <div className="relative h-72 w-full bg-[#0b0d18] border-b border-white/10 overflow-hidden">
+      <div className="relative h-[340px] w-full bg-[#0b0d18] border-b border-white/10 overflow-hidden">
         <img 
           src={project.image || "/placeholder.jpg"} 
           alt={project.name} 
@@ -90,7 +90,20 @@ function SwipeCard({
         </div>
       </div>
       <div className="p-6 flex flex-col flex-1 bg-black/40">
-        <h3 className="text-2xl font-bold text-white mb-2">{project.name}</h3>
+        <div className="flex justify-between items-start mb-2">
+          <h3 className="text-3xl font-bold text-white">{project.name}</h3>
+          {project.url && (
+            <a 
+              href={project.url} 
+              target="_blank" 
+              rel="noreferrer" 
+              className="text-cyan-400 hover:text-white p-2 shrink-0 bg-white/5 rounded-full hover:bg-cyan-500 transition-colors cursor-pointer z-50 pointer-events-auto"
+              onPointerDown={(e) => e.stopPropagation()} 
+            >
+              <ExternalLink size={20} />
+            </a>
+          )}
+        </div>
         <p className="text-cyan-400 text-xs font-mono tracking-widest uppercase mb-4">{project.cat}</p>
         <p className="text-sm text-gray-300 line-clamp-3 mb-4 leading-relaxed">{project.desc}</p>
         
@@ -157,7 +170,7 @@ export function Projects() {
     <section className="scene pb-32" data-screen-label="04 Projects" id="projects">
       <SceneHead num="" title="Projects" sub={`${PROJECTS.length} selected`} />
       
-      <div className="relative w-full max-w-xl mx-auto h-[700px] mt-12 flex flex-col items-center">
+      <div className="relative w-full max-w-2xl mx-auto h-[850px] mt-12 flex flex-col items-center">
         <div className="relative w-full h-full perspective-1000">
           <AnimatePresence>
             {deck.slice(0, 4).map((p, i) => (
