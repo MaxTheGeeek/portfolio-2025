@@ -85,9 +85,13 @@ function Core() {
 
   return (
     <mesh ref={coreRef}>
-      <boxGeometry args={[1.5, 1.5, 1.5]} />
+      <sphereGeometry args={[1.2, 32, 32]} />
       <meshPhysicalMaterial color="#0b0d18" transparent opacity={0.9} />
-      <Edges color="#22d3ee" scale={1.05} />
+      <Edges color="#22d3ee" scale={1.05} threshold={15} />
+      <mesh>
+        <sphereGeometry args={[1.25, 16, 12]} />
+        <meshBasicMaterial color="#22d3ee" wireframe transparent opacity={0.15} />
+      </mesh>
       <pointLight color="#22d3ee" intensity={2} distance={10} />
     </mesh>
   );

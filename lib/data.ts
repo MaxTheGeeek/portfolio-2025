@@ -70,6 +70,33 @@ export const EXPERIENCE = [
     to: "Dec 2022",
     blurb: "Delivered 10+ web applications and dashboards for clients across e-commerce and SaaS. Led development of cross-platform applications.",
     tags: ["Vue.js", "React", "Next.js", "Electron"]
+  },
+  {
+    role: "Junior Frontend Developer",
+    company: "TastyDay",
+    location: "Remote, Netherlands",
+    from: "Jan 2018",
+    to: "Mar 2019",
+    blurb: "Built responsive interfaces and contributed to MVP development using JavaScript, jQuery, HTML and CSS in agile sprints.",
+    tags: ["JavaScript", "jQuery", "CSS", "HTML"]
+  },
+  {
+    role: "Junior Software Developer (.NET)",
+    company: "Aspira Co.",
+    location: "Tehran, Iran",
+    from: "Jan 2011",
+    to: "Dec 2013",
+    blurb: "Developed internal financial software solutions using C#, .NET, and SQL applying SOLID principles and OOP.",
+    tags: ["C#", ".NET", "SQL"]
+  },
+  {
+    role: "FinTech Consultant",
+    company: "Sanat Shams",
+    location: "Tehran, Iran",
+    from: "Jan 2005",
+    to: "Dec 2010",
+    blurb: "Bridged business needs and software implementation, improving financial system usability and workflows.",
+    tags: ["Accounting", "Analysis", "Workflows"]
   }
 ];
 
@@ -121,6 +148,54 @@ export const PROJECTS = [
     stack: ["React", "Node.js", "Payment Gateways"],
     features: ["Global Shopping Cart", "Live Product Catalog", "Robust Checkout Engine"],
     image: "/irmall.png"
+  },
+  {
+    name: "Stereum Launcher",
+    cat: "Desktop App",
+    desc: "Cross-platform desktop application reaching 50,000+ active users.",
+    tags: ["Electron", "Vue.js", "Node.js"],
+    accent: "pink",
+    role: "Frontend Lead",
+    timeline: "Shipped",
+    stack: ["Vue.js", "Electron", "Node.js"],
+    features: ["Ethereum Node Management", "Cross-OS Execution", "High scale reach"],
+    image: "/launcher-node.png"
+  },
+  {
+    name: "Stereum Plus",
+    cat: "Web Tooling",
+    desc: "Advanced UI dashboard and toolset extending Stereum node capacities.",
+    tags: ["React", "Typescript", "Node.js"],
+    accent: "amber",
+    role: "Senior Developer",
+    timeline: "Shipped",
+    stack: ["React", "Web3", "ThreeJS"],
+    features: ["Node analytics", "Interactive monitoring", "Blockchain sync"],
+    image: "/plus.png"
+  },
+  {
+    name: "Stereum Labs",
+    cat: "Research & Development",
+    desc: "Experimental interfaces for blockchain node operation.",
+    tags: ["WebGL", "Three.js", "React"],
+    accent: "green",
+    role: "Creative Developer",
+    timeline: "Ongoing",
+    stack: ["R3F", "Three.js", "GSAP"],
+    features: ["Spatial UI concepts", "WebGL visualizations"],
+    image: "/labs.png"
+  },
+  {
+    name: "Stereum Monitor",
+    cat: "Infrastructure",
+    desc: "High performance monitoring module for system metrics.",
+    tags: ["Next.js", "NestJS", "PostgreSQL"],
+    accent: "cyan",
+    role: "Full-Stack Dev",
+    timeline: "Shipped",
+    stack: ["Next.js", "NestJS", "Grafana API"],
+    features: ["Live server stats", "Dashboard generation", "B2B Scale"],
+    image: "/score.png"
   }
 ];
 
