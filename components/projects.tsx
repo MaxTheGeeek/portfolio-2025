@@ -14,64 +14,6 @@ function SceneHead({ num, title, sub }: { num: string; title: string; sub: strin
   );
 }
 
-function ProjectShot({ accent, idx }: { accent: string; idx: number }) {
-  const variants = idx % 3;
-  return (
-    <div className="project-shot">
-      <div className="project-shot-stripes"></div>
-      <div className="project-shot-label">Placeholder · screen #{String(idx + 1).padStart(2, '0')}</div>
-      <div className="project-shot-mock" style={{ borderColor: `var(--${accent}-glow, var(--line))` }}>
-        <div className="project-shot-bar">
-          <i></i><i></i><i></i>
-        </div>
-        <div className="project-shot-body">
-          {variants === 0 && (
-            <>
-              <div className="project-shot-row w70"></div>
-              <div className="project-shot-row w50"></div>
-              <div className="project-shot-grid">
-                <div className="project-shot-tile"></div>
-                <div className="project-shot-tile alt"></div>
-                <div className="project-shot-tile"></div>
-                <div className="project-shot-tile alt"></div>
-                <div className="project-shot-tile"></div>
-                <div className="project-shot-tile alt"></div>
-              </div>
-            </>
-          )}
-          {variants === 1 && (
-            <>
-              <div className="project-shot-row w90"></div>
-              <div className="project-shot-row w70"></div>
-              <div className="project-shot-row w50"></div>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: 8, marginTop: 8 }}>
-                <div className="project-shot-tile" style={{ aspectRatio: "auto", height: 60 }}></div>
-                <div className="project-shot-tile alt" style={{ aspectRatio: "auto", height: 60 }}></div>
-              </div>
-            </>
-          )}
-          {variants === 2 && (
-            <>
-              <div style={{ display: "flex", gap: 6 }}>
-                <div className="project-shot-row w50" style={{ flex: 1 }}></div>
-                <div className="project-shot-row w50" style={{ flex: 1, background: "rgba(34, 211, 238, 0.15)" }}></div>
-              </div>
-              <div className="project-shot-row w90"></div>
-              <div className="project-shot-row w70"></div>
-              <div className="project-shot-grid" style={{ gridTemplateColumns: "repeat(4, 1fr)" }}>
-                <div className="project-shot-tile alt"></div>
-                <div className="project-shot-tile"></div>
-                <div className="project-shot-tile alt"></div>
-                <div className="project-shot-tile"></div>
-              </div>
-            </>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function ProjectModal({ project, onClose }: { project: any; onClose: () => void }) {
   if (!project) return null;
   useEffect(() => {
@@ -89,7 +31,9 @@ function ProjectModal({ project, onClose }: { project: any; onClose: () => void 
     <div className="modal-backdrop" onClick={onClose}>
       <div className="glass modal" onClick={(e) => e.stopPropagation()}>
         <button className="modal-close" onClick={onClose}><X size={16} /></button>
-        <ProjectShot accent={project.accent} idx={idx} />
+        <div className="project-shot overflow-hidden relative">
+          <img src={project.image || "/placeholder.jpg"} alt={project.name} className="absolute inset-0 w-full h-full object-cover mix-blend-screen opacity-70 hover:opacity-100 transition-opacity" />
+        </div>
         <div className="modal-body">
           <div className="modal-sub">{project.cat} · {project.role} · {project.timeline}</div>
           <h3 className="modal-title">{project.name}</h3>
@@ -122,11 +66,13 @@ export function Projects() {
 
   return (
     <section className="scene" data-screen-label="04 Projects" id="projects">
-      <SceneHead num="// 03" title="Projects" sub={`${PROJECTS.length} selected`} />
+      <SceneHead num="" title="Projects" sub={`${PROJECTS.length} selected`} />
       <div className="projects-grid">
         {PROJECTS.map((p, i) => (
           <article key={p.name} className="glass project" onClick={() => setOpenProject(p)}>
-            <ProjectShot accent={p.accent} idx={i} />
+            <div className="project-shot overflow-hidden relative">
+              <img src={p.image || "/placeholder.jpg"} alt={p.name} className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-screen group-hover:opacity-100 transition-opacity" />
+            </div>
             <div className="project-meta">
               <div className="project-row">
                 <h3 className="project-name">{p.name}</h3>

@@ -23,7 +23,7 @@ const iconsMap: Record<string, any> = {
 export function Contact() {
   return (
     <section className="scene" data-screen-label="08 Contact" id="contact">
-      <SceneHead num="// 06" title="Contact" sub="Let's build something" />
+      <SceneHead num="" title="Contact" sub="Let's build something" />
       <div className="contact">
         <h3 className="contact-big">Have a project?<br/><span className="grad">Say hi.</span></h3>
         <p className="contact-sub">Open to freelance, full-time roles, or just a chat about Three.js and shaders.</p>

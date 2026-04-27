@@ -15,22 +15,22 @@ function SceneHead({ num, title, sub }: { num: string; title: string; sub: strin
 export function About() {
   return (
     <section className="scene" data-screen-label="02 About" id="about">
-      <SceneHead num="// 01" title="About" sub="Self-portrait, in code" />
+      <SceneHead num="" title="About" sub="Self-portrait, in code" />
       <div className="about-grid">
         <div className="glass about-copy">
           <p>
-            I'm a <strong>creative developer</strong> obsessed with the seam between design and engineering — the place where motion, 3D and considered interaction make a product feel alive instead of just functional.
+            I'm a <strong>software developer</strong> with a strong focus on <strong>Cloud Engineering</strong> (AWS, Azure) and scalable architectures. I am obsessed with the seam where solid engineering meets clean interaction.
           </p>
           <p>
-            Most of my work lives at the intersection of <strong>React, WebGL and shaders</strong>. I care about performance and accessibility as much as craft; the most interesting moment of any project is finding the version that's beautiful <em>and</em> fast.
+            Most of my work lives at the intersection of <strong>backend systems, full-stack development, and modern cloud deployment</strong>. I care about performance and robust system design as much as craft; the most interesting moment of any project is finding the version that is both resilient <em>and</em> fast.
           </p>
           <p>
-            Outside of the editor I'm usually messing about with <strong>Blender, Houdini</strong>, or learning whatever's adjacent enough to be useful. Currently {PROFILE.location.toLowerCase()}, currently building.
+            Currently {PROFILE.location.toLowerCase()}, currently building robust cloud solutions.
           </p>
         </div>
         <div className="about-stats">
           <div className="glass stat">
-            <div className="stat-num">{PROFILE.yearsExp}<span className="unit">yrs</span></div>
+            <div className="stat-num">6<span className="unit">yrs+</span></div>
             <div className="stat-label">Building for the web</div>
           </div>
           <div className="glass stat">

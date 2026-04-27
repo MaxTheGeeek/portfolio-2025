@@ -16,7 +16,7 @@ function SceneHead({ num, title, sub }: { num: string; title: string; sub: strin
 export function Education() {
   return (
     <section className="scene" data-screen-label="06 Education" id="education">
-      <SceneHead num="// 05" title="Education & Learning" sub="Then & now" />
+      <SceneHead num="" title="Education & Learning" sub="Then & now" />
       <div className="dual-grid">
         <div className="glass dual-col">
           <div className="dual-head">

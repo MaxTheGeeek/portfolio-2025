@@ -135,7 +135,7 @@ export function Hub({ onNav }: { onNav: (id: string) => void }) {
         <ambientLight intensity={0.5} />
         <HubScene onNav={onNav} />
       </Canvas>
-      <div className="hub-counter absolute bottom-0 left-0 w-full text-center">
+      <div className="hub-counter absolute bottom-0 left-0 w-full text-center pointer-events-none">
         [ click any object to teleport ]
       </div>
     </div>

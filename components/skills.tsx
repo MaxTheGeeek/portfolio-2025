@@ -18,7 +18,7 @@ export function Skills() {
 
   return (
     <section className="scene" data-screen-label="05 Skills" id="skills">
-      <SceneHead num="// 04" title="Skills" sub="The constellation" />
+      <SceneHead num="" title="Skills" sub="The constellation" />
       <div className="constellation">
         <svg className="const-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
           {SKILL_LINES.map(([a, b], i) => (
@@ -68,7 +68,7 @@ export function Skills() {
           );
         })}
       </div>
-      <div className="skill-cats">
+      <div className="skill-cats" style={{ fontSize: '18px' }}>
         {SKILL_CATS.map(c => (
           <div className="skill-cat" key={c.id} style={{ color: c.color }}>
             <span className="swatch"></span>

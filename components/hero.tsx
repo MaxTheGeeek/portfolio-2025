@@ -15,10 +15,11 @@ export function Hero() {
   };
 
   return (
-    <section className="hero" data-screen-label="01 Hero" id="hero">
-      <div className="hero-inner">
-        <div className="hero-left">
-          <div className="hero-eyebrow">Portfolio · v3.0 · 2026</div>
+    <section className="hero relative" data-screen-label="01 Hero" id="hero">
+      <img src="/marsi.jpg" alt="background" className="absolute inset-0 w-full h-full object-cover opacity-10 mix-blend-screen pointer-events-none" style={{ filter: "grayscale(100%) blur(4px)" }} />
+      <div className="hero-inner relative z-10 flex">
+        <div className="hero-left relative z-20">
+          <div className="hero-eyebrow">&nbsp;</div>
           <h1 className="hero-name">
             {PROFILE.name}<br />
             <span className="accent">{PROFILE.surname}</span>
@@ -32,12 +33,9 @@ export function Hero() {
             <button className="btn" onClick={() => navTo("contact")}>
               Get in touch
             </button>
-            <button className="btn" onClick={() => window.open("/Majid_Behzadi_Resume.pdf", "_blank")}>
-              <Download size={16} style={{ marginRight: 8 }} /> Resume
-            </button>
           </div>
 
-          <div className="hero-meta">
+          <div className="hero-meta relative z-20">
             <div className="hero-meta-item">
               Role <span>{PROFILE.title}</span>
             </div>

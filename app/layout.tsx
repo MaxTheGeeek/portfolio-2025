@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Space_Grotesk, JetBrains_Mono, Inter } from "next/font/google"
+import { FaviconAnimator } from "@/components/three/FaviconAnimator"
 import "./globals.css"
 
 const spaceGrotesk = Space_Grotesk({
@@ -31,6 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${spaceGrotesk.variable} ${jetBrainsMono.variable} ${inter.variable} font-sans antialiased`}>
+        <FaviconAnimator />
         {children}
       </body>
     </html>

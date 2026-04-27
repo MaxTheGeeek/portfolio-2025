@@ -15,7 +15,7 @@ function SceneHead({ num, title, sub }: { num: string; title: string; sub: strin
 export function Experience() {
   return (
     <section className="scene" data-screen-label="03 Experience" id="experience">
-      <SceneHead num="// 02" title="Experience" sub="Where I've shipped" />
+      <SceneHead num="" title="Experience" sub="Where I've shipped" />
       <div className="timeline">
         <div className="timeline-track"></div>
         {EXPERIENCE.map((e, i) => (
