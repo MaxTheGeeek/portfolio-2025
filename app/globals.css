@@ -1231,6 +1231,26 @@ footer {
   .hub { max-width: 420px; }
 }
 
+@media (max-width: 600px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .topnav { max-width: 95vw; overflow-x: auto; justify-content: flex-start; }
+  .topnav::-webkit-scrollbar { display: none; }
+  .topnav-brand { display: none; }
+  .topnav-divider { display: none; }
+  .tl-item { grid-template-columns: 40px 16px 1fr; gap: 8px; }
+  .timeline-track { left: 16px; }
+  .tl-card { padding: 16px; }
+  .tl-card-head { flex-direction: column; gap: 8px; align-items: flex-start; }
+  .tl-card-head .tag { margin-left: 0; }
+  .dual-col { padding: 20px 10px; }
+  .about-copy { padding: 20px; font-size: 15px; }
+  .constellation { height: 350px; }
+  .skill-orb-bubble { transform: scale(0.75); }
+  .skill-orb:hover .skill-orb-bubble { transform: scale(0.85); }
+  section.scene { padding: 100px 5vw 60px; }
+  .scene-title { font-size: 32px; }
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 8px; height: 8px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
