@@ -1,18 +1,18 @@
 // === Portfolio data ===
 
 export const PROFILE = {
-  name: "Max",
+  name: "Majid",
   surname: "Behzadi",
-  title: "Creative Developer",
-  tagline: "Full-stack developer crafting interactive web experiences with a focus on motion, 3D, and considered interaction design.",
-  location: "Available worldwide",
+  title: "Full-Stack Engineer",
+  tagline: "Full-Stack Engineer with 8+ years of professional experience delivering production-ready applications across B2B SaaS, IaaS infrastructure, and real-time systems.",
+  location: "Vienna, Austria",
   status: "Open to opportunities",
   email: "maxbehzadi82@gmail.com",
   site: "maxbehzadi.online",
-  github: "@maxbehzadi",
-  linkedin: "max-behzadi",
-  yearsExp: 4,
-  projectsShipped: 24,
+  github: "MaxTheGeeek",
+  linkedin: "in/maxii",
+  yearsExp: 8,
+  projectsShipped: 12,
   coffeeYear: 312
 };
 
@@ -27,22 +27,20 @@ export const NAV_NODES = [
 
 export const EXPERIENCE = [
   {
-    role: "Learning Pause",
-    company: "Self-Directed",
-    location: "Global",
-    from: "Mar 2026",
-    to: "Present",
-    blurb: "Dedicated time for intensive upskilling in Agentic workflows, System Design, and advanced cloud orchestrations.",
-    tags: ["AWS", "Kubernetes", "Gen AI", "System Design"]
-  },
-  {
-    role: "Full-Stack Engineer",
-    company: "Rocklogic GmbH",
+    role: "Full-Stack Developer",
+    company: "RockLogic GmbH",
     location: "Vienna, Austria",
     from: "Oct 2025",
     to: "Mar 2026",
-    blurb: "Led frontend development across multiple shipped products and contributed to event-driven backend microservices.",
-    tags: ["NestJS", "Next.js", "PostgreSQL", "Docker", "Event-Driven"]
+    blurb: "Built B2B Ethereum analytics platforms and NestJS microservices. Extended private banking tools with WPF desktop modules.",
+    bullets: [
+      "Built a B2B analytics platform for Ethereum infrastructure monitoring using Next.js, NestJS, and PostgreSQL, serving 10+ enterprise clients.",
+      "Designed scalable NestJS microservices integrating Grafana APIs for automated provisioning of 30+ dashboards, with TypeScript visualization.",
+      "Refactored front-end data fetching with React Query, reducing boilerplate and stabilizing client-side caching.",
+      "Optimized API performance, reducing response latency from 850ms to 120ms for back-office internal tooling.",
+      "Developed a WPF Desktop Application extending private banking back-office tools; implemented Parallel UI Migration using WPF and Angular."
+    ],
+    tags: ["Next.js", "NestJS", "PostgreSQL", "React Query", "WPF", "TypeScript"]
   },
   {
     role: "Full-Stack Developer",
@@ -50,35 +48,68 @@ export const EXPERIENCE = [
     location: "Vienna, Austria",
     from: "Sep 2024",
     to: "Sep 2025",
-    blurb: "Built B2B analytics platform for Ethereum infrastructure, implemented CI/CD pipelines, and developed scalable NestJS microservices.",
-    tags: ["Next.js", "NestJS", "TypeScript", "CI/CD", ".NET"]
+    blurb: "Implemented server provisioning APIs and real-time VM dashboards. Built high-performance desktop modules for private banking clients.",
+    bullets: [
+      "Implemented server provisioning API pipeline using NestJS and RabbitMQ with RBAC across 5+ tenant organizations, cutting provisioning times.",
+      "Led frontend development of an IaaS platform including a real-time server management dashboard reflecting live VM states.",
+      "Developed WPF desktop tools for private banking, implementing UI Virtualization to handle 50k+ row datasets.",
+      "Optimized concurrency reporting using Crystal Reports to analyze multi-threaded transaction states in real time.",
+      "Resolved memory leaks and optimized local data structures to improve banking desktop app stability."
+    ],
+    tags: ["NestJS", "RabbitMQ", "PostgreSQL", "WPF", "Crystal Reports", "MVVM"]
   },
   {
-    role: "Software Developer",
-    company: "Rocklogic GmbH",
+    role: "Full-Stack Developer",
+    company: "RockLogic GmbH",
     location: "Vienna, Austria",
     from: "Jan 2022",
     to: "Aug 2024",
-    blurb: "Spearheaded frontend development of an IaaS platform with real-time server management. Contributed to backend microservices using NestJS and RabbitMQ.",
-    tags: ["React", "NestJS", "RabbitMQ", "SQL", "JWT"]
+    blurb: "Led Stereum Launcher development, reaching 50,000+ active users. Built real-time monitoring and node tracking dashboards.",
+    bullets: [
+      "Led development of Stereum Launcher, a cross-platform desktop application using Vue.js, Electron, and Node.js, reaching 50,000+ active users.",
+      "Built real-time monitoring systems with WebSocket-based architecture, tracking 100+ distributed nodes.",
+      "Implemented live telemetry dashboards for system metrics, improving incident response times."
+    ],
+    tags: ["Vue.js", "Electron", "Node.js", "WebSockets", "WebSocket"]
   },
   {
-    role: "Frontend Developer",
+    role: "Full-Stack Developer",
     company: "Freelance / Contract",
     location: "Vienna, Remote",
     from: "Mar 2019",
-    to: "Dec 2022",
-    blurb: "Delivered 10+ web applications and dashboards for clients across e-commerce and SaaS. Led development of cross-platform applications.",
-    tags: ["Vue.js", "React", "Next.js", "Electron"]
+    to: "Dec 2021",
+    blurb: "Designed shopping basket REST APIs and created internal Laravel administration boards with RBAC.",
+    bullets: [
+      "Designed and implemented a RESTful Product Catalog and Shopping Basket API using Node.js for IRMALL, an e-commerce platform.",
+      "Built an internal back-office management tool using PHP and Laravel 8, implementing custom RBAC for staff administration."
+    ],
+    tags: ["Node.js", "PHP", "Laravel", "REST API", "MySQL"]
   },
   {
     role: "Junior Frontend Developer",
     company: "TastyDay",
-    location: "Remote, Netherlands",
+    location: "Netherlands, Remote",
     from: "Jan 2018",
     to: "Mar 2019",
-    blurb: "Built responsive interfaces and contributed to MVP development using JavaScript, jQuery, HTML and CSS in agile sprints.",
-    tags: ["JavaScript", "jQuery", "CSS", "HTML"]
+    blurb: "Built UI components and integrated REST endpoints for food-tech consumer solutions.",
+    bullets: [
+      "Built responsive UI components and contributed to MVP development using JavaScript, HTML5, and CSS3.",
+      "Integrated backend REST APIs for a food-tech consumer platform in agile sprints."
+    ],
+    tags: ["JavaScript", "HTML5", "CSS3", "REST APIs"]
+  },
+  {
+    role: "Career Development & Relocation",
+    company: "Language & Tech Courses",
+    location: "Vienna, Austria",
+    from: "2014",
+    to: "2017",
+    blurb: "Relocated to Austria; completed German B2 certification and preparatory courses at WIFI Vienna.",
+    bullets: [
+      "Completed intensive German language training achieving certified B2 level.",
+      "Completed preparatory software development courses at WIFI Vienna prior to formal enrollment."
+    ],
+    tags: ["German B2", "WIFI Vienna", "Software Courses"]
   },
   {
     role: "Junior Software Developer (.NET)",
@@ -86,17 +117,12 @@ export const EXPERIENCE = [
     location: "Tehran, Iran",
     from: "Jan 2011",
     to: "Dec 2013",
-    blurb: "Developed internal financial software solutions using C#, .NET, and SQL applying SOLID principles and OOP.",
-    tags: ["C#", ".NET", "SQL"]
-  },
-  {
-    role: "FinTech Consultant",
-    company: "Sanat Shams",
-    location: "Tehran, Iran",
-    from: "Jan 2005",
-    to: "Dec 2010",
-    blurb: "Bridged business needs and software implementation, improving financial system usability and workflows.",
-    tags: ["Accounting", "Analysis", "Workflows"]
+    blurb: "Created transactional reporting modules and database applications using C#, ASP.NET, and SQL Server.",
+    bullets: [
+      "Developed internal financial software in C#, ASP.NET, and SQL Server for banking clients.",
+      "Implemented transactional reporting modules using LINQ and stored procedures following OOP and SOLID patterns."
+    ],
+    tags: ["C#", "ASP.NET", "SQL Server", "LINQ", "OOP", "SOLID"]
   }
 ];
 
@@ -127,124 +153,142 @@ export const PROJECTS = [
     image: "/placeholder.jpg"
   },
   {
-    name: "TastyDay",
-    cat: "Food Application",
-    desc: "Comprehensive recipe sharing and food management platform.",
-    tags: ["React", "Node.js"],
-    accent: "amber",
-    role: "Full-Stack Developer",
-    timeline: "Completed",
-    stack: ["React", "Node.js", "MongoDB", "Express"],
-    features: ["Recipe management dashboards", "Dynamic interactive UI", "Secure user profiles"],
-    image: "/tastyday.png"
-  },
-  {
-    name: "IRMall",
-    cat: "E-Commerce",
-    desc: "An advanced, interactive e-commerce mall platform spanning multiple storefront workflows.",
-    tags: ["E-Commerce", "Web"],
-    accent: "violet",
-    role: "Developer",
-    timeline: "Completed",
-    stack: ["React", "Node.js", "Payment Gateways"],
-    features: ["Global Shopping Cart", "Live Product Catalog", "Robust Checkout Engine"],
-    image: "/irmall.png"
-  },
-  {
     name: "Stereum Launcher",
     cat: "Desktop App",
-    desc: "Cross-platform desktop application reaching 50,000+ active users.",
+    desc: "Cross-platform desktop application reaching 50,000+ active users. Manages Ethereum nodes and cross-OS execution.",
     tags: ["Electron", "Vue.js", "Node.js"],
     accent: "pink",
     role: "Frontend Lead",
     timeline: "Shipped",
-    stack: ["Vue.js", "Electron", "Node.js"],
-    features: ["Ethereum Node Management", "Cross-OS Execution", "High scale reach"],
+    stack: ["Vue.js", "Electron", "Node.js", "Ethereum"],
+    features: ["Ethereum Node Management", "Cross-OS Execution", "50,000+ Active Users"],
     image: "/launcher-node.png",
-    url: "https://stereum.com"
-  },
-  {
-    name: "Stereum Plus",
-    cat: "Web Tooling",
-    desc: "Advanced UI dashboard and toolset extending Stereum node capacities.",
-    tags: ["React", "Typescript", "Node.js"],
-    accent: "amber",
-    role: "Senior Developer",
-    timeline: "Shipped",
-    stack: ["React", "Web3", "ThreeJS"],
-    features: ["Node analytics", "Interactive monitoring", "Blockchain sync"],
-    image: "/plus.png",
-    url: "https://stereumplus.com"
-  },
-  {
-    name: "Stereum Labs",
-    cat: "Research & Development",
-    desc: "Experimental interfaces for blockchain node operation.",
-    tags: ["WebGL", "Three.js", "React"],
-    accent: "green",
-    role: "Creative Developer",
-    timeline: "Ongoing",
-    stack: ["R3F", "Three.js", "GSAP"],
-    features: ["Spatial UI concepts", "WebGL visualizations"],
-    image: "/labs.png",
-    url: "https://stereumlabs.com"
+    url: "https://stereum.net"
   },
   {
     name: "Stereum Monitor",
-    cat: "Infrastructure",
-    desc: "High performance monitoring module for system metrics.",
+    cat: "B2B Analytics Platform",
+    desc: "B2B analytics platform for Ethereum infrastructure monitoring, serving 10+ enterprise clients with automated Grafana provisioning.",
     tags: ["Next.js", "NestJS", "PostgreSQL"],
     accent: "cyan",
-    role: "Full-Stack Dev",
+    role: "Full-Stack Developer",
     timeline: "Shipped",
-    stack: ["Next.js", "NestJS", "Grafana API"],
-    features: ["Live server stats", "Dashboard generation", "B2B Scale"],
+    stack: ["Next.js", "NestJS", "PostgreSQL", "Grafana API", "React Query"],
+    features: ["Automated Grafana dashboards", "React Query caching", "End-to-end telemetry metrics"],
     image: "/score.png"
+  },
+  {
+    name: "IaaS Provisioning Pipeline",
+    cat: "Infrastructure",
+    desc: "Real-time VM server provisioning API pipeline using NestJS, RabbitMQ, and RBAC across 5+ tenant organizations.",
+    tags: ["NestJS", "RabbitMQ", "PostgreSQL"],
+    accent: "amber",
+    role: "Full-Stack Developer",
+    timeline: "Shipped",
+    stack: ["NestJS", "RabbitMQ", "PostgreSQL", "TypeScript"],
+    features: ["Server provisioning pipeline", "Real-time VM metrics", "Multi-tenant user management"],
+    image: "/plus.png"
+  },
+  {
+    name: "Private Banking WPF Tool",
+    cat: "Desktop App / FinTech",
+    desc: "High-performance WPF desktop application extending a private banking back-office tool with MVVM architecture, handling 50k+ row datasets.",
+    tags: ["WPF", "C#", ".NET"],
+    accent: "violet",
+    role: "Desktop Developer",
+    timeline: "Shipped",
+    stack: ["WPF", "C#", ".NET Core", "Crystal Reports", "MVVM"],
+    features: ["VirtualizingStackPanel for 50k+ rows", "Crystal Reports concurrency engine", "Memory-leak optimizations"],
+    image: "/placeholder.jpg"
+  },
+  {
+    name: "IRMall E-Commerce API",
+    cat: "E-Commerce / Backend",
+    desc: "RESTful Product Catalog and Shopping Basket API for an e-commerce platform handling listing, cart management, and order flow.",
+    tags: ["Node.js", "REST API", "Database"],
+    accent: "violet",
+    role: "Backend Engineer",
+    timeline: "Completed",
+    stack: ["Node.js", "Express", "RESTful API", "MySQL"],
+    features: ["Scalable shopping cart engine", "Order flow state machine", "Product catalog index"],
+    image: "/irmall.png"
+  },
+  {
+    name: "HOMA Back-Office Tool",
+    cat: "Web Application / PHP",
+    desc: "Internal back-office management tool using PHP and Laravel 8 with role-based access control for internal staff management.",
+    tags: ["PHP", "Laravel", "MySQL"],
+    accent: "green",
+    role: "Full-Stack Developer",
+    timeline: "Completed",
+    stack: ["PHP", "Laravel 8", "MySQL", "Bootstrap"],
+    features: ["Role-based access control", "Internal staff reporting", "Audit logs tracking"],
+    image: "/labs.png"
+  },
+  {
+    name: "TastyDay Platform",
+    cat: "Food-Tech MVP",
+    desc: "Responsive food-tech consumer platform building UI components and integrating REST APIs for consumer food booking.",
+    tags: ["JavaScript", "HTML5", "CSS3"],
+    accent: "amber",
+    role: "Junior Frontend Developer",
+    timeline: "Completed",
+    stack: ["JavaScript", "HTML5", "CSS3", "REST APIs"],
+    features: ["Responsive consumer UI", "REST API integration", "Agile sprint delivery"],
+    image: "/tastyday.png"
+  },
+  {
+    name: "Aspira Financial Core",
+    cat: "FinTech Software",
+    desc: "Internal financial software built in C# and ASP.NET using SQL Server stored procedures and transactional reporting modules.",
+    tags: ["C#", "ASP.NET", "SQL Server"],
+    accent: "cyan",
+    role: "Junior Software Developer (.NET)",
+    timeline: "Completed",
+    stack: ["C#", "ASP.NET", "SQL Server", "LINQ", "SOLID"],
+    features: ["Transactional reporting with LINQ", "OOP design patterns", "Financial data models design"],
+    image: "/placeholder.jpg"
   }
 ];
 
 export const SKILLS = [
-  // Frontend (cyan)
-  { name: "React",      cat: "frontend", level: 95, x: 18, y: 22, size: 96 },
-  { name: "TypeScript", cat: "frontend", level: 90, x: 38, y: 14, size: 90 },
-  { name: "Next.js",    cat: "frontend", level: 88, x: 60, y: 22, size: 80 },
-  { name: "Vue",        cat: "frontend", level: 70, x: 80, y: 16, size: 70 },
-  { name: "Angular",    cat: "frontend", level: 85, x: 80, y: 30, size: 78 },
+  // Frontend & Web (cyan)
+  { name: "React",      cat: "frontend", level: 95, x: 18, y: 22, size: 90 },
+  { name: "TypeScript", cat: "frontend", level: 92, x: 38, y: 14, size: 90 },
+  { name: "Next.js",    cat: "frontend", level: 90, x: 60, y: 22, size: 85 },
+  { name: "Vue.js",     cat: "frontend", level: 85, x: 80, y: 16, size: 75 },
+  { name: "Angular",    cat: "frontend", level: 80, x: 80, y: 32, size: 75 },
 
-  // 3D / Motion (violet)
-  { name: "Three.js",   cat: "threed",   level: 85, x: 28, y: 50, size: 92 },
-  { name: "GSAP",       cat: "threed",   level: 88, x: 50, y: 60, size: 84 },
-  { name: "Framer",     cat: "threed",   level: 82, x: 70, y: 52, size: 76 },
+  // Desktop UI (violet)
+  { name: "WPF",        cat: "desktop",  level: 85, x: 28, y: 50, size: 85 },
+  { name: "Electron",   cat: "desktop",  level: 88, x: 50, y: 60, size: 80 },
 
-  // Backend (pink)
-  { name: "Node.js",    cat: "backend",  level: 80, x: 88, y: 45, size: 80 },
-  { name: "PostgreSQL", cat: "backend",  level: 72, x: 92, y: 60, size: 90 },
-  { name: "Python",     cat: "backend",  level: 65, x: 6,  y: 42, size: 64 },
-  { name: ".NET",       cat: "backend",  level: 85, x: 60, y: 70, size: 78 },
-  { name: "Go",         cat: "backend",  level: 75, x: 40, y: 75, size: 72 },
+  // Backend & DB (pink)
+  { name: "C# / .NET",  cat: "backend",  level: 90, x: 70, y: 52, size: 90 },
+  { name: "NestJS",     cat: "backend",  level: 92, x: 88, y: 45, size: 90 },
+  { name: "Node.js",    cat: "backend",  level: 88, x: 92, y: 60, size: 85 },
+  { name: "ASP.NET Core",cat: "backend", level: 85, x: 6,  y: 42, size: 80 },
+  { name: "PostgreSQL", cat: "backend",  level: 85, x: 60, y: 70, size: 80 },
 
-  // Cloud (amber)
-  { name: "AWS",             cat: "cloud", level: 90, x: 32, y: 84, size: 85 },
-  { name: "Microsoft Azure", cat: "cloud", level: 80, x: 80, y: 88, size: 100 },
+  // Tooling & AI (green)
+  { name: "RabbitMQ",   cat: "tooling",  level: 80, x: 40, y: 75, size: 75 },
+  { name: "Agentic AI", cat: "tooling",  level: 80, x: 85, y: 80, size: 80 },
 
-  // Tooling (green)
-  { name: "Git",        cat: "tooling",  level: 92, x: 85, y: 80, size: 72 }
+  // Cloud & Infra (amber)
+  { name: "Azure",      cat: "cloud",    level: 82, x: 32, y: 84, size: 85 },
+  { name: "Docker",     cat: "cloud",    level: 85, x: 80, y: 88, size: 85 }
 ];
 
 export const SKILL_CATS = [
-  { id: "frontend", label: "Frontend", color: "var(--cyan)" },
-  { id: "threed",   label: "3D / Motion", color: "var(--violet)" },
-  { id: "backend",  label: "Backend",  color: "var(--pink)" },
-  { id: "cloud",    label: "Cloud",    color: "var(--amber)" },
-  { id: "tooling",  label: "Tooling",  color: "oklch(0.78 0.16 145)" }
+  { id: "frontend", label: "Frontend / Web", color: "var(--cyan)" },
+  { id: "desktop",  label: "Desktop UI",     color: "var(--violet)" },
+  { id: "backend",  label: "Backend / DB",   color: "var(--pink)" },
+  { id: "cloud",    label: "Cloud / Infra",  color: "var(--amber)" },
+  { id: "tooling",  label: "Tooling / AI",   color: "oklch(0.78 0.16 145)" }
 ];
 
 export const SKILL_LINES = [
-  [0, 1], [1, 2], [2, 3],
-  [0, 4], [2, 4], [4, 6], [6, 3],
-  [4, 5], [5, 10], [10, 0],
-  [6, 7], [7, 8], [8, 9], [9, 11], [11, 12],
-  [13, 8], [13, 6]
+  [0, 1], [0, 2], [0, 5], [1, 2], [1, 7], [2, 3], [2, 4], [3, 9], [4, 8], [5, 6], [5, 10], [6, 7], [6, 12], [7, 8], [7, 10], [8, 9], [8, 11], [9, 14], [10, 13], [11, 14], [11, 15], [12, 13], [13, 14], [14, 15]
 ];
 
 export const EDUCATION = [
@@ -252,7 +296,7 @@ export const EDUCATION = [
     school: "University of Tehran",
     degree: "B.Sc. Accounting",
     date: "Sep 2000 — Feb 2005",
-    desc: "Built a solid analytical foundation before pivoting entirely into software engineering and technology."
+    desc: "Domain expertise in financial data models and transactional systems; bridged business analysis and backend structure."
   },
   {
     school: "WIFI Vienna",
@@ -262,22 +306,21 @@ export const EDUCATION = [
   },
   {
     school: "WIFI Vienna",
-    degree: "Diploma in Web Application Development (PHP)",
+    degree: "Diploma in Web Application Development & OOP (PHP)",
     date: "Jun 2021 — Dec 2021",
     desc: "Comprehensive study covering backend principles, server-side logic, and robust database management systems."
   }
 ];
 
 export const LEARNING = [
-  { name: "AWS", progress: 65, meta: "Cloud architectures · Deep dive" },
-  { name: "Kubernetes", progress: 40, meta: "Orchestration · Self hosting" },
-  { name: "Gen AI", progress: 80, meta: "LLM Integrations · Agentic workflows" },
-  { name: "System Design", progress: 75, meta: "Scalability · Multi-tenant apps" }
+  { name: "Azure DevOps", progress: 70, meta: "CI/CD · Enterprise Pipelines" },
+  { name: "Azure AI", progress: 60, meta: "Cognitive Services · Cloud ML" },
+  { name: "LLM Orchestration", progress: 85, meta: "LangChain · Semantic Kernel" },
+  { name: "Azure AZ-204", progress: 80, meta: "Developer Associate · Certification in prep" }
 ];
 
 export const CONTACT = [
   { label: "Email", val: "maxbehzadi82@gmail.com", href: "mailto:maxbehzadi82@gmail.com", icon: "mail" },
-  { label: "Email Alternate", val: "max.behzadi@outlook.com", href: "mailto:max.behzadi@outlook.com", icon: "mail" },
-  { label: "GitHub", val: "@maxbehzadi", href: "https://github.com/MaxTheGeeek", icon: "github" },
-  { label: "LinkedIn", val: "max-behzadi", href: "https://www.linkedin.com/in/max-behzadi-1857b7193", icon: "linkedin" }
+  { label: "GitHub", val: "@MaxTheGeeek", href: "https://github.com/MaxTheGeeek", icon: "github" },
+  { label: "LinkedIn", val: "maxii", href: "https://www.linkedin.com/in/maxii", icon: "linkedin" }
 ];

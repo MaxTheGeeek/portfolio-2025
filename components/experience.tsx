@@ -33,7 +33,15 @@ export function Experience() {
                 </div>
                 <span className="tag cyan ml-auto" style={{ height: "fit-content" }}>{i === 0 ? "Current" : "Past"}</span>
               </div>
-              <p className="tl-desc">{e.blurb}</p>
+              {e.bullets ? (
+                <ul className="list-disc list-outside ml-4 mb-4 space-y-1.5 text-[13.5px] text-gray-300">
+                  {e.bullets.map((b, bi) => (
+                    <li key={bi} className="leading-relaxed">{b}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="tl-desc">{e.blurb}</p>
+              )}
               <div className="tl-tags">
                 {e.tags.map(t => <span key={t} className="tag">{t}</span>)}
               </div>

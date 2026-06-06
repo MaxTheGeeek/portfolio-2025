@@ -32,9 +32,9 @@ export function Skills() {
         </svg>
         {SKILLS.map((s, i) => {
           const cls = s.cat === "frontend" ? "cyan" : 
-                      s.cat === "threed" ? "violet" : 
+                      s.cat === "desktop" ? "violet" : 
                       s.cat === "backend" ? "pink" : 
-                      s.cat === "design" ? "amber" : "green";
+                      s.cat === "cloud" ? "amber" : "green";
           return (
             <div
               key={s.name}
