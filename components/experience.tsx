@@ -15,7 +15,7 @@ function SceneHead({ num, title, sub }: { num: string; title: string; sub: strin
 export function Experience() {
   return (
     <section className="scene" data-screen-label="03 Experience" id="experience">
-      <SceneHead num="" title="Experience" sub="Where I've shipped" />
+      <SceneHead num="// 02" title="Experience" sub="Where I've shipped" />
       <div className="timeline">
         <div className="timeline-track"></div>
         {EXPERIENCE.map((e, i) => (
@@ -26,17 +26,24 @@ export function Experience() {
             </div>
             <div className="tl-marker"><span className="dot"></span></div>
             <div className="glass tl-card">
-              <div className="tl-card-head w-full">
-                <div className="flex-1">
+              <div className="tl-card-head">
+                <div>
                   <div className="tl-role">{e.role}</div>
-                  <div className="tl-company">{e.company} · {e.location}</div>
+                  <div className="tl-company flex flex-wrap items-center gap-2">
+                    <span>{e.company} · {e.location}</span>
+                    {e.company.includes("Stereum Services") && (
+                      <span className="tag bg-white/5 border border-white/10 text-gray-300 font-mono text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded inline-flex items-center">
+                        Subsidiary of RockLogic
+                      </span>
+                    )}
+                  </div>
                 </div>
-                <span className="tag cyan ml-auto" style={{ height: "fit-content" }}>{i === 0 ? "Current" : "Past"}</span>
+                {i === 0 && <span className="tag cyan">Present</span>}
               </div>
               {e.bullets ? (
-                <ul className="list-disc list-outside ml-4 mb-4 space-y-1.5 text-[13.5px] text-gray-300">
+                <ul className="tl-desc list-disc list-outside pl-4 space-y-1.5">
                   {e.bullets.map((b, bi) => (
-                    <li key={bi} className="leading-relaxed">{b}</li>
+                    <li key={bi}>{b}</li>
                   ))}
                 </ul>
               ) : (

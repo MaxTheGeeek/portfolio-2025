@@ -1,13 +1,10 @@
-// === Portfolio data ===
-
 export const PROFILE = {
-  name: "Majid",
+  name: "Max",
   surname: "Behzadi",
   title: "Full-Stack Engineer",
   tagline: "Full-Stack Engineer with 8+ years of professional experience delivering production-ready applications across B2B SaaS, IaaS infrastructure, and real-time systems.",
   location: "Vienna, Austria",
   status: "Open to opportunities",
-  email: "maxbehzadi82@gmail.com",
   site: "maxbehzadi.online",
   github: "MaxTheGeeek",
   linkedin: "in/maxii",
@@ -32,10 +29,10 @@ export const EXPERIENCE = [
     location: "Vienna, Austria",
     from: "Oct 2025",
     to: "Mar 2026",
-    blurb: "Built B2B Ethereum analytics platforms and NestJS microservices. Extended private banking tools with WPF desktop modules.",
+    blurb: "Built B2B Ethereum analytics platforms and NestJS backends. Extended private banking tools with WPF desktop modules.",
     bullets: [
       "Built a B2B analytics platform for Ethereum infrastructure monitoring using Next.js, NestJS, and PostgreSQL, serving 10+ enterprise clients.",
-      "Designed scalable NestJS microservices integrating Grafana APIs for automated provisioning of 30+ dashboards, with TypeScript visualization.",
+      "Designed scalable NestJS backend architectures integrating Grafana APIs for automated provisioning of 30+ dashboards, with TypeScript visualization.",
       "Refactored front-end data fetching with React Query, reducing boilerplate and stabilizing client-side caching.",
       "Optimized API performance, reducing response latency from 850ms to 120ms for back-office internal tooling.",
       "Developed a WPF Desktop Application extending private banking back-office tools; implemented Parallel UI Migration using WPF and Angular."
@@ -128,6 +125,47 @@ export const EXPERIENCE = [
 
 export const PROJECTS = [
   {
+    name: "MaxerZ Desktop",
+    cat: "Desktop App · 2026",
+    desc: "A desktop application that optimizes career search workflows with advanced agentic LLM orchestration. Built with C#, .NET, MAUI, OpenRouter, and Python.",
+    tags: ["C#", ".NET", "MAUI", "LLM", "OpenRouter", "Python"],
+    accent: "violet",
+    role: "Lead Developer",
+    timeline: "Completed",
+    stack: ["C#", ".NET", "MAUI", "LLM", "OpenRouter", "Python"],
+    features: ["Agentic LLM orchestration", "Cover letter writing system", "Resume optimizer"],
+    image: "/projects/maxerz-1.png",
+    images: ["/projects/maxerz-1.png", "/projects/maxerz-2.png"],
+    url: ""
+  },
+  {
+    name: "Stereum Launcher",
+    cat: "Desktop App",
+    desc: "Cross-platform desktop application reaching 50,000+ active users. Manages Ethereum nodes and cross-OS execution. Built with Electron, Vue.js, and Node.js.",
+    tags: ["Electron", "Vue.js", "Node.js"],
+    accent: "pink",
+    role: "Frontend Lead",
+    timeline: "Shipped",
+    stack: ["Vue.js", "Electron", "Node.js", "Ethereum"],
+    features: ["Ethereum Node Management", "Cross-OS Execution", "50,000+ Active Users"],
+    image: "/projects/launcher-1.png",
+    images: ["/projects/launcher-1.png", "/projects/launcher-2.png"],
+    url: "https://stereum.net"
+  },
+  {
+    name: "rocklogic.at",
+    cat: "B2B Analytics Platform",
+    desc: "B2B analytics platform and enterprise portal for Ethereum infrastructure monitoring, serving 10+ clients with automated provisioning.",
+    tags: ["Next.js", "NestJS", "PostgreSQL"],
+    accent: "cyan",
+    role: "Full-Stack Developer",
+    timeline: "Shipped",
+    stack: ["Next.js", "NestJS", "PostgreSQL", "Grafana API", "React Query"],
+    features: ["Automated Grafana dashboards", "React Query caching", "End-to-end telemetry metrics"],
+    image: "/projects/rocklogic.png",
+    url: "https://rocklogic.at"
+  },
+  {
     name: "cover-letter.work",
     cat: "Web Platform · 2026",
     desc: "A platform for generating cover letters and merging PDFs. Driven by AI and robust components.",
@@ -138,56 +176,21 @@ export const PROJECTS = [
     stack: ["React", "Next.js", "TypeScript", "shadcn UI", "Supabase"],
     features: ["Cover letter AI generation", "PDF merging tools", "User Authentication via Supabase"],
     image: "/cover-1.png",
+    images: ["/cover-1.png", "/cover-2.png"],
     url: "https://cover-letter.work"
   },
   {
-    name: "docshow.org",
-    cat: "Web App · In Progress",
-    desc: "A document sharing platform with secure view-only access modes and LLM-powered insights.",
-    tags: [".NET 10", "Angular 20", "AWS"],
-    accent: "cyan",
-    role: "Full-Stack Developer",
-    timeline: "Currently Building",
-    stack: ["C#", ".NET 10", "Angular 20", "AWS", "Entity Framework Core", "Ollama", "LLM API"],
-    features: ["AWS S3 / RDS deployments", "View-only document viewing", "Locally hosted LLM assistance"],
-    image: "/placeholder.jpg"
-  },
-  {
-    name: "Stereum Launcher",
-    cat: "Desktop App",
-    desc: "Cross-platform desktop application reaching 50,000+ active users. Manages Ethereum nodes and cross-OS execution.",
-    tags: ["Electron", "Vue.js", "Node.js"],
-    accent: "pink",
-    role: "Frontend Lead",
-    timeline: "Shipped",
-    stack: ["Vue.js", "Electron", "Node.js", "Ethereum"],
-    features: ["Ethereum Node Management", "Cross-OS Execution", "50,000+ Active Users"],
-    image: "/launcher-node.png",
-    url: "https://stereum.net"
-  },
-  {
-    name: "Stereum Monitor",
-    cat: "B2B Analytics Platform",
-    desc: "B2B analytics platform for Ethereum infrastructure monitoring, serving 10+ enterprise clients with automated Grafana provisioning.",
-    tags: ["Next.js", "NestJS", "PostgreSQL"],
-    accent: "cyan",
-    role: "Full-Stack Developer",
-    timeline: "Shipped",
-    stack: ["Next.js", "NestJS", "PostgreSQL", "Grafana API", "React Query"],
-    features: ["Automated Grafana dashboards", "React Query caching", "End-to-end telemetry metrics"],
-    image: "/score.png"
-  },
-  {
-    name: "IaaS Provisioning Pipeline",
-    cat: "Infrastructure",
-    desc: "Real-time VM server provisioning API pipeline using NestJS, RabbitMQ, and RBAC across 5+ tenant organizations.",
+    name: "StereumPlus",
+    cat: "IaaS Provisioning",
+    desc: "A high-performance IaaS provisioning platform orchestrating real-time VM server deployments with NestJS, RabbitMQ, and RBAC.",
     tags: ["NestJS", "RabbitMQ", "PostgreSQL"],
     accent: "amber",
     role: "Full-Stack Developer",
     timeline: "Shipped",
     stack: ["NestJS", "RabbitMQ", "PostgreSQL", "TypeScript"],
     features: ["Server provisioning pipeline", "Real-time VM metrics", "Multi-tenant user management"],
-    image: "/plus.png"
+    image: "/projects/stereum-plus.png",
+    url: "https://stereumplus.com"
   },
   {
     name: "Private Banking WPF Tool",
@@ -199,7 +202,7 @@ export const PROJECTS = [
     timeline: "Shipped",
     stack: ["WPF", "C#", ".NET Core", "Crystal Reports", "MVVM"],
     features: ["VirtualizingStackPanel for 50k+ rows", "Crystal Reports concurrency engine", "Memory-leak optimizations"],
-    image: "/placeholder.jpg"
+    image: "/projects/banking-table.png"
   },
   {
     name: "IRMall E-Commerce API",
@@ -211,19 +214,20 @@ export const PROJECTS = [
     timeline: "Completed",
     stack: ["Node.js", "Express", "RESTful API", "MySQL"],
     features: ["Scalable shopping cart engine", "Order flow state machine", "Product catalog index"],
-    image: "/irmall.png"
+    image: "/projects/irmall.png"
   },
   {
-    name: "HOMA Back-Office Tool",
-    cat: "Web Application / PHP",
-    desc: "Internal back-office management tool using PHP and Laravel 8 with role-based access control for internal staff management.",
-    tags: ["PHP", "Laravel", "MySQL"],
+    name: "StereumLabs",
+    cat: "Web Application",
+    desc: "Internal management tool and IaaS platform built using NestJS, RabbitMQ, and PostgreSQL with role-based access control.",
+    tags: ["NestJS", "RabbitMQ", "PostgreSQL"],
     accent: "green",
     role: "Full-Stack Developer",
     timeline: "Completed",
-    stack: ["PHP", "Laravel 8", "MySQL", "Bootstrap"],
+    stack: ["NestJS", "RabbitMQ", "PostgreSQL", "TypeScript"],
     features: ["Role-based access control", "Internal staff reporting", "Audit logs tracking"],
-    image: "/labs.png"
+    image: "/projects/stereum-labs.png",
+    url: "https://stereumlabs.com"
   },
   {
     name: "TastyDay Platform",
@@ -235,19 +239,32 @@ export const PROJECTS = [
     timeline: "Completed",
     stack: ["JavaScript", "HTML5", "CSS3", "REST APIs"],
     features: ["Responsive consumer UI", "REST API integration", "Agile sprint delivery"],
-    image: "/tastyday.png"
+    image: "/projects/tastyday.png"
   },
   {
-    name: "Aspira Financial Core",
-    cat: "FinTech Software",
-    desc: "Internal financial software built in C# and ASP.NET using SQL Server stored procedures and transactional reporting modules.",
+    name: "Aspira Accounting App",
+    cat: "Persian Desktop App",
+    desc: "Persian desktop accounting application built in C# and ASP.NET using SQL Server stored procedures, double-entry ledgers, and reporting.",
     tags: ["C#", "ASP.NET", "SQL Server"],
     accent: "cyan",
     role: "Junior Software Developer (.NET)",
     timeline: "Completed",
     stack: ["C#", "ASP.NET", "SQL Server", "LINQ", "SOLID"],
     features: ["Transactional reporting with LINQ", "OOP design patterns", "Financial data models design"],
-    image: "/placeholder.jpg"
+    image: "/projects/aspira-persian.png"
+  },
+  {
+    name: "fungl.com",
+    cat: "Single Page Application (SPA)",
+    desc: "A premium, high-performance Single Page Application (SPA) designed with polished transitions and responsive data visualizations.",
+    tags: ["React", "TypeScript", "Framer Motion"],
+    accent: "pink",
+    role: "Frontend Developer",
+    timeline: "Completed",
+    stack: ["React", "TypeScript", "CSS Modules", "Framer Motion"],
+    features: ["Highly responsive user interfaces", "Optimized component state management", "Premium interactive animations"],
+    image: "/projects/fungl.png",
+    url: "https://fungl.com"
   }
 ];
 
@@ -313,14 +330,14 @@ export const EDUCATION = [
 ];
 
 export const LEARNING = [
-  { name: "Azure DevOps", progress: 70, meta: "CI/CD · Enterprise Pipelines" },
-  { name: "Azure AI", progress: 60, meta: "Cognitive Services · Cloud ML" },
-  { name: "LLM Orchestration", progress: 85, meta: "LangChain · Semantic Kernel" },
-  { name: "Azure AZ-204", progress: 80, meta: "Developer Associate · Certification in prep" }
+  { name: ".NET / C# Deepening", progress: 95, meta: "Advanced memory management · Concurrency" },
+  { name: "Blazor WebAssembly", progress: 85, meta: "Interactive SPA components · WebAssembly" },
+  { name: "LLM Orchestration", progress: 85, meta: "Agentic Workflows · Semantic Kernel" },
+  { name: "Azure AI & DevOps", progress: 75, meta: "CI/CD Pipelines · Cognitive Services" }
 ];
 
 export const CONTACT = [
   { label: "Email", val: "maxbehzadi82@gmail.com", href: "mailto:maxbehzadi82@gmail.com", icon: "mail" },
-  { label: "GitHub", val: "@MaxTheGeeek", href: "https://github.com/MaxTheGeeek", icon: "github" },
-  { label: "LinkedIn", val: "maxii", href: "https://www.linkedin.com/in/maxii", icon: "linkedin" }
+  { label: "GitHub", val: "github.com/MaxTheGeeek", href: "https://github.com/MaxTheGeeek", icon: "github" },
+  { label: "LinkedIn", val: "linkedin.com/in/maxii", href: "https://linkedin.com/in/maxii", icon: "linkedin" }
 ];

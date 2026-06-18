@@ -18,10 +18,10 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Majid Behzadi - Creative Developer",
-  description: "Portfolio of Majid Behzadi, building interactive web experiences with motion, 3D, and considered interaction design.",
-  keywords: "Majid Behzadi, Creative Developer, Three.js, React.js, Node.js",
-  authors: [{ name: "Majid Behzadi" }],
+  title: "Max Behzadi — Senior Full-Stack Developer",
+  description: "Senior Full-Stack Developer based in Vienna. TypeScript, React, NestJS, Next.js, C# and ASP.NET Core.",
+  keywords: "Max Behzadi, Senior Full-Stack Developer, TypeScript, React, NestJS, Next.js, C#, ASP.NET Core",
+  authors: [{ name: "Max Behzadi" }],
 }
 
 export default function RootLayout({
@@ -30,8 +30,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${spaceGrotesk.variable} ${jetBrainsMono.variable} ${inter.variable} font-sans antialiased`}>
+    <html lang="en" className={`dark scroll-smooth ${spaceGrotesk.variable} ${jetBrainsMono.variable} ${inter.variable}`}>
+      <body className="antialiased">
         <FaviconAnimator />
         {children}
       </body>

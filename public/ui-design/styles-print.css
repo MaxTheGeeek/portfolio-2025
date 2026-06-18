@@ -1,0 +1,145 @@
+/* Print-friendly stylesheet for portfolio */
+@import url("styles.css");
+
+@page {
+  size: A4 portrait;
+  margin: 12mm;
+}
+
+html, body {
+  background: #06070d !important;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+  color-adjust: exact !important;
+}
+
+* {
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+/* Hide live-only chrome */
+.topnav,
+.tweaks-panel,
+.tweaks-toggle,
+[data-tweaks-panel],
+.starfield,
+.grid-floor,
+.modal-backdrop {
+  display: none !important;
+}
+
+/* Disable all animations for print */
+*, *::before, *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Reset hub rotation so the orbital nav captures cleanly */
+.hub-inner {
+  transform: rotateY(0deg) rotateX(0deg) !important;
+}
+.hub-core {
+  transform: rotateY(20deg) rotateX(20deg) !important;
+}
+.hub-node .hub-shape {
+  animation: none !important;
+}
+.hub-label { opacity: 1 !important; }
+
+/* Force opaque backgrounds (backdrop-filter doesn't print) */
+.glass {
+  background: #11142a !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.glass::before { display: none !important; }
+
+/* Page sizing — each scene is one page */
+.app {
+  display: block !important;
+}
+
+section.scene,
+section.hero {
+  min-height: auto !important;
+  padding: 30px 24px !important;
+  page-break-before: always;
+  break-before: page;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  display: block !important;
+}
+
+section.hero {
+  page-break-before: auto;
+  break-before: auto;
+}
+
+/* Hero */
+.hero-inner {
+  grid-template-columns: 1.1fr 1fr !important;
+  gap: 30px !important;
+  max-width: 100% !important;
+}
+.hero-name { font-size: 64px !important; }
+.hero-tagline { font-size: 14px !important; margin-bottom: 22px !important; }
+.hero-cta { margin-bottom: 30px !important; }
+.btn { padding: 10px 16px !important; font-size: 11px !important; }
+.hub { max-width: 380px !important; }
+
+/* Section heads */
+.scene-head {
+  margin-bottom: 24px !important;
+}
+.scene-title { font-size: 38px !important; }
+
+/* About */
+.about-grid { grid-template-columns: 1.4fr 1fr !important; gap: 16px !important; }
+.about-copy { padding: 24px !important; font-size: 13px !important; line-height: 1.6 !important; }
+.stat { padding: 18px !important; }
+.stat-num { font-size: 38px !important; }
+
+/* Timeline */
+.timeline-track { display: none !important; }
+.tl-item { grid-template-columns: 90px 30px 1fr !important; padding: 8px 0 14px !important; page-break-inside: avoid; break-inside: avoid; }
+.tl-card { padding: 16px 18px !important; }
+.tl-role { font-size: 16px !important; }
+.tl-desc { font-size: 12px !important; margin-bottom: 8px !important; }
+.tl-date { font-size: 10px !important; padding-top: 18px !important; }
+
+/* Projects — grid of 2, allow flow across pages */
+.projects-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 14px !important; }
+.project { page-break-inside: avoid; break-inside: avoid; box-shadow: none !important; }
+.project-shot { aspect-ratio: 16/10 !important; }
+.project-meta { padding: 16px 18px !important; }
+.project-name { font-size: 16px !important; }
+.project-desc { font-size: 12px !important; margin-bottom: 10px !important; }
+
+/* Skills */
+.constellation { height: 460px !important; max-width: 100% !important; }
+.skill-orb-bubble {
+  box-shadow: inset 0 0 12px rgba(255,255,255,0.04) !important;
+}
+.const-line { stroke-dasharray: none !important; }
+
+/* Education / learning */
+.dual-grid { grid-template-columns: 1fr 1fr !important; gap: 16px !important; }
+.dual-col { padding: 24px !important; }
+.dual-head h3 { font-size: 22px !important; }
+.edu-item { padding: 12px 0 !important; }
+.edu-school { font-size: 14px !important; }
+.edu-desc { font-size: 12px !important; }
+.learn-item { padding: 10px 0 !important; }
+
+/* Contact */
+.contact-big { font-size: 56px !important; margin-bottom: 12px !important; }
+.contact-sub { font-size: 14px !important; margin-bottom: 28px !important; }
+.contact-grid { grid-template-columns: repeat(4, 1fr) !important; gap: 10px !important; }
+.contact-card { padding: 18px 14px !important; }
+
+/* Footer */
+footer { padding: 20px 24px !important; font-size: 9px !important; }
+
+/* Glow toned down for paper */
+:root { --intensity: 0.6; }

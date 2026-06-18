@@ -1,7 +1,6 @@
 "use client";
 
 import { EDUCATION, LEARNING } from "@/lib/data";
-import { Sparkles, BookOpen } from "lucide-react";
 
 function SceneHead({ num, title, sub }: { num: string; title: string; sub: string }) {
   return (
@@ -13,15 +12,35 @@ function SceneHead({ num, title, sub }: { num: string; title: string; sub: strin
   );
 }
 
+const GraduationIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="inline w-5 h-5 mr-2 text-cyan-400">
+    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+    <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/>
+  </svg>
+);
+
+const TerminalIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="inline w-5 h-5 mr-2 text-violet-400">
+    <polyline points="4 17 10 11 4 5"/>
+    <line x1="12" y1="19" x2="20" y2="19"/>
+  </svg>
+);
+
+const BulletIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-4 h-4">
+    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+  </svg>
+);
+
 export function Education() {
   return (
-    <section className="scene" data-screen-label="06 Education" id="education">
-      <SceneHead num="" title="Education & Learning" sub="Then & now" />
+    <section className="scene" data-screen-label="06 Education & Learning" id="education">
+      <SceneHead num="// 05" title="Education & Learning" sub="Then & now" />
       <div className="dual-grid">
         <div className="glass dual-col">
           <div className="dual-head">
-            <h3>Education</h3>
-            <span className="tag">Foundations</span>
+            <h3><GraduationIcon /> Foundations</h3>
+            <span className="tag">Academic</span>
           </div>
           {EDUCATION.map((e, i) => (
             <div className="edu-item" key={i}>
@@ -35,15 +54,15 @@ export function Education() {
           ))}
         </div>
 
-        <div className="glass dual-col" id="learning" data-screen-label="07 Learning">
+        <div className="glass dual-col">
           <div className="dual-head">
-            <h3>Currently Learning</h3>
-            <span className="tag violet">In progress</span>
+            <h3><TerminalIcon /> R&D / Tech</h3>
+            <span className="tag violet">Ongoing</span>
           </div>
           {LEARNING.map((l, i) => (
             <div className="learn-item" key={i}>
               <div className="learn-icon">
-                {i % 2 === 0 ? <Sparkles size={20} /> : <BookOpen size={20} />}
+                <BulletIcon />
               </div>
               <div className="learn-body">
                 <div className="learn-name">{l.name}</div>
@@ -52,7 +71,7 @@ export function Education() {
                   <div className="learn-prog-fill" style={{ width: `${l.progress}%` }}></div>
                 </div>
               </div>
-              <span className="tag" style={{ minWidth: 44, justifyContent: "center" }}>{l.progress}%</span>
+              <span className="tag">{l.progress}%</span>
             </div>
           ))}
         </div>

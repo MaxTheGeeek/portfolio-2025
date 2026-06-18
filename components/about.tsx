@@ -1,6 +1,7 @@
 "use client";
 
 import { PROFILE } from "@/lib/data";
+import Image from "next/image";
 
 function SceneHead({ num, title, sub }: { num: string; title: string; sub: string }) {
   return (
@@ -15,22 +16,40 @@ function SceneHead({ num, title, sub }: { num: string; title: string; sub: strin
 export function About() {
   return (
     <section className="scene" data-screen-label="02 About" id="about">
-      <SceneHead num="" title="About" sub="Self-portrait, in code" />
+      <SceneHead num="// 01" title="About" sub="Self-portrait, in code" />
       <div className="about-grid">
-        <div className="glass about-copy">
-          <p>
-            I'm a <strong>software developer</strong> with a strong focus on <strong>Cloud Engineering</strong> (AWS, Azure) and scalable architectures. I am obsessed with the seam where solid engineering meets clean interaction.
-          </p>
-          <p>
-            Most of my work lives at the intersection of <strong>backend systems, full-stack development, and modern cloud deployment</strong>. I care about performance and robust system design as much as craft; the most interesting moment of any project is finding the version that is both resilient <em>and</em> fast.
-          </p>
-          <p>
-            Currently {PROFILE.location.toLowerCase()}, currently building robust cloud solutions.
-          </p>
+        <div className="glass about-copy flex flex-col justify-between h-full">
+          <div>
+            <p className="mb-4">
+              Software engineering has always been, for me, less about the tools and more about the problems worth solving. I've spent 8+ years building across the stack from .NET backends and cloud pipelines to TypeScript frontends and AI-powered features always chasing systems that are both technically sound and genuinely enjoyable to use.
+            </p>
+            <p className="mb-4">
+              I'm drawn to complexity that can be untangled: a slow API, a brittle deployment, a product that almost works. That's where the real engineering lives.
+            </p>
+            <p>
+              Currently in Vienna, looking for problems worth solving.
+            </p>
+          </div>
+
+          <div className="mt-6 flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-white/[0.02] backdrop-blur-sm">
+            <div className="relative w-20 h-20 overflow-hidden rounded-lg border border-white/10">
+              <Image 
+                src="/marsi.jpg" 
+                alt="My dog Marsi" 
+                fill
+                sizes="80px"
+                className="object-cover" 
+              />
+            </div>
+            <div>
+              <div className="text-sm font-semibold text-white">Marsi</div>
+              <div className="text-xs text-gray-400">Chief Morale Officer & faithful companion</div>
+            </div>
+          </div>
         </div>
         <div className="about-stats">
           <div className="glass stat">
-            <div className="stat-num">6<span className="unit">yrs+</span></div>
+            <div className="stat-num">{PROFILE.yearsExp}<span className="unit">yrs</span></div>
             <div className="stat-label">Building for the web</div>
           </div>
           <div className="glass stat">

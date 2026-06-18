@@ -1,147 +1,111 @@
 "use client";
 
-import React, { useRef, useMemo, useState } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { Edges, Html } from "@react-three/drei";
-import * as THREE from "three";
+import React from "react";
 import { NAV_NODES } from "@/lib/data";
 
-function NodeShape({ shape, i }: { shape: string, i: number }) {
-  const meshRef = useRef<THREE.Mesh>(null);
-  useFrame(({ clock }) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.x = clock.getElapsedTime() * (0.5 + i * 0.1);
-      meshRef.current.rotation.y = clock.getElapsedTime() * (0.5 + i * 0.1);
-    }
-  });
+// Custom premium SVG icons for navigation nodes
+const BriefcaseIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-9 h-9">
+    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+  </svg>
+);
 
-  let geom;
-  let color = "#fff";
-  if (shape === "cube") { geom = <boxGeometry args={[1, 1, 1]} />; color = "#22d3ee"; }
-  else if (shape === "sphere") { geom = <sphereGeometry args={[0.7, 32, 32]} />; color = "#c084fc"; }
-  else if (shape === "torus") { geom = <torusGeometry args={[0.6, 0.2, 16, 32]} />; color = "#f472b6"; }
-  else if (shape === "diamond") { geom = <octahedronGeometry args={[0.8]} />; color = "#fbbf24"; }
-  else if (shape === "prism") { geom = <tetrahedronGeometry args={[0.9]} />; color = "#4ade80"; }
-  else { geom = <boxGeometry args={[1, 1, 1]} />; color = "#22d3ee"; }
+const FolderCodeIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-9 h-9">
+    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+    <path d="m10 11-2 2 2 2m4-4 2 2-2 2"/>
+  </svg>
+);
 
-  return (
-    <mesh ref={meshRef}>
-      {geom}
-      <meshPhysicalMaterial color="#0b0d18" transparent opacity={0.8} />
-      <Edges color={color} threshold={15} scale={1.05} />
-    </mesh>
-  );
-}
+const CpuIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-9 h-9">
+    <rect x="4" y="4" width="16" height="16" rx="2"/>
+    <path d="M9 9h6v6H9zM9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3"/>
+  </svg>
+);
 
-function OrbitNode({ node, index, onNav }: { node: any; index: number; onNav: (id: string) => void }) {
-  const radii = { 1: 3, 2: 4.5, 3: 6 };
-  const r = (radii as any)[node.orbit];
-  const rad = (node.angle * Math.PI) / 180;
-  
-  // Base position
-  const x = Math.cos(rad) * r;
-  const z = Math.sin(rad) * r;
-  const y = Math.sin(rad) * 0.6; // tilt
+const GraduationCapIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-9 h-9">
+    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+    <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/>
+  </svg>
+);
 
-  const [hovered, setHover] = useState(false);
+const RocketIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-9 h-9">
+    <path d="M4.5 16.5c-1.5 1.25-2.5 3.5-2.5 3.5s2.25-1 3.5-2.5M12 5l-8 8M9 9l8 8M19 5l-7 7"/>
+    <path d="M9 15l-3-3 6-6 9 9-3 3-9-9z"/>
+  </svg>
+);
 
-  return (
-    <group position={[x, y, z]}>
-      <group
-        onPointerOver={() => { document.body.style.cursor = 'pointer'; setHover(true); }}
-        onPointerOut={() => { document.body.style.cursor = 'auto'; setHover(false); }}
-        onClick={(e) => { e.stopPropagation(); onNav(node.id); }}
-      >
-        {/* Hover ring */}
-        <mesh scale={hovered ? 1.5 : 1}>
-          <sphereGeometry args={[1.2, 16, 16]} />
-          <meshBasicMaterial transparent opacity={0} />
-        </mesh>
-        
-        {/* The actual geometry */}
-        <group scale={hovered ? 1.2 : 1}>
-          <NodeShape shape={node.shape} i={index} />
-        </group>
-
-        {/* HTML Label */}
-        <Html position={[0, -1.8, 0]} center style={{ opacity: hovered ? 1 : 0, transition: 'opacity 0.2s', pointerEvents: 'none' }}>
-          <div className="hub-label" style={{ opacity: 1, position: 'relative', top: 'auto', left: 'auto', transform: 'none' }}>
-            {node.label}
-          </div>
-        </Html>
-      </group>
-    </group>
-  );
-}
-
-function Core() {
-  const coreRef = useRef<THREE.Mesh>(null);
-  useFrame(({ clock }) => {
-    if (coreRef.current) {
-      coreRef.current.rotation.y = clock.getElapsedTime() * 0.2;
-      coreRef.current.rotation.x = clock.getElapsedTime() * 0.2;
-    }
-  });
-
-  return (
-    <mesh ref={coreRef}>
-      <sphereGeometry args={[1.2, 32, 32]} />
-      <meshPhysicalMaterial color="#0b0d18" transparent opacity={0.9} />
-      <Edges color="#22d3ee" scale={1.05} threshold={15} />
-      <mesh>
-        <sphereGeometry args={[1.25, 16, 12]} />
-        <meshBasicMaterial color="#22d3ee" wireframe transparent opacity={0.15} />
-      </mesh>
-      <pointLight color="#22d3ee" intensity={2} distance={10} />
-    </mesh>
-  );
-}
-
-function HubScene({ onNav }: { onNav: (id: string) => void }) {
-  const groupRef = useRef<THREE.Group>(null);
-
-  useFrame(({ clock }) => {
-    if (groupRef.current) {
-      groupRef.current.rotation.y = clock.getElapsedTime() * 0.05;
-      groupRef.current.rotation.x = Math.sin(clock.getElapsedTime() * 0.1) * 0.1 + 0.1;
-    }
-  });
-
-  return (
-    <group ref={groupRef}>
-      <Core />
-      {/* Orbit Rings */}
-      <mesh rotation={[Math.PI / 2, 0, 0]}>
-        <ringGeometry args={[2.98, 3.02, 64]} />
-        <meshBasicMaterial color="#ffffff" transparent opacity={0.06} side={THREE.DoubleSide} />
-      </mesh>
-      <mesh rotation={[Math.PI / 2, 0, 0]}>
-        <ringGeometry args={[4.48, 4.52, 64]} />
-        <meshBasicMaterial color="#ffffff" transparent opacity={0.06} side={THREE.DoubleSide} />
-      </mesh>
-      <mesh rotation={[Math.PI / 2, 0, 0]}>
-        <ringGeometry args={[5.98, 6.02, 64]} />
-        <meshBasicMaterial color="#ffffff" transparent opacity={0.06} side={THREE.DoubleSide} />
-      </mesh>
-
-      {/* Nodes */}
-      {NAV_NODES.map((node, i) => (
-        <OrbitNode key={node.id} node={node} index={i} onNav={onNav} />
-      ))}
-    </group>
-  );
-}
+const MailIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-9 h-9">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+    <polyline points="22,6 12,13 2,6"/>
+  </svg>
+);
 
 export function Hub({ onNav }: { onNav: (id: string) => void }) {
   return (
-    <div style={{ width: '100%', height: '100%', position: 'relative' }}>
-      <Canvas camera={{ position: [0, 2, 12], fov: 60 }}>
-        <ambientLight intensity={0.5} />
-        <HubScene onNav={onNav} />
-      </Canvas>
-      <div className="hub-counter absolute bottom-0 left-0 w-full text-center pointer-events-none">
-        [ click any object to teleport ]
+    <div className="hub">
+      <div className="hub-inner-stable">
+        {/* Dash Orbit Ring */}
+        <div className="hub-orbit-ring"></div>
+
+        {/* Central Spinning Core */}
+        <div className="hub-core">
+          {[1, 2, 3, 4, 5, 6].map(i => (
+            <div key={i} className="hub-core-face"></div>
+          ))}
+        </div>
+
+        {/* Nodes arranged in a perfect circle around the core */}
+        {NAV_NODES.map((node, i) => {
+          // Evenly spaced at 60deg intervals around the ring (6 items)
+          const R = 220; 
+          const angle = i * 60 - 90; // offset to start at the top (12 o'clock)
+          const rad = (angle * Math.PI) / 180;
+          const x = Math.cos(rad) * R;
+          const y = Math.sin(rad) * R * 0.76; // compress slightly to give oval 3D look
+
+          // Node color classes
+          const colorCls = 
+            node.id === "experience" ? "cyan" :
+            node.id === "projects" ? "pink" :
+            node.id === "skills" ? "violet" :
+            node.id === "education" ? "amber" :
+            node.id === "learning" ? "green" : "cyan";
+
+          const Icon = () => {
+            if (node.id === "experience") return <BriefcaseIcon />;
+            if (node.id === "projects") return <FolderCodeIcon />;
+            if (node.id === "skills") return <CpuIcon />;
+            if (node.id === "education") return <GraduationCapIcon />;
+            if (node.id === "learning") return <RocketIcon />;
+            if (node.id === "contact") return <MailIcon />;
+            return null;
+          };
+
+          return (
+            <div
+              key={node.id}
+              className="hub-node"
+              style={{ 
+                transform: `translate3d(${x}px, ${y}px, 0px)`,
+                animationDelay: `${i * 0.45}s`
+              }}
+              onClick={() => onNav(node.id)}
+            >
+              <div className={`hub-shape circle ${colorCls}`}>
+                <Icon />
+              </div>
+              <div className="hub-label">{node.label}</div>
+            </div>
+          );
+        })}
       </div>
+      <div className="hub-counter">[ click any item to teleport ]</div>
     </div>
   );
 }

@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portfolio · Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  body { padding: 60px 5vw; background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(124, 92, 255, 0.18), transparent 70%),
+    var(--bg); }
+  .ds-shell { max-width: 1280px; margin: 0 auto; position: relative; z-index: 2; }
+  .ds-hero { margin-bottom: 64px; }
+  .ds-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cyan); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .ds-eyebrow::before { content:''; width: 24px; height: 1px; background: var(--cyan); }
+  .ds-title { font-family: var(--display); font-size: clamp(40px, 6vw, 72px); font-weight: 500; letter-spacing: -0.03em; line-height: 1; margin-bottom: 16px; }
+  .ds-title .accent { font-style: italic; font-weight: 300; background: linear-gradient(135deg, var(--cyan), var(--violet)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .ds-lede { color: var(--ink-dim); font-size: 17px; max-width: 640px; line-height: 1.6; }
+
+  .ds-section { margin-bottom: 80px; }
+  .ds-section-head { display: flex; align-items: baseline; gap: 24px; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+  .ds-section-num { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; color: var(--cyan); text-transform: uppercase; }
+  .ds-section-title { font-family: var(--display); font-size: 32px; font-weight: 500; letter-spacing: -0.02em; }
+  .ds-section-sub { color: var(--ink-mute); font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; margin-left: auto; }
+
+  /* Color swatches */
+  .swatch-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .swatch { padding: 0; overflow: hidden; }
+  .swatch-fill { height: 120px; position: relative; }
+  .swatch-fill .glow {
+    position: absolute; inset: 16px;
+    border-radius: 50%;
+    box-shadow: 0 0 60px currentColor;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  .swatch-meta { padding: 16px 18px; border-top: 1px solid var(--line); }
+  .swatch-name { font-family: var(--display); font-size: 16px; font-weight: 500; margin-bottom: 4px; }
+  .swatch-token { font-family: var(--mono); font-size: 11px; color: var(--ink-mute); letter-spacing: 0.04em; word-break: break-all; }
+  .swatch-hex { font-family: var(--mono); font-size: 11px; color: var(--cyan); margin-top: 4px; }
+
+  .neutral-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
+  .neutral { padding: 14px; min-height: 100px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid var(--line); border-radius: 12px; }
+  .neutral-name { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-mute); }
+  .neutral-val { font-family: var(--mono); font-size: 11px; color: var(--ink); }
+
+  /* Typography */
+  .type-row { display: grid; grid-template-columns: 220px 1fr; gap: 32px; padding: 24px 0; border-bottom: 1px solid var(--line); align-items: center; }
+  .type-meta { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-mute); }
+  .type-meta strong { display: block; color: var(--ink); margin-bottom: 4px; font-size: 12px; }
+  .type-sample-display-xl { font-family: var(--display); font-size: 88px; font-weight: 500; letter-spacing: -0.04em; line-height: 0.92; }
+  .type-sample-display { font-family: var(--display); font-size: 56px; font-weight: 500; letter-spacing: -0.02em; line-height: 1; }
+  .type-sample-h1 { font-family: var(--display); font-size: 38px; font-weight: 500; letter-spacing: -0.02em; }
+  .type-sample-h2 { font-family: var(--display); font-size: 24px; font-weight: 500; }
+  .type-sample-body { font-family: var(--body); font-size: 17px; color: var(--ink-dim); line-height: 1.6; }
+  .type-sample-small { font-family: var(--body); font-size: 14px; color: var(--ink-dim); }
+  .type-sample-mono { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--cyan); }
+
+  .font-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 40px; }
+  .font-card { padding: 28px; }
+  .font-display-name { font-size: 64px; line-height: 1; margin-bottom: 18px; font-weight: 400; letter-spacing: -0.02em; }
+  .font-display-name.space { font-family: 'Space Grotesk', sans-serif; }
+  .font-display-name.mono { font-family: 'JetBrains Mono', monospace; font-size: 48px; }
+  .font-display-name.inter { font-family: 'Inter', sans-serif; }
+  .font-card-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 6px; }
+  .font-card-role { font-family: var(--display); font-size: 18px; font-weight: 500; margin-bottom: 4px; }
+  .font-card-token { font-family: var(--mono); font-size: 11px; color: var(--cyan); }
+  .font-card-weights { display: flex; gap: 6px; margin-top: 14px; flex-wrap: wrap; }
+
+  /* Spacing */
+  .space-row { display: flex; align-items: center; gap: 24px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+  .space-token { font-family: var(--mono); font-size: 12px; color: var(--ink); width: 100px; }
+  .space-bar { height: 14px; background: var(--cyan); box-shadow: 0 0 16px var(--cyan-glow); border-radius: 2px; }
+  .space-val { font-family: var(--mono); font-size: 11px; color: var(--ink-mute); margin-left: auto; }
+
+  /* Radius */
+  .radius-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+  .radius-cell { aspect-ratio: 1; background: linear-gradient(135deg, rgba(34, 211, 238, 0.18), rgba(124, 92, 255, 0.18)); border: 1px solid var(--cyan); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 10px; }
+  .radius-cell .name { font-family: var(--display); font-size: 14px; }
+  .radius-cell .val { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); letter-spacing: 0.06em; }
+
+  /* Component examples */
+  .comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .comp-card { padding: 28px; min-height: 200px; display: flex; flex-direction: column; gap: 18px; }
+  .comp-card-title { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: -4px; }
+  .comp-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+
+  /* Code block */
+  .code { font-family: var(--mono); font-size: 12px; line-height: 1.7; color: var(--ink-dim); padding: 22px 24px; background: rgba(0,0,0,0.4); border: 1px solid var(--line); border-radius: 12px; white-space: pre; overflow-x: auto; }
+  .code .k { color: var(--violet); }
+  .code .v { color: var(--cyan); }
+  .code .c { color: var(--ink-mute); }
+
+  /* Effects */
+  .fx-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .fx-card { padding: 30px; min-height: 160px; display: flex; flex-direction: column; gap: 10px; }
+  .fx-name { font-family: var(--display); font-size: 18px; font-weight: 500; }
+  .fx-desc { font-family: var(--mono); font-size: 11px; color: var(--ink-mute); letter-spacing: 0.04em; }
+  .fx-demo { flex: 1; display: grid; place-items: center; }
+
+  .glow-orb {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, var(--bg-2), var(--bg));
+    border: 1px solid var(--cyan);
+    box-shadow: 0 0 36px var(--cyan-glow), inset 0 0 18px rgba(255,255,255,0.04);
+  }
+  .glow-cube {
+    width: 56px; height: 56px; border: 1px solid var(--violet);
+    background: linear-gradient(135deg, rgba(124, 92, 255, 0.12), transparent);
+    box-shadow: 0 0 36px rgba(124, 92, 255, 0.4), inset 0 0 18px rgba(124, 92, 255, 0.2);
+    transform: rotate(15deg);
+  }
+  .glass-demo {
+    width: 100%; height: 100%; min-height: 80px;
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--line-strong);
+    border-radius: 14px;
+    display: grid; place-items: center;
+    color: var(--ink-dim);
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+
+  .tagline-block {
+    padding: 32px;
+    margin-top: 32px;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .tagline-block .big {
+    display: block;
+    font-family: var(--display);
+    font-size: 28px;
+    letter-spacing: -0.01em;
+    text-transform: none;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 920px) {
+    .swatch-grid, .font-cards { grid-template-columns: 1fr 1fr; }
+    .neutral-grid { grid-template-columns: repeat(3, 1fr); }
+    .radius-grid { grid-template-columns: repeat(3, 1fr); }
+    .comp-grid, .fx-grid { grid-template-columns: 1fr; }
+    .type-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="ds-shell">
+
+  <header class="ds-hero">
+    <div class="ds-eyebrow">Design System · v1.0 · 2026</div>
+    <h1 class="ds-title">Portfolio<br/><span class="accent">tokens & components</span></h1>
+    <p class="ds-lede">The full set of colors, type, spacing, and components powering the 3D portfolio. Use these tokens directly in your Three.js port — every value is sourced from <code style="font-family: var(--mono); color: var(--cyan);">styles.css</code>.</p>
+  </header>
+
+  <!-- COLORS -->
+  <section class="ds-section">
+    <div class="ds-section-head">
+      <span class="ds-section-num">// 01</span>
+      <h2 class="ds-section-title">Colors</h2>
+      <span class="ds-section-sub">Dark cinematic · neon accents</span>
+    </div>
+
+    <h3 style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 14px;">Accent palette</h3>
+    <div class="swatch-grid" style="margin-bottom: 32px;">
+      <div class="glass swatch">
+        <div class="swatch-fill" style="background: var(--cyan); color: var(--cyan);"><span class="glow"></span></div>
+        <div class="swatch-meta">
+          <div class="swatch-name">Cyan</div>
+          <div class="swatch-token">--cyan</div>
+          <div class="swatch-hex">oklch(0.82 0.16 215)</div>
+        </div>
+      </div>
+      <div class="glass swatch">
+        <div class="swatch-fill" style="background: var(--violet); color: var(--violet);"><span class="glow"></span></div>
+        <div class="swatch-meta">
+          <div class="swatch-name">Violet</div>
+          <div class="swatch-token">--violet</div>
+          <div class="swatch-hex">oklch(0.70 0.22 295)</div>
+        </div>
+      </div>
+      <div class="glass swatch">
+        <div class="swatch-fill" style="background: var(--pink); color: var(--pink);"><span class="glow"></span></div>
+        <div class="swatch-meta">
+          <div class="swatch-name">Pink</div>
+          <div class="swatch-token">--pink</div>
+          <div class="swatch-hex">oklch(0.76 0.18 340)</div>
+        </div>
+      </div>
+      <div class="glass swatch">
+        <div class="swatch-fill" style="background: var(--amber); color: var(--amber);"><span class="glow"></span></div>
+        <div class="swatch-meta">
+          <div class="swatch-name">Amber</div>
+          <div class="swatch-token">--amber</div>
+          <div class="swatch-hex">oklch(0.85 0.14 75)</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 14px;">Surfaces & ink</h3>
+    <div class="neutral-grid">
+      <div class="neutral" style="background: #06070d;">
+        <span class="neutral-name">--bg</span>
+        <span class="neutral-val">#06070d</span>
+      </div>
+      <div class="neutral" style="background: #0b0d18;">
+        <span class="neutral-name">--bg-1</span>
+        <span class="neutral-val">#0b0d18</span>
+      </div>
+      <div class="neutral" style="background: #11142a;">
+        <span class="neutral-name">--bg-2</span>
+        <span class="neutral-val">#11142a</span>
+      </div>
+      <div class="neutral" style="background: #11142a; color: var(--ink);">
+        <span class="neutral-name" style="color: var(--ink-dim);">--ink</span>
+        <span class="neutral-val">#e8eaf5</span>
+      </div>
+      <div class="neutral" style="background: #11142a; color: var(--ink-dim);">
+        <span class="neutral-name">--ink-dim</span>
+        <span class="neutral-val">#9097b8</span>
+      </div>
+      <div class="neutral" style="background: #11142a; color: var(--ink-mute);">
+        <span class="neutral-name">--ink-mute</span>
+        <span class="neutral-val">#5b6286</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPOGRAPHY -->
+  <section class="ds-section">
+    <div class="ds-section-head">
+      <span class="ds-section-num">// 02</span>
+      <h2 class="ds-section-title">Typography</h2>
+      <span class="ds-section-sub">Three families · purpose-paired</span>
+    </div>
+
+    <div class="font-cards">
+      <div class="glass font-card">
+        <div class="font-card-meta">Display</div>
+        <div class="font-display-name space">Aa</div>
+        <div class="font-card-role">Space Grotesk</div>
+        <div class="font-card-token">--display</div>
+        <div class="font-card-weights">
+          <span class="tag">300</span><span class="tag">400</span><span class="tag">500</span><span class="tag">600</span>
+        </div>
+      </div>
+      <div class="glass font-card">
+        <div class="font-card-meta">Mono · UI</div>
+        <div class="font-display-name mono">Aa</div>
+        <div class="font-card-role">JetBrains Mono</div>
+        <div class="font-card-token">--mono</div>
+        <div class="font-card-weights">
+          <span class="tag">400</span><span class="tag">500</span>
+        </div>
+      </div>
+      <div class="glass font-card">
+        <div class="font-card-meta">Body</div>
+        <div class="font-display-name inter">Aa</div>
+        <div class="font-card-role">Inter</div>
+        <div class="font-card-token">--body</div>
+        <div class="font-card-weights">
+          <span class="tag">400</span><span class="tag">500</span><span class="tag">600</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass" style="padding: 8px 32px;">
+      <div class="type-row">
+        <div class="type-meta"><strong>Display XL</strong>Hero headline · 88–110px</div>
+        <div class="type-sample-display-xl">Behzadi.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta"><strong>Display</strong>Section title · 48–64px</div>
+        <div class="type-sample-display">Selected work</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta"><strong>Heading 1</strong>Card title · 32–38px</div>
+        <div class="type-sample-h1">Aurora Dashboard</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta"><strong>Heading 2</strong>Sub-section · 22–24px</div>
+        <div class="type-sample-h2">Senior Frontend Developer</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta"><strong>Body</strong>Lede · 17px / 1.6</div>
+        <div class="type-sample-body">A creative developer obsessed with the seam between design and engineering — where motion, 3D and interaction make a product feel alive.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta"><strong>Body S</strong>Description · 14–15px</div>
+        <div class="type-sample-small">Real-time analytics dashboard with WebGL data visualizations and multi-tenant architecture.</div>
+      </div>
+      <div class="type-row" style="border-bottom: none;">
+        <div class="type-meta"><strong>Mono · UI</strong>Eyebrow · 11–12px · 0.08–0.2em</div>
+        <div class="type-sample-mono">// 03  ·  PORTFOLIO · v3.0 · 2026</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPACING & RADIUS -->
+  <section class="ds-section">
+    <div class="ds-section-head">
+      <span class="ds-section-num">// 03</span>
+      <h2 class="ds-section-title">Spacing & Radius</h2>
+      <span class="ds-section-sub">4px base · soft glass corners</span>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start;">
+      <div class="glass" style="padding: 28px 32px;">
+        <h3 style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 10px;">Spacing scale</h3>
+        <div class="space-row"><span class="space-token">xs</span><span class="space-bar" style="width: 4px;"></span><span class="space-val">4px</span></div>
+        <div class="space-row"><span class="space-token">sm</span><span class="space-bar" style="width: 8px;"></span><span class="space-val">8px</span></div>
+        <div class="space-row"><span class="space-token">md</span><span class="space-bar" style="width: 16px;"></span><span class="space-val">16px</span></div>
+        <div class="space-row"><span class="space-token">lg</span><span class="space-bar" style="width: 24px;"></span><span class="space-val">24px</span></div>
+        <div class="space-row"><span class="space-token">xl</span><span class="space-bar" style="width: 40px;"></span><span class="space-val">40px</span></div>
+        <div class="space-row"><span class="space-token">2xl</span><span class="space-bar" style="width: 64px;"></span><span class="space-val">64px</span></div>
+        <div class="space-row" style="border-bottom: none;"><span class="space-token">3xl</span><span class="space-bar" style="width: 120px;"></span><span class="space-val">120px</span></div>
+      </div>
+
+      <div>
+        <h3 style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 14px;">Border radius</h3>
+        <div class="radius-grid">
+          <div class="radius-cell" style="border-radius: 4px;"><span class="name">xs</span><span class="val">4px</span></div>
+          <div class="radius-cell" style="border-radius: 8px;"><span class="name">sm</span><span class="val">8px</span></div>
+          <div class="radius-cell" style="border-radius: 12px;"><span class="name">md</span><span class="val">12px</span></div>
+          <div class="radius-cell" style="border-radius: 18px;"><span class="name">lg</span><span class="val">18px</span></div>
+          <div class="radius-cell" style="border-radius: 100px;"><span class="name">pill</span><span class="val">100px</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EFFECTS -->
+  <section class="ds-section">
+    <div class="ds-section-head">
+      <span class="ds-section-num">// 04</span>
+      <h2 class="ds-section-title">Effects</h2>
+      <span class="ds-section-sub">Glow · glass · grid</span>
+    </div>
+    <div class="fx-grid">
+      <div class="glass fx-card">
+        <div class="fx-name">Neon glow</div>
+        <div class="fx-desc">box-shadow: 0 0 36px var(--cyan-glow)</div>
+        <div class="fx-demo"><div class="glow-orb"></div></div>
+      </div>
+      <div class="glass fx-card">
+        <div class="fx-name">Emissive cube</div>
+        <div class="fx-desc">linear gradient + inset glow</div>
+        <div class="fx-demo"><div class="glow-cube"></div></div>
+      </div>
+      <div class="glass fx-card">
+        <div class="fx-name">Glass surface</div>
+        <div class="fx-desc">backdrop-filter: blur(20px)</div>
+        <div class="fx-demo" style="padding: 0;">
+          <div class="glass-demo">backdrop blur · 20</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPONENTS -->
+  <section class="ds-section">
+    <div class="ds-section-head">
+      <span class="ds-section-num">// 05</span>
+      <h2 class="ds-section-title">Components</h2>
+      <span class="ds-section-sub">Building blocks</span>
+    </div>
+
+    <div class="comp-grid">
+      <!-- Buttons -->
+      <div class="glass comp-card">
+        <div class="comp-card-title">Buttons · .btn</div>
+        <div class="comp-row">
+          <button class="btn primary">Primary action <span class="arrow">→</span></button>
+          <button class="btn">Secondary</button>
+        </div>
+        <div class="comp-row">
+          <button class="btn">↓ Download</button>
+          <button class="btn primary">Hire me</button>
+        </div>
+      </div>
+
+      <!-- Tags -->
+      <div class="glass comp-card">
+        <div class="comp-card-title">Tags · .tag</div>
+        <div class="comp-row">
+          <span class="tag">React</span>
+          <span class="tag cyan">Three.js</span>
+          <span class="tag violet">GLSL</span>
+          <span class="tag pink">GSAP</span>
+        </div>
+        <div class="comp-row">
+          <span class="tag">TypeScript</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">PostgreSQL</span>
+        </div>
+      </div>
+
+      <!-- Stat -->
+      <div class="glass comp-card">
+        <div class="comp-card-title">Stat block · .stat</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+          <div class="glass stat" style="padding: 18px;">
+            <div class="stat-num" style="font-size: 38px;">4<span class="unit" style="font-size: 18px;">yrs</span></div>
+            <div class="stat-label">Building for the web</div>
+          </div>
+          <div class="glass stat" style="padding: 18px;">
+            <div class="stat-num" style="font-size: 38px;">24<span class="unit" style="font-size: 18px;">+</span></div>
+            <div class="stat-label">Projects shipped</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill orb preview -->
+      <div class="glass comp-card">
+        <div class="comp-card-title">Skill orb · .skill-orb</div>
+        <div class="comp-row" style="justify-content: center; gap: 22px; margin-top: auto; margin-bottom: auto;">
+          <div style="position: relative; width: 70px; height: 70px;">
+            <div class="skill-orb-bubble" style="width: 70px; height: 70px; color: var(--cyan); --lvl: 95;"><span style="position: relative;">React</span></div>
+          </div>
+          <div style="position: relative; width: 80px; height: 80px;">
+            <div class="skill-orb-bubble" style="width: 80px; height: 80px; color: var(--violet); --lvl: 85;"><span style="position: relative;">Three.js</span></div>
+          </div>
+          <div style="position: relative; width: 64px; height: 64px;">
+            <div class="skill-orb-bubble" style="width: 64px; height: 64px; color: var(--pink); --lvl: 72;"><span style="position: relative; font-size: 10px;">PostgreSQL</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USAGE -->
+  <section class="ds-section">
+    <div class="ds-section-head">
+      <span class="ds-section-num">// 06</span>
+      <h2 class="ds-section-title">Token usage</h2>
+      <span class="ds-section-sub">Copy-paste ready</span>
+    </div>
+
+    <div class="code"><span class="c">/* CSS variables — defined in styles.css :root */</span>
+<span class="k">--bg</span>:        <span class="v">#06070d</span>;          <span class="c">/* page background */</span>
+<span class="k">--bg-1</span>:      <span class="v">#0b0d18</span>;          <span class="c">/* surface */</span>
+<span class="k">--bg-2</span>:      <span class="v">#11142a</span>;          <span class="c">/* elevated surface */</span>
+<span class="k">--ink</span>:       <span class="v">#e8eaf5</span>;          <span class="c">/* primary text */</span>
+<span class="k">--ink-dim</span>:   <span class="v">#9097b8</span>;          <span class="c">/* secondary text */</span>
+<span class="k">--ink-mute</span>:  <span class="v">#5b6286</span>;          <span class="c">/* tertiary, labels */</span>
+
+<span class="k">--cyan</span>:      <span class="v">oklch(0.82 0.16 215)</span>;
+<span class="k">--violet</span>:    <span class="v">oklch(0.70 0.22 295)</span>;
+<span class="k">--pink</span>:      <span class="v">oklch(0.76 0.18 340)</span>;
+<span class="k">--amber</span>:     <span class="v">oklch(0.85 0.14 75)</span>;
+
+<span class="k">--display</span>:   <span class="v">'Space Grotesk'</span>, ui-sans-serif;
+<span class="k">--mono</span>:      <span class="v">'JetBrains Mono'</span>, ui-monospace;
+<span class="k">--body</span>:      <span class="v">'Inter'</span>, ui-sans-serif;</div>
+  </section>
+
+  <div class="glass tagline-block">
+    <span class="big">Designed to port to Three.js.</span>
+    Every accent maps to an emissive material · every glass panel to a postprocessing bloom pass.
+  </div>
+
+</div>
+</body>
+</html>

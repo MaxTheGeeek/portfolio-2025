@@ -1,26 +1,23 @@
 "use client";
 
 import { PROFILE } from "@/lib/data";
-import { Download, ArrowRight } from "lucide-react";
-import dynamic from "next/dynamic";
+import { ArrowRight } from "lucide-react";
 
-const Hub = dynamic<{ onNav: (id: string) => void }>(() => import("@/components/three/Hub").then((m) => m.Hub), { ssr: false });
+import { Hub } from "@/components/three/Hub";
 
 export function Hero() {
   const navTo = (id: string) => {
-    const el = document.getElementById(id);
+    const targetId = id === "learning" ? "education" : id;
+    const el = document.getElementById(targetId);
     if (!el) return;
     const top = el.getBoundingClientRect().top + window.scrollY;
     window.scrollTo({ top, behavior: "smooth" });
   };
 
   return (
-    <section className="hero relative" data-screen-label="01 Hero" id="hero">
-      <div className="hero-inner relative z-10 flex">
-        <div className="hero-left relative z-20">
-          <div className="text-cyan-400 font-mono text-sm tracking-widest uppercase mb-4 z-20 relative">
-            {new Date().getFullYear()}
-          </div>
+    <section className="hero" data-screen-label="01 Hero" id="hero">
+      <div className="hero-inner">
+        <div className="hero-left">
           <h1 className="hero-name">
             {PROFILE.name}<br />
             <span className="accent">{PROFILE.surname}</span>
@@ -36,7 +33,7 @@ export function Hero() {
             </button>
           </div>
 
-          <div className="hero-meta relative z-20">
+          <div className="hero-meta">
             <div className="hero-meta-item">
               Role <span>{PROFILE.title}</span>
             </div>
@@ -49,7 +46,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="hero-right relative h-[600px] w-full max-w-[600px] mx-auto hidden md:block">
+        <div className="hero-right">
           <Hub onNav={navTo} />
         </div>
       </div>
