@@ -309,7 +309,7 @@ section.scene {
   width: 100%;
   max-width: 1400px;
   display: grid;
-  grid-template-columns: 1.22fr 0.78fr;
+  grid-template-columns: 1fr 1fr;
   gap: 50px;
   align-items: center;
 }
@@ -347,7 +347,7 @@ section.scene {
   .hero-photo-wrapper {
     position: absolute;
     top: -45px;
-    left: 59%;
+    left: 50%;
     transform: translateX(-50%);
     width: auto;
     margin-bottom: 0;
