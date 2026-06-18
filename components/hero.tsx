@@ -2,6 +2,7 @@
 
 import { PROFILE } from "@/lib/data";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 import { Hub } from "@/components/three/Hub";
 
@@ -16,7 +17,23 @@ export function Hero() {
 
   return (
     <section className="hero" data-screen-label="01 Hero" id="hero">
-      <div className="hero-inner">
+      <div className="hero-inner relative">
+        {/* Profile photo */}
+        <div className="hero-photo-wrapper">
+          <div className="hero-photo-ring">
+            <div className="hero-photo-inner">
+              <Image 
+                src="/me.jpg" 
+                alt="Max Behzadi" 
+                fill
+                sizes="(max-width: 768px) 130px, 170px"
+                className="object-cover opacity-85 hover:opacity-100 transition-opacity duration-300"
+                priority
+              />
+            </div>
+          </div>
+        </div>
+
         <div className="hero-left">
           <h1 className="hero-name">
             {PROFILE.name}<br />

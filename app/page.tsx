@@ -28,22 +28,6 @@ export default function Portfolio() {
 
       <div className="app relative z-10 text-white min-h-screen">
         <Hero />
-        
-        {/* Profile Picture Divider */}
-        <div className="flex justify-center -my-14 relative z-30 pointer-events-none">
-          <div className="relative w-32 h-32 rounded-full overflow-hidden border border-white/10 bg-[#080a14]/60 backdrop-blur-md shadow-2xl p-1 pointer-events-auto transition-transform duration-300 hover:scale-105">
-            <div className="w-full h-full rounded-full overflow-hidden relative">
-              <Image 
-                src="/me.jpg" 
-                alt="Max Behzadi" 
-                fill
-                sizes="128px"
-                className="object-cover opacity-80 hover:opacity-100 transition-opacity duration-300"
-              />
-            </div>
-          </div>
-        </div>
-
         <About />
         <Experience />
         <Projects />

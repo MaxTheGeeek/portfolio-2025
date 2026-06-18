@@ -313,6 +313,51 @@ section.scene {
   gap: 50px;
   align-items: center;
 }
+.hero-photo-wrapper {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.hero-photo-ring {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  padding: 4px;
+  background: rgba(8, 10, 20, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(255, 255, 255, 0.02);
+  transition: all 0.3s ease;
+}
+.hero-photo-ring:hover {
+  transform: scale(1.04);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(255, 255, 255, 0.03);
+}
+.hero-photo-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+@media (min-width: 1025px) {
+  .hero-photo-wrapper {
+    position: absolute;
+    top: -45px;
+    left: 59%;
+    transform: translateX(-50%);
+    width: auto;
+    margin-bottom: 0;
+    z-index: 20;
+  }
+  .hero-photo-ring {
+    width: 180px;
+    height: 180px;
+  }
+}
 .hero-left {
   position: relative;
   z-index: 2;
