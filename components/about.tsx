@@ -21,10 +21,10 @@ export function About() {
         <div className="glass about-copy flex flex-col justify-between h-full">
           <div>
             <p className="mb-4">
-              Software engineering has always been, for me, less about the tools and more about the problems worth solving. I've spent 8+ years building across the stack from .NET backends and cloud pipelines to TypeScript frontends and AI-powered features always chasing systems that are both technically sound and genuinely enjoyable to use.
+              Software engineering has always been, for me, less about the tools and more about the problems worth solving. I've spent 8+ years building production-grade solutions across B2B SaaS, IaaS infrastructure, and FinTech systems—specializing in a high-velocity, dual-stack approach combining C#/.NET and TypeScript/NestJS.
             </p>
             <p className="mb-4">
-              I'm drawn to complexity that can be untangled: a slow API, a brittle deployment, a product that almost works. That's where the real engineering lives.
+              Today, my focus is at the intersection of robust backend architectures and AI-driven development. I leverage tools like Claude Code, Context7 context mapping, and custom repository rules to design agentic workflows, accelerate testing, and build complex applications from specification to launch.
             </p>
             <p>
               Currently in Vienna, looking for problems worth solving.

@@ -2,10 +2,10 @@ export const PROFILE = {
   name: "Max",
   surname: "Behzadi",
   title: "Full-Stack Engineer",
-  tagline: "Full-Stack Engineer with 8+ years of professional experience delivering production-ready applications across B2B SaaS, IaaS infrastructure, and real-time systems.",
+  tagline: "Full-Stack Engineer with 8+ years of professional experience delivering production-ready applications across B2B SaaS, IaaS infrastructure, and real-time systems. Dual-stack specialist in C#/.NET and TypeScript/NestJS, utilizing AI-driven engineering, custom LLM rules, and agentic workflows.",
   location: "Vienna, Austria",
   status: "Open to opportunities",
-  site: "maxbehzadi.online",
+  site: "maxbehzadi.site",
   github: "MaxTheGeeek",
   linkedin: "in/maxii",
   yearsExp: 8,
@@ -24,20 +24,40 @@ export const NAV_NODES = [
 
 export const EXPERIENCE = [
   {
+    role: "AI Full-Stack Engineer",
+    company: "Freelancer",
+    location: "Vienna, Austria",
+    from: "Mar 2026",
+    to: "Present",
+    blurb: "Pioneering spec-driven development workflows and autonomous coding agent integrations using Claude Code, Context7, and MCP systems.",
+    bullets: [
+      "Introduced AI-driven spec workflows into existing production codebases, translating new feature requirements into structured specifications before implementation to improve planning accuracy and reduce rework.",
+      "Designed and built a Claude Code Spec Workflow framework, extended with custom plugins and skills (including Superpowers), establishing a repeatable spec-to-implementation pipeline as the foundation for autonomous, agentic development on future projects.",
+      "Integrated Context7 for up-to-date, version-accurate library documentation directly into the AI development loop, reducing hallucinated APIs and outdated code suggestions.",
+      "Deepened expertise in LLM architectures, Model Context Protocol (MCP), and Retrieval-Augmented Generation (RAG), applying this knowledge to practical AI-driven development workflows.",
+      "Explored and prototyped agentic development patterns, evaluating how autonomous coding agents can be safely integrated into professional software delivery pipelines."
+    ],
+    tags: ["Claude Code", "Spec-Driven Development", "Superpowers", "Context7", "MCP", "RAG", "LLM", "AI Automation", "Agentic Development"]
+  },
+  {
     role: "Full-Stack Developer",
     company: "RockLogic GmbH",
     location: "Vienna, Austria",
     from: "Oct 2025",
     to: "Mar 2026",
-    blurb: "Built B2B Ethereum analytics platforms and NestJS backends. Extended private banking tools with WPF desktop modules.",
+    blurb: "Accelerated development velocity using Claude Code and Context7 context mapping. Built B2B Ethereum analytics platforms and NestJS microservices.",
     bullets: [
-      "Built a B2B analytics platform for Ethereum infrastructure monitoring using Next.js, NestJS, and PostgreSQL, serving 10+ enterprise clients.",
-      "Designed scalable NestJS backend architectures integrating Grafana APIs for automated provisioning of 30+ dashboards, with TypeScript visualization.",
-      "Refactored front-end data fetching with React Query, reducing boilerplate and stabilizing client-side caching.",
-      "Optimized API performance, reducing response latency from 850ms to 120ms for back-office internal tooling.",
-      "Developed a WPF Desktop Application extending private banking back-office tools; implemented Parallel UI Migration using WPF and Angular."
+      "Accelerated development velocity by integrating Claude Code and Context7 into daily workflows; authored custom project rules (.claudemd / .cursorrules) to enforce Clean Architecture boundaries, leveraged LLMs for complex system brainstorming, and engineered comprehensive AI-driven unit and integration test-suites to maintain high code coverage.",
+      "Developed a WPF Desktop Application extending the private banking back-office tool; implemented Parallel UI Migration by building new features in WPF while actively refactoring core modules into a web-based Angular frontend.",
+      "Wrote comprehensive technical documentation for internal ASP.NET Core reporting modules, covering service layer design, API contracts, and data-flow diagrams for cross-team handover.",
+      "Optimized end-to-end API performance, reducing response latency from 850ms to 120ms for back-office internal tooling and measurably improving daily stakeholder workflows.",
+      "Built a B2B analytics platform for Ethereum infrastructure monitoring using Next.js, NestJS, and PostgreSQL, serving 10+ enterprise clients with end-to-end feature ownership.",
+      "Designed scalable NestJS microservices integrating Grafana APIs for automated provisioning of 30+ dashboards, including full-stack authentication and data visualization in TypeScript.",
+      "Built an internal reporting panel for 8+ non-technical back-office stakeholders, substantially reducing report generation time.",
+      "Implemented CI/CD pipelines using Docker and GitHub Actions, significantly reducing deployment time.",
+      "Refactored front-end data fetching by replacing legacy state-management workflows with React Query, reducing boilerplate code and stabilizing client-side caching."
     ],
-    tags: ["Next.js", "NestJS", "PostgreSQL", "React Query", "WPF", "TypeScript"]
+    tags: ["Next.js", "NestJS", "PostgreSQL", "React Query", "WPF", "TypeScript", "Claude Code", "Context7", "AI Automation"]
   },
   {
     role: "Full-Stack Developer",
@@ -45,15 +65,18 @@ export const EXPERIENCE = [
     location: "Vienna, Austria",
     from: "Sep 2024",
     to: "Sep 2025",
-    blurb: "Implemented server provisioning APIs and real-time VM dashboards. Built high-performance desktop modules for private banking clients.",
+    blurb: "Developed WPF banking tools, optimized UI virtualization for large datasets, and implemented high-performance server provisioning pipelines.",
     bullets: [
-      "Implemented server provisioning API pipeline using NestJS and RabbitMQ with RBAC across 5+ tenant organizations, cutting provisioning times.",
-      "Led frontend development of an IaaS platform including a real-time server management dashboard reflecting live VM states.",
-      "Developed WPF desktop tools for private banking, implementing UI Virtualization to handle 50k+ row datasets.",
-      "Optimized concurrency reporting using Crystal Reports to analyze multi-threaded transaction states in real time.",
-      "Resolved memory leaks and optimized local data structures to improve banking desktop app stability."
+      "Developed a WPF Desktop Application for a private banking back-office tool, implementing core portfolio and transaction views with full data binding and MVVM architecture.",
+      "WPF UI Performance: Implemented UI Virtualization (VirtualizingStackPanel) and asynchronous background worker threads, substantially reducing application rendering latency when handling datasets exceeding 50,000 rows.",
+      "Concurrency Reporting: Designed and implemented advanced concurrency reports using Crystal Reports, enabling back-office teams to analyse multi-threaded transaction states in real time.",
+      "Memory and App Stability: Resolved critical memory leaks and optimized local data structures, significantly reducing application crashes during long-running banking sessions.",
+      "Implemented a server provisioning API pipeline using NestJS and RabbitMQ with RBAC for multi-tenant user management across 5+ tenant organizations, cutting server provisioning time from hours to minutes.",
+      "Led frontend development of an IaaS platform including a real-time server management dashboard reflecting live VM provisioning state.",
+      "Contributed to backend microservices using NestJS, RabbitMQ, TypeScript, and PostgreSQL in a multi-tenant architecture.",
+      "Integrated payment gateway API and secure JWT/OAuth2 authentication flows, processing 500+ monthly transactions."
     ],
-    tags: ["NestJS", "RabbitMQ", "PostgreSQL", "WPF", "Crystal Reports", "MVVM"]
+    tags: ["NestJS", "RabbitMQ", "PostgreSQL", "WPF", "Crystal Reports", "MVVM", "UI Virtualization", "Multi-tenancy"]
   },
   {
     role: "Full-Stack Developer",
@@ -65,7 +88,7 @@ export const EXPERIENCE = [
     bullets: [
       "Led development of Stereum Launcher, a cross-platform desktop application using Vue.js, Electron, and Node.js, reaching 50,000+ active users.",
       "Built real-time monitoring systems with WebSocket-based architecture, tracking 100+ distributed nodes.",
-      "Implemented live telemetry dashboards for system metrics, improving incident response times."
+      "Implemented dashboards for system metrics and live data visualization, measurably improving incident response time."
     ],
     tags: ["Vue.js", "Electron", "Node.js", "WebSockets", "WebSocket"]
   },
@@ -77,8 +100,8 @@ export const EXPERIENCE = [
     to: "Dec 2021",
     blurb: "Designed shopping basket REST APIs and created internal Laravel administration boards with RBAC.",
     bullets: [
-      "Designed and implemented a RESTful Product Catalog and Shopping Basket API using Node.js for IRMALL, an e-commerce platform.",
-      "Built an internal back-office management tool using PHP and Laravel 8, implementing custom RBAC for staff administration."
+      "Designed and implemented a RESTful Product Catalog and Shopping Basket API using Node.js for IRMALL, a Persian e-commerce platform; delivered scalable endpoints handling product listing, cart management, and order flow.",
+      "Built an internal back-office management tool for HOMA using PHP and Laravel 8, including a full authentication system with role-based access control for internal staff management."
     ],
     tags: ["Node.js", "PHP", "Laravel", "REST API", "MySQL"]
   },
@@ -90,8 +113,7 @@ export const EXPERIENCE = [
     to: "Mar 2019",
     blurb: "Built UI components and integrated REST endpoints for food-tech consumer solutions.",
     bullets: [
-      "Built responsive UI components and contributed to MVP development using JavaScript, HTML5, and CSS3.",
-      "Integrated backend REST APIs for a food-tech consumer platform in agile sprints."
+      "Built responsive UI components and contributed to MVP development using JavaScript, HTML5, and CSS3; integrated REST APIs for a food-tech consumer platform."
     ],
     tags: ["JavaScript", "HTML5", "CSS3", "REST APIs"]
   },
@@ -101,10 +123,10 @@ export const EXPERIENCE = [
     location: "Vienna, Austria",
     from: "2014",
     to: "2017",
-    blurb: "Relocated to Austria; completed German B2 certification and preparatory courses at WIFI Vienna.",
+    blurb: "Relocated to Austria; completed German B2 certification and preparatory software development courses.",
     bullets: [
-      "Completed intensive German language training achieving certified B2 level.",
-      "Completed preparatory software development courses at WIFI Vienna prior to formal enrollment."
+      "Relocated to Austria; completed intensive German language training achieving B2 level (WKO-certified).",
+      "Completed preparatory software courses at WIFI Vienna prior to formal enrollment."
     ],
     tags: ["German B2", "WIFI Vienna", "Software Courses"]
   },
@@ -116,8 +138,8 @@ export const EXPERIENCE = [
     to: "Dec 2013",
     blurb: "Created transactional reporting modules and database applications using C#, ASP.NET, and SQL Server.",
     bullets: [
-      "Developed internal financial software in C#, ASP.NET, and SQL Server for banking clients.",
-      "Implemented transactional reporting modules using LINQ and stored procedures following OOP and SOLID patterns."
+      "Developed internal financial software in C#, ASP.NET, and SQL Server for banking clients; accounting domain knowledge (BSc Accounting) enabled direct collaboration with finance stakeholders on data model design.",
+      "Implemented transactional reporting modules using LINQ and stored procedures; applied SOLID principles, dependency injection, and OOP design patterns throughout."
     ],
     tags: ["C#", "ASP.NET", "SQL Server", "LINQ", "OOP", "SOLID"]
   }
@@ -277,23 +299,28 @@ export const SKILLS = [
   { name: "Angular",    cat: "frontend", level: 80, x: 80, y: 32, size: 75 },
 
   // Desktop UI (violet)
-  { name: "WPF",        cat: "desktop",  level: 85, x: 28, y: 50, size: 85 },
-  { name: "Electron",   cat: "desktop",  level: 88, x: 50, y: 60, size: 80 },
+  { name: "WPF",        cat: "desktop",  level: 88, x: 28, y: 50, size: 85 },
+  { name: "Electron",   cat: "desktop",  level: 85, x: 50, y: 60, size: 80 },
+  { name: "MAUI",       cat: "desktop",  level: 80, x: 60, y: 60, size: 80 },
 
   // Backend & DB (pink)
-  { name: "C# / .NET",  cat: "backend",  level: 90, x: 70, y: 52, size: 90 },
+  { name: "C# / .NET",  cat: "backend",  level: 92, x: 70, y: 52, size: 90 },
   { name: "NestJS",     cat: "backend",  level: 92, x: 88, y: 45, size: 90 },
   { name: "Node.js",    cat: "backend",  level: 88, x: 92, y: 60, size: 85 },
-  { name: "ASP.NET Core",cat: "backend", level: 85, x: 6,  y: 42, size: 80 },
+  { name: "ASP.NET Core",cat: "backend", level: 88, x: 6,  y: 42, size: 80 },
   { name: "PostgreSQL", cat: "backend",  level: 85, x: 60, y: 70, size: 80 },
-
-  // Tooling & AI (green)
-  { name: "RabbitMQ",   cat: "tooling",  level: 80, x: 40, y: 75, size: 75 },
-  { name: "Agentic AI", cat: "tooling",  level: 80, x: 85, y: 80, size: 80 },
+  { name: "EF Core",    cat: "backend",  level: 85, x: 60, y: 70, size: 80 },
 
   // Cloud & Infra (amber)
-  { name: "Azure",      cat: "cloud",    level: 82, x: 32, y: 84, size: 85 },
-  { name: "Docker",     cat: "cloud",    level: 85, x: 80, y: 88, size: 85 }
+  { name: "Azure",      cat: "cloud",    level: 85, x: 32, y: 84, size: 85 },
+  { name: "Docker",     cat: "cloud",    level: 85, x: 80, y: 88, size: 85 },
+  { name: "CI / CD",    cat: "cloud",    level: 85, x: 80, y: 88, size: 85 },
+
+  // Tooling & AI (green)
+  { name: "Agentic AI", cat: "tooling",  level: 90, x: 85, y: 80, size: 80 },
+  { name: "Claude Code",cat: "tooling",  level: 95, x: 85, y: 80, size: 80 },
+  { name: "Context7",   cat: "tooling",  level: 90, x: 85, y: 80, size: 80 },
+  { name: "RabbitMQ",   cat: "tooling",  level: 80, x: 40, y: 75, size: 75 }
 ];
 
 export const SKILL_CATS = [
@@ -310,9 +337,9 @@ export const SKILL_LINES = [
 
 export const EDUCATION = [
   {
-    school: "University of Tehran",
-    degree: "B.Sc. Accounting",
-    date: "Sep 2000 — Feb 2005",
+    school: "Tehran University",
+    degree: "Bachelor of Science in Accounting",
+    date: "2000 — 2005",
     desc: "Domain expertise in financial data models and transactional systems; bridged business analysis and backend structure."
   },
   {
@@ -326,14 +353,26 @@ export const EDUCATION = [
     degree: "Diploma in Web Application Development & OOP (PHP)",
     date: "Jun 2021 — Dec 2021",
     desc: "Comprehensive study covering backend principles, server-side logic, and robust database management systems."
+  },
+  {
+    school: "Microsoft / Coursera",
+    degree: "Microsoft Azure Fundamentals (AZ-900)",
+    date: "Completed 2025",
+    desc: "Cloud services, architecture, governance, privacy, security, and workload management on Microsoft Azure."
+  },
+  {
+    school: "Microsoft",
+    degree: "Microsoft Azure Developer Associate (AZ-204)",
+    date: "In Progress",
+    desc: "Building, testing, and maintaining cloud applications and services on Microsoft Azure (Expected Q3 2026)."
   }
 ];
 
 export const LEARNING = [
   { name: ".NET / C# Deepening", progress: 95, meta: "Advanced memory management · Concurrency" },
   { name: "Blazor WebAssembly", progress: 85, meta: "Interactive SPA components · WebAssembly" },
-  { name: "LLM Orchestration", progress: 85, meta: "Agentic Workflows · Semantic Kernel" },
-  { name: "Azure AI & DevOps", progress: 75, meta: "CI/CD Pipelines · Cognitive Services" }
+  { name: "LLM Orchestration", progress: 90, meta: "Agentic Workflows · Custom AI Rules · Claude Code" },
+  { name: "Azure AI & DevOps", progress: 80, meta: "CI/CD Pipelines · Cognitive Services" }
 ];
 
 export const CONTACT = [
@@ -341,3 +380,4 @@ export const CONTACT = [
   { label: "GitHub", val: "github.com/MaxTheGeeek", href: "https://github.com/MaxTheGeeek", icon: "github" },
   { label: "LinkedIn", val: "linkedin.com/in/maxii", href: "https://linkedin.com/in/maxii", icon: "linkedin" }
 ];
+

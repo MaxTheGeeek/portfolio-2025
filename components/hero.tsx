@@ -18,8 +18,12 @@ export function Hero() {
   return (
     <section className="hero" data-screen-label="01 Hero" id="hero">
       <div className="hero-inner relative">
-        {/* Profile photo */}
+        {/* Profile photo & Name on top */}
         <div className="hero-photo-wrapper">
+          <h1 className="hero-name-center">
+            <span className="first-name">{PROFILE.name}</span>{" "}
+            <span className="last-name">{PROFILE.surname}</span>
+          </h1>
           <div className="hero-photo-ring">
             <div className="hero-photo-inner">
               <Image 
@@ -35,10 +39,6 @@ export function Hero() {
         </div>
 
         <div className="hero-left">
-          <h1 className="hero-name">
-            {PROFILE.name}<br />
-            <span className="accent">{PROFILE.surname}</span>
-          </h1>
           <p className="hero-tagline">{PROFILE.tagline}</p>
 
           <div className="hero-cta">
