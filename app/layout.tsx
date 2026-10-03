@@ -18,9 +18,9 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Max Behzadi — Senior Full-Stack Developer",
-  description: "Senior Full-Stack Developer based in Vienna. TypeScript, React, NestJS, Next.js, C# and ASP.NET Core.",
-  keywords: "Max Behzadi, Senior Full-Stack Developer, TypeScript, React, NestJS, Next.js, C#, ASP.NET Core",
+  title: "Max Behzadi · Full-Stack Engineer | Applied AI Engineer",
+  description: "Full-Stack Engineer | Applied AI Engineer based in Vienna, Austria. Specializing in autonomous agent pipelines, enterprise conversational voice intelligence, and high-concurrency desktop & cloud architectures.",
+  keywords: "Max Behzadi, Full-Stack Engineer, Applied AI Engineer, Systems Architect, Vienna, Austria, Model Context Protocol, MCP, .NET, Next.js, AI Voice, Claude Code",
   authors: [{ name: "Max Behzadi" }],
 }
 
@@ -31,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`dark scroll-smooth ${spaceGrotesk.variable} ${jetBrainsMono.variable} ${inter.variable}`}>
-      <body className="antialiased">
+      <body className="antialiased bg-[#0c0e12] text-[#f3f4f6] selection:bg-[#d99b53]/30 selection:text-white">
         <FaviconAnimator />
         {children}
       </body>

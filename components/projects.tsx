@@ -1,257 +1,414 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { PROJECTS } from "@/lib/data";
-import { X, Heart, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
-import { motion, AnimatePresence, useMotionValue, useTransform } from "framer-motion";
+import Image from "next/image";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { scrollToSection } from "@/lib/scroll";
+import { 
+  ChevronLeft, 
+  ChevronRight, 
+  ArrowRight, 
+  Heart, 
+  ExternalLink, 
+  Cpu, 
+  Layers, 
+  Activity, 
+  ShieldCheck, 
+  Terminal,
+  CheckCircle2
+} from "lucide-react";
 
-function SceneHead({ num, title, sub }: { num: string; title: string; sub: string }) {
-  return (
-    <div className="scene-head">
-      <span className="scene-num">{num}</span>
-      <h2 className="scene-title">{title}</h2>
-      <span className="scene-sub">{sub}</span>
-    </div>
-  );
+interface CaseStudy {
+  id: string;
+  number: string;
+  name: string;
+  role: string;
+  timeframe: string;
+  stack: string[];
+  description: string;
+  metrics: { label: string; value: string }[];
+  image: string;
+  liveUrl?: string;
 }
 
-function SwipeCard({ 
-  project, 
-  index, 
-  isTop, 
-  onSwipe, 
-  likes 
-}: { 
-  project: any; 
-  index: number; 
-  isTop: boolean; 
-  onSwipe: (dir: string, projId: string) => void;
-  likes: number;
-}) {
-  const x = useMotionValue(0);
-  const rotate = useTransform(x, [-200, 200], [-15, 15]);
-  const randRot = (index % 5 - 2) * 2; 
-
-  const [imgIndex, setImgIndex] = useState(0);
-  const images = project.images || [project.image || "/placeholder.jpg"];
-
-  const handleDragEnd = (e: any, info: any) => {
-    if (info.offset.x > 120) {
-      onSwipe("right", project.name);
-    } else if (info.offset.x < -120) {
-      onSwipe("left", project.name);
-    }
-  };
-
-  const handleNextImage = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    e.preventDefault();
-    setImgIndex((prev) => (prev + 1) % images.length);
-  };
-
-  const handlePrevImage = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    e.preventDefault();
-    setImgIndex((prev) => (prev - 1 + images.length) % images.length);
-  };
-
-  return (
-    <motion.div
-      style={{ 
-        position: 'absolute',
-        top: 0,
-        x: isTop ? x : 0, 
-        rotate: isTop ? rotate : randRot, 
-        zIndex: 50 - index,
-        transformOrigin: "bottom center",
-        width: '100%', 
-        maxWidth: '580px', 
-        height: '100%', 
-        left: 0, 
-        right: 0, 
-        margin: '0 auto'
-      }}
-      drag={isTop ? "x" : false}
-      dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleDragEnd}
-      initial={{ scale: 0.9, y: 50, opacity: 0 }}
-      animate={{ 
-        scale: 1 - index * 0.04, 
-        y: index * 12,
-        opacity: 1 - index * 0.15
-      }}
-      variants={{
-        exit: (custom) => ({
-          x: custom === "right" ? 400 : -400,
-          opacity: 0,
-          transition: { duration: 0.25 }
-        })
-      }}
-      exit="exit"
-      custom={x.get() > 0 ? "right" : "left"}
-      transition={{ type: "spring", stiffness: 350, damping: 22 }}
-      className="bg-[#020202] rounded-2xl flex flex-col overflow-hidden shadow-2xl cursor-grab active:cursor-grabbing border border-white/12"
-    >
-      {/* Card Image Area */}
-      <div className="relative h-[48%] min-h-[220px] w-full bg-[#030408] border-b border-white/10 overflow-hidden select-none">
-        <img 
-          src={images[imgIndex]} 
-          alt={`${project.name} screenshot ${imgIndex + 1}`} 
-          className="absolute inset-0 w-full h-full object-cover mix-blend-screen opacity-80" 
-          draggable="false"
-        />
-        
-        {/* Navigation Arrows for multi-image projects */}
-        {images.length > 1 && (
-          <>
-            <button 
-              onClick={handlePrevImage}
-              className="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 hover:bg-black/80 flex items-center justify-center text-white/75 hover:text-white transition-all border border-white/10 z-30"
-              onPointerDown={(e) => e.stopPropagation()}
-            >
-              <ChevronLeft size={18} />
-            </button>
-            <button 
-              onClick={handleNextImage}
-              className="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 hover:bg-black/80 flex items-center justify-center text-white/75 hover:text-white transition-all border border-white/10 z-30"
-              onPointerDown={(e) => e.stopPropagation()}
-            >
-              <ChevronRight size={18} />
-            </button>
-            
-            {/* Slide Indicators */}
-            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-30 bg-black/40 px-2 py-1 rounded-full border border-white/5">
-              {images.map((_: any, idx: number) => (
-                <div 
-                  key={idx} 
-                  className={`w-1.5 h-1.5 rounded-full transition-all ${idx === imgIndex ? "bg-cyan-400 w-3" : "bg-white/30"}`}
-                />
-              ))}
-            </div>
-          </>
-        )}
-
-        <div className="absolute top-4 right-4 bg-black/55 backdrop-blur-md px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider text-cyan-400 border border-cyan-500/20">
-          {project.timeline}
-        </div>
-      </div>
-
-      {/* Card Info Area */}
-      <div className="p-6 flex flex-col flex-1 bg-black">
-        <div className="flex justify-between items-start mb-2">
-          <h3 className="text-3xl font-bold text-white tracking-tight">{project.name}</h3>
-          {project.url && (
-            <a 
-              href={project.url} 
-              target="_blank" 
-              rel="noreferrer" 
-              className="text-cyan-400 hover:text-white p-2 shrink-0 bg-white/5 rounded-full hover:bg-cyan-500 transition-colors cursor-pointer z-50 pointer-events-auto"
-              onPointerDown={(e) => e.stopPropagation()} 
-            >
-              <ExternalLink size={18} />
-            </a>
-          )}
-        </div>
-        <p className="text-cyan-400 text-xs font-mono tracking-widest uppercase mb-4">{project.cat}</p>
-        <p className="text-sm text-gray-300 line-clamp-3 mb-4 leading-relaxed">{project.desc}</p>
-        
-        <div className="flex flex-wrap gap-2 mb-auto">
-          {project.tags.map((t: string) => (
-            <span key={t} className="text-xs px-2.5 py-1 rounded-md bg-white/5 text-gray-300 border border-white/5 font-mono">
-              {t}
-            </span>
-          ))}
-        </div>
-
-        <div className="mt-auto flex justify-between items-center pt-4 border-t border-white/10">
-           <div className="flex items-center gap-2 font-mono text-pink-400">
-             <Heart size={16} fill="currentColor" className="animate-pulse" /> {likes} 
-           </div>
-           <div className="text-xs text-gray-400 uppercase tracking-wider font-mono">{project.role}</div>
-        </div>
-      </div>
-    </motion.div>
-  );
-}
+const CASE_STUDIES: CaseStudy[] = [
+  {
+    id: "maxerz-desktop",
+    number: "01 // DESKTOP RUNTIME • 2024-2025",
+    name: "MaxerZ Desktop Application",
+    role: "Lead Architect & Systems Developer",
+    timeframe: "2024 - 2025",
+    stack: ["C#", ".NET MAUI", "Python Engine", "OpenRouter API", "SQLite"],
+    description: "Engineered a native client desktop platform optimizing professional career governance workflows via local-first execution. Integrates custom tool calling with OpenRouter endpoints while decoupling payload state across asynchronous worker threads to maintain 60fps UI responsiveness during bulk document compilation.",
+    metrics: [
+      { label: "Threading", value: "Async Worker Pool" },
+      { label: "Model Routing", value: "Adaptive Fallback" },
+      { label: "Storage", value: "Encrypted SQLite" },
+      { label: "Responsiveness", value: "60 FPS UI Thread" }
+    ],
+    image: "/projects/maxerz-1.png",
+    liveUrl: "https://github.com/MaxTheGeeek"
+  },
+  {
+    id: "stereum",
+    number: "02 // DISTRIBUTED IAAS • 2024-2026",
+    name: "Stereum Launcher & Plus",
+    role: "Full-Stack Systems Engineer · RockLogic GmbH",
+    timeframe: "2024 - 2026",
+    stack: ["Vue.js", "Electron", "Shell Scripting", "RabbitMQ", "Docker"],
+    description: "Decoupled Ethereum node automation platform used by 50,000+ active validators and stakers globally. Engineered zero-downtime client switching, dynamic system resource throttling, and distributed RPC heartbeat monitoring across multiple testnets and mainnet.",
+    metrics: [
+      { label: "Deployment Scale", value: "50,000+ Active Nodes" },
+      { label: "Architecture", value: "Decoupled Message Bus" },
+      { label: "Reliability", value: "Zero-Downtime Swap" },
+      { label: "Telemetry", value: "Prometheus & Grafana" }
+    ],
+    image: "/projects/launcher-1.png",
+    liveUrl: "https://stereum.net"
+  },
+  {
+    id: "rocklogic",
+    number: "03 // TELEMETRY & CLOUD • 2024-2025",
+    name: "rocklogic.at Architecture",
+    role: "Infrastructure & Telemetry Engineer · RockLogic GmbH",
+    timeframe: "2024 - 2025",
+    stack: ["Next.js", "TypeScript", "Grafana API", "Docker", "Nginx"],
+    description: "B2B telemetry and infrastructure showcase delivering real-time Ethereum node cluster monitoring, automated Grafana dashboard provisioning, and high-performance server-side rendering with sub-100ms time to first byte.",
+    metrics: [
+      { label: "TTFB Performance", value: "< 90ms Edge Global" },
+      { label: "Dashboard Engine", value: "Automated Grafana API" },
+      { label: "Cluster Monitoring", value: "10+ Enterprise Clients" },
+      { label: "Security", value: "Hardened TLS Reverse Proxy" }
+    ],
+    image: "/projects/rocklogic.png",
+    liveUrl: "https://rocklogic.at"
+  },
+  {
+    id: "private-banking-wpf",
+    number: "04 // FINTECH SYSTEMS • 2023-2024",
+    name: "Private Banking Portfolio Suite",
+    role: "Senior .NET Systems Developer",
+    timeframe: "2023 - 2024",
+    stack: ["C#", "WPF", "MVVM Pattern", "VirtualizingStackPanel", "SQL Server"],
+    description: "High-throughput financial valuation workstation built for enterprise asset managers. Solved extreme UI lag by implementing VirtualizingStackPanel algorithms capable of rendering 50,000+ active portfolio rows at 60 FPS while reducing calculation latency from 850ms to sub-120ms.",
+    metrics: [
+      { label: "UI Virtualization", value: "50,000+ Records @ 60 FPS" },
+      { label: "Latency Reduction", value: "850ms → < 120ms" },
+      { label: "Memory Hygiene", value: "Zero Thread Blocking" },
+      { label: "Reporting Engine", value: "Crystal Reports Integrated" }
+    ],
+    image: "/projects/banking-table.png"
+  },
+  {
+    id: "cover-letter-work",
+    number: "05 // AGENTIC PIPELINES • 2025-2026",
+    name: "cover-letter.work & AI Document Pipelines",
+    role: "Full-Stack & Applied AI Engineer",
+    timeframe: "2025 - 2026",
+    stack: ["Next.js", "TypeScript", "OpenRouter", "Supabase", "Tailwind CSS"],
+    description: "Production career intelligence engine converting unstructured candidate backgrounds into bespoke executive communications. Implemented schema AST verification to eliminate AI hallucinations and multi-turn prompt optimization with real-time streaming feedback.",
+    metrics: [
+      { label: "Context Engine", value: "Multi-Turn Structured Prompting" },
+      { label: "Hallucination Defense", value: "AST Schema Verification" },
+      { label: "Token Streaming", value: "< 2s First Token Latency" },
+      { label: "Persistence", value: "Vector Search & Postgres" }
+    ],
+    image: "/projects/cover-1.png",
+    liveUrl: "https://cover-letter.work"
+  }
+];
 
 export function Projects() {
+  const shouldReduceMotion = useReducedMotion();
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [likesMap, setLikesMap] = useState<Record<string, number>>({});
-  const [deck, setDeck] = useState(() => PROJECTS.map((p, i) => ({ ...p, _id: i })));
+  const [hasLikedMap, setHasLikedMap] = useState<Record<string, boolean>>({});
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
 
+  // Fetch initial likes
   useEffect(() => {
-    fetch('/api/likes')
-      .then(r => r.json())
-      .then(data => {
-        const map: any = {};
-        if (Array.isArray(data)) {
-           data.forEach((d) => {
-             map[d.projectId] = d.likes;
-           });
+    async function fetchLikes() {
+      try {
+        const res = await fetch("/api/likes");
+        if (res.ok) {
+          const data = await res.json();
+          const map: Record<string, number> = {};
+          if (Array.isArray(data)) {
+            data.forEach((item: any) => {
+              if (item.id) map[item.id] = item.count || 0;
+            });
+          }
+          setLikesMap(map);
         }
-        setLikesMap(map);
-      })
-      .catch(console.error);
+      } catch {
+        // Fallback gracefully
+      }
+    }
+    fetchLikes();
   }, []);
 
-  const handleSwipe = async (dir: string, projId: string) => {
-    if (dir === "right") {
-      // Optimistic Like
-      setLikesMap(prev => ({ ...prev, [projId]: (prev[projId] || 0) + 1 }));
-      fetch('/api/likes', { 
-        method: 'POST', 
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id: projId }) 
-      }).catch(console.error);
-    }
+  // Keyboard navigation listener (ArrowLeft / ArrowRight)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (document.activeElement?.tagName === "INPUT" || document.activeElement?.tagName === "TEXTAREA") return;
+      if (e.key === "ArrowLeft") {
+        setCurrentIndex(prev => (prev === 0 ? CASE_STUDIES.length - 1 : prev - 1));
+      } else if (e.key === "ArrowRight") {
+        setCurrentIndex(prev => (prev === CASE_STUDIES.length - 1 ? 0 : prev + 1));
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
-    // Move top card to back with new unique ID
-    setTimeout(() => {
-      setDeck(prev => {
-        const top = prev[0];
-        const rest = prev.slice(1);
-        return [...rest, { ...top, _id: Math.random() }];
-      });
-    }, 50);
+  const handleNext = () => {
+    setCurrentIndex(prev => (prev === CASE_STUDIES.length - 1 ? 0 : prev + 1));
   };
 
+  const handlePrev = () => {
+    setCurrentIndex(prev => (prev === 0 ? CASE_STUDIES.length - 1 : prev - 1));
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX === null) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        handleNext();
+      } else {
+        handlePrev();
+      }
+    }
+    setTouchStartX(null);
+  };
+
+  const handleLike = async (projectName: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (hasLikedMap[projectName]) return;
+
+    // Optimistic update
+    setLikesMap(prev => ({
+      ...prev,
+      [projectName]: (prev[projectName] || 0) + 1
+    }));
+    setHasLikedMap(prev => ({ ...prev, [projectName]: true }));
+
+    try {
+      await fetch("/api/likes", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id: projectName })
+      });
+    } catch {
+      // Revert if error
+    }
+  };
+
+  const handleDeepDive = (projectName: string, e?: React.MouseEvent) => {
+    if (e) e.preventDefault();
+    const event = new CustomEvent("prefill-contact-service", {
+      detail: { project: projectName }
+    });
+    window.dispatchEvent(event);
+    scrollToSection("contact", 80);
+  };
+
+  const currentStudy = CASE_STUDIES[currentIndex];
+
   return (
-    <section className="scene pb-32" data-screen-label="04 Projects" id="projects">
-      <SceneHead num="// 03" title="Projects" sub={`${PROJECTS.length} selected`} />
-      
-      <div className="relative w-full max-w-2xl mx-auto h-[75vh] min-h-[520px] max-h-[780px] mt-12 flex flex-col items-center">
-        <div className="relative w-full h-full perspective-1000">
-          <AnimatePresence>
-            {deck.slice(0, 4).map((p, i) => (
-              <SwipeCard 
-                key={p._id} 
-                project={p} 
-                index={i} 
-                isTop={i === 0} 
-                onSwipe={handleSwipe}
-                likes={likesMap[p.name] || 0}
-              />
-            ))}
-          </AnimatePresence>
+    <section className="scene py-24 md:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full relative" id="projects">
+      {/* Dossier Header */}
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 pb-6 border-b border-white/10">
+        <div>
+          <span className="text-xs font-mono uppercase tracking-[0.06em] text-[#d99b53] mb-2 block">
+            Engineering Dossier
+          </span>
+          <h2 className="font-serif text-2xl sm:text-[32px] sm:leading-[40px] font-normal text-[#f3f4f6] tracking-tight">
+            Selected <span className="italic text-[#fcb96e]">Works</span>
+          </h2>
         </div>
 
-        {/* Action Buttons */}
-        <div className="flex gap-8 justify-center mt-6 z-50 relative pointer-events-auto">
-          <button 
-            onClick={() => handleSwipe("left", deck[0].name)}
-            className="w-16 h-16 rounded-full bg-black/50 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 hover:border-white/30 backdrop-blur-md transition-all active:scale-95 shadow-xl"
-            title="Dislike"
-          >
-            <X size={28} />
-          </button>
-          <button 
-            onClick={() => handleSwipe("right", deck[0].name)}
-            className="w-16 h-16 rounded-full bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-500 hover:text-pink-400 hover:bg-pink-500/20 hover:border-pink-500/40 backdrop-blur-md transition-all active:scale-95 shadow-xl shadow-pink-500/20"
-            title="Like"
-          >
-            <Heart size={26} fill="currentColor" />
-          </button>
+        {/* Carousel Pagination Controls */}
+        <div className="flex items-center gap-4">
+          <div className="text-xs font-mono text-[#6b7280]">
+            <span className="text-[#f3f4f6] font-semibold">{currentIndex + 1}</span> of {CASE_STUDIES.length}
+          </div>
+
+          {/* Dots Indicator */}
+          <div className="flex items-center gap-1.5">
+            {CASE_STUDIES.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setCurrentIndex(i)}
+                className={`h-1.5 rounded-full transition-all cursor-pointer ${
+                  currentIndex === i ? "w-6 bg-[#d99b53]" : "w-1.5 bg-white/20 hover:bg-white/40"
+                }`}
+                aria-label={`Go to case study ${i + 1}`}
+              />
+            ))}
+          </div>
+
+          {/* Prev / Next Buttons */}
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={handlePrev}
+              className="w-9 h-9 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-[#f3f4f6] hover:text-[#fcb96e] transition-colors cursor-pointer active:scale-95"
+              aria-label="Previous Case Study (ArrowLeft)"
+              title="Previous Case Study (ArrowLeft)"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+            <button
+              type="button"
+              onClick={handleNext}
+              className="w-9 h-9 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-[#f3f4f6] hover:text-[#fcb96e] transition-colors cursor-pointer active:scale-95"
+              aria-label="Next Case Study (ArrowRight)"
+              title="Next Case Study (ArrowRight)"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
         </div>
       </div>
+
+      {/* Active Case Study Dossier Card */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentStudy.id}
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={shouldReduceMotion ? undefined : { opacity: 0, y: -12 }}
+          transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+          className="rounded-2xl border border-white/10 bg-[#111317] overflow-hidden shadow-2xl touch-pan-y"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+            {/* Left Column: Case Study Intelligence & Metrics */}
+            <div className="lg:col-span-7 p-6 sm:p-10 flex flex-col justify-between">
+              <div>
+                {/* Dossier Top Identifier */}
+                <div className="flex flex-wrap items-center justify-between gap-3 pb-4 mb-6 border-b border-white/10 text-xs font-mono">
+                  <span className="text-[#fcb96e] font-medium tracking-wider">
+                    {currentStudy.number}
+                  </span>
+                  <div className="flex items-center gap-3">
+                    <span className="text-[#6b7280]">{currentStudy.timeframe}</span>
+                    <button
+                      type="button"
+                      onClick={(e) => handleLike(currentStudy.name, e)}
+                      className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-mono transition-all cursor-pointer ${
+                        hasLikedMap[currentStudy.name]
+                          ? "bg-rose-500/15 border border-rose-500/30 text-rose-400"
+                          : "bg-white/5 border border-white/10 text-[#9ca3af] hover:text-white"
+                      }`}
+                      title="Like this case study"
+                    >
+                      <Heart className={`w-3 h-3 ${hasLikedMap[currentStudy.name] ? "fill-rose-400" : ""}`} />
+                      <span>{likesMap[currentStudy.name] || 0}</span>
+                    </button>
+                  </div>
+                </div>
+
+                {/* Project Title & Role */}
+                <h3 className="font-serif text-2xl sm:text-3xl font-normal text-[#f3f4f6] tracking-tight mb-2">
+                  {currentStudy.name}
+                </h3>
+                <div className="text-xs font-mono text-[#d99b53] mb-5">
+                  {currentStudy.role}
+                </div>
+
+                {/* Narrative Description */}
+                <p className="text-sm text-[#9ca3af] leading-relaxed mb-6">
+                  {currentStudy.description}
+                </p>
+
+                {/* Tech Stack Tags */}
+                <div className="flex flex-wrap gap-1.5 mb-8">
+                  {currentStudy.stack.map(tag => (
+                    <span
+                      key={tag}
+                      className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-[#16191f] border border-white/10 text-[#d1d5db]"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Metrics Grid */}
+              <div className="pt-6 border-t border-white/10">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+                  {currentStudy.metrics.map((m, idx) => (
+                    <div key={idx} className="p-3 rounded-xl bg-[#16191f] border border-white/5">
+                      <div className="text-[10px] font-mono text-[#6b7280] uppercase tracking-wider mb-0.5">
+                        {m.label}
+                      </div>
+                      <div className="text-xs font-mono font-semibold text-[#f3f4f6]">
+                        {m.value}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Action Row */}
+                <div className="flex flex-wrap items-center justify-between gap-4">
+                  <a
+                    href="#contact"
+                    onClick={(e) => handleDeepDive(currentStudy.name, e)}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#d99b53] hover:bg-[#fcb96e] text-[#111317] font-semibold text-xs transition-all shadow-md shadow-[#d99b53]/20 active:scale-95 cursor-pointer"
+                  >
+                    <span>Request Technical Deep Dive</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
+
+                  {currentStudy.liveUrl && (
+                    <a
+                      href={currentStudy.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-mono text-[#9ca3af] hover:text-[#fcb96e] transition-colors"
+                    >
+                      <span>Public Repository / Live</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Visual Preview / Case Study Asset */}
+            <div className="lg:col-span-5 relative bg-[#0c0e12] border-t lg:border-t-0 lg:border-l border-white/10 min-h-[300px] lg:min-h-[460px] flex items-center justify-center p-6 sm:p-8">
+              <div className="relative w-full h-full min-h-[260px] rounded-xl overflow-hidden border border-white/10 shadow-lg group">
+                <Image
+                  src={currentStudy.image}
+                  alt={currentStudy.name}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0c0e12] via-transparent to-transparent opacity-40" />
+
+                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                  <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-black/80 text-[#9ca3af] border border-white/10">
+                    Production Architecture
+                  </span>
+                  <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-[#d99b53]/20 text-[#fcb96e] border border-[#d99b53]/30">
+                    Verified
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </AnimatePresence>
     </section>
   );
 }

@@ -1,43 +1,28 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { Starfield } from "@/components/starfield";
-import Image from "next/image";
+import React from "react";
+import { TopNav } from "@/components/navigation";
 import { Hero } from "@/components/hero";
-import { About } from "@/components/about";
-import { Experience } from "@/components/experience";
+import { Solutions } from "@/components/solutions";
 import { Projects } from "@/components/projects";
-import { Skills } from "@/components/skills";
-import { Education } from "@/components/education";
+import { Principles } from "@/components/principles";
+import { Trajectory } from "@/components/trajectory";
 import { Contact } from "@/components/contact";
-import { ScrollArrow } from "@/components/scroll-arrow";
-import { TweaksPanel } from "@/components/tweaks-panel";
+import { Footer } from "@/components/footer";
 
 export default function Portfolio() {
-  const [intensity, setIntensity] = useState(70);
-
-  // Sync intensity value to css variable --intensity at the page root level
-  useEffect(() => {
-    document.documentElement.style.setProperty("--intensity", String(intensity / 50));
-  }, [intensity]);
-
   return (
-    <>
-      <Starfield />
-      <div className="grid-floor"></div>
-
-      <div className="app relative z-10 text-white min-h-screen">
+    <div className="bg-[#0c0e12] text-[#f3f4f6] min-h-screen selection:bg-[#d99b53]/30 selection:text-white">
+      <TopNav />
+      <main className="relative z-10 w-full">
         <Hero />
-        <About />
-        <Experience />
+        <Solutions />
         <Projects />
-        <Skills />
-        <Education />
+        <Principles />
+        <Trajectory />
         <Contact />
-        <ScrollArrow />
-      </div>
-
-      <TweaksPanel intensity={intensity} setIntensity={setIntensity} />
-    </>
+      </main>
+      <Footer />
+    </div>
   );
 }

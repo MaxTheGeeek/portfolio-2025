@@ -24,7 +24,7 @@ const profile = {
   philosophy: 'Software engineering is less about tools and more about problems worth solving.',
   focus: 'Intersection of robust backend architectures and AI-driven development.',
   tools: ['Claude Code', 'Context Mapping', 'Agentic Workflows', 'Automated Testing'],
-  location: 'Vienna, Austria — Looking for problems worth solving.'
+  location: 'Vienna, Austria: Looking for problems worth solving.'
 };
 
 export default profile;`;

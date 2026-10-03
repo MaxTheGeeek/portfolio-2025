@@ -134,7 +134,7 @@ export function DogCarousel() {
             "Playing with him makes me fresh..."
           </p>
           <p className="text-[11px] text-gray-400 font-mono mt-0.5">
-            Marsi — Chief Morale Officer & faithful companion
+            Marsi · Chief Morale Officer & faithful companion
           </p>
         </div>
       </div>

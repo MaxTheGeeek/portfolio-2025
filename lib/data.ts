@@ -339,19 +339,19 @@ export const EDUCATION = [
   {
     school: "Tehran University",
     degree: "Bachelor of Science in Accounting",
-    date: "2000 — 2005",
+    date: "2000 - 2005",
     desc: "Domain expertise in financial data models and transactional systems; bridged business analysis and backend structure."
   },
   {
     school: "WIFI Vienna",
     degree: "Diploma in Software Development (JavaScript)",
-    date: "Sep 2020 — Feb 2021",
+    date: "Sep 2020 - Feb 2021",
     desc: "Rigorous bootcamp focused on modern frontend paradigms, JavaScript ecosystem, and scalable application architectures."
   },
   {
     school: "WIFI Vienna",
     degree: "Diploma in Web Application Development & OOP (PHP)",
-    date: "Jun 2021 — Dec 2021",
+    date: "Jun 2021 - Dec 2021",
     desc: "Comprehensive study covering backend principles, server-side logic, and robust database management systems."
   },
   {

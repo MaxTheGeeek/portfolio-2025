@@ -275,10 +275,10 @@ export function TweaksPanel({ intensity, setIntensity }: TweaksPanelProps) {
               marginTop: 4,
             }}
           >
-            {intensity < 30 && "Subtle — gentle backdrop"}
-            {intensity >= 30 && intensity < 70 && "Balanced — recommended"}
-            {intensity >= 70 && intensity < 100 && "Vivid — neon showreel"}
-            {intensity >= 100 && "Maximum — full cinematic"}
+            {intensity < 30 && "Subtle: gentle backdrop"}
+            {intensity >= 30 && intensity < 70 && "Balanced: recommended"}
+            {intensity >= 70 && intensity < 100 && "Vivid: neon showreel"}
+            {intensity >= 100 && "Maximum: full cinematic"}
           </div>
         </div>
       </div>

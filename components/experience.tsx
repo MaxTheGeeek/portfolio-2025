@@ -1,136 +1,134 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import { EXPERIENCE } from "@/lib/data";
-
-function SceneHead({ num, title, sub }: { num: string; title: string; sub: string }) {
-  return (
-    <div className="scene-head">
-      <span className="scene-num">{num}</span>
-      <h2 className="scene-title">{title}</h2>
-      <span className="scene-sub">{sub}</span>
-    </div>
-  );
-}
-
-function CardDots({ seedId }: { seedId: string }) {
-  const dots = useMemo(() => {
-    let hash = 0;
-    for (let i = 0; i < seedId.length; i++) {
-      hash = seedId.charCodeAt(i) + ((hash << 5) - hash);
-    }
-    let seed = Math.abs(hash) || 42;
-    const rand = () => {
-      seed = (seed * 9301 + 49297) % 233280;
-      return seed / 233280;
-    };
-
-    const count = 14;
-    const arr = [];
-    for (let i = 0; i < count; i++) {
-      const x = rand() * 100;
-      const y = rand() * 100;
-      const size = rand() > 0.85 ? 2 : 1;
-      const op = 0.08 + rand() * 0.18;
-      arr.push({
-        left: `${x.toFixed(2)}%`,
-        top: `${y.toFixed(2)}%`,
-        width: `${size}px`,
-        height: `${size}px`,
-        opacity: op,
-      });
-    }
-    return arr;
-  }, [seedId]);
-
-  return (
-    <>
-      {dots.map((dot, idx) => (
-        <div
-          key={idx}
-          style={{
-            position: "absolute",
-            left: dot.left,
-            top: dot.top,
-            width: dot.width,
-            height: dot.height,
-            borderRadius: "50%",
-            backgroundColor: "#e2e8f0",
-            opacity: dot.opacity,
-            pointerEvents: "none",
-            zIndex: 0,
-          }}
-        />
-      ))}
-    </>
-  );
-}
+import { motion, useReducedMotion } from "framer-motion";
+import { Briefcase, ChevronDown, ChevronUp, MapPin, Calendar, Sparkles } from "lucide-react";
 
 export function Experience() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const shouldReduceMotion = useReducedMotion();
+  // By default, open the first 2 items (most recent & relevant)
+  const [openIndices, setOpenIndices] = useState<number[]>([0, 1]);
+
+  const toggleIndex = (index: number) => {
+    setOpenIndices(prev => 
+      prev.includes(index) ? prev.filter(i => i !== index) : [...prev, index]
+    );
+  };
 
   return (
-    <section className="scene" data-screen-label="03 Experience" id="experience">
-      <SceneHead num="// 02" title="Experience" sub="Where I've shipped" />
-      <div className="timeline">
-        <div className="timeline-track"></div>
-        {EXPERIENCE.map((e, i) => {
-          const isOpen = hoveredIndex === i;
+    <section className="scene py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full relative" id="experience">
+      {/* Section Header */}
+      <div className="flex flex-col items-center text-center mb-16 max-w-3xl mx-auto">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono uppercase tracking-wider mb-4">
+          <Briefcase className="w-3.5 h-3.5" />
+          <span>Professional Background</span>
+        </div>
+        <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white mb-4">
+          Engineering Experience
+        </h2>
+        <p className="text-base text-slate-300 leading-relaxed">
+          Over 8 years delivering scalable SaaS, IaaS infrastructure, and applied AI systems.
+        </p>
+      </div>
+
+      {/* Timeline Container */}
+      <div className="max-w-4xl mx-auto space-y-6 relative">
+        {EXPERIENCE.map((item, index) => {
+          const isOpen = openIndices.includes(index);
+          const isPresent = item.to.toLowerCase() === "present";
+
           return (
-            <div className={`tl-item ${isOpen ? "is-open" : ""}`} key={i}>
-              <div className="tl-date">
-                <strong>{e.to.toUpperCase()}</strong>
-                <div className="range">{e.from.toUpperCase()} — {e.to.toUpperCase()}</div>
-              </div>
-              <div className="tl-marker">
-                <div className="tl-dot"></div>
-              </div>
-              <div
-                className="tl-card"
-                onMouseEnter={() => setHoveredIndex(i)}
-                onMouseLeave={() => setHoveredIndex(null)}
+            <motion.div
+              key={`${item.company}-${item.role}-${index}`}
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              className="rounded-2xl border border-white/10 bg-[#0a0d14]/80 backdrop-blur-xl overflow-hidden shadow-lg hover:border-cyan-500/30 transition-all duration-200"
+            >
+              {/* Header / Toggle Button */}
+              <button
+                type="button"
+                onClick={() => toggleIndex(index)}
+                className="w-full text-left p-6 sm:p-7 flex flex-col sm:flex-row sm:items-center justify-between gap-4 focus:outline-none focus:bg-white/[0.02] cursor-pointer"
+                aria-expanded={isOpen}
               >
-                <CardDots seedId={e.company + "-" + e.role} />
-                <div style={{ position: "relative", zIndex: 1 }}>
-                  <div className="tl-card-head">
-                    <div>
-                      <h3 className="tl-role">{e.role}</h3>
-                      <div className="tl-company flex flex-wrap items-center gap-2">
-                        <span>{e.company} · {e.location}</span>
-                        {e.company.includes("Stereum Services") && (
-                          <span className="tag bg-white/5 border border-white/10 text-gray-300 font-mono text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded inline-flex items-center">
-                            Subsidiary of RockLogic
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                    {e.to.toLowerCase() === "present" && (
-                      <div className="tl-present-badge">PRESENT</div>
+                <div className="flex-1">
+                  <div className="flex flex-wrap items-center gap-2.5 mb-1.5">
+                    <span className="text-base sm:text-lg font-bold text-white tracking-tight">
+                      {item.role}
+                    </span>
+                    <span className="text-slate-500">at</span>
+                    <span className="text-base sm:text-lg font-semibold text-cyan-300">
+                      {item.company}
+                    </span>
+                    {isPresent && (
+                      <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 font-semibold">
+                        Present
+                      </span>
                     )}
                   </div>
 
-                  <div className="tl-bullets-wrap">
-                    <div className="tl-bullets-inner">
-                      <ul className="tl-bullets-list">
-                        {e.bullets.map((b, bi) => (
-                          <li key={bi} className="tl-bullet-item">
-                            {b}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                  <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-400">
+                    <span className="inline-flex items-center gap-1.5 text-slate-300">
+                      <Calendar className="w-3.5 h-3.5 text-cyan-400" />
+                      <span>{item.from} - {item.to}</span>
+                    </span>
+                    <span className="inline-flex items-center gap-1.5">
+                      <MapPin className="w-3.5 h-3.5 text-slate-500" />
+                      <span>{item.location}</span>
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 shrink-0">
+                  <span className="text-xs font-mono text-slate-400 hidden sm:inline">
+                    {isOpen ? "Collapse" : "Expand"}
+                  </span>
+                  <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300">
+                    {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                  </div>
+                </div>
+              </button>
+
+              {/* Blurb */}
+              <div className="px-6 sm:px-7 pb-4">
+                <p className="text-sm text-slate-300 leading-relaxed">
+                  {item.blurb}
+                </p>
+              </div>
+
+              {/* Expanded Details */}
+              {isOpen && (
+                <div className="px-6 sm:px-7 pb-6 pt-2 border-t border-white/[0.06] space-y-4 animate-in fade-in duration-200">
+                  <div className="text-xs font-mono text-slate-400 uppercase tracking-wider pt-2">
+                    Key Responsibilities & Deliverables:
                   </div>
 
-                  <div className="tl-badges-row">
-                    {e.tags.map(t => (
-                      <div key={t} className="tl-badge">{t}</div>
+                  <ul className="space-y-2.5">
+                    {item.bullets.map((bullet, bIdx) => (
+                      <li key={bIdx} className="text-xs sm:text-sm text-slate-300 flex items-start gap-2.5 leading-relaxed">
+                        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2 shrink-0" />
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Technology Badges */}
+                  <div className="pt-3 flex flex-wrap gap-1.5">
+                    {item.tags.map(tag => (
+                      <span
+                        key={tag}
+                        className="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 border border-white/10 text-slate-300"
+                      >
+                        {tag}
+                      </span>
                     ))}
                   </div>
-
-                  <div className="tl-hint">hover to expand details</div>
                 </div>
-              </div>
-            </div>
+              )}
+            </motion.div>
           );
         })}
       </div>

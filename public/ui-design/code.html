@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Max Behzadi — Senior Systems &amp; Applied AI Engineer</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      overscroll-behavior-y: none;
+    }
+    .font-serif-accent {
+      font-family: 'Newsreader', Georgia, serif;
+    }
+    /* Smooth carousel slide transitions */
+    .carousel-slide {
+      transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .carousel-slide.active-slide {
+      display: block;
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .carousel-slide.hidden-slide {
+      display: none;
+      opacity: 0;
+      transform: translateX(12px);
+    }
+  </style>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background": "#0c0e12",
+            "surface": "#12141a",
+            "surface-subtle": "#171a22",
+            "surface-card": "#1c202a",
+            "surface-border": "#272b38",
+            "primary": "#38bdf8",
+            "primary-hover": "#7dd3fc",
+            "accent": "#f59e0b",
+            "text-primary": "#f1f5f9",
+            "text-secondary": "#94a3b8",
+            "text-muted": "#64748b"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#0b0d12] text-text-primary antialiased selection:bg-primary/20 selection:text-primary">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[#0b0d12]/85 backdrop-blur-xl border-b border-surface-border/60">
+<div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+<a class="flex items-center gap-3.5 group" href="#">
+<div class="w-10 h-10 rounded-full bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center font-bold text-white shadow-lg shadow-sky-500/20 text-sm tracking-wide">
+          MB
+        </div>
+<div class="flex flex-col">
+<span class="font-semibold text-[15px] tracking-tight text-white group-hover:text-primary transition-colors">Max Behzadi</span>
+<span class="text-xs text-text-muted font-normal">Vienna, Austria</span>
+</div>
+</a>
+<!-- Clean nav items -->
+<nav class="hidden md:flex items-center gap-8 text-sm font-medium text-text-secondary">
+<a class="hover:text-white transition-colors" href="#solutions">AI Solutions</a>
+<a class="hover:text-white transition-colors" href="#work">Selected Work</a>
+<a class="hover:text-white transition-colors" href="#philosophy">Philosophy</a>
+<a class="hover:text-white transition-colors" href="#experience">Trajectory</a>
+<a class="hover:text-white transition-colors" href="#about">Studio &amp; Marsi</a>
+</nav>
+<div class="flex items-center gap-3">
+<a class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold bg-white/10 text-white hover:bg-white/20 transition-all border border-white/10 hover:border-white/25" href="#inquiry">
+<span>Discuss Project</span>
+<span class="text-sky-400">→</span>
+</a>
+</div>
+</div>
+</header>
+<main class="w-full pt-20">
+<!-- 1. HERO SECTION (Decluttered, Human, Prominent Portrait Card, No Second Row Metrics) -->
+<section class="max-w-6xl mx-auto px-6 pt-16 pb-24 md:pt-24 md:pb-28">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+<!-- Left: Copy & Headline -->
+<div class="lg:col-span-7 flex flex-col items-start gap-6">
+<div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs font-medium">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+<span>Available for Custom AI &amp; High-Performance Systems</span>
+</div>
+<h1 class="text-4xl sm:text-5xl lg:text-[54px] font-medium tracking-tight text-white leading-[1.12]">
+            Engineering resilient systems and <span class="font-serif-accent italic font-normal text-sky-300">applied AI</span> architectures.
+          </h1>
+<p class="text-lg text-text-secondary leading-relaxed max-w-xl font-normal">
+            Vienna-based senior engineer with over eight years designing autonomous AI agent pipelines, enterprise voice intelligence, and high-concurrency desktop &amp; cloud systems that run smoothly in production.
+          </p>
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<a class="px-6 py-3 rounded-xl bg-gradient-to-r from-sky-400 to-sky-500 text-slate-950 font-semibold text-sm hover:opacity-95 shadow-lg shadow-sky-500/20 transition-all" href="#solutions">
+              Explore AI Solutions
+            </a>
+<a class="px-6 py-3 rounded-xl bg-surface-card border border-surface-border text-text-secondary hover:text-white hover:border-text-muted text-sm font-medium transition-all" href="#work">
+              View Selected Work
+            </a>
+<a class="inline-flex items-center gap-1.5 text-sm font-medium text-text-secondary hover:text-white px-2 py-3 transition-colors" href="#inquiry">
+<span>Get in touch</span>
+<span class="text-xs">→</span>
+</a>
+</div>
+<div class="pt-6 border-t border-surface-border/50 text-xs text-text-muted flex flex-wrap items-center gap-x-6 gap-y-2">
+<span><strong class="text-text-secondary font-medium">Core Stack:</strong> Claude Code &amp; MCP</span>
+<span>TypeScript &amp; Next.js</span>
+<span>C# &amp; .NET</span>
+<span>Python &amp; Vector Databases</span>
+</div>
+</div>
+<!-- Right: Prominently featured Photo & Senior Title Card (from Image 15) -->
+<div class="lg:col-span-5 flex justify-center lg:justify-end">
+<div class="w-full max-w-sm rounded-2xl bg-surface-card border border-surface-border/80 p-6 shadow-2xl relative overflow-hidden backdrop-blur-sm">
+<!-- Ambient glow -->
+<div class="absolute -top-16 -right-16 w-48 h-48 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex items-center gap-4 mb-6">
+<!-- Portrait thumbnail from IMAGE_15 style -->
+<div class="relative w-16 h-16 rounded-xl overflow-hidden ring-2 ring-sky-500/30 shrink-0 bg-slate-800">
+<img alt="Max Behzadi" class="w-full h-full object-cover object-[58%_24%] scale-[2.2]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTzJUBEQjIo7DjcXDax8Yrzm_NZfPcArkkT1h3nVwOt8Bkiu6F_1QPFq8BSkpRxSQBviOM0llcyCP4D6zhk_pRz5nuFLDW9HsfAIpmNXqMc07DJioPBrBVX2H4GkcST0TEunYWgygKtoJMaU3wK9h80Y6mvnxqpzEBZC6AAB1HS84psF5KLOfHffMtKxz_IpRnBem1kvxoV77q9DFYs7yGDVT_fE6-XZWulKCJBGodrLglCXgIU6AnhFuTZ_bWGKVchQY"/>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h3 class="font-semibold text-base text-white">Max Behzadi</h3>
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+</div>
+<p class="text-xs text-sky-400 font-medium mt-0.5">Senior Full-Stack &amp; Applied AI</p>
+<p class="text-[11px] text-text-muted mt-0.5">Vienna, Austria · 8+ Years Production</p>
+</div>
+</div>
+<!-- Terminal-style capabilities pill preview -->
+<div class="p-4 rounded-xl bg-[#0e1017] border border-surface-border/60 text-xs space-y-2.5">
+<div class="flex items-center justify-between pb-2 border-b border-surface-border/40 text-[11px] text-text-muted">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-rose-500/80"></span>
+<span class="w-2 h-2 rounded-full bg-amber-500/80"></span>
+<span class="w-2 h-2 rounded-full bg-emerald-500/80"></span>
+<span class="ml-1 text-slate-400">capabilities.ts</span>
+</span>
+<span class="text-sky-400/90 font-mono">Dual-Stack</span>
+</div>
+<div class="space-y-1.5 text-text-secondary font-mono text-[11.5px] leading-relaxed">
+<p class="text-slate-400"><span class="text-sky-400">$</span> claude-code --spec-driven</p>
+<p class="text-slate-300">✓ Architecting autonomous agent pipelines</p>
+<p class="text-slate-300">✓ Grounded RAG customer support &amp; voice</p>
+<p class="text-slate-300">✓ Low-latency desktop &amp; distributed APIs</p>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-xs">
+<span class="text-text-muted">Status: Active &amp; Advisory</span>
+<a class="text-sky-400 hover:text-sky-300 font-semibold inline-flex items-center gap-1" href="#inquiry">
+                Hire Max <span>→</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. AI SOLUTIONS & CUSTOM SYSTEMS SECTION (Client Deliverables & Image 16 Graphic) -->
+<section class="w-full bg-surface-subtle/50 border-y border-surface-border/50 py-24" id="solutions">
+<div class="max-w-6xl mx-auto px-6">
+<div class="max-w-2xl mb-14">
+<span class="text-xs uppercase tracking-widest text-sky-400 font-semibold mb-2 block">Enterprise AI Capabilities</span>
+<h2 class="text-3xl sm:text-4xl font-medium tracking-tight text-white">
+            What I build for organizations &amp; clients
+          </h2>
+<p class="mt-3 text-text-secondary leading-relaxed">
+            Eliminating toy demonstrations in favor of verifiable, low-latency AI pipelines and production enterprise software designed for continuous operations.
+          </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+<!-- Left: Audio / Voice Pipeline Visual (IMAGE_16) -->
+<div class="lg:col-span-6 flex flex-col">
+<div class="relative rounded-2xl overflow-hidden border border-surface-border bg-surface-card shadow-2xl h-full flex flex-col justify-between group">
+<div class="relative aspect-[4/3] w-full overflow-hidden bg-slate-900">
+<img alt="Enterprise AI Voice &amp; Neural Telemetry Pipeline" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQoHU2143UXExxE0WTsbJzUcClb7IlsvipqQ0Ttu9SZGDrcpdGmjCYy9o7VwKMJcyvB0pBhp3PaCJfGmcZniA5V1rbsvY43QtpTOiCMgzOxAAhcn6WNQGLG8u32Wrr2wfGnt-UTHWMG4oTnbGzG-DQI-UKdOpOMOswRMQ5LCOoTMfiyKeIPc5on7Kpc3SNJp-aS4tyMcF0jLPUxvSWLPhbizoJ87LbLmKB7LiOeNSimmrVvHidSqPkpA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-card via-transparent to-transparent opacity-80"></div>
+<!-- Floating status pill -->
+<div class="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-black/70 backdrop-blur-md border border-white/10 text-[11px] font-medium text-white flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+<span>Neural Speech &amp; AST Audio Pipeline</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex items-center justify-between text-xs text-text-muted mb-2 font-mono">
+<span>LATENCY: &lt; 400MS</span>
+<span class="text-emerald-400">99.9% RELIABILITY</span>
+</div>
+<h3 class="text-lg font-semibold text-white">Full-Duplex Conversational Voice Systems</h3>
+<p class="mt-1.5 text-sm text-text-secondary leading-relaxed">
+                  Real-time audio streaming nodes integrating whisper transcription, LLM reasoning, speech synthesis, and live CRM function execution without stutter or human perceptible pause.
+                </p>
+</div>
+</div>
+</div>
+<!-- Right: Three Real Client Deliveries -->
+<div class="lg:col-span-6 flex flex-col justify-between space-y-5">
+<!-- Delivery 1: Reloco GmbH -->
+<div class="p-6 rounded-2xl bg-surface-card/70 border border-surface-border hover:border-sky-500/40 transition-colors">
+<div class="flex items-start justify-between gap-4">
+<div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-semibold text-sky-400 uppercase tracking-wide">Reloco GmbH</span>
+<span class="text-text-muted text-xs">· Production Delivery</span>
+</div>
+<h4 class="text-base font-semibold text-white mt-1">Autonomous AI Voice Assistant</h4>
+</div>
+<span class="px-2.5 py-1 rounded-md bg-white/5 text-[11px] font-mono text-text-muted">Voice AI</span>
+</div>
+<p class="mt-2.5 text-sm text-text-secondary leading-relaxed">
+                Engineered a low-latency conversational audio pipeline for automated inbound appointment dispatching, customer intake, and direct CRM synchronization with sub-second response times.
+              </p>
+</div>
+<!-- Delivery 2: FindDev -->
+<div class="p-6 rounded-2xl bg-surface-card/70 border border-surface-border hover:border-sky-500/40 transition-colors">
+<div class="flex items-start justify-between gap-4">
+<div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-semibold text-sky-400 uppercase tracking-wide">FindDev</span>
+<span class="text-text-muted text-xs">· Enterprise Support</span>
+</div>
+<h4 class="text-base font-semibold text-white mt-1">Intelligent Customer Service &amp; Support Chatbot</h4>
+</div>
+<span class="px-2.5 py-1 rounded-md bg-white/5 text-[11px] font-mono text-text-muted">Grounded RAG</span>
+</div>
+<p class="mt-2.5 text-sm text-text-secondary leading-relaxed">
+                Built an always-on 24/7 grounded RAG knowledge engine. Implemented schema AST verification to eliminate AI hallucinations and ensure flawless triage and escalation to human staff.
+              </p>
+</div>
+<!-- Delivery 3: Custom Enterprise Systems -->
+<div class="p-6 rounded-2xl bg-surface-card/70 border border-surface-border hover:border-sky-500/40 transition-colors">
+<div class="flex items-start justify-between gap-4">
+<div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-semibold text-sky-400 uppercase tracking-wide">Custom Enterprise</span>
+<span class="text-text-muted text-xs">· Architecture &amp; Delivery</span>
+</div>
+<h4 class="text-base font-semibold text-white mt-1">High-Concurrency Full-Stack &amp; Desktop Systems</h4>
+</div>
+<span class="px-2.5 py-1 rounded-md bg-white/5 text-[11px] font-mono text-text-muted">.NET &amp; Next.js</span>
+</div>
+<p class="mt-2.5 text-sm text-text-secondary leading-relaxed">
+                From sub-120ms desktop WPF valuation engines to distributed Next.js and NestJS cloud architectures. Clean software that stays fast under intense workloads.
+              </p>
+</div>
+<!-- Warm CTA -->
+<div class="pt-2">
+<a class="inline-flex items-center gap-2 text-sm font-semibold text-sky-400 hover:text-sky-300 group" href="#inquiry">
+<span>Initiate an architectural discussion for your organization</span>
+<span class="group-hover:translate-x-1 transition-transform">→</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. SELECTED WORK (ANIMATED & INTERACTIVE CAROUSEL) -->
+<section class="max-w-6xl mx-auto px-6 py-24" id="work">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div>
+<span class="text-xs uppercase tracking-widest text-sky-400 font-semibold mb-2 block">Engineering Dossier</span>
+<h2 class="text-3xl sm:text-4xl font-medium tracking-tight text-white">Selected Works</h2>
+<p class="text-sm text-text-secondary mt-2">Focused architectural case disclosures. Explore using the controls below.</p>
+</div>
+<!-- Carousel navigation buttons & indicator -->
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1.5 mr-3" id="carousel-dots">
+<button aria-label="Slide 1" class="w-6 h-1.5 rounded-full bg-sky-400 transition-all dot-indicator" data-index="0" onclick="goToSlide(0)"></button>
+<button aria-label="Slide 2" class="w-2 h-1.5 rounded-full bg-surface-border hover:bg-text-muted transition-all dot-indicator" data-index="1" onclick="goToSlide(1)"></button>
+<button aria-label="Slide 3" class="w-2 h-1.5 rounded-full bg-surface-border hover:bg-text-muted transition-all dot-indicator" data-index="2" onclick="goToSlide(2)"></button>
+<button aria-label="Slide 4" class="w-2 h-1.5 rounded-full bg-surface-border hover:bg-text-muted transition-all dot-indicator" data-index="3" onclick="goToSlide(3)"></button>
+<button aria-label="Slide 5" class="w-2 h-1.5 rounded-full bg-surface-border hover:bg-text-muted transition-all dot-indicator" data-index="4" onclick="goToSlide(4)"></button>
+</div>
+<button aria-label="Previous Project" class="w-10 h-10 rounded-xl bg-surface-card border border-surface-border flex items-center justify-center text-text-secondary hover:text-white hover:border-text-muted transition-all" onclick="prevSlide()">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button aria-label="Next Project" class="w-10 h-10 rounded-xl bg-surface-card border border-surface-border flex items-center justify-center text-text-secondary hover:text-white hover:border-text-muted transition-all" onclick="nextSlide()">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Carousel Container -->
+<div class="relative overflow-hidden min-h-[380px]">
+<!-- Slide 1: MaxerZ Desktop -->
+<div class="carousel-slide active-slide p-8 md:p-10 rounded-2xl bg-surface-card border border-surface-border shadow-xl" data-slide="0">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<div class="lg:col-span-5 space-y-4">
+<div class="flex items-center gap-2.5 text-xs text-sky-400 font-mono">
+<span>01 // DESKTOP RUNTIME</span>
+<span>·</span>
+<span class="text-text-muted">2024–2025</span>
+</div>
+<h3 class="text-2xl md:text-3xl font-semibold text-white">MaxerZ Desktop</h3>
+<p class="text-xs text-text-secondary font-medium">Lead Architect &amp; Systems Developer</p>
+<div class="pt-4 border-t border-surface-border/60 text-xs space-y-2 text-text-secondary">
+<p><span class="text-text-muted">Stack:</span> C#, .NET MAUI, Python Engine, OpenRouter API</p>
+<p><span class="text-text-muted">Delivery:</span> Local-first cross-platform orchestration</p>
+</div>
+<div class="pt-2">
+<a class="inline-flex items-center gap-2 text-xs font-semibold text-sky-400 hover:text-sky-300" href="#inquiry">
+<span>Request Technical Deep Dive</span>
+<span>→</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-7 space-y-6">
+<p class="text-sm md:text-base text-text-secondary leading-relaxed">
+                Engineered a native client desktop platform optimizing professional career governance workflows via local-first execution. Integrates custom tool calling with OpenRouter endpoints while decoupling payload state across asynchronous worker threads to maintain 60fps UI responsiveness during bulk document compilation.
+              </p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 rounded-xl bg-[#0c0e13] border border-surface-border/40 text-xs">
+<div>
+<span class="text-text-muted block text-[11px]">Threading</span>
+<span class="text-white font-medium mt-0.5 block">Asynchronous Worker Pool</span>
+</div>
+<div>
+<span class="text-text-muted block text-[11px]">Model Routing</span>
+<span class="text-white font-medium mt-0.5 block">Adaptive Token Fallback</span>
+</div>
+<div>
+<span class="text-text-muted block text-[11px]">Storage</span>
+<span class="text-white font-medium mt-0.5 block">Encrypted Local SQLite</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Slide 2: Stereum Launcher & Plus -->
+<div class="carousel-slide hidden-slide p-8 md:p-10 rounded-2xl bg-surface-card border border-surface-border shadow-xl" data-slide="1">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<div class="lg:col-span-5 space-y-4">
+<div class="flex items-center gap-2.5 text-xs text-sky-400 font-mono">
+<span>02 // DISTRIBUTED INFRASTRUCTURE</span>
+<span>·</span>
+<span class="text-text-muted">2023–2025</span>
+</div>
+<h3 class="text-2xl md:text-3xl font-semibold text-white">Stereum Launcher &amp; Plus</h3>
+<p class="text-xs text-text-secondary font-medium">Core Engineering &amp; Telemetry Infrastructure</p>
+<div class="pt-4 border-t border-surface-border/60 text-xs space-y-2 text-text-secondary">
+<p><span class="text-text-muted">Stack:</span> Docker Swarm, NestJS, RabbitMQ, Vue, Electron</p>
+<p><span class="text-text-muted">Scale:</span> 50,000+ active Ethereum node instances</p>
+</div>
+<div class="pt-2">
+<a class="inline-flex items-center gap-2 text-xs font-semibold text-sky-400 hover:text-sky-300" href="https://stereum.net" rel="noreferrer" target="_blank">
+<span>Visit stereum.net</span>
+<span>↗</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-7 space-y-6">
+<p class="text-sm md:text-base text-text-secondary leading-relaxed">
+                Principal infrastructure behind automated Ethereum node orchestration. Built container lifecycle managers, zero-downtime client switching (Geth, Nethermind, Besu, Prysm), and resilient automated cloud provisioning. Integrated high-frequency system telemetry via RabbitMQ streams with automated fallback self-healing.
+              </p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 rounded-xl bg-[#0c0e13] border border-surface-border/40 text-xs">
+<div>
+<span class="text-text-muted block text-[11px]">Operational Base</span>
+<span class="text-white font-medium mt-0.5 block">50k+ Active Deployments</span>
+</div>
+<div>
+<span class="text-text-muted block text-[11px]">Message Fabric</span>
+<span class="text-white font-medium mt-0.5 block">RabbitMQ Event Relays</span>
+</div>
+<div>
+<span class="text-text-muted block text-[11px]">Orchestration</span>
+<span class="text-white font-medium mt-0.5 block">Multi-Arch Docker</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Slide 3: rocklogic.at Telemetry -->
+<div class="carousel-slide hidden-slide p-8 md:p-10 rounded-2xl bg-surface-card border border-surface-border shadow-xl" data-slide="2">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<div class="lg:col-span-5 space-y-4">
+<div class="flex items-center gap-2.5 text-xs text-sky-400 font-mono">
+<span>03 // TELEMETRY &amp; ANALYTICS</span>
+<span>·</span>
+<span class="text-text-muted">2024–2025</span>
+</div>
+<h3 class="text-2xl md:text-3xl font-semibold text-white">rocklogic.at Architecture</h3>
+<p class="text-xs text-text-secondary font-medium">Full-Stack &amp; Telemetry Architect</p>
+<div class="pt-4 border-t border-surface-border/60 text-xs space-y-2 text-text-secondary">
+<p><span class="text-text-muted">Stack:</span> Next.js, PostgreSQL, Grafana API, Redis</p>
+<p><span class="text-text-muted">Focus:</span> Enterprise B2B telemetry &amp; node billing</p>
+</div>
+<div class="pt-2">
+<a class="inline-flex items-center gap-2 text-xs font-semibold text-sky-400 hover:text-sky-300" href="https://rocklogic.at" rel="noreferrer" target="_blank">
+<span>Inspect rocklogic.at</span>
+<span>↗</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-7 space-y-6">
+<p class="text-sm md:text-base text-text-secondary leading-relaxed">
+                Architected the corporate and B2B enterprise staking monitoring platform. Implemented automated programmatic Grafana dashboard provisioning, aggregated node uptime metrics with second-level precision, and integrated PostgreSQL time-bucket partitioning for sub-50ms analytics query resolution.
+              </p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 rounded-xl bg-[#0c0e13] border border-surface-border/40 text-xs">
+<div>
+<span class="text-text-muted block text-[11px]">Query Latency</span>
+<span class="text-white font-medium mt-0.5 block">&lt; 50ms Analytic Loads</span>
+</div>
+<div>
+<span class="text-text-muted block text-[11px]">Visualization</span>
+<span class="text-white font-medium mt-0.5 block">Headless Grafana Embed</span>
+</div>
+<div>
+<span class="text-text-muted block text-[11px]">Data Hygiene</span>
+<span class="text-white font-medium mt-0.5 block">Automated Rollup Vacuum</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Slide 4: Private Banking WPF Suite -->
+<div class="carousel-slide hidden-slide p-8 md:p-10 rounded-2xl bg-surface-card border border-surface-border shadow-xl" data-slide="3">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<div class="lg:col-span-5 space-y-4">
+<div class="flex items-center gap-2.5 text-xs text-sky-400 font-mono">
+<span>04 // HIGH-CONCURRENCY DESKTOP</span>
+<span>·</span>
+<span class="text-text-muted">ENTERPRISE</span>
+</div>
+<h3 class="text-2xl md:text-3xl font-semibold text-white">Private Banking WPF Suite</h3>
+<p class="text-xs text-text-secondary font-medium">High-Performance Systems Engineer</p>
+<div class="pt-4 border-t border-surface-border/60 text-xs space-y-2 text-text-secondary">
+<p><span class="text-text-muted">Stack:</span> C#, WPF, MVVM, Crystal Reports, SQL Server</p>
+<p><span class="text-text-muted">Scale:</span> 50,000+ row dataset virtualization</p>
+</div>
+<div class="pt-2">
+<span class="text-xs font-mono text-text-muted">[ Confidential Institutional Client ]</span>
+</div>
+</div>
+<div class="lg:col-span-7 space-y-6">
+<p class="text-sm md:text-base text-text-secondary leading-relaxed">
+                Engineered an internal portfolio valuation engine for institutional wealth managers. Addressed memory contention and UI locking through custom viewport virtualization, zero-allocation data structures, and optimized asynchronous data hydration, slashing transaction review time across millions in assets.
+              </p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 rounded-xl bg-[#0c0e13] border border-surface-border/40 text-xs">
+<div>
+<span class="text-text-muted block text-[11px]">UI Virtualization</span>
+<span class="text-white font-medium mt-0.5 block">50k+ Rows Smooth (60fps)</span>
+</div>
+<div>
+<span class="text-text-muted block text-[11px]">Valuation Engine</span>
+<span class="text-white font-medium mt-0.5 block">Sub-120ms Calculation</span>
+</div>
+<div>
+<span class="text-text-muted block text-[11px]">Security</span>
+<span class="text-white font-medium mt-0.5 block">Strict On-Prem Auditing</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Slide 5: cover-letter.work -->
+<div class="carousel-slide hidden-slide p-8 md:p-10 rounded-2xl bg-surface-card border border-surface-border shadow-xl" data-slide="4">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<div class="lg:col-span-5 space-y-4">
+<div class="flex items-center gap-2.5 text-xs text-sky-400 font-mono">
+<span>05 // APPLIED AI ARCHITECTURE</span>
+<span>·</span>
+<span class="text-text-muted">2024–PRESENT</span>
+</div>
+<h3 class="text-2xl md:text-3xl font-semibold text-white">cover-letter.work &amp; Pipelines</h3>
+<p class="text-xs text-text-secondary font-medium">Founder &amp; Principal Architect</p>
+<div class="pt-4 border-t border-surface-border/60 text-xs space-y-2 text-text-secondary">
+<p><span class="text-text-muted">Stack:</span> Supabase, Vector Store, Next.js, LLM Tooling</p>
+<p><span class="text-text-muted">Core:</span> Zero-hallucination grounded context</p>
+</div>
+<div class="pt-2">
+<a class="inline-flex items-center gap-2 text-xs font-semibold text-sky-400 hover:text-sky-300" href="https://cover-letter.work" rel="noreferrer" target="_blank">
+<span>Visit Platform</span>
+<span>↗</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-7 space-y-6">
+<p class="text-sm md:text-base text-text-secondary leading-relaxed">
+                Created a document synthesis engine grounded in strict biographical and technical fact repositories. Employs contextual chunking, AST-validated JSON outputs, and automated prompt eval benchmarks that prevent hallucinations while retaining nuanced human prose tone.
+              </p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 rounded-xl bg-[#0c0e13] border border-surface-border/40 text-xs">
+<div>
+<span class="text-text-muted block text-[11px]">Verification</span>
+<span class="text-white font-medium mt-0.5 block">Schema AST Parsing</span>
+</div>
+<div>
+<span class="text-text-muted block text-[11px]">Context Control</span>
+<span class="text-white font-medium mt-0.5 block">Grounded RAG Pipeline</span>
+</div>
+<div>
+<span class="text-text-muted block text-[11px]">Auth &amp; DB</span>
+<span class="text-white font-medium mt-0.5 block">Supabase Row-Level Sec</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. TECHNICAL PHILOSOPHY (Decluttered, Elegant Editorial Narrative) -->
+<section class="w-full bg-surface-subtle/50 border-t border-surface-border/50 py-24" id="philosophy">
+<div class="max-w-6xl mx-auto px-6">
+<div class="max-w-3xl mb-16">
+<span class="text-xs uppercase tracking-widest text-sky-400 font-semibold mb-2 block">Technical Principles</span>
+<h2 class="text-3xl sm:text-4xl font-medium tracking-tight text-white">
+            Engineering over stochastic guesswork.
+          </h2>
+<p class="mt-3 text-lg text-text-secondary font-serif-accent italic">
+            "In production, reliability is not an afterthought; it is the fundamental contract between code and user."
+          </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<div class="p-8 rounded-2xl bg-surface-card border border-surface-border/70 space-y-4">
+<div class="w-8 h-8 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center font-semibold text-xs">01</div>
+<h3 class="text-xl font-semibold text-white">Spec-Driven Agentic Engineering</h3>
+<p class="text-sm text-text-secondary leading-relaxed">
+              Autonomous workflows degrade quickly when treated as vague chat sessions. Production agents require strictly typed Model Context Protocol (MCP) environments, input sanitization, and deterministic state checks before execution. Output variance is systematically bounded by design.
+            </p>
+<div class="pt-3 text-xs text-text-muted font-mono">
+              Model Context Protocol (MCP) · AST Filters · Sandboxed Execution
+            </div>
+</div>
+<div class="p-8 rounded-2xl bg-surface-card border border-surface-border/70 space-y-4">
+<div class="w-8 h-8 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center font-semibold text-xs">02</div>
+<h3 class="text-xl font-semibold text-white">High Concurrency &amp; Memory Discipline</h3>
+<p class="text-sm text-text-secondary leading-relaxed">
+              Whether rendering fifty thousand financial portfolio records or coordinating distributed Ethereum node clusters, clean architectures manage allocations carefully. Using modern .NET Span, pooling, and asynchronous messaging fabrics, intense computation never locks customer workflows.
+            </p>
+<div class="pt-3 text-xs text-text-muted font-mono">
+              Zero-Allocation Viewports · RabbitMQ Streaming · Native C# / .NET
+            </div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. PROFESSIONAL TRAJECTORY & EXPERIENCE (Clean & Uncluttered Timeline) -->
+<section class="max-w-6xl mx-auto px-6 py-24" id="experience">
+<div class="max-w-3xl mb-14">
+<span class="text-xs uppercase tracking-widest text-sky-400 font-semibold mb-2 block">Career Journey</span>
+<h2 class="text-3xl sm:text-4xl font-medium tracking-tight text-white">Trajectory &amp; Foundation</h2>
+</div>
+<div class="space-y-8 border-l border-surface-border pl-6 md:pl-8 ml-2 md:ml-4">
+<!-- Experience Item 1 -->
+<div class="relative group">
+<div class="absolute -left-[31px] md:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-sky-400 ring-4 ring-[#0b0d12]"></div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+<h3 class="text-lg font-semibold text-white">Applied AI Systems Engineer &amp; Advisory</h3>
+<span class="text-xs font-mono text-sky-400">2026 — PRESENT</span>
+</div>
+<p class="text-xs text-text-muted mb-2">Vienna, Austria · Independent Advisory &amp; Custom Delivery</p>
+<p class="text-sm text-text-secondary leading-relaxed max-w-3xl">
+            Consulting engineering teams on Model Context Protocol (MCP) servers, verifiable context retrieval, and high-throughput agent tooling. Delivering custom .NET MAUI wrappers and automated testing infrastructure with strict zero-hallucination compliance.
+          </p>
+</div>
+<!-- Experience Item 2 -->
+<div class="relative group">
+<div class="absolute -left-[31px] md:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-surface-border ring-4 ring-[#0b0d12] group-hover:bg-sky-400 transition-colors"></div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+<h3 class="text-lg font-semibold text-white">Full-Stack &amp; Telemetry Engineer</h3>
+<span class="text-xs font-mono text-text-muted">2024 — 2026</span>
+</div>
+<p class="text-xs text-text-muted mb-2">RockLogic GmbH · Vienna, Austria</p>
+<p class="text-sm text-text-secondary leading-relaxed max-w-3xl">
+            Maintained and scaled high-availability infrastructure for Stereum and rocklogic.at. Designed Dockerized client switching routines, automated Grafana analytics instances, and consolidated Ethereum node lifecycle telemetry handling thousands of simultaneous community installations.
+          </p>
+</div>
+<!-- Experience Item 3 -->
+<div class="relative group">
+<div class="absolute -left-[31px] md:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-surface-border ring-4 ring-[#0b0d12] group-hover:bg-sky-400 transition-colors"></div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+<h3 class="text-lg font-semibold text-white">Desktop Systems &amp; Financial Tooling</h3>
+<span class="text-xs font-mono text-text-muted">Prior Years</span>
+</div>
+<p class="text-xs text-text-muted mb-2">Enterprise Financial Systems · Vienna &amp; Distributed</p>
+<p class="text-sm text-text-secondary leading-relaxed max-w-3xl">
+            Engineered enterprise financial management platforms utilizing C#, WPF, MVVM patterns, and optimized SQL Server schemas. Focused on memory profile reduction, zero-allocation dataset rendering for 50,000+ records, and multi-tenant reporting engines.
+          </p>
+</div>
+<!-- Education & Credentials -->
+<div class="relative group pt-4">
+<div class="absolute -left-[31px] md:-left-[39px] top-5.5 w-3.5 h-3.5 rounded-full bg-surface-border ring-4 ring-[#0b0d12]"></div>
+<h4 class="text-base font-semibold text-white mb-2">Academic &amp; Accreditations</h4>
+<p class="text-sm text-text-secondary leading-relaxed max-w-3xl">
+            B.Sc. in Accounting &amp; Financial Analysis (deterministic ledger foundation) · Software Engineering Diplomas (WIFI Wien) · Microsoft Certified Azure Developer (AZ-204 &amp; AZ-900).
+          </p>
+</div>
+</div>
+</section>
+<!-- 6. MARSI COMPANION SECTION (Authentic Human Element from IMAGE_6) -->
+<section class="w-full bg-surface-subtle/50 border-y border-surface-border/50 py-20" id="about">
+<div class="max-w-6xl mx-auto px-6">
+<div class="rounded-2xl bg-surface-card border border-surface-border overflow-hidden shadow-2xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 items-center">
+<!-- Dog Photo from IMAGE_6 -->
+<div class="lg:col-span-6 relative aspect-[16/10] overflow-hidden bg-emerald-950/20">
+<img alt="Marsi on grass with toy" class="w-full h-full object-cover object-[70%_48%] scale-[1.7]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6ELo311IKnH7CrnWwdP9YIvHq3y8p9tu8t1JL887N4WVpj4PAeZf-Cd1_usfPfGMOc9M3p7nKXPiLT2aySOQdVp53I0_kkqsGBhrD6W1xIugYJa6GeYgtYAqqcECSLhUY6rpQ4jRo-IZ8IunWpAcF0JRlPUxsbxm1lOzoCOXw4qDQg5aAZKgjTZHXtbA0Kzlv4SMiwab0CVd3r8W81QquHhItMyhYL5pT9yrnRpfp3KrmmAarvv6svCPWl2h74T0IA4o"/>
+<div class="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-xs font-medium text-white flex items-center gap-2">
+<span class="text-rose-400">♥</span>
+<span>Marsi · CMO (Chief Morale Officer)</span>
+</div>
+</div>
+<!-- Warm human quote & description -->
+<div class="lg:col-span-6 p-8 md:p-12 space-y-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 text-sky-400 text-xs font-medium">
+<span>Studio Life in Vienna</span>
+</div>
+<blockquote class="text-xl md:text-2xl font-serif-accent italic text-white leading-snug">
+                "Playing with him makes me fresh..."
+              </blockquote>
+<p class="text-sm text-text-secondary leading-relaxed">
+                Faithful companion &amp; zero-tolerance for unhandled exceptions. Beyond the command line and architectural blueprints, Marsi ensures all systems in the Vienna studio maintain steady equilibrium, accompanied by mandatory afternoon walks across the city's parks.
+              </p>
+<div class="pt-2 text-xs font-mono text-text-muted flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+<span>Active On-Site Companion · Chief Morale Officer</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. DIRECT INQUIRY & CONTACT SECTION (Clean High-Converting Form from IMAGE_4) -->
+<section class="max-w-6xl mx-auto px-6 py-24" id="inquiry">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/10 text-sky-400 text-xs font-medium mb-3">
+<span>GET IN TOUCH</span>
+</div>
+<h2 class="text-3xl sm:text-5xl font-medium tracking-tight text-white">
+          Let's Build Something Exceptional
+        </h2>
+<p class="mt-4 text-text-secondary leading-relaxed text-sm md:text-base">
+          Whether you need an AI customer chatbot, autonomous voice pipeline, or high-performance desktop &amp; web architecture, reach out below.
+        </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left: Direct Coordinates Card -->
+<div class="lg:col-span-5 p-8 rounded-2xl bg-surface-card border border-surface-border space-y-6">
+<div>
+<span class="text-xs uppercase tracking-wider text-sky-400 font-semibold block">Direct Contact</span>
+<h3 class="text-xl font-semibold text-white mt-1">Max Behzadi</h3>
+<p class="text-xs text-text-secondary mt-1">Senior Full-Stack &amp; Applied AI Systems Engineer available for private client contracts and organizational integration.</p>
+</div>
+<!-- Direct Inbox snippet -->
+<div class="p-4 rounded-xl bg-[#0c0e13] border border-surface-border space-y-2">
+<div class="flex items-center justify-between text-xs">
+<span class="text-text-muted font-mono">DIRECT INBOX</span>
+<span class="inline-flex items-center gap-1.5 text-emerald-400 text-[11px] font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Active
+              </span>
+</div>
+<div class="flex items-center justify-between gap-2 pt-1">
+<span class="font-mono text-sm text-sky-300 select-all" id="mail-text">maxbehzadi82@gmail.com</span>
+<button class="px-2.5 py-1 rounded bg-white/10 hover:bg-white/20 text-xs font-medium text-white transition-all" onclick="navigator.clipboard.writeText('maxbehzadi82@gmail.com'); this.innerText='Copied';">
+                Copy
+              </button>
+</div>
+</div>
+<div class="space-y-4 text-xs">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-sky-400 text-[18px] shrink-0 mt-0.5">location_on</span>
+<div>
+<span class="text-white font-medium block">Location</span>
+<span class="text-text-muted">Vienna, Austria · Available for Remote Worldwide</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-sky-400 text-[18px] shrink-0 mt-0.5">schedule</span>
+<div>
+<span class="text-white font-medium block">Response SLA</span>
+<span class="text-text-muted">Typically within 24 business hours directly from Max</span>
+</div>
+</div>
+</div>
+<div class="pt-4 border-t border-surface-border/50 flex items-center gap-3">
+<a class="flex-1 py-2.5 px-3 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-medium text-white text-center transition-colors" href="https://github.com" rel="noreferrer" target="_blank">
+              GitHub ↗
+            </a>
+<a class="flex-1 py-2.5 px-3 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-medium text-white text-center transition-colors" href="https://linkedin.com" rel="noreferrer" target="_blank">
+              LinkedIn ↗
+            </a>
+</div>
+</div>
+<!-- Right: Inquiry Form -->
+<div class="lg:col-span-7 p-8 rounded-2xl bg-surface-card border border-surface-border">
+<form class="space-y-5" onsubmit="event.preventDefault(); document.getElementById('submit-success').classList.remove('hidden');">
+<div>
+<h3 class="text-lg font-semibold text-white">Send a Project Inquiry</h3>
+<p class="text-xs text-text-muted mt-1">Direct transmission without administrative delays.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="space-y-1.5">
+<label class="text-xs font-medium text-text-secondary" for="name">Your Name *</label>
+<input class="w-full px-3.5 py-2.5 rounded-xl bg-[#0c0e13] border border-surface-border text-sm text-white placeholder:text-text-muted focus:outline-none focus:border-sky-400 transition-colors" id="name" placeholder="e.g. Alex Morgan" required="" type="text"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-medium text-text-secondary" for="email">Email Address *</label>
+<input class="w-full px-3.5 py-2.5 rounded-xl bg-[#0c0e13] border border-surface-border text-sm text-white placeholder:text-text-muted focus:outline-none focus:border-sky-400 transition-colors" id="email" placeholder="alex@company.com" required="" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="space-y-1.5">
+<label class="text-xs font-medium text-text-secondary" for="company">Organization / Company</label>
+<input class="w-full px-3.5 py-2.5 rounded-xl bg-[#0c0e13] border border-surface-border text-sm text-white placeholder:text-text-muted focus:outline-none focus:border-sky-400 transition-colors" id="company" placeholder="Acme Inc. or Private" type="text"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-medium text-text-secondary" for="type">Project or Inquiry Type</label>
+<select class="w-full px-3.5 py-2.5 rounded-xl bg-[#0c0e13] border border-surface-border text-sm text-white focus:outline-none focus:border-sky-400 transition-colors" id="type">
+<option value="voice">AI Voice Assistant &amp; Audio Pipeline</option>
+<option value="rag">AI Customer Support Chatbot / Grounded RAG</option>
+<option value="mcp">Custom Claude Code &amp; MCP Agent Tooling</option>
+<option value="dotnet">High-Concurrency .NET / Full-Stack Systems</option>
+<option value="advisory">Technical Advisory &amp; Retainer</option>
+</select>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-medium text-text-secondary" for="message">Project Details or Message *</label>
+<textarea class="w-full px-3.5 py-2.5 rounded-xl bg-[#0c0e13] border border-surface-border text-sm text-white placeholder:text-text-muted focus:outline-none focus:border-sky-400 transition-colors resize-y" id="message" placeholder="Tell me about what you are aiming to build, technical constraints, timeline, or scope..." required="" rows="4"></textarea>
+</div>
+<div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+<button class="w-full sm:w-auto px-7 py-3 rounded-xl bg-gradient-to-r from-sky-400 to-sky-500 hover:from-sky-300 hover:to-sky-400 text-slate-950 font-semibold text-xs tracking-wide shadow-lg shadow-sky-500/20 flex items-center justify-center gap-2 transition-all" type="submit">
+<span>Send Message</span>
+<span>↗</span>
+</button>
+<span class="text-xs text-text-muted">Direct founder &amp; engineer communication.</span>
+</div>
+<div class="hidden p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs text-center" id="submit-success">
+              Message received. Max will reply directly to your provided email within 24 hours.
+            </div>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Clean Minimal Footer -->
+<footer class="w-full border-t border-surface-border/50 py-10 bg-[#090b0e] text-xs text-text-muted">
+<div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+<span class="text-text-secondary">Max Behzadi · Systems &amp; Applied AI Engineer · Vienna, Austria</span>
+</div>
+<div>
+        © 2026 Max Behzadi. All rights reserved. Zero tracking cookies.
+      </div>
+</div>
+</footer>
+<!-- Simple Carousel Script -->
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.dot-indicator');
+    const totalSlides = slides.length;
+
+    function updateCarousel() {
+      slides.forEach((slide, idx) => {
+        if (idx === currentSlide) {
+          slide.classList.remove('hidden-slide');
+          slide.classList.add('active-slide');
+        } else {
+          slide.classList.remove('active-slide');
+          slide.classList.add('hidden-slide');
+        }
+      });
+
+      dots.forEach((dot, idx) => {
+        if (idx === currentSlide) {
+          dot.classList.remove('bg-surface-border', 'w-2');
+          dot.classList.add('bg-sky-400', 'w-6');
+        } else {
+          dot.classList.remove('bg-sky-400', 'w-6');
+          dot.classList.add('bg-surface-border', 'w-2');
+        }
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      updateCarousel();
+    }
+  </script>
+</body></html>
