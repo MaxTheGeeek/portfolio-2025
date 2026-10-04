@@ -29,11 +29,11 @@ export function Solutions() {
     <section className="scene py-24 md:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full relative" id="solutions">
       {/* Section Header */}
       <div className="flex flex-col items-center text-center mb-16 max-w-3xl mx-auto">
-        <span className="text-xs font-mono uppercase tracking-[0.06em] text-[#d99b53] mb-3">
+        <span className="text-xs font-mono uppercase tracking-widest text-[#d99b53] mb-3">
           Enterprise AI Capabilities
         </span>
         <h2 className="font-serif text-2xl sm:text-[32px] sm:leading-[40px] font-normal text-[#f3f4f6] tracking-tight mb-4 lg:whitespace-nowrap">
-          What I build for <span className="italic text-[#fcb96e]">organizations & clients</span>
+          What I build for <span className="italic text-[#fcb96e]">organizations &amp; clients</span>
         </h2>
         <p className="text-base sm:text-lg text-[#9ca3af] leading-relaxed">
           Direct engineering collaboration from architectural design and local model integration through to production deployment and operational handover.
@@ -48,7 +48,7 @@ export function Solutions() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.5 }}
-          className="rounded-none border border-[#232730] bg-[#111317] overflow-hidden shadow-2xl flex flex-col hover:border-[#d99b53]/40 transition-all duration-300 group"
+          className="rounded-lg border border-[#232730] bg-[#111317] overflow-hidden shadow-2xl flex flex-col hover:border-[#d99b53]/40 transition-all duration-300 group"
         >
           {/* Top Bar */}
           <div className="flex items-center justify-between px-5 py-3.5 bg-[#16191f] border-b border-[#232730]">
@@ -56,30 +56,32 @@ export function Solutions() {
               <span className="w-2.5 h-2.5 rounded-full bg-[#d99b53]" />
               <span className="text-xs font-mono font-medium text-[#f3f4f6]">Reloco · Client Project</span>
             </div>
-            <span className="px-2.5 py-0.5 rounded-none bg-amber-500/10 border border-amber-500/30 text-amber-400 text-[11px] font-mono flex items-center gap-1.5">
+            <span className="px-2.5 py-0.5 rounded-md bg-amber-500/10 border border-amber-500/30 text-amber-400 text-[11px] font-mono flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
               In Progress
             </span>
           </div>
 
           {/* Screenshot Display */}
-          <div className="relative aspect-[16/10] w-full bg-[#0c0e12] overflow-hidden">
-            <Image
-              src="/client-projects/chatbot-2.jpeg"
-              alt="Reloco Intelligent Relocation Support & Inquiry Bot"
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#111317] via-transparent to-transparent opacity-50" />
-            <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between">
-              <span className="px-2.5 py-1 rounded-none text-[11px] font-mono bg-[#0c0e12]/90 border border-white/15 text-[#f3f4f6] backdrop-blur-md">
-                Self-Hosted Local LLM
-              </span>
-              <span className="px-2.5 py-1 rounded-none text-[11px] font-mono bg-[#0c0e12]/90 border border-white/15 text-[#fcb96e] backdrop-blur-md">
-                Reloco Platform
-              </span>
+          <div className="p-4 sm:p-5 pb-0">
+            <div className="relative aspect-[16/10] w-full bg-[#0c0e12] overflow-hidden rounded-md border border-[#232730]">
+              <Image
+                src="/client-projects/chatbot.jpeg"
+                alt="Reloco Intelligent Relocation Support & Inquiry Bot"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#111317] via-transparent to-transparent opacity-50" />
+              <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between">
+                <span className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-[#0c0e12]/90 border border-white/15 text-[#f3f4f6] backdrop-blur-md">
+                  Self-Hosted Local LLM
+                </span>
+                <span className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-[#0c0e12]/90 border border-white/15 text-[#fcb96e] backdrop-blur-md">
+                  Reloco Platform
+                </span>
+              </div>
             </div>
           </div>
 
@@ -93,7 +95,7 @@ export function Solutions() {
                 </span>
               </div>
               <h3 className="text-xl font-semibold text-[#f3f4f6] tracking-tight mb-2">
-                Intelligent Relocation Support & Inquiry Bot
+                Intelligent Relocation Support &amp; Inquiry Bot
               </h3>
               <p className="text-xs text-[#9ca3af] leading-relaxed">
                 Built an automated 24/7 customer support chatbot for relocation workflows. Powered by a self-hosted local LLM and semantic search via PostgreSQL (pgvector), the system retrieves grounded policy and procedural data to resolve inquiries instantly and escalate edge cases seamlessly to human agents.
@@ -102,15 +104,15 @@ export function Solutions() {
 
             {/* 3 Structured Stats (TASK-405) */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-4 border-t border-[#232730]">
-              <div className="p-3 rounded-none bg-[#16191f] border border-[#232730]">
+              <div className="p-3 rounded-md bg-[#16191f] border border-[#232730]">
                 <div className="text-[10px] font-mono text-[#768e9d] uppercase tracking-wider">Architecture</div>
                 <div className="text-xs font-mono font-semibold text-[#fcb96e] mt-1">On-Prem / Local</div>
               </div>
-              <div className="p-3 rounded-none bg-[#16191f] border border-[#232730]">
+              <div className="p-3 rounded-md bg-[#16191f] border border-[#232730]">
                 <div className="text-[10px] font-mono text-[#768e9d] uppercase tracking-wider">Retrieval Engine</div>
                 <div className="text-xs font-mono font-semibold text-[#fcb96e] mt-1">PostgreSQL + pgvector</div>
               </div>
-              <div className="p-3 rounded-none bg-[#16191f] border border-[#232730]">
+              <div className="p-3 rounded-md bg-[#16191f] border border-[#232730]">
                 <div className="text-[10px] font-mono text-[#768e9d] uppercase tracking-wider">Factual Accuracy</div>
                 <div className="text-xs font-mono font-semibold text-[#fcb96e] mt-1">Context-Grounded</div>
               </div>
@@ -120,7 +122,7 @@ export function Solutions() {
             <button
               type="button"
               onClick={(e) => handleSelectService("Intelligent Relocation Support Bot (Reloco)", e)}
-              className="w-full mt-2 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-none bg-[#16191f] hover:bg-[#d99b53] text-[#f3f4f6] hover:text-[#111317] border border-[#232730] hover:border-[#d99b53] font-medium text-xs transition-all duration-200 cursor-pointer shadow-sm"
+              className="w-full mt-2 inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md bg-transparent hover:border-[#D99B53] hover:text-[#D99B53] border border-[#232730] text-[#ECEFF4] font-mono text-xs uppercase tracking-wider font-medium transition-colors duration-150 cursor-pointer shadow-sm"
             >
               <span>Discuss Relocation Support Bot</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -134,7 +136,7 @@ export function Solutions() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="rounded-none border border-[#232730] bg-[#111317] overflow-hidden shadow-2xl flex flex-col hover:border-[#d99b53]/40 transition-all duration-300 group"
+          className="rounded-lg border border-[#232730] bg-[#111317] overflow-hidden shadow-2xl flex flex-col hover:border-[#d99b53]/40 transition-all duration-300 group"
         >
           {/* Top Bar */}
           <div className="flex items-center justify-between px-5 py-3.5 bg-[#16191f] border-b border-[#232730]">
@@ -142,30 +144,32 @@ export function Solutions() {
               <span className="w-2.5 h-2.5 rounded-full bg-[#d99b53]" />
               <span className="text-xs font-mono font-medium text-[#f3f4f6]">Real Estate Assistant · Client Project</span>
             </div>
-            <span className="px-2.5 py-0.5 rounded-none bg-amber-500/10 border border-amber-500/30 text-amber-400 text-[11px] font-mono flex items-center gap-1.5">
+            <span className="px-2.5 py-0.5 rounded-md bg-amber-500/10 border border-amber-500/30 text-amber-400 text-[11px] font-mono flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
               In Progress
             </span>
           </div>
 
           {/* Screenshot Display */}
-          <div className="relative aspect-[16/10] w-full bg-[#0c0e12] overflow-hidden">
-            <Image
-              src="/client-projects/chatbot.jpeg"
-              alt="Automated Real Estate Support & Client Intake Assistant"
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#111317] via-transparent to-transparent opacity-50" />
-            <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between">
-              <span className="px-2.5 py-1 rounded-none text-[11px] font-mono bg-[#0c0e12]/90 border border-white/15 text-[#f3f4f6] backdrop-blur-md">
-                Private Inference &amp; Intake
-              </span>
-              <span className="px-2.5 py-1 rounded-none text-[11px] font-mono bg-[#0c0e12]/90 border border-white/15 text-[#fcb96e] backdrop-blur-md">
-                Real Estate CRM
-              </span>
+          <div className="p-4 sm:p-5 pb-0">
+            <div className="relative aspect-[16/10] w-full bg-[#0c0e12] overflow-hidden rounded-md border border-[#232730]">
+              <Image
+                src="/client-projects/chatbot-2.jpeg"
+                alt="Automated Real Estate Support & Client Intake Assistant"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#111317] via-transparent to-transparent opacity-50" />
+              <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between">
+                <span className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-[#0c0e12]/90 border border-white/15 text-[#f3f4f6] backdrop-blur-md">
+                  Private Inference &amp; Intake
+                </span>
+                <span className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-[#0c0e12]/90 border border-white/15 text-[#fcb96e] backdrop-blur-md">
+                  Real Estate CRM
+                </span>
+              </div>
             </div>
           </div>
 
@@ -179,7 +183,7 @@ export function Solutions() {
                 </span>
               </div>
               <h3 className="text-xl font-semibold text-[#f3f4f6] tracking-tight mb-2">
-                Automated Real Estate Support & Client Intake Assistant
+                Automated Real Estate Support &amp; Client Intake Assistant
               </h3>
               <p className="text-xs text-[#9ca3af] leading-relaxed">
                 Engineered an on-site customer service assistant to qualify leads and answer client queries around listings and real estate services. Leveraged a high-efficiency local inference model with embedded vector search in PostgreSQL, ensuring private data handling, fast response times, and structured client inquiry handoff.
@@ -188,15 +192,15 @@ export function Solutions() {
 
             {/* 3 Structured Stats (TASK-405) */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-4 border-t border-[#232730]">
-              <div className="p-3 rounded-none bg-[#16191f] border border-[#232730]">
+              <div className="p-3 rounded-md bg-[#16191f] border border-[#232730]">
                 <div className="text-[10px] font-mono text-[#768e9d] uppercase tracking-wider">Local LLM</div>
                 <div className="text-xs font-mono font-semibold text-[#fcb96e] mt-1">Private Inference</div>
               </div>
-              <div className="p-3 rounded-none bg-[#16191f] border border-[#232730]">
+              <div className="p-3 rounded-md bg-[#16191f] border border-[#232730]">
                 <div className="text-[10px] font-mono text-[#768e9d] uppercase tracking-wider">Fast Retrieval</div>
                 <div className="text-xs font-mono font-semibold text-[#fcb96e] mt-1">Vector Search</div>
               </div>
-              <div className="p-3 rounded-none bg-[#16191f] border border-[#232730]">
+              <div className="p-3 rounded-md bg-[#16191f] border border-[#232730]">
                 <div className="text-[10px] font-mono text-[#768e9d] uppercase tracking-wider">Lead Intake</div>
                 <div className="text-xs font-mono font-semibold text-[#fcb96e] mt-1">Automated Triage</div>
               </div>
@@ -206,7 +210,7 @@ export function Solutions() {
             <button
               type="button"
               onClick={(e) => handleSelectService("Automated Real Estate Support & Intake Assistant", e)}
-              className="w-full mt-2 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-none bg-[#16191f] hover:bg-[#d99b53] text-[#f3f4f6] hover:text-[#111317] border border-[#232730] hover:border-[#d99b53] font-medium text-xs transition-all duration-200 cursor-pointer shadow-sm"
+              className="w-full mt-2 inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md bg-transparent hover:border-[#D99B53] hover:text-[#D99B53] border border-[#232730] text-[#ECEFF4] font-mono text-xs uppercase tracking-wider font-medium transition-colors duration-150 cursor-pointer shadow-sm"
             >
               <span>Discuss Real Estate Assistant</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -223,7 +227,7 @@ export function Solutions() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.45 }}
-          className="rounded-none border border-[#232730] bg-[#111317] p-6 sm:p-7 flex flex-col justify-between hover:border-[#d99b53]/40 transition-all duration-300 shadow-xl group"
+          className="rounded-lg border border-[#232730] bg-[#16191f] p-6 sm:p-8 flex flex-col justify-between hover:border-[#d99b53]/40 transition-all duration-300 shadow-xl group"
         >
           <div>
             <span className="text-[10px] font-mono uppercase tracking-wider text-[#d99b53] mb-2.5 block">
@@ -237,7 +241,7 @@ export function Solutions() {
             </p>
             <div className="flex flex-wrap gap-1.5 pt-4 border-t border-[#232730] mb-6">
               {["Clean Architecture & DDD", "PostgreSQL & Data Integrity", "RabbitMQ Async Queues", "Tested & Production-Ready"].map(tag => (
-                <span key={tag} className="px-2 py-0.5 rounded-none text-[10px] font-mono bg-[#16191f] border border-[#232730] text-[#9ca3af]">
+                <span key={tag} className="px-2 py-0.5 rounded-md text-[10px] font-mono bg-[#111317] border border-[#232730] text-[#9ca3af]">
                   {tag}
                 </span>
               ))}
@@ -246,7 +250,7 @@ export function Solutions() {
           <button
             type="button"
             onClick={(e) => handleSelectService("Robust Full-Stack Web & Distributed Backend Architecture", e)}
-            className="inline-flex items-center gap-1.5 text-xs font-mono text-[#d99b53] hover:text-[#fcb96e] transition-colors cursor-pointer group-hover:translate-x-0.5 duration-200"
+            className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-[#d99b53] hover:text-[#fcb96e] transition-colors cursor-pointer group-hover:translate-x-0.5 duration-200"
           >
             <span>Discuss Architecture &amp; Systems</span>
             <span>→</span>
@@ -259,7 +263,7 @@ export function Solutions() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.45, delay: 0.05 }}
-          className="rounded-none border border-[#232730] bg-[#111317] p-6 sm:p-7 flex flex-col justify-between hover:border-[#d99b53]/40 transition-all duration-300 shadow-xl group"
+          className="rounded-lg border border-[#232730] bg-[#16191f] p-6 sm:p-8 flex flex-col justify-between hover:border-[#d99b53]/40 transition-all duration-300 shadow-xl group"
         >
           <div>
             <span className="text-[10px] font-mono uppercase tracking-wider text-[#d99b53] mb-2.5 block">
@@ -273,7 +277,7 @@ export function Solutions() {
             </p>
             <div className="flex flex-wrap gap-1.5 pt-4 border-t border-[#232730] mb-6">
               {["Cross-Platform Delivery", "Event-Driven Messaging", "Optimized Resource Usage", "Deterministic Testing"].map(tag => (
-                <span key={tag} className="px-2 py-0.5 rounded-none text-[10px] font-mono bg-[#16191f] border border-[#232730] text-[#9ca3af]">
+                <span key={tag} className="px-2 py-0.5 rounded-md text-[10px] font-mono bg-[#111317] border border-[#232730] text-[#9ca3af]">
                   {tag}
                 </span>
               ))}
@@ -282,7 +286,7 @@ export function Solutions() {
           <button
             type="button"
             onClick={(e) => handleSelectService("Performant Cross-Platform & Event-Driven Applications", e)}
-            className="inline-flex items-center gap-1.5 text-xs font-mono text-[#d99b53] hover:text-[#fcb96e] transition-colors cursor-pointer group-hover:translate-x-0.5 duration-200"
+            className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-[#d99b53] hover:text-[#fcb96e] transition-colors cursor-pointer group-hover:translate-x-0.5 duration-200"
           >
             <span>Explore Technical Work</span>
             <span>→</span>
@@ -295,7 +299,7 @@ export function Solutions() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.45, delay: 0.1 }}
-          className="rounded-none border border-[#232730] bg-[#111317] p-6 sm:p-7 flex flex-col justify-between hover:border-[#d99b53]/40 transition-all duration-300 shadow-xl group"
+          className="rounded-lg border border-[#232730] bg-[#16191f] p-6 sm:p-8 flex flex-col justify-between hover:border-[#d99b53]/40 transition-all duration-300 shadow-xl group"
         >
           <div>
             <span className="text-[10px] font-mono uppercase tracking-wider text-[#d99b53] mb-2.5 block">
@@ -309,7 +313,7 @@ export function Solutions() {
             </p>
             <div className="flex flex-wrap gap-1.5 pt-4 border-t border-[#232730] mb-6">
               {["Vector & Relational DBs", "Decoupled Async Workers", "Strict Type Safety", "End-to-End Traceability"].map(tag => (
-                <span key={tag} className="px-2 py-0.5 rounded-none text-[10px] font-mono bg-[#16191f] border border-[#232730] text-[#9ca3af]">
+                <span key={tag} className="px-2 py-0.5 rounded-md text-[10px] font-mono bg-[#111317] border border-[#232730] text-[#9ca3af]">
                   {tag}
                 </span>
               ))}
@@ -318,7 +322,7 @@ export function Solutions() {
           <button
             type="button"
             onClick={(e) => handleSelectService("Scalable Web Platforms & Intelligent Service Integration", e)}
-            className="inline-flex items-center gap-1.5 text-xs font-mono text-[#d99b53] hover:text-[#fcb96e] transition-colors cursor-pointer group-hover:translate-x-0.5 duration-200"
+            className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-[#d99b53] hover:text-[#fcb96e] transition-colors cursor-pointer group-hover:translate-x-0.5 duration-200"
           >
             <span>Discuss Technical Architecture</span>
             <span>→</span>
@@ -327,7 +331,7 @@ export function Solutions() {
       </div>
 
       {/* Direct Architectural Transition Banner */}
-      <div className="rounded-none border border-[#232730] bg-gradient-to-r from-[#111317] via-[#16191f] to-[#111317] p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+      <div className="rounded-lg border border-[#232730] bg-[#16191f] p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
         <div className="space-y-2 max-w-2xl">
           <div className="flex items-center gap-2 text-xs font-mono text-[#fcb96e]">
             <ShieldCheck className="w-4 h-4 text-[#d99b53]" />
@@ -344,7 +348,7 @@ export function Solutions() {
         <a
           href="#contact"
           onClick={(e) => handleSelectService("Enterprise Architectural Consultation", e)}
-          className="shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-none bg-[#d99b53] hover:bg-[#fcb96e] text-[#111317] font-semibold text-sm transition-all duration-200 shadow-md shadow-[#d99b53]/20 active:scale-[0.98] cursor-pointer"
+          className="shrink-0 inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md bg-[#ECEFF4] hover:bg-[#D99B53] text-[#0F1115] font-mono font-medium text-xs tracking-wider uppercase transition-colors duration-150 cursor-pointer"
         >
           <span>Initiate an architectural discussion</span>
           <ArrowRight className="w-4 h-4" />

@@ -53,9 +53,9 @@ export function Hero() {
           className="lg:col-span-7 flex flex-col items-start"
         >
           {/* Live Availability Unbordered Eyebrow */}
-          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-[0.06em] text-[#d99b53] mb-5">
+          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#d99b53] mb-5">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>Available for Custom AI & High-Performance Systems</span>
+            <span>Available for Custom AI &amp; High-Performance Systems</span>
           </div>
 
           {/* Editorial Headline in Serif (Newsreader) - Reduced by 2 font sizes */}
@@ -65,7 +65,7 @@ export function Hero() {
 
           {/* Narrative Lead Paragraph */}
           <p className="text-base sm:text-lg text-[#9ca3af] leading-relaxed max-w-xl mb-8">
-            Vienna-based senior engineer with over eight years designing autonomous AI agent pipelines, enterprise voice intelligence, and high-concurrency desktop & cloud systems that run smoothly in production.
+            Vienna-based senior engineer with over eight years designing autonomous AI agent pipelines, enterprise voice intelligence, and high-concurrency desktop &amp; cloud systems that run smoothly in production.
           </p>
 
           {/* Action Buttons */}
@@ -76,10 +76,10 @@ export function Hero() {
                 e.preventDefault();
                 scrollToSection("solutions", 80);
               }}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#d99b53] hover:bg-[#fcb96e] text-[#111317] font-semibold text-sm transition-all duration-200 shadow-md shadow-[#d99b53]/20 active:scale-[0.98] cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md bg-[#ECEFF4] hover:bg-[#D99B53] text-[#0F1115] font-mono font-medium text-xs tracking-wider uppercase transition-colors duration-150 cursor-pointer"
             >
               <span>Explore AI Solutions</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-3.5 h-3.5" />
             </a>
 
             <a
@@ -88,7 +88,7 @@ export function Hero() {
                 e.preventDefault();
                 scrollToSection("projects", 80);
               }}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-[#f3f4f6] font-semibold text-sm transition-all duration-200 active:scale-[0.98] cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md bg-transparent hover:border-[#D99B53] hover:text-[#D99B53] border border-[#232730] text-[#ECEFF4] font-mono font-medium text-xs tracking-wider uppercase transition-colors duration-150 cursor-pointer"
             >
               <span>View Selected Work</span>
             </a>
@@ -99,7 +99,7 @@ export function Hero() {
                 e.preventDefault();
                 scrollToSection("contact", 80);
               }}
-              className="text-xs font-mono text-[#9ca3af] hover:text-[#fcb96e] px-2 py-2 transition-colors inline-flex items-center gap-1.5 cursor-pointer ml-1"
+              className="text-xs font-mono uppercase tracking-wider text-[#9CA3AF] hover:text-[#D99B53] px-2 py-2 transition-colors inline-flex items-center gap-1.5 cursor-pointer ml-1"
             >
               <span>Get in touch</span>
               <span>→</span>
@@ -107,15 +107,15 @@ export function Hero() {
           </div>
 
           {/* Core Stack Metadata Line */}
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs font-mono text-[#6b7280] pt-4 border-t border-white/10 w-full">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs font-mono text-[#6b7280] pt-4 border-t border-[#232730] w-full">
             <span className="text-[#9ca3af] font-medium">Core Stack:</span>
-            <span className="text-[#d1d5db]">Claude Code & MCP</span>
+            <span className="text-[#d1d5db]">Claude Code &amp; MCP</span>
             <span>•</span>
-            <span className="text-[#d1d5db]">TypeScript & Next.js</span>
+            <span className="text-[#d1d5db]">TypeScript &amp; Next.js</span>
             <span>•</span>
-            <span className="text-[#d1d5db]">C# & .NET</span>
+            <span className="text-[#d1d5db]">C# &amp; .NET</span>
             <span>•</span>
-            <span className="text-[#d1d5db]">Python & Vector Databases</span>
+            <span className="text-[#d1d5db]">Python &amp; Vector Databases</span>
           </div>
         </motion.div>
 
@@ -127,9 +127,9 @@ export function Hero() {
           className="lg:col-span-5 flex flex-col gap-6"
         >
           {/* Portrait & Profile Summary Bar - Footprint Increased */}
-          <div className="flex items-center gap-4 sm:gap-5 p-5 sm:p-6 rounded-none bg-[#111317] border border-[#232730] shadow-xl">
+          <div className="flex items-center gap-4 sm:gap-5 p-6 sm:p-8 rounded-lg bg-[#16191f] border border-[#232730] shadow-xl">
             <div 
-              className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-none overflow-hidden border border-[#232730] shrink-0 shadow-md cursor-pointer group transition-all duration-200 hover:border-[#d99b53]"
+              className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-md overflow-hidden border border-[#232730] shrink-0 shadow-md cursor-pointer group transition-all duration-200 hover:border-[#d99b53]"
               onMouseEnter={handlePortraitMouseEnter}
               onMouseLeave={handlePortraitMouseLeave}
               onClick={() => {
@@ -152,7 +152,7 @@ export function Hero() {
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2">
                 <h3 className="text-base sm:text-lg font-semibold text-[#f3f4f6] truncate">Max Behzadi</h3>
-                <span className="inline-flex items-center gap-1 px-1.5 py-0.5 text-[10px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                <span className="inline-flex items-center gap-1 px-1.5 py-0.5 text-[10px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-md">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                   Active
                 </span>
@@ -167,7 +167,7 @@ export function Hero() {
           </div>
 
           {/* Mini Capabilities Badge Card */}
-          <div className="rounded-none border border-[#232730] bg-[#16191f] overflow-hidden shadow-xl">
+          <div className="rounded-lg border border-[#232730] bg-[#16191f] overflow-hidden shadow-xl">
             {/* Terminal Window Header - Vertical spacing enhanced */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between px-4 py-3.5 bg-black/40 border-b border-[#232730] gap-3">
               <div className="flex items-center gap-1.5">
@@ -180,7 +180,7 @@ export function Hero() {
                 <button
                   type="button"
                   onClick={() => setActiveTab("spec")}
-                  className={`px-2.5 py-1 text-[10px] font-mono transition-colors cursor-pointer ${
+                  className={`px-2.5 py-1 text-[10px] font-mono rounded-md transition-colors cursor-pointer ${
                     activeTab === "spec" ? "bg-[#d99b53]/20 text-[#fcb96e] font-semibold" : "text-[#9ca3af] hover:text-white"
                   }`}
                 >
@@ -189,7 +189,7 @@ export function Hero() {
                 <button
                   type="button"
                   onClick={() => setActiveTab("voice")}
-                  className={`px-2 py-0.5 text-[10px] font-mono transition-colors cursor-pointer ${
+                  className={`px-2 py-0.5 text-[10px] font-mono rounded-md transition-colors cursor-pointer ${
                     activeTab === "voice" ? "bg-[#d99b53]/20 text-[#fcb96e] font-semibold" : "text-[#9ca3af] hover:text-white"
                   }`}
                 >
@@ -198,7 +198,7 @@ export function Hero() {
                 <button
                   type="button"
                   onClick={() => setActiveTab("concurrency")}
-                  className={`px-2 py-0.5 text-[10px] font-mono transition-colors cursor-pointer ${
+                  className={`px-2 py-0.5 text-[10px] font-mono rounded-md transition-colors cursor-pointer ${
                     activeTab === "concurrency" ? "bg-[#d99b53]/20 text-[#fcb96e] font-semibold" : "text-[#9ca3af] hover:text-white"
                   }`}
                 >
@@ -319,7 +319,7 @@ export function Hero() {
               animate={{ scale: 1, opacity: 1 }}
               exit={shouldReduceMotion ? undefined : { scale: 0.9, opacity: 0 }}
               transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="relative w-72 h-72 sm:w-96 sm:h-96 md:w-[420px] md:h-[420px] rounded-none overflow-hidden border border-[#d99b53] shadow-2xl bg-[#0c0e12]"
+              className="relative w-72 h-72 sm:w-96 sm:h-96 md:w-[420px] md:h-[420px] rounded-lg overflow-hidden border border-[#d99b53] shadow-2xl bg-[#0c0e12]"
               onClick={(e) => e.stopPropagation()}
             >
               <Image

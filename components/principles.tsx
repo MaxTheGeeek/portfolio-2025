@@ -10,7 +10,7 @@ export function Principles() {
     <section className="scene py-24 md:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full relative" id="principles">
       {/* Section Header */}
       <div className="flex flex-col items-center text-center mb-16 max-w-3xl mx-auto">
-        <span className="text-xs font-mono uppercase tracking-[0.06em] text-[#d99b53] mb-3">
+        <span className="text-xs font-mono uppercase tracking-widest text-[#d99b53] mb-3">
           Technical Principles
         </span>
         <h2 className="font-serif text-2xl sm:text-[32px] sm:leading-[40px] font-normal text-[#f3f4f6] tracking-tight mb-5 lg:whitespace-nowrap">
@@ -29,7 +29,7 @@ export function Principles() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.45 }}
-          className="rounded-none border border-[#232730] bg-[#111317] p-8 sm:p-10 flex flex-col justify-between shadow-xl hover:border-[#d99b53]/40 transition-all duration-200"
+          className="rounded-lg border border-[#232730] bg-[#16191f] p-8 sm:p-10 flex flex-col justify-between shadow-xl hover:border-[#d99b53]/40 transition-all duration-200"
         >
           <div>
             <div className="flex items-center justify-between mb-6 pb-4 border-b border-[#232730]">
@@ -82,7 +82,7 @@ export function Principles() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.45, delay: 0.1 }}
-          className="rounded-none border border-[#232730] bg-[#111317] p-8 sm:p-10 flex flex-col justify-between shadow-xl hover:border-[#d99b53]/40 transition-all duration-200"
+          className="rounded-lg border border-[#232730] bg-[#16191f] p-8 sm:p-10 flex flex-col justify-between shadow-xl hover:border-[#d99b53]/40 transition-all duration-200"
         >
           <div>
             <div className="flex items-center justify-between mb-6 pb-4 border-b border-[#232730]">

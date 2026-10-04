@@ -241,10 +241,10 @@ export function Projects() {
       {/* Dossier Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 pb-6 border-b border-[#232730]">
         <div>
-          <span className="text-xs font-mono uppercase tracking-[0.06em] text-[#d99b53] mb-2 block">
+          <span className="text-xs font-mono uppercase tracking-widest text-[#d99b53] mb-2 block">
             Engineering Dossier
           </span>
-          <h2 className="font-serif text-2xl sm:text-[32px] sm:leading-[40px] font-normal text-[#f3f4f6] tracking-tight">
+          <h2 className="font-serif text-2xl sm:text-[32px] sm:leading-[40px] font-normal text-[#f3f4f6] tracking-tight lg:whitespace-nowrap">
             Selected <span className="italic text-[#fcb96e]">Works</span>
           </h2>
         </div>
@@ -262,7 +262,7 @@ export function Projects() {
                 key={i}
                 type="button"
                 onClick={() => setCurrentIndex(i)}
-                className={`h-1.5 rounded-none transition-all cursor-pointer ${
+                className={`h-1.5 rounded-full transition-all cursor-pointer ${
                   currentIndex === i ? "w-5 bg-[#d99b53]" : "w-1.5 bg-white/20 hover:bg-white/40"
                 }`}
                 aria-label={`Go to case study ${i + 1}`}
@@ -275,7 +275,7 @@ export function Projects() {
             <button
               type="button"
               onClick={handlePrev}
-              className="w-9 h-9 rounded-none bg-[#16191f] hover:bg-[#232730] border border-[#232730] flex items-center justify-center text-[#f3f4f6] hover:text-[#fcb96e] transition-colors cursor-pointer active:scale-95"
+              className="w-9 h-9 rounded-md bg-[#16191f] hover:bg-[#232730] border border-[#232730] flex items-center justify-center text-[#f3f4f6] hover:text-[#fcb96e] transition-colors cursor-pointer active:scale-95"
               aria-label="Previous Case Study (ArrowLeft)"
               title="Previous Case Study (ArrowLeft)"
             >
@@ -284,7 +284,7 @@ export function Projects() {
             <button
               type="button"
               onClick={handleNext}
-              className="w-9 h-9 rounded-none bg-[#16191f] hover:bg-[#232730] border border-[#232730] flex items-center justify-center text-[#f3f4f6] hover:text-[#fcb96e] transition-colors cursor-pointer active:scale-95"
+              className="w-9 h-9 rounded-md bg-[#16191f] hover:bg-[#232730] border border-[#232730] flex items-center justify-center text-[#f3f4f6] hover:text-[#fcb96e] transition-colors cursor-pointer active:scale-95"
               aria-label="Next Case Study (ArrowRight)"
               title="Next Case Study (ArrowRight)"
             >
@@ -302,7 +302,7 @@ export function Projects() {
           animate={{ opacity: 1, y: 0 }}
           exit={shouldReduceMotion ? undefined : { opacity: 0, y: -12 }}
           transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-          className="rounded-none border border-[#232730] bg-[#111317] overflow-hidden shadow-2xl touch-pan-y"
+          className="rounded-lg border border-[#232730] bg-[#111317] overflow-hidden shadow-2xl touch-pan-y"
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
@@ -320,7 +320,7 @@ export function Projects() {
                     <button
                       type="button"
                       onClick={(e) => handleLike(currentStudy.name, e)}
-                      className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-none text-xs font-mono transition-all cursor-pointer ${
+                      className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-mono transition-all cursor-pointer ${
                         hasLikedMap[currentStudy.name]
                           ? "bg-rose-500/15 border border-rose-500/30 text-rose-400"
                           : "bg-[#16191f] border border-[#232730] text-[#9ca3af] hover:text-white"
@@ -351,7 +351,7 @@ export function Projects() {
                   {currentStudy.stack.map(tag => (
                     <span
                       key={tag}
-                      className="px-2.5 py-1 rounded-none text-[11px] font-mono bg-[#16191f] border border-[#232730] text-[#d1d5db]"
+                      className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-[#16191f] border border-[#232730] text-[#d1d5db]"
                     >
                       {tag}
                     </span>
@@ -364,7 +364,7 @@ export function Projects() {
                 <a
                   href="#contact"
                   onClick={(e) => handleDeepDive(currentStudy.name, e)}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-none bg-[#d99b53] hover:bg-[#fcb96e] text-[#111317] font-semibold text-xs transition-all shadow-md shadow-[#d99b53]/20 active:scale-95 cursor-pointer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-[#ECEFF4] hover:bg-[#D99B53] text-[#0F1115] font-mono font-medium text-xs tracking-wider uppercase transition-colors duration-150 cursor-pointer"
                 >
                   <span>Request Technical Deep Dive</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -375,7 +375,7 @@ export function Projects() {
                     href={currentStudy.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-mono text-[#9ca3af] hover:text-[#fcb96e] transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-[#9CA3AF] hover:text-[#D99B53] transition-colors"
                   >
                     <span>Public Repository / Live</span>
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -386,7 +386,7 @@ export function Projects() {
 
             {/* Right Column: Visual Preview / Case Study Asset (Uncropped Preserved Framing) */}
             <div className="lg:col-span-5 relative bg-[#08090b] border-t lg:border-t-0 lg:border-l border-[#232730] min-h-[340px] sm:min-h-[420px] lg:min-h-[500px] flex items-center justify-center p-4 sm:p-6 lg:p-8">
-              <div className="relative w-full h-full min-h-[280px] sm:min-h-[360px] lg:min-h-[440px] rounded-none overflow-hidden border border-[#232730] bg-[#0c0e12] flex items-center justify-center group shadow-xl">
+              <div className="relative w-full h-full min-h-[280px] sm:min-h-[360px] lg:min-h-[440px] rounded-md overflow-hidden border border-[#232730] bg-[#0c0e12] flex items-center justify-center group shadow-xl">
                 <Image
                   src={currentStudy.image}
                   alt={currentStudy.name}
@@ -397,10 +397,10 @@ export function Projects() {
                 />
 
                 <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between pointer-events-none">
-                  <span className="px-2 py-0.5 rounded-none text-[10px] font-mono bg-black/85 text-[#9ca3af] border border-[#232730] backdrop-blur-sm">
+                  <span className="px-2 py-0.5 rounded-md text-[10px] font-mono bg-black/85 text-[#9ca3af] border border-[#232730] backdrop-blur-sm">
                     Production Architecture
                   </span>
-                  <span className="px-2 py-0.5 rounded-none text-[10px] font-mono bg-[#d99b53]/20 text-[#fcb96e] border border-[#d99b53]/40 backdrop-blur-sm">
+                  <span className="px-2 py-0.5 rounded-md text-[10px] font-mono bg-[#d99b53]/20 text-[#fcb96e] border border-[#d99b53]/40 backdrop-blur-sm">
                     Verified
                   </span>
                 </div>

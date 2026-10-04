@@ -125,6 +125,21 @@ Live milestone progress, completed features, ongoing sprints, and verification r
   - Streamlined footer strictly to 3 essential elements: Copyright (`© 2026 Max Behzadi. All rights reserved.`), active mailto link (`maxbehzadi82@gmail.com`), and privacy telemetry note (`Zero third-party tracking cookies · Privacy-first architecture.`).
   - Removed name/avatar block, role title string, Vienna timezone coordinates, and "Back to Top" link.
   - Applied generous symmetrical vertical padding (`py-12`), balanced flex distribution, and responsive mobile wrapping with `border-t border-[#232730]`.
+- [x] **TASK-413 (Global Design Alignment Pass)**:
+  - Styled all primary CTAs with solid `#ECEFF4` fill, `#0F1115` text in `font-mono text-xs uppercase tracking-wider font-medium`, shifting instantaneously to `#D99B53` on hover.
+  - Styled all secondary/outline buttons with 1px solid hairline borders (`#232730`), transparent background, and `#ECEFF4` text transitioning to `#D99B53` text & border on hover.
+  - Calibrated card surfaces across all sections to `#16191f` / `#15181E` framed with 1px solid hairline borders (`#232730`) and balanced padding (`p-6` to `p-8`).
+  - Standardized all section eyebrows to unbordered inline text in `JetBrains Mono` (`font-mono text-xs uppercase tracking-widest text-[#D99B53]`).
+  - Calibrated all `headline-lg` section titles to `32px` (`leading-[40px]`) with `lg:whitespace-nowrap` on desktop.
+- [x] **TASK-414 (Enterprise AI Image Alignment & Subtle Border Radii Restoration)**:
+  - Fixed client chatbot image inversion in `components/solutions.tsx`: Card 1 (Reloco) strictly points to `/client-projects/chatbot.jpeg` (dark Reloco screenshot) matching "Intelligent Relocation Support & Inquiry Bot", and Card 2 (Real Estate) strictly points to `/client-projects/chatbot-2.jpeg` (light Myler screenshot) matching "Automated Real Estate Support & Client Intake Assistant".
+  - Replaced rigid `rounded-none` geometry across all UI elements per updated `docs/DESIGN.md`:
+    * Cards & Panels: Set to `rounded-lg` (8px).
+    * Buttons (Primary & Secondary): Set to `rounded-md` (6px).
+    * Screenshot & Image Containers: Set to `rounded-md` (6px) with 1px hairline border (`#232730`).
+    * Form Fields & Controls: Set to `rounded-md` (6px).
+  - Maintained unbordered plain text style for all section eyebrows.
+  - Verified clean TypeScript compilation (`npx tsc --noEmit`) and successful production build (`npm run build`).
 
 ---
 

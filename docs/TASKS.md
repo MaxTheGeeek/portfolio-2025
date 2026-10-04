@@ -140,3 +140,12 @@ Engineering task breakdown, execution phases, state tracking, and section-by-sec
   - Keep only copyright, direct email anchor, and third-party tracking telemetry note.
   - Remove name block, role title, Vienna/UTC+1 timezone coordinates, and "Back to Top" link.
   - Apply clean symmetrical padding (`py-12`), balanced horizontal spacing, and responsive mobile wrapping.
+- [x] **TASK-413**: Global design alignment pass:
+  - Buttons & Interactive Links: Enforce solid `#ECEFF4` with `#0F1115` text shifting to `#D99B53` on hover for primary CTAs (`label-md` uppercase), and 1px hairline border `#232730` with hover transition to `#D99B53` for secondary/outline buttons.
+  - Section Eyebrows: Standardize all section top labels to unbordered plain text in `JetBrains Mono` (`label-sm`), uppercase `tracking-widest`, in accent bronze `#D99B53`.
+  - Section Headlines: Calibrate `headline-lg` section titles to `32px` (`leading-[40px]`) with `lg:whitespace-nowrap` on desktop.
+- [x] **TASK-414**: Enterprise AI image swap & subtle border radii restoration:
+  - Enterprise AI Inversion Fix: Swapped client project screenshots so Card 1 (Reloco) displays `/client-projects/chatbot.jpeg` (dark Reloco screenshot) matching "Intelligent Relocation Support & Inquiry Bot", and Card 2 (Real Estate) displays `/client-projects/chatbot-2.jpeg` (light Myler Winnipeg screenshot) matching "Automated Real Estate Support & Client Intake Assistant".
+  - Subtle Border Radii: Restored architectural border radius across all cards/panels (`rounded-lg` / 8px), buttons (`rounded-md` / 6px), screenshot/image containers (`rounded-md` / 6px with 1px border `#232730`), and form inputs/select/textarea (`rounded-md` / 6px).
+  - Maintained unbordered plain text style for section eyebrows (no pill containers or background badges).
+  - Full TypeScript typecheck (`npx tsc --noEmit`) and production build (`npm run build`) passed with zero errors.

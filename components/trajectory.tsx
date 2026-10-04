@@ -110,10 +110,10 @@ export function Trajectory() {
     <section className="scene py-24 md:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full relative" id="trajectory">
       {/* Section Header */}
       <div className="flex flex-col items-center text-center mb-16 max-w-3xl mx-auto">
-        <span className="text-xs font-mono uppercase tracking-[0.06em] text-[#d99b53] mb-3">
+        <span className="text-xs font-mono uppercase tracking-widest text-[#d99b53] mb-3">
           Career Journey
         </span>
-        <h2 className="font-serif text-2xl sm:text-[32px] sm:leading-[40px] font-normal text-[#f3f4f6] tracking-tight mb-4">
+        <h2 className="font-serif text-2xl sm:text-[32px] sm:leading-[40px] font-normal text-[#f3f4f6] tracking-tight mb-4 lg:whitespace-nowrap">
           Trajectory &amp; <span className="italic text-[#fcb96e]">Foundation</span>
         </h2>
         <p className="text-base sm:text-lg text-[#9ca3af] leading-relaxed">
@@ -137,10 +137,10 @@ export function Trajectory() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.4, delay: idx * 0.08 }}
-                className={`rounded-none border p-6 sm:p-7 relative transition-all duration-200 ${
+                className={`rounded-lg border p-6 sm:p-7 relative transition-all duration-200 ${
                   item.isCurrent
                     ? "bg-[#16191f] border-[#d99b53]/40 shadow-xl"
-                    : "bg-[#111317] border-[#232730] shadow-lg hover:border-[#d99b53]/30"
+                    : "bg-[#16191f] border-[#232730] shadow-lg hover:border-[#d99b53]/30"
                 }`}
               >
                 {/* Header Row */}
@@ -150,7 +150,7 @@ export function Trajectory() {
                       {item.period}
                     </span>
                     {item.isCurrent && (
-                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-none text-[10px] font-mono bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 font-semibold">
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-mono bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 font-semibold">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                         Active Focus
                       </span>
@@ -196,7 +196,7 @@ export function Trajectory() {
             <span>Academic &amp; Technical Credentials</span>
           </h3>
 
-          <div className="rounded-none border border-[#232730] bg-[#111317] p-6 sm:p-7 shadow-xl space-y-6">
+          <div className="rounded-lg border border-[#232730] bg-[#16191f] p-6 sm:p-8 shadow-xl space-y-6">
             {ACCREDITATIONS.map((acc, i) => (
               <div 
                 key={i} 
@@ -231,7 +231,7 @@ export function Trajectory() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.5 }}
-        className="rounded-none border border-[#232730] bg-[#111317] overflow-hidden shadow-2xl"
+        className="rounded-lg border border-[#232730] bg-[#16191f] overflow-hidden shadow-2xl"
         id="marsi"
       >
         <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
@@ -246,7 +246,7 @@ export function Trajectory() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#111317] via-transparent to-transparent opacity-60 lg:hidden" />
             <div className="absolute top-3 left-3">
-              <span className="px-2 py-0.5 rounded-none text-[10px] font-mono bg-[#0c0e12]/90 border border-[#232730] text-[#fcb96e] backdrop-blur-md">
+              <span className="px-2 py-0.5 rounded-md text-[10px] font-mono bg-[#0c0e12]/90 border border-[#232730] text-[#fcb96e] backdrop-blur-md">
                 Vienna Studio Life
               </span>
             </div>

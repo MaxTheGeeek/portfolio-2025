@@ -51,39 +51,39 @@ colors:
 typography:
   headline-xl:
     fontFamily: Newsreader
-    fontSize: 56px
+    fontSize: 44px
     fontWeight: '400'
-    lineHeight: 64px
+    lineHeight: 52px
     letterSpacing: -0.02em
   headline-xl-mobile:
     fontFamily: Newsreader
-    fontSize: 36px
+    fontSize: 34px
     fontWeight: '400'
-    lineHeight: 44px
+    lineHeight: 42px
     letterSpacing: -0.01em
   headline-lg:
     fontFamily: Newsreader
-    fontSize: 40px
+    fontSize: 32px
     fontWeight: '400'
-    lineHeight: 48px
+    lineHeight: 40px
     letterSpacing: -0.015em
   headline-lg-mobile:
-    fontFamily: Newsreader
-    fontSize: 28px
-    fontWeight: '400'
-    lineHeight: 36px
-    letterSpacing: -0.01em
-  headline-md:
     fontFamily: Newsreader
     fontSize: 26px
     fontWeight: '400'
     lineHeight: 34px
     letterSpacing: -0.01em
+  headline-md:
+    fontFamily: Newsreader
+    fontSize: 24px
+    fontWeight: '400'
+    lineHeight: 32px
+    letterSpacing: -0.01em
   headline-sm:
     fontFamily: Geist
-    fontSize: 18px
+    fontSize: 20px
     fontWeight: '600'
-    lineHeight: 26px
+    lineHeight: 28px
     letterSpacing: -0.01em
   body-lg:
     fontFamily: Geist
@@ -137,154 +137,54 @@ spacing:
 
 ## Brand & Style
 
-This design system expresses the credibility, intellectual rigor, and understated poise of a veteran systems architect and principal software engineer. It rejects modern synthetic portfolio tropes: generic glowing badges, decorative skill progress meters, rounded floating cards, and gratuitous code window chromes.
+This design system expresses the credibility, intellectual rigor, and understated poise of a veteran systems architect and principal software engineer[cite: 4]. It rejects modern synthetic portfolio tropes: generic glowing badges, decorative skill progress meters, rounded floating cards, and gratuitous code window chromes.
 
-The design movement is **Editorial Minimalist meets Swiss Functionalism**. Structure, spatial proportion, horizontal hairline rules, and strict typographic hierarchy govern the interface rather than heavy container blocks. Every visual mark serves attribution, legibility, and architectural clarity. The emotional atmosphere is calm, authoritative, deeply technical, and enduring.
+The design movement is **Editorial Minimalist meets Swiss Functionalism**[cite: 4]. Structure, spatial proportion, horizontal hairline rules, and strict typographic hierarchy govern the interface rather than heavy container blocks[cite: 4]. The emotional atmosphere is calm, authoritative, deeply technical, and enduring[cite: 4].
 
 ## Colors
 
-The palette is rooted in deep, warm volcanic tones rather than hollow slate or pitch black. 
+The palette is rooted in deep, warm volcanic tones rather than hollow slate or pitch black[cite: 4]. 
 
-- **Background & Canvas (`#0F1115`)**: A warm obsidian ground with high color depth that eliminates harsh contrast against text. Elevated panel surfaces settle into `#15181E` with subtle hairline divider strokes at `#232730`.
-- **Text & Foreground**: Primary reading text uses `#ECEFF4` (warm chalk), secondary technical commentary uses `#9CA3AF`, and tertiary metadata uses `#667085`.
+- **Background & Canvas (`#0c0e12` / `#0F1115`)**: A warm obsidian ground with high color depth that eliminates harsh contrast against text[cite: 4, 6]. Elevated panel surfaces settle into `#15181E` / `#16191f` with subtle hairline divider strokes at `#232730`[cite: 4, 6].
+- **Text & Foreground**: Primary reading text uses `#ECEFF4` (warm chalk), secondary technical commentary uses `#9CA3AF`, and tertiary metadata uses `#667085`[cite: 4, 6].
 - **Accents**: 
-  - Primary (`#D99B53`): An understated architectural bronze/amber used sparingly for operational state, key impact metrics, and active anchors.
-  - Secondary (`#768E9D`): A muted structural steel blue reserved for technical tags, commit hashes, and archival specs.
+  - Primary (`#D99B53`): An understated architectural bronze/amber used sparingly for operational state, key impact metrics, and active anchors[cite: 4, 6].
+  - Secondary (`#768E9D`): Muted structural steel blue reserved for technical tags, commit hashes, and archival specs[cite: 4].
 
-Never employ high-saturation neon glow effects, cyan drop-shadows, or saturated gradient text fills.
+## Typography
 
-### Typography & Layout Rules
-- **Headline Adjustments**:
-  - `headline-xl` (Hero title): Scale down desktop size by 2 steps (to `44px` / line-height `52px`) to eliminate crowding[cite: 4].
-  - `headline-lg` (Section titles): Adjust down to `32px` / line-height `40px` to guarantee single-line inline presentation on desktop viewports (`>= 1024px`) without wrapping[cite: 4].
-- **Navbar Typography**:
-  - Increase brand display name typography to `20px` semi-bold display scale (`headline-sm`)[cite: 4].
+1. **Newsreader (Display/Headlines)**: Brings literary gravity to statements and section titles[cite: 4, 6]. Headline-lg is calibrated to `32px` on desktop (`>= 1024px`) to guarantee single-line inline presentation without awkward line wraps[cite: 4].
+2. **Geist / Inter (Body/Narrative)**: Neutral, hyper-legible sans-serif for architectural readouts and project impact narratives[cite: 4, 6].
+3. **JetBrains Mono (Metadata/Labels)**: Strict fixed-width numerals, system metrics, dates, and repository tags[cite: 4, 6].
 
-1. **Newsreader (Display/Headlines)**: Brings an authoritative, literary gravity to personal philosophies, mission statements, and section intros. Set with regular weight and subtle tight tracking.
-2. **Geist (Body/Narrative)**: Neutral, hyper-legible neo-grotesque sans-serif optimized for deep architectural readouts, project impact narratives, and post-mortems.
-3. **JetBrains Mono (Metadata/Labels)**: Strict fixed-width numerals, system metrics, dates, repository tags, and system constraints. Set exclusively in medium/regular weights with generous tracking.
+## Layout, Depth & Geometry
 
-## Layout & Spacing
-
-The layout is an asymmetric, structured grid anchored by a maximum content container of `1180px`. The composition prioritizes quiet margin breathing room over packed dashboard grids.
-
-- **Desktop (1024px+)**: 12-column layout. Left columns (cols 1–4) regularly hold sticky section nomenclature, timelines, or primary meta details, while right columns (cols 5–12) carry deep technical writing, architectural tables, and deliverables.
-- **Tablet (768px – 1023px)**: 8-column layout. Sidebar annotations reflow into structured horizontal preambles directly above primary content segments.
-- **Mobile (< 768px)**: 4-column single-stream editorial stack. System parameters fold into responsive key-value lists.
-
-Vertical pacing adheres strictly to multiples of `0.5rem`, using `space-xl` (3rem) and larger section breaks (`5rem` to `7rem`) separated by hairline horizontal rules rather than boxed cards.
-
-## Elevation & Depth
-
-This system avoids layered shadows, skeuomorphic surface bevels, and frosted backdrop blurs. Depth is achieved via **tonal stacking and hairline demarcation**:
-
-- **Ground**: Base canvas resting at `#0F1115`.
-- **Structural Outlines**: 1px solid hairline dividers (`#232730`) create clean linear separations between row items, tables, and major hierarchy shifts.
-- **Elevated Surfaces**: Interactive rows, expanded drawer contexts, or code inspections utilize flat tonal shifts to `#15181E`, framed with a quiet `#2C323D` border.
-- **Focus & States**: Interactive elements never scale upward via spring animations; they trigger instantaneous or crisp 120ms linear color adjustments and subtle underline shifts.
-
-## Shapes
-
-The design system enforces architectural sharpness with `0px` radius geometry. 
-
-All interactive buttons, index tables, status indicators, and framing elements use razor-sharp rectangular perimeters. This crisp profile reinforces structural stability, engineering rigour, and classical print editorial tradition.
+- **Geometry & Border Radius**:
+  - Cards & Panels: Subtle, refined architectural rounding (`rounded-lg` / `8px` or `rounded-md` / `6px`) to avoid harsh blockiness while maintaining structural balance.
+  - Buttons & Inputs: Subtle `rounded-md` (`4px` to `6px`).
+  - Image Frames: `rounded-md` (`6px`) with 1px hairline border (`#232730`).
+- **Elevation & Outlines**: Flat surfaces elevated via tonal shifts (`#16191f`), bounded by 1px hairline solid borders (`#232730` or `rgba(255,255,255,0.08)`)[cite: 4, 6].
 
 ## Components
 
 ### Buttons & Interactive Links
-- **Primary Action**: Crisp rectangular block (`padding: 0.625rem 1.25rem`), `#ECEFF4` solid fill with `#0F1115` text in `label-md`. Hover state shifts immediately to `#D99B53`.
-- **Tertiary / Inline Link**: Monospaced anchor text (`label-md`) coupled with an explicit non-breaking arrow `->` and an underline positioned 4px below baseline with 30% border opacity, sharpening to 100% on hover.
+- **Primary CTA Button**: Rectangular block (`padding: 0.625rem 1.25rem`), subtle radius (`rounded-md` / `6px`), solid `#ECEFF4` fill with `#0F1115` text in `label-md` (`font-mono font-medium text-xs tracking-wider uppercase`)[cite: 4]. Hover state shifts immediately to `#D99B53` background[cite: 4].
+- **Secondary / Outline Button**: Subtle radius (`rounded-md` / `6px`), transparent background with 1px solid hairline border (`#232730`), text in `#ECEFF4`[cite: 4, 6]. Hover shifts border and text to `#D99B53`[cite: 4].
+- **Tertiary / Inline Link**: Monospaced anchor text (`label-md`) coupled with an explicit non-breaking arrow `→`[cite: 4].
 
-### Index / Project Registry (Table View)
-- Replaces generic image cards with a dense, comprehensive architectural registry.
-- Standard 5-column table structure: `Year`, `System / Project Name`, `Domain / Scope`, `Key Architecture / Tech`, `Reference Link`.
-- Top and bottom bounded by 1px rules (`#232730`). Row items transition to `#15181E` on hover with key metrics highlighted in bronze (`#D99B53`).
+### Cards & Container Panels
+- **Structure**: Clean subtle radius (`rounded-lg` / `8px`), background surface `#16191f` / `#15181E`, bounded by a 1px solid hairline border in `#232730`[cite: 4, 6].
+- **Hover Transitions**: Subtle tonal shift to `#1a1e26` with hairline border highlighting to `#373d4a` or `#D99B53`[cite: 4].
 
-### Chronological Experience Ledger
-- Linear vertical timeline without floating bubble nodes or ornamental dots.
-- Date ranges set in `label-sm` along a persistent left column; organization, position, and architectural impact summary sit in the parallel right column.
-- Bullet points are replaced with em-dashes (`—`) in muted secondary steel tone (`#768E9D`).
-
-### Technical Metadata & Chips
-- Eliminates bright pill badges. Replaced with bracketed, unrounded plain text labels: `[ Distributed Systems ]`, `[ raft / consensus ]`.
-- Rendered in `label-sm` using `#768E9D` text on transparent backgrounds.
+### Section Eyebrows & Status Indicators
+- **Unbordered Plain Typography**: No pill containers, no capsules, and no outer borders[cite: 4].
+- **Styling**: Rendered as an unbordered inline line in `label-sm` or `label-md` using `JetBrains Mono` (`font-mono text-xs uppercase tracking-widest`)[cite: 4]. Text color set to primary accent bronze (`#D99B53`) or muted secondary steel (`#768E9D`)[cite: 4].
 
 ### Form Inputs & Fields
-- Monospaced, border-bottom-only inputs without outer rounded frames.
-- Bottom border rests at 1px `#232730`, focusing to 1px `#D99B53` with zero glow radius. Labels float consistently above in uppercase `label-sm`.
-
-### Technical Proof Artifacts
-- When system topology or raw configurations are shown, they are presented inside an unadorned terminal pane: flat `#0B0C0E` background, 1px `#232730` stroke, strictly monospaced text, without faux macOS traffic-light buttons.
-
+- Subtle rounded edges (`rounded-md` / `4px`) or clean border-bottom inputs, bottom/border stroke at 1px `#232730`, focusing to 1px `#D99B53`[cite: 4].
 
 ### Hero Portrait Inspection Modal (Hover-Expanded)
-- **Geometry & Framing**: 
-  - Retain strict `0px` corner radius across normal and expanded states to preserve the architectural editorial identity[cite: 4].
-  - Border: 1px hairline stroke `#232730` in normal state, crisp `#D99B53` (primary accent) stroke in expanded modal state[cite: 4].
-- **Backdrop**:
-  - Backdrop blur: `rgba(12, 14, 18, 0.75)` with `backdrop-filter: blur(12px)`[cite: 4, 6].
-- **Motion & Easing**:
-  - Duration: `200ms`.
-  - Timing: Linear or crisp exit-entrance curve (`cubic-bezier(0.16, 1, 0.3, 1)`).
-  - No bouncy spring effects or synthetic skeuomorphic drop shadows[cite: 4].
-
-
-# Updates to DESIGN.md
-
-### 1. Typography Adjustments
-
-- **Headline Hierarchy (`headline-lg` / Section Titles)**:
-  - Slightly scale down desktop section titles (e.g., from `40px` / line-height `48px` to `32px` / line-height `40px`).
-  - Enforce single-line inline presentation for editorial section statements (e.g., "Engineering over stochastic guesswork.") across desktop viewports (`>= 1024px`), preventing awkward multi-line wraps.
-- **Hero Title (`headline-xl`)**:
-  - Reduce the primary hero headline by 2 standard scale steps on desktop (from `56px` to `44px`, line-height scaled proportionally from `64px` to `52px`) to eliminate layout crowding.
-- **Navigation Identity**:
-  - Increase the brand name typography scale from `label-lg` to a prominent `headline-sm` / semi-bold display scale (`20px`, letter-spacing `-0.01em`) to anchor the header without an avatar icon[cite: 4].
-
----
-
-### 2. Component Design Overhauls
-
-### Section Eyebrows & Status Indicators (Replaces Badge Component)
-- **Elimination of Badges & Pills**:
-  - Completely remove container pill backgrounds, hairline borders (`1px solid #232730`), inner padding, and rounded geometry from all section header tags[cite: 4].
-  - Render eyebrows purely as unbordered, monospaced text lines using `label-sm` or `label-md` in `JetBrains Mono`[cite: 4].
-  - Color set to primary accent bronze (`#d99b53` / `surface-tint`) or muted steel (`#768e9d`)[cite: 4].
-  - Maintain original font size and uppercase letter-spacing (`0.06em`) without any encapsulating container[cite: 4].
-
-### Architectural Principle Cards (Spec-Driven & Concurrency)
-- **Icon-Free Minimalism**:
-  - Remove all SVGs, glyphs, and decorative icon containers inside feature cards[cite: 4].
-  - Rely exclusively on strict typographic hierarchy: monospaced bracketed category labels (`[ SPEC-DRIVEN ]`, `[ CONCURRENCY ]`), sharp hairline dividers (`1px solid #232730`), and editorial body copy[cite: 4].
-
-### Navigation Chrome & Identity
-- **Left Identity Anchor**:
-  - Remove circular avatar container, photo crop, and status ring[cite: 4].
-  - Display strictly as clean typographic mark (`Max Behzadi`) with adjacent metadata (`Vienna, Austria`)[cite: 4].
-- **Action Group**:
-  - Remove secondary `Resume` button/link[cite: 4]. Keep only primary direct consultation CTA[cite: 4].
-
-### Hero Layout & Portrait Proportions
-- **Portrait Framing**:
-  - Increase the right-hand image container footprint by ~15%[cite: 4].
-  - Retain the sharp `0px` radius border framing with `1px` subtle outline (`#232730`)[cite: 4].
-- **Vertical Spacing**:
-  - Increase the vertical gap between the identity badge and telemetry indicators (`capabilities.ts` to `Agentic MCP`) from `space-sm` (`0.5rem`) to `space-md` (`1rem`) for improved breathing room[cite: 4].
-- **Section Eyebrow Labels**:
-  - Remove all capsule borders, backgrounds, and pill padding[cite: 4]. Render as unbordered monospaced text (`JetBrains Mono`, `label-sm` or `label-md`) with uppercase letter spacing (`0.06em`) in accent bronze (`#d99b53`) or muted steel (`#768e9d`)[cite: 4].
-- **Card Minimalist Reset**:
-  - Strip all icons and SVGs from Technical Principles cards[cite: 4]. Rely solely on typography, hairline borders (`1px solid #232730`), and bracketed metadata[cite: 4].
-- **Selected Works Image Frame**:
-  - Replace aggressive cropping with an aspect-ratio-preserving container that renders the full project screenshot without layout overflow[cite: 4].
-- **Hero Image Modal**:
-  - Expanded hover state: `0px` radius, 1px solid `#d99b53` stroke, `backdrop-filter: blur(12px)`, `rgba(12, 14, 18, 0.75)` backdrop[cite: 4].
-  
-  ### Minimalist Editorial Footer
-- **Spacing & Layout**:
-  - Container width matching the global maximum (`1180px` / `max-w-6xl`)[cite: 4, 6].
-  - Padding: `3rem 0` (`py-12`) with generous margin breathing room[cite: 4].
-  - Layout: `flex justify-between items-center` with equal distribution and ample column gaps[cite: 4].
-- **Typography & Colors**:
-  - Primary text: Monospaced metadata style (`JetBrains Mono`, `label-sm` or `11px/12px`), set in muted tertiary grey (`#667085` / `#9ca3af`)[cite: 4, 6].
-  - Email Anchor: `label-sm` in primary accent bronze (`#d99b53`), transitioning cleanly on hover without decorative badges[cite: 4, 6].
-  - Border: 1px solid hairline `#232730`[cite: 4].
+- **Geometry & Framing**: Subtle `rounded-lg` (`8px`) border radius[cite: 4].
+- **Border**: 1px hairline stroke `#232730` in normal state, crisp `#D99B53` in expanded state[cite: 4].
+- **Backdrop**: `rgba(12, 14, 18, 0.75)` with `backdrop-filter: blur(12px)`[cite: 4, 6].
+- **Motion & Easing**: 200ms linear or crisp entrance/exit curve (`cubic-bezier(0.16, 1, 0.3, 1)`)[cite: 4].

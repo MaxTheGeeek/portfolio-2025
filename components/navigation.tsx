@@ -66,10 +66,10 @@ export function TopNav() {
     <>
       <header className="fixed top-0 inset-x-0 z-50 flex justify-center px-4 sm:px-6 py-3 transition-all duration-300 pointer-events-none">
         <div 
-          className={`w-full max-w-7xl h-14 sm:h-16 rounded-full px-4 sm:px-6 flex items-center justify-between transition-all duration-300 pointer-events-auto ${
+          className={`w-full max-w-7xl h-14 sm:h-16 rounded-lg px-4 sm:px-6 flex items-center justify-between transition-all duration-300 pointer-events-auto ${
             isScrolled
-              ? "bg-[#0c0e12]/95 backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/40"
-              : "bg-[#111317]/85 backdrop-blur-md border border-white/10"
+              ? "bg-[#0c0e12]/95 backdrop-blur-xl border border-[#232730] shadow-2xl shadow-black/40"
+              : "bg-[#111317]/90 backdrop-blur-md border border-[#232730]"
           }`}
         >
           {/* Brand Typographic Mark & Geographic Attribution */}
@@ -98,14 +98,14 @@ export function TopNav() {
                   key={link.id}
                   href={`#${link.id}`}
                   onClick={(e) => handleNavClick(e, link.id)}
-                  className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 cursor-pointer ${
+                  className={`px-3 py-1.5 rounded-md font-mono text-xs uppercase tracking-wider transition-all duration-200 cursor-pointer ${
                     isActive
-                      ? "bg-white/10 text-[#fcb96e] font-semibold shadow-inner"
-                      : "text-[#9ca3af] hover:text-[#f3f4f6] hover:bg-white/5"
+                      ? "bg-[#16191f] text-[#fcb96e] border border-[#232730]"
+                      : "text-[#9ca3af] hover:text-[#ECEFF4] hover:bg-[#16191f]/60"
                   }`}
                 >
                   {link.id === "solutions" ? (
-                    <span className="inline-flex items-center gap-1.5 text-[#fcb96e] font-semibold">
+                    <span className="inline-flex items-center gap-1.5 text-[#fcb96e]">
                       <Sparkles className="w-3 h-3 text-[#d99b53]" />
                       <span>{link.label}</span>
                     </span>
@@ -122,7 +122,7 @@ export function TopNav() {
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, "contact")}
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#d99b53] hover:bg-[#fcb96e] text-[#111317] text-xs font-semibold transition-all shadow-md shadow-[#d99b53]/20 active:scale-95 cursor-pointer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-[#ECEFF4] hover:bg-[#D99B53] text-[#0F1115] font-mono font-medium text-xs tracking-wider uppercase transition-colors duration-150 cursor-pointer"
             >
               <span>Discuss Project</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -134,7 +134,7 @@ export function TopNav() {
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, "contact")}
-              className="px-3 py-1.5 rounded-full bg-[#d99b53] text-[#111317] text-xs font-semibold cursor-pointer"
+              className="px-3.5 py-2 rounded-md bg-[#ECEFF4] hover:bg-[#D99B53] text-[#0F1115] font-mono font-medium text-xs tracking-wider uppercase transition-colors duration-150 cursor-pointer"
             >
               Contact
             </a>
@@ -142,7 +142,7 @@ export function TopNav() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(prev => !prev)}
-              className="p-2 rounded-full bg-white/5 border border-white/10 text-[#9ca3af] hover:text-white cursor-pointer active:scale-95 focus:outline-none focus:ring-1 focus:ring-[#d99b53]"
+              className="p-2 rounded-md bg-[#16191f] border border-[#232730] text-[#9ca3af] hover:text-[#ECEFF4] hover:border-[#D99B53] cursor-pointer focus:outline-none"
               aria-label="Toggle navigation menu"
               aria-expanded={mobileMenuOpen}
             >
@@ -153,16 +153,16 @@ export function TopNav() {
 
         {/* Mobile Drawer Menu (< md) */}
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-20 left-4 right-4 rounded-2xl bg-[#0c0e12]/95 backdrop-blur-2xl border border-white/15 p-5 shadow-2xl flex flex-col gap-2 pointer-events-auto z-50">
+          <div className="md:hidden absolute top-20 left-4 right-4 rounded-lg bg-[#0c0e12]/98 backdrop-blur-2xl border border-[#232730] p-5 shadow-2xl flex flex-col gap-2 pointer-events-auto z-50">
             {NAV_LINKS.map(link => (
               <a
                 key={link.id}
                 href={`#${link.id}`}
                 onClick={(e) => handleNavClick(e, link.id)}
-                className={`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-colors cursor-pointer ${
+                className={`w-full text-left px-4 py-3 rounded-md font-mono text-xs uppercase tracking-wider transition-colors cursor-pointer ${
                   activeSection === link.id
-                    ? "bg-[#d99b53]/15 text-[#fcb96e] font-semibold"
-                    : "text-[#9ca3af] hover:bg-white/5 hover:text-white"
+                    ? "bg-[#16191f] text-[#fcb96e] border border-[#232730]"
+                    : "text-[#9ca3af] hover:bg-[#16191f]/50 hover:text-white"
                 }`}
               >
                 {link.id === "solutions" ? (
@@ -176,11 +176,11 @@ export function TopNav() {
               </a>
             ))}
 
-            <div className="pt-3 mt-2 border-t border-white/10 flex flex-col gap-2">
+            <div className="pt-3 mt-2 border-t border-[#232730] flex flex-col gap-2">
               <a
                 href="#contact"
                 onClick={(e) => handleNavClick(e, "contact")}
-                className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#d99b53] text-[#111317] text-sm font-semibold cursor-pointer"
+                className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-md bg-[#ECEFF4] hover:bg-[#D99B53] text-[#0F1115] font-mono font-medium text-xs tracking-wider uppercase transition-colors duration-150 cursor-pointer"
               >
                 <span>Discuss Project</span>
                 <ArrowRight className="w-4 h-4" />

@@ -198,10 +198,10 @@ export function Contact() {
     <section className="scene py-24 md:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full relative" id="contact">
       {/* Header */}
       <div className="flex flex-col items-center text-center mb-16 max-w-2xl mx-auto">
-        <span className="text-xs font-mono uppercase tracking-[0.06em] text-[#d99b53] mb-3">
+        <span className="text-xs font-mono uppercase tracking-widest text-[#d99b53] mb-3">
           Technical Consultation &amp; Intake
         </span>
-        <h2 className="font-serif text-2xl sm:text-[32px] sm:leading-[40px] font-normal text-[#f3f4f6] tracking-tight mb-4">
+        <h2 className="font-serif text-2xl sm:text-[32px] sm:leading-[40px] font-normal text-[#f3f4f6] tracking-tight mb-4 lg:whitespace-nowrap">
           Let&apos;s Build <span className="italic text-[#fcb96e]">Something Exceptional</span>
         </h2>
         <p className="text-base text-[#9ca3af] leading-relaxed">
@@ -218,7 +218,7 @@ export function Contact() {
           transition={{ duration: 0.5 }}
           className="lg:col-span-5 flex flex-col gap-6"
         >
-          <div className="rounded-none border border-[#232730] bg-[#111317] p-6 sm:p-8 flex flex-col gap-6 shadow-xl">
+          <div className="rounded-lg border border-[#232730] bg-[#16191f] p-6 sm:p-8 flex flex-col gap-6 shadow-xl">
             <div>
               <div className="text-xs font-mono text-[#d99b53] uppercase tracking-[0.06em] mb-1">
                 Direct Coordinates
@@ -232,7 +232,7 @@ export function Contact() {
             </div>
 
             {/* Direct Email Card */}
-            <div className="p-4 rounded-none bg-[#16191f] border border-[#232730] flex flex-col gap-3">
+            <div className="p-4 rounded-md bg-[#16191f] border border-[#232730] flex flex-col gap-3">
               <div className="flex items-center justify-between">
                 <span className="text-[11px] font-mono uppercase tracking-wider text-[#768e9d]">Direct Mailbox</span>
                 <span className="inline-flex items-center gap-1.5 text-[11px] text-emerald-400 font-mono">
@@ -250,7 +250,7 @@ export function Contact() {
                 <button
                   type="button"
                   onClick={handleCopyEmail}
-                  className="p-1.5 rounded-none bg-white/5 hover:bg-white/10 text-[#9ca3af] hover:text-white transition-colors cursor-pointer shrink-0"
+                  className="p-1.5 rounded-md bg-white/5 hover:bg-white/10 text-[#9ca3af] hover:text-white transition-colors cursor-pointer shrink-0"
                   title="Copy email to clipboard"
                   aria-label="Copy email address"
                 >
@@ -265,7 +265,7 @@ export function Contact() {
 
             {/* Location & Response SLA */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono">
-              <div className="p-3 rounded-none bg-[#16191f] border border-[#232730] flex items-center gap-2.5">
+              <div className="p-3 rounded-md bg-[#16191f] border border-[#232730] flex items-center gap-2.5">
                 <MapPin className="w-4 h-4 text-[#d99b53] shrink-0" />
                 <div>
                   <div className="text-[10px] text-[#768e9d]">Location</div>
@@ -273,7 +273,7 @@ export function Contact() {
                 </div>
               </div>
 
-              <div className="p-3 rounded-none bg-[#16191f] border border-[#232730] flex items-center gap-2.5">
+              <div className="p-3 rounded-md bg-[#16191f] border border-[#232730] flex items-center gap-2.5">
                 <Clock className="w-4 h-4 text-[#d99b53] shrink-0" />
                 <div>
                   <div className="text-[10px] text-[#768e9d]">Response SLA</div>
@@ -288,7 +288,7 @@ export function Contact() {
                 href="https://github.com/MaxTheGeeek"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-2 p-2.5 rounded-none bg-[#16191f] hover:bg-white/5 border border-[#232730] text-xs font-mono text-[#9ca3af] hover:text-white transition-all cursor-pointer"
+                className="flex-1 inline-flex items-center justify-center gap-2 p-2.5 rounded-md bg-[#16191f] hover:bg-white/5 border border-[#232730] text-xs font-mono text-[#9ca3af] hover:text-white transition-all cursor-pointer"
               >
                 <Github className="w-4 h-4 text-[#d99b53]" />
                 <span>GitHub</span>
@@ -299,7 +299,7 @@ export function Contact() {
                 href="https://linkedin.com/in/max-behzadi"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-2 p-2.5 rounded-none bg-[#16191f] hover:bg-white/5 border border-[#232730] text-xs font-mono text-[#9ca3af] hover:text-white transition-all cursor-pointer"
+                className="flex-1 inline-flex items-center justify-center gap-2 p-2.5 rounded-md bg-[#16191f] hover:bg-white/5 border border-[#232730] text-xs font-mono text-[#9ca3af] hover:text-white transition-all cursor-pointer"
               >
                 <Linkedin className="w-4 h-4 text-[#d99b53]" />
                 <span>LinkedIn</span>
@@ -317,7 +317,7 @@ export function Contact() {
           transition={{ duration: 0.5 }}
           className="lg:col-span-7"
         >
-          <div className="rounded-none border border-[#232730] bg-[#111317] p-6 sm:p-10 shadow-xl relative overflow-hidden">
+          <div className="rounded-lg border border-[#232730] bg-[#16191f] p-6 sm:p-8 shadow-xl relative overflow-hidden">
             <h3 className="font-serif text-2xl text-[#f3f4f6] font-normal mb-2">
               Send a Project Inquiry
             </h3>
@@ -329,9 +329,9 @@ export function Contact() {
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="p-8 rounded-none bg-[#d99b53]/10 border border-[#d99b53]/30 text-center flex flex-col items-center gap-4"
+                className="p-8 rounded-lg bg-[#d99b53]/10 border border-[#d99b53]/30 text-center flex flex-col items-center gap-4"
               >
-                <div className="w-14 h-14 rounded-none bg-[#d99b53]/20 border border-[#d99b53]/40 flex items-center justify-center text-[#fcb96e]">
+                <div className="w-14 h-14 rounded-md bg-[#d99b53]/20 border border-[#d99b53]/40 flex items-center justify-center text-[#fcb96e]">
                   <CheckCircle2 className="w-7 h-7" />
                 </div>
                 <div>
@@ -344,13 +344,13 @@ export function Contact() {
                   <button
                     type="button"
                     onClick={() => setSubmitStatus("idle")}
-                    className="px-5 py-2.5 rounded-none bg-white/10 hover:bg-white/15 text-white text-xs font-semibold transition-all cursor-pointer"
+                    className="px-5 py-2.5 rounded-md bg-transparent hover:border-[#D99B53] hover:text-[#D99B53] border border-[#232730] text-[#ECEFF4] font-mono text-xs uppercase tracking-wider font-medium transition-colors duration-150 cursor-pointer"
                   >
                     Send Another Message
                   </button>
                   <a
                     href="mailto:maxbehzadi82@gmail.com"
-                    className="px-5 py-2.5 rounded-none bg-[#d99b53]/20 hover:bg-[#d99b53]/30 border border-[#d99b53]/40 text-[#fcb96e] text-xs font-semibold transition-all"
+                    className="px-5 py-2.5 rounded-md bg-[#ECEFF4] hover:bg-[#D99B53] text-[#0F1115] font-mono font-medium text-xs tracking-wider uppercase transition-colors duration-150 inline-flex items-center gap-1.5"
                   >
                     Open in Email Client
                   </a>
@@ -383,7 +383,7 @@ export function Contact() {
                       placeholder="e.g. Alex Morgan"
                       value={formState.name}
                       onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-none bg-[#16191f] border border-[#232730] text-white placeholder-[#6b7280] text-sm focus:outline-none focus:border-[#d99b53] transition-all"
+                      className="w-full px-3.5 py-2.5 rounded-md bg-[#16191f] border border-[#232730] text-white placeholder-[#6b7280] text-sm focus:outline-none focus:border-[#d99b53] transition-all"
                     />
                   </div>
 
@@ -398,7 +398,7 @@ export function Contact() {
                       placeholder="alex@company.com"
                       value={formState.email}
                       onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-none bg-[#16191f] border border-[#232730] text-white placeholder-[#6b7280] text-sm focus:outline-none focus:border-[#d99b53] transition-all"
+                      className="w-full px-3.5 py-2.5 rounded-md bg-[#16191f] border border-[#232730] text-white placeholder-[#6b7280] text-sm focus:outline-none focus:border-[#d99b53] transition-all"
                     />
                   </div>
                 </div>
@@ -415,7 +415,7 @@ export function Contact() {
                       placeholder="Organization or Private"
                       value={formState.organization}
                       onChange={(e) => setFormState({ ...formState, organization: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-none bg-[#16191f] border border-[#232730] text-white placeholder-[#6b7280] text-sm focus:outline-none focus:border-[#d99b53] transition-all"
+                      className="w-full px-3.5 py-2.5 rounded-md bg-[#16191f] border border-[#232730] text-white placeholder-[#6b7280] text-sm focus:outline-none focus:border-[#d99b53] transition-all"
                     />
                   </div>
 
@@ -427,7 +427,7 @@ export function Contact() {
                       id="contact-scope"
                       value={formState.scope}
                       onChange={(e) => setFormState({ ...formState, scope: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-none bg-[#16191f] border border-[#232730] text-white text-sm focus:outline-none focus:border-[#d99b53] transition-all"
+                      className="w-full px-3.5 py-2.5 rounded-md bg-[#16191f] border border-[#232730] text-white text-sm focus:outline-none focus:border-[#d99b53] transition-all"
                     >
                       {PROJECT_TYPE_OPTIONS.map((opt) => (
                         <option key={opt} value={opt} className="bg-[#111317] text-white">
@@ -450,13 +450,13 @@ export function Contact() {
                     placeholder="Describe your system requirements, technical constraints, timeline, or objectives..."
                     value={formState.message}
                     onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-none bg-[#16191f] border border-[#232730] text-white placeholder-[#6b7280] text-sm focus:outline-none focus:border-[#d99b53] transition-all resize-none"
+                    className="w-full px-3.5 py-2.5 rounded-md bg-[#16191f] border border-[#232730] text-white placeholder-[#6b7280] text-sm focus:outline-none focus:border-[#d99b53] transition-all resize-none"
                   />
                 </div>
 
                 {/* Error Banner */}
                 {submitStatus === "error" && (
-                  <div className="p-3 rounded-none bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs flex items-center gap-2">
+                  <div className="p-3 rounded-md bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs flex items-center gap-2">
                     <AlertCircle className="w-4 h-4 shrink-0" />
                     <span>{errorMessage}</span>
                   </div>
@@ -470,17 +470,17 @@ export function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-none bg-[#d99b53] hover:bg-[#fcb96e] text-[#111317] font-semibold text-sm transition-all duration-200 shadow-md shadow-[#d99b53]/20 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md bg-[#ECEFF4] hover:bg-[#D99B53] text-[#0F1115] font-mono font-medium text-xs tracking-wider uppercase transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                   >
                     {isSubmitting ? (
                       <>
-                        <span className="w-4 h-4 border-2 border-[#111317] border-t-transparent rounded-full animate-spin" />
+                        <span className="w-3.5 h-3.5 border-2 border-[#111317] border-t-transparent rounded-full animate-spin" />
                         <span>Sending to Web3Forms...</span>
                       </>
                     ) : (
                       <>
                         <span>Send Message</span>
-                        <Send className="w-4 h-4" />
+                        <Send className="w-3.5 h-3.5" />
                       </>
                     )}
                   </button>
