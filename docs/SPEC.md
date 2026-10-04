@@ -229,6 +229,21 @@ The portfolio establishes credibility for high-ticket client advisory and enterp
 
 ---
 
+### Section 07: Global Footer
+- **Layout & Structure**:
+  - Minimalist, single-line horizontal layout (with clean vertical stacking on mobile viewports)[cite: 4, 6].
+  - Border: 1px hairline divider stroke (`rgba(255, 255, 255, 0.08)` / `#232730`) separating the footer from the preceding section[cite: 4, 6].
+  - Spacing: Generous, symmetrical vertical breathing room (`py-12` or `3rem` padding top/bottom) with balanced margins[cite: 4].
+- **Included Elements Only**:
+  1. **Copyright**: `© 2026 Max Behzadi. All rights reserved.`[cite: 5, 7]
+  2. **Direct Email Anchor**: `maxbehzadi82@gmail.com` styled with monospaced typography (`JetBrains Mono`, `label-sm`), warm bronze hover state (`#d99b53`), and `mailto:` action[cite: 4, 6, 8].
+  3. **Privacy Telemetry Statement**: `Zero third-party tracking cookies · Privacy-first architecture.`[cite: 5, 7, 8, 9]
+- **Removed Elements**:
+  - Remove brand monogram block `[MB] Max Behzadi`[cite: 6, 7].
+  - Remove role label (`Full-Stack Engineer | Applied AI Engineer`) from the footer[cite: 6, 9].
+  - Remove geographic location and timezone info (`Vienna, Austria · Europe/Vienna (UTC+1)`)[cite: 6, 7, 9].
+  - Remove `BACK TO TOP ↑` button[cite: 5, 9].
+
 ## 5. Step-by-Step Implementation Plan
 
 ### Step 1: Project Setup & Baseline HTML Scaffolding
