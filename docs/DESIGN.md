@@ -278,3 +278,13 @@ All interactive buttons, index tables, status indicators, and framing elements u
   - Replace aggressive cropping with an aspect-ratio-preserving container that renders the full project screenshot without layout overflow[cite: 4].
 - **Hero Image Modal**:
   - Expanded hover state: `0px` radius, 1px solid `#d99b53` stroke, `backdrop-filter: blur(12px)`, `rgba(12, 14, 18, 0.75)` backdrop[cite: 4].
+  
+  ### Minimalist Editorial Footer
+- **Spacing & Layout**:
+  - Container width matching the global maximum (`1180px` / `max-w-6xl`)[cite: 4, 6].
+  - Padding: `3rem 0` (`py-12`) with generous margin breathing room[cite: 4].
+  - Layout: `flex justify-between items-center` with equal distribution and ample column gaps[cite: 4].
+- **Typography & Colors**:
+  - Primary text: Monospaced metadata style (`JetBrains Mono`, `label-sm` or `11px/12px`), set in muted tertiary grey (`#667085` / `#9ca3af`)[cite: 4, 6].
+  - Email Anchor: `label-sm` in primary accent bronze (`#d99b53`), transitioning cleanly on hover without decorative badges[cite: 4, 6].
+  - Border: 1px solid hairline `#232730`[cite: 4].

@@ -121,6 +121,10 @@ Live milestone progress, completed features, ongoing sprints, and verification r
   - Confirmed 100% removal of all "Resume" download links and buttons from both navbar and footer.
   - Confirmed zero TypeScript errors with `npx tsc --noEmit`.
   - Confirmed zero build errors or warnings with `npm run build` (1.47s Turbopack build).
+- [x] **TASK-412 (Minimalist Editorial Footer Refactor)**:
+  - Streamlined footer strictly to 3 essential elements: Copyright (`© 2026 Max Behzadi. All rights reserved.`), active mailto link (`maxbehzadi82@gmail.com`), and privacy telemetry note (`Zero third-party tracking cookies · Privacy-first architecture.`).
+  - Removed name/avatar block, role title string, Vienna timezone coordinates, and "Back to Top" link.
+  - Applied generous symmetrical vertical padding (`py-12`), balanced flex distribution, and responsive mobile wrapping with `border-t border-[#232730]`.
 
 ---
 

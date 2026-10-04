@@ -135,3 +135,8 @@ Engineering task breakdown, execution phases, state tracking, and section-by-sec
   - Remove all remaining resume links and download options from the entire codebase.
   - Test all buttons, internal anchors, and links across viewports.
   - Verify clean compilation with `npx tsc --noEmit` and `npm run build`.
+
+- [x] **TASK-412**: Refactor footer to minimal layout:
+  - Keep only copyright, direct email anchor, and third-party tracking telemetry note.
+  - Remove name block, role title, Vienna/UTC+1 timezone coordinates, and "Back to Top" link.
+  - Apply clean symmetrical padding (`py-12`), balanced horizontal spacing, and responsive mobile wrapping.
