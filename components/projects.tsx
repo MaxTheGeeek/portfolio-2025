@@ -9,13 +9,7 @@ import {
   ChevronRight, 
   ArrowRight, 
   Heart, 
-  ExternalLink, 
-  Cpu, 
-  Layers, 
-  Activity, 
-  ShieldCheck, 
-  Terminal,
-  CheckCircle2
+  ExternalLink 
 } from "lucide-react";
 
 interface CaseStudy {
@@ -26,95 +20,115 @@ interface CaseStudy {
   timeframe: string;
   stack: string[];
   description: string;
-  metrics: { label: string; value: string }[];
   image: string;
   liveUrl?: string;
 }
 
 const CASE_STUDIES: CaseStudy[] = [
   {
-    id: "maxerz-desktop",
-    number: "01 // DESKTOP RUNTIME • 2024-2025",
-    name: "MaxerZ Desktop Application",
-    role: "Lead Architect & Systems Developer",
-    timeframe: "2024 - 2025",
-    stack: ["C#", ".NET MAUI", "Python Engine", "OpenRouter API", "SQLite"],
-    description: "Engineered a native client desktop platform optimizing professional career governance workflows via local-first execution. Integrates custom tool calling with OpenRouter endpoints while decoupling payload state across asynchronous worker threads to maintain 60fps UI responsiveness during bulk document compilation.",
-    metrics: [
-      { label: "Threading", value: "Async Worker Pool" },
-      { label: "Model Routing", value: "Adaptive Fallback" },
-      { label: "Storage", value: "Encrypted SQLite" },
-      { label: "Responsiveness", value: "60 FPS UI Thread" }
-    ],
-    image: "/projects/maxerz-1.png",
+    id: "maxerz",
+    number: "01 // AI DESKTOP RUNTIME • 2026",
+    name: "MaxerZ",
+    role: "Lead Systems Architect",
+    timeframe: "2026",
+    stack: ["C#", ".NET 8", "Angular", "MAUI"],
+    description: "AI-powered native desktop application engineered to streamline professional career governance and document compilation. Features decoupled worker threads, local-first execution, and adaptive model orchestration to maintain a responsive 60 FPS UI under intensive document generation workloads.",
+    image: "/projects/maxerz-2.png",
     liveUrl: "https://github.com/MaxTheGeeek"
   },
   {
-    id: "stereum",
-    number: "02 // DISTRIBUTED IAAS • 2024-2026",
-    name: "Stereum Launcher & Plus",
+    id: "stereum-plus",
+    number: "02 // IAAS PROVISIONING • 2024-2026",
+    name: "StereumPlus",
     role: "Full-Stack Systems Engineer · RockLogic GmbH",
-    timeframe: "2024 - 2026",
-    stack: ["Vue.js", "Electron", "Shell Scripting", "RabbitMQ", "Docker"],
-    description: "Decoupled Ethereum node automation platform used by 50,000+ active validators and stakers globally. Engineered zero-downtime client switching, dynamic system resource throttling, and distributed RPC heartbeat monitoring across multiple testnets and mainnet.",
-    metrics: [
-      { label: "Deployment Scale", value: "50,000+ Active Nodes" },
-      { label: "Architecture", value: "Decoupled Message Bus" },
-      { label: "Reliability", value: "Zero-Downtime Swap" },
-      { label: "Telemetry", value: "Prometheus & Grafana" }
-    ],
-    image: "/projects/launcher-1.png",
+    timeframe: "2024 — 2026",
+    stack: ["Next.js", "NestJS", "TypeScript", "RabbitMQ", "BullMQ", "PostgreSQL", "TypeORM"],
+    description: "High-throughput cloud server provisioning and infrastructure platform. Orchestrates bare-metal and virtual machine deployments with asynchronous queue pipelines, real-time node telemetry, and granular role-based access controls.",
+    image: "/projects/stereum-plus.png",
+    liveUrl: "https://stereumplus.com"
+  },
+  {
+    id: "stereum-launcher",
+    number: "03 // ETH NODE ORCHESTRATION • 2022-2026",
+    name: "Stereum Launcher Desktop App",
+    role: "Frontend Lead & Systems Developer · RockLogic GmbH",
+    timeframe: "2022 — 2026",
+    stack: ["Vue.js", "Node.js", "WebSocket", "Ansible", "Electron.js"],
+    description: "Cross-platform Ethereum node management platform trusted by 50,000+ active validators and stakers globally. Engineered zero-downtime client switching, dynamic system resource throttling, and distributed RPC heartbeat monitoring across multiple testnets and mainnet.",
+    image: "/projects/launcher-2.png",
     liveUrl: "https://stereum.net"
   },
   {
-    id: "rocklogic",
-    number: "03 // TELEMETRY & CLOUD • 2024-2025",
-    name: "rocklogic.at Architecture",
-    role: "Infrastructure & Telemetry Engineer · RockLogic GmbH",
-    timeframe: "2024 - 2025",
-    stack: ["Next.js", "TypeScript", "Grafana API", "Docker", "Nginx"],
-    description: "B2B telemetry and infrastructure showcase delivering real-time Ethereum node cluster monitoring, automated Grafana dashboard provisioning, and high-performance server-side rendering with sub-100ms time to first byte.",
-    metrics: [
-      { label: "TTFB Performance", value: "< 90ms Edge Global" },
-      { label: "Dashboard Engine", value: "Automated Grafana API" },
-      { label: "Cluster Monitoring", value: "10+ Enterprise Clients" },
-      { label: "Security", value: "Hardened TLS Reverse Proxy" }
-    ],
-    image: "/projects/rocklogic.png",
-    liveUrl: "https://rocklogic.at"
-  },
-  {
-    id: "private-banking-wpf",
-    number: "04 // FINTECH SYSTEMS • 2023-2024",
-    name: "Private Banking Portfolio Suite",
+    id: "private-bank-app",
+    number: "04 // ENTERPRISE FINTECH • 2023-2024",
+    name: "Private Bank Internal App",
     role: "Senior .NET Systems Developer",
-    timeframe: "2023 - 2024",
-    stack: ["C#", "WPF", "MVVM Pattern", "VirtualizingStackPanel", "SQL Server"],
-    description: "High-throughput financial valuation workstation built for enterprise asset managers. Solved extreme UI lag by implementing VirtualizingStackPanel algorithms capable of rendering 50,000+ active portfolio rows at 60 FPS while reducing calculation latency from 850ms to sub-120ms.",
-    metrics: [
-      { label: "UI Virtualization", value: "50,000+ Records @ 60 FPS" },
-      { label: "Latency Reduction", value: "850ms → < 120ms" },
-      { label: "Memory Hygiene", value: "Zero Thread Blocking" },
-      { label: "Reporting Engine", value: "Crystal Reports Integrated" }
-    ],
+    timeframe: "2023 — 2024",
+    stack: ["WPF", "Angular", "C#", ".NET Framework", "Crystal Reports"],
+    description: "Mission-critical financial valuation workstation built for enterprise asset managers. Solved extreme UI lag by implementing UI virtualization algorithms capable of rendering 50,000+ active portfolio rows at 60 FPS while reducing calculation latency from 850ms to sub-120ms.",
     image: "/projects/banking-table.png"
   },
   {
-    id: "cover-letter-work",
-    number: "05 // AGENTIC PIPELINES • 2025-2026",
-    name: "cover-letter.work & AI Document Pipelines",
+    id: "persian-score",
+    number: "05 // SPORTS TELEMETRY • 2025",
+    name: "Persian Score",
+    role: "Full-Stack Developer",
+    timeframe: "2025",
+    stack: ["Next.js", "TypeScript", "Supabase", "Socket.io / WebSocket"],
+    description: "High-concurrency sports telemetry and live score platform. Built with real-time WebSocket feeds and edge caching to stream second-by-second football match updates, statistics, and league standings under heavy traffic surges.",
+    image: "/projects/persian-scores.png"
+  },
+  {
+    id: "irmall",
+    number: "06 // RETAIL ARCHITECTURE • 2024",
+    name: "IRMALL",
+    role: "Full-Stack Developer",
+    timeframe: "2024",
+    stack: ["React", "Contentful CRM", "Node.js", "PostgreSQL"],
+    description: "E-commerce retail platform featuring decoupled catalog indexing, atomic shopping cart transactions, and dynamic payment gateway integration. Designed with clean RESTful APIs and optimized SQL schema relations.",
+    image: "/projects/irmall.png"
+  },
+  {
+    id: "tasty-day",
+    number: "07 // FOOD-TECH PLATFORM • 2023",
+    name: "Tasty Day",
+    role: "Frontend Developer",
+    timeframe: "2023",
+    stack: ["HTML", "CSS", "JavaScript", "jQuery"],
+    description: "Consumer diet food ordering and recipe platform. Engineered interactive nutritional calculators, responsive recipe galleries, and order dispatch pipelines with zero runtime dependencies.",
+    image: "/projects/tastyday.png"
+  },
+  {
+    id: "stereum-labs",
+    number: "08 // AI NODE OBSERVABILITY • 2024-2025",
+    name: "Stereum Labs",
+    role: "Full-Stack Engineer · RockLogic GmbH",
+    timeframe: "2024 — 2025",
+    stack: ["Next.js", "NestJS", "TypeScript", "RabbitMQ", "BullMQ", "PostgreSQL", "TypeORM"],
+    description: "AI-powered telemetry and node observability suite. Ingests distributed node logs through asynchronous message queues to detect synchronization bottlenecks and alert infrastructure operators before validator slashes occur.",
+    image: "/projects/stereum-labs.png",
+    liveUrl: "https://stereumlabs.com"
+  },
+  {
+    id: "cvmaker",
+    number: "09 // RESUME & ATS PLATFORM • 2025-2026",
+    name: "CVMaker",
     role: "Full-Stack & Applied AI Engineer",
-    timeframe: "2025 - 2026",
-    stack: ["Next.js", "TypeScript", "OpenRouter", "Supabase", "Tailwind CSS"],
-    description: "Production career intelligence engine converting unstructured candidate backgrounds into bespoke executive communications. Implemented schema AST verification to eliminate AI hallucinations and multi-turn prompt optimization with real-time streaming feedback.",
-    metrics: [
-      { label: "Context Engine", value: "Multi-Turn Structured Prompting" },
-      { label: "Hallucination Defense", value: "AST Schema Verification" },
-      { label: "Token Streaming", value: "< 2s First Token Latency" },
-      { label: "Persistence", value: "Vector Search & Postgres" }
-    ],
+    timeframe: "2025 — 2026",
+    stack: ["Next.js", "NestJS", "TypeScript", "OpenRouter API", "Groq API"],
+    description: "Intelligent career documentation platform with ATS parsing and resume structuring. Utilizes high-speed inference via Groq and OpenRouter to generate formatted executive summaries, tailored CVs, and deterministic PDF artifacts.",
     image: "/projects/cover-1.png",
     liveUrl: "https://cover-letter.work"
+  },
+  {
+    id: "aspira",
+    number: "10 // INDUSTRIAL ACCOUNTING • PRIOR",
+    name: "Aspira",
+    role: "Software Developer (.NET)",
+    timeframe: "Prior Years",
+    stack: ["MVVM", "C#", "WPF", ".NET Framework", "NHibernate", "LINQ"],
+    description: "Industrial accounting desktop system supporting double-entry bookkeeping, multi-currency ledgers, and comprehensive auditing. Engineered complex transactional queries using NHibernate, LINQ, and SQL Server stored procedures.",
+    image: "/projects/aspira-persian.png"
   }
 ];
 
@@ -187,16 +201,18 @@ export function Projects() {
     setTouchStartX(null);
   };
 
-  const handleLike = async (projectName: string, e: React.MouseEvent) => {
-    e.stopPropagation();
+  const handleLike = async (projectName: string, e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
     if (hasLikedMap[projectName]) return;
 
-    // Optimistic update
     setLikesMap(prev => ({
       ...prev,
       [projectName]: (prev[projectName] || 0) + 1
     }));
-    setHasLikedMap(prev => ({ ...prev, [projectName]: true }));
+    setHasLikedMap(prev => ({
+      ...prev,
+      [projectName]: true
+    }));
 
     try {
       await fetch("/api/likes", {
@@ -223,7 +239,7 @@ export function Projects() {
   return (
     <section className="scene py-24 md:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full relative" id="projects">
       {/* Dossier Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 pb-6 border-b border-white/10">
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 pb-6 border-b border-[#232730]">
         <div>
           <span className="text-xs font-mono uppercase tracking-[0.06em] text-[#d99b53] mb-2 block">
             Engineering Dossier
@@ -235,19 +251,19 @@ export function Projects() {
 
         {/* Carousel Pagination Controls */}
         <div className="flex items-center gap-4">
-          <div className="text-xs font-mono text-[#6b7280]">
+          <div className="text-xs font-mono text-[#768e9d]">
             <span className="text-[#f3f4f6] font-semibold">{currentIndex + 1}</span> of {CASE_STUDIES.length}
           </div>
 
           {/* Dots Indicator */}
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-1 sm:gap-1.5 flex-wrap max-w-[160px] sm:max-w-none">
             {CASE_STUDIES.map((_, i) => (
               <button
                 key={i}
                 type="button"
                 onClick={() => setCurrentIndex(i)}
-                className={`h-1.5 rounded-full transition-all cursor-pointer ${
-                  currentIndex === i ? "w-6 bg-[#d99b53]" : "w-1.5 bg-white/20 hover:bg-white/40"
+                className={`h-1.5 rounded-none transition-all cursor-pointer ${
+                  currentIndex === i ? "w-5 bg-[#d99b53]" : "w-1.5 bg-white/20 hover:bg-white/40"
                 }`}
                 aria-label={`Go to case study ${i + 1}`}
               />
@@ -259,7 +275,7 @@ export function Projects() {
             <button
               type="button"
               onClick={handlePrev}
-              className="w-9 h-9 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-[#f3f4f6] hover:text-[#fcb96e] transition-colors cursor-pointer active:scale-95"
+              className="w-9 h-9 rounded-none bg-[#16191f] hover:bg-[#232730] border border-[#232730] flex items-center justify-center text-[#f3f4f6] hover:text-[#fcb96e] transition-colors cursor-pointer active:scale-95"
               aria-label="Previous Case Study (ArrowLeft)"
               title="Previous Case Study (ArrowLeft)"
             >
@@ -268,7 +284,7 @@ export function Projects() {
             <button
               type="button"
               onClick={handleNext}
-              className="w-9 h-9 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-[#f3f4f6] hover:text-[#fcb96e] transition-colors cursor-pointer active:scale-95"
+              className="w-9 h-9 rounded-none bg-[#16191f] hover:bg-[#232730] border border-[#232730] flex items-center justify-center text-[#f3f4f6] hover:text-[#fcb96e] transition-colors cursor-pointer active:scale-95"
               aria-label="Next Case Study (ArrowRight)"
               title="Next Case Study (ArrowRight)"
             >
@@ -286,28 +302,28 @@ export function Projects() {
           animate={{ opacity: 1, y: 0 }}
           exit={shouldReduceMotion ? undefined : { opacity: 0, y: -12 }}
           transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-          className="rounded-2xl border border-white/10 bg-[#111317] overflow-hidden shadow-2xl touch-pan-y"
+          className="rounded-none border border-[#232730] bg-[#111317] overflow-hidden shadow-2xl touch-pan-y"
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
-            {/* Left Column: Case Study Intelligence & Metrics */}
+            {/* Left Column: Case Study Intelligence & Overview */}
             <div className="lg:col-span-7 p-6 sm:p-10 flex flex-col justify-between">
               <div>
                 {/* Dossier Top Identifier */}
-                <div className="flex flex-wrap items-center justify-between gap-3 pb-4 mb-6 border-b border-white/10 text-xs font-mono">
+                <div className="flex flex-wrap items-center justify-between gap-3 pb-4 mb-6 border-b border-[#232730] text-xs font-mono">
                   <span className="text-[#fcb96e] font-medium tracking-wider">
                     {currentStudy.number}
                   </span>
                   <div className="flex items-center gap-3">
-                    <span className="text-[#6b7280]">{currentStudy.timeframe}</span>
+                    <span className="text-[#768e9d]">{currentStudy.timeframe}</span>
                     <button
                       type="button"
                       onClick={(e) => handleLike(currentStudy.name, e)}
-                      className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-mono transition-all cursor-pointer ${
+                      className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-none text-xs font-mono transition-all cursor-pointer ${
                         hasLikedMap[currentStudy.name]
                           ? "bg-rose-500/15 border border-rose-500/30 text-rose-400"
-                          : "bg-white/5 border border-white/10 text-[#9ca3af] hover:text-white"
+                          : "bg-[#16191f] border border-[#232730] text-[#9ca3af] hover:text-white"
                       }`}
                       title="Like this case study"
                     >
@@ -335,7 +351,7 @@ export function Projects() {
                   {currentStudy.stack.map(tag => (
                     <span
                       key={tag}
-                      className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-[#16191f] border border-white/10 text-[#d1d5db]"
+                      className="px-2.5 py-1 rounded-none text-[11px] font-mono bg-[#16191f] border border-[#232730] text-[#d1d5db]"
                     >
                       {tag}
                     </span>
@@ -343,64 +359,48 @@ export function Projects() {
                 </div>
               </div>
 
-              {/* Metrics Grid */}
-              <div className="pt-6 border-t border-white/10">
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-                  {currentStudy.metrics.map((m, idx) => (
-                    <div key={idx} className="p-3 rounded-xl bg-[#16191f] border border-white/5">
-                      <div className="text-[10px] font-mono text-[#6b7280] uppercase tracking-wider mb-0.5">
-                        {m.label}
-                      </div>
-                      <div className="text-xs font-mono font-semibold text-[#f3f4f6]">
-                        {m.value}
-                      </div>
-                    </div>
-                  ))}
-                </div>
+              {/* Action Row (Legacy metrics removed per TASK-406) */}
+              <div className="pt-6 border-t border-[#232730] flex flex-wrap items-center justify-between gap-4">
+                <a
+                  href="#contact"
+                  onClick={(e) => handleDeepDive(currentStudy.name, e)}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-none bg-[#d99b53] hover:bg-[#fcb96e] text-[#111317] font-semibold text-xs transition-all shadow-md shadow-[#d99b53]/20 active:scale-95 cursor-pointer"
+                >
+                  <span>Request Technical Deep Dive</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
 
-                {/* Action Row */}
-                <div className="flex flex-wrap items-center justify-between gap-4">
+                {currentStudy.liveUrl && (
                   <a
-                    href="#contact"
-                    onClick={(e) => handleDeepDive(currentStudy.name, e)}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#d99b53] hover:bg-[#fcb96e] text-[#111317] font-semibold text-xs transition-all shadow-md shadow-[#d99b53]/20 active:scale-95 cursor-pointer"
+                    href={currentStudy.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-mono text-[#9ca3af] hover:text-[#fcb96e] transition-colors"
                   >
-                    <span>Request Technical Deep Dive</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <span>Public Repository / Live</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
                   </a>
-
-                  {currentStudy.liveUrl && (
-                    <a
-                      href={currentStudy.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-mono text-[#9ca3af] hover:text-[#fcb96e] transition-colors"
-                    >
-                      <span>Public Repository / Live</span>
-                      <ExternalLink className="w-3.5 h-3.5" />
-                    </a>
-                  )}
-                </div>
+                )}
               </div>
             </div>
 
-            {/* Right Column: Visual Preview / Case Study Asset */}
-            <div className="lg:col-span-5 relative bg-[#0c0e12] border-t lg:border-t-0 lg:border-l border-white/10 min-h-[300px] lg:min-h-[460px] flex items-center justify-center p-6 sm:p-8">
-              <div className="relative w-full h-full min-h-[260px] rounded-xl overflow-hidden border border-white/10 shadow-lg group">
+            {/* Right Column: Visual Preview / Case Study Asset (Uncropped Preserved Framing) */}
+            <div className="lg:col-span-5 relative bg-[#08090b] border-t lg:border-t-0 lg:border-l border-[#232730] min-h-[340px] sm:min-h-[420px] lg:min-h-[500px] flex items-center justify-center p-4 sm:p-6 lg:p-8">
+              <div className="relative w-full h-full min-h-[280px] sm:min-h-[360px] lg:min-h-[440px] rounded-none overflow-hidden border border-[#232730] bg-[#0c0e12] flex items-center justify-center group shadow-xl">
                 <Image
                   src={currentStudy.image}
                   alt={currentStudy.name}
                   fill
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                  sizes="(max-width: 1024px) 100vw, 42vw"
+                  className="object-contain p-2 sm:p-3 transition-transform duration-500 group-hover:scale-[1.01]"
+                  priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0c0e12] via-transparent to-transparent opacity-40" />
 
-                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
-                  <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-black/80 text-[#9ca3af] border border-white/10">
+                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between pointer-events-none">
+                  <span className="px-2 py-0.5 rounded-none text-[10px] font-mono bg-black/85 text-[#9ca3af] border border-[#232730] backdrop-blur-sm">
                     Production Architecture
                   </span>
-                  <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-[#d99b53]/20 text-[#fcb96e] border border-[#d99b53]/30">
+                  <span className="px-2 py-0.5 rounded-none text-[10px] font-mono bg-[#d99b53]/20 text-[#fcb96e] border border-[#d99b53]/40 backdrop-blur-sm">
                     Verified
                   </span>
                 </div>

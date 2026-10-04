@@ -23,7 +23,7 @@ export function Principles() {
 
       {/* Two-Column Comparative Architectural Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* Pillar 01: Spec-Driven Agentic Engineering */}
+        {/* Pillar 01: Deterministic AI & Context-Grounded Architecture */}
         <motion.div
           initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -34,35 +34,35 @@ export function Principles() {
           <div>
             <div className="flex items-center justify-between mb-6 pb-4 border-b border-[#232730]">
               <span className="text-xs font-mono uppercase tracking-[0.06em] text-[#d99b53]">
-                [ SPEC-DRIVEN ]
+                [ DETERMINISTIC AI ]
               </span>
               <span className="text-[11px] font-mono text-[#768e9d] uppercase tracking-wider">
-                AST &amp; MCP Architecture
+                STRUCTURED RAG &amp; MCP INTEGRATION
               </span>
             </div>
 
             <h3 className="font-serif text-2xl font-normal text-[#f3f4f6] mb-3">
-              Spec-Driven Agentic Engineering
+              Deterministic AI &amp; Context-Grounded Architecture
             </h3>
             <p className="text-xs text-[#d99b53] font-mono uppercase tracking-wider mb-4">
-              Model Context Protocol · Schema AST Filters · Deterministic Verification
+              MODEL CONTEXT PROTOCOL (MCP) · SCHEMA VALIDATION · SEMANTIC RETRIEVAL
             </p>
             <p className="text-sm text-[#9ca3af] leading-relaxed mb-6">
-              Modern AI agents are only as reliable as the deterministic contracts enclosing them. I engineer custom Model Context Protocol (MCP) servers, sandboxed execution boundaries, and schema AST filters that force language models into verified execution paths, completely eliminating hallucinations and silent execution drifts.
+              AI agents and LLM assistants are only as dependable as the boundary contracts enclosing them. I design resilient workflows using Model Context Protocol (MCP) servers, domain-specific retrieval-augmented generation (RAG), and strict output parsing to keep language models predictable, secure, and grounded in actual business logic.
             </p>
 
-            <ul className="space-y-3 pt-5 border-t border-[#232730] text-xs text-[#9ca3af]">
+            <ul className="space-y-3.5 pt-5 border-t border-[#232730] text-xs text-[#9ca3af]">
               <li className="flex items-start gap-3">
                 <span className="text-[#fcb96e] font-mono font-bold mt-0.5">01</span>
-                <span><strong className="text-[#f3f4f6]">Context Hygiene:</strong> Real-time token pruning and semantic graph anchoring prevents state corruption in multi-turn executions.</span>
+                <span><strong className="text-[#f3f4f6]">Context Engineering:</strong> Precise context pruning and hybrid vector search via PostgreSQL (pgvector) ensure relevant, grounded retrieval without context pollution.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-[#fcb96e] font-mono font-bold mt-0.5">02</span>
-                <span><strong className="text-[#f3f4f6]">AST Verification:</strong> Responses validated against strict JSON and TypeScript abstract syntax trees before entering downstream systems.</span>
+                <span><strong className="text-[#f3f4f6]">Strict Schema Validation:</strong> Model outputs are enforced through validated typed schemas before triggering downstream services or database mutations.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-[#fcb96e] font-mono font-bold mt-0.5">03</span>
-                <span><strong className="text-[#f3f4f6]">Human-in-the-Loop Gateways:</strong> Critical state modifications require cryptographic approval checkpoints and immutable audit logs.</span>
+                <span><strong className="text-[#f3f4f6]">Human-in-the-Loop Safeguards:</strong> High-impact business actions and state mutations require explicit verification and structured audit logging.</span>
               </li>
             </ul>
           </div>
@@ -70,13 +70,13 @@ export function Principles() {
           <div className="pt-6 mt-6 border-t border-[#232730] flex flex-wrap gap-2 text-[10px] font-mono text-[#768e9d]">
             <span>[ MCP PROTOCOL ]</span>
             <span>·</span>
-            <span>[ CONTEXT HYGIENE ]</span>
+            <span>[ EMBEDDING PIPELINES ]</span>
             <span>·</span>
-            <span>[ ZERO HALLUCINATION ]</span>
+            <span>[ BOUNDED EXECUTION ]</span>
           </div>
         </motion.div>
 
-        {/* Pillar 02: High Concurrency & Memory Discipline */}
+        {/* Pillar 02: High-Throughput Backends & Event-Driven Systems */}
         <motion.div
           initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -87,45 +87,45 @@ export function Principles() {
           <div>
             <div className="flex items-center justify-between mb-6 pb-4 border-b border-[#232730]">
               <span className="text-xs font-mono uppercase tracking-[0.06em] text-[#d99b53]">
-                [ CONCURRENCY ]
+                [ CONCURRENCY &amp; RELIABILITY ]
               </span>
               <span className="text-[11px] font-mono text-[#768e9d] uppercase tracking-wider">
-                Memory Discipline
+                BACKEND PERFORMANCE
               </span>
             </div>
 
             <h3 className="font-serif text-2xl font-normal text-[#f3f4f6] mb-3">
-              High Concurrency &amp; Memory Discipline
+              High-Throughput Backends &amp; Event-Driven Systems
             </h3>
             <p className="text-xs text-[#d99b53] font-mono uppercase tracking-wider mb-4">
-              .NET Span&lt;T&gt; · Memory Pooling · Asynchronous Message Queues
+              .NET CORE · ASYNCHRONOUS PIPELINES · MESSAGE BROKERS
             </p>
             <p className="text-sm text-[#9ca3af] leading-relaxed mb-6">
-              Years of building native desktop platforms, distributed Ethereum node orchestration tools, and private banking valuation instruments taught me that speed is a consequence of discipline. I write zero-allocation loops using Span&lt;T&gt;, implement asynchronous message brokers with RabbitMQ, and virtualize rendering pipelines to keep user interfaces fluid at 60 FPS.
+              Building distributed systems and data-intensive services requires strict architectural boundaries and predictable resource utilization. I build decoupled, high-performance backends with asynchronous message brokers, efficient memory handling, and clean database query design to ensure systems remain stable under real-world traffic.
             </p>
 
-            <ul className="space-y-3 pt-5 border-t border-[#232730] text-xs text-[#9ca3af]">
+            <ul className="space-y-3.5 pt-5 border-t border-[#232730] text-xs text-[#9ca3af]">
               <li className="flex items-start gap-3">
                 <span className="text-[#fcb96e] font-mono font-bold mt-0.5">01</span>
-                <span><strong className="text-[#f3f4f6]">Zero-Allocation Slices:</strong> Leveraging .NET Span&lt;T&gt; and MemoryPool to eliminate garbage collector pauses during high-frequency data streams.</span>
+                <span><strong className="text-[#f3f4f6]">Memory &amp; Resource Discipline:</strong> Leveraging modern .NET idioms (memory pooling, efficient stream processing, and unbuffered I/O) to keep GC pressure and latency minimal.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-[#fcb96e] font-mono font-bold mt-0.5">02</span>
-                <span><strong className="text-[#f3f4f6]">Decoupled Worker Threads:</strong> Heavy cryptographic and mathematical calculations isolated from UI threads via worker channels.</span>
+                <span><strong className="text-[#f3f4f6]">Decoupled Event Pipelines:</strong> Offloading heavy compute and third-party integrations to asynchronous background workers using RabbitMQ.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-[#fcb96e] font-mono font-bold mt-0.5">03</span>
-                <span><strong className="text-[#f3f4f6]">UI Virtualization:</strong> Custom VirtualizingStackPanel rendering 50,000+ rows seamlessly with zero memory bloat.</span>
+                <span><strong className="text-[#f3f4f6]">Resilient API Gateways:</strong> Implementing circuit breakers, structured rate limiting, and graceful degradation across web APIs and microservices.</span>
               </li>
             </ul>
           </div>
 
           <div className="pt-6 mt-6 border-t border-[#232730] flex flex-wrap gap-2 text-[10px] font-mono text-[#768e9d]">
-            <span>[ ZERO ALLOCATION ]</span>
+            <span>[ EVENT-DRIVEN ]</span>
             <span>·</span>
-            <span>[ RABBITMQ QUEUES ]</span>
+            <span>[ RABBITMQ / QUEUES ]</span>
             <span>·</span>
-            <span>[ 60 FPS VIRTUALIZATION ]</span>
+            <span>[ PERFORMANCE DISCIPLINE ]</span>
           </div>
         </motion.div>
       </div>

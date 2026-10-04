@@ -38,15 +38,6 @@ export function Footer() {
           </a>
 
           <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-[#fcb96e] transition-colors"
-          >
-            Download Résumé (PDF)
-          </a>
-
-          <a
             href="mailto:maxbehzadi82@gmail.com"
             className="text-[#fcb96e] hover:underline transition-colors"
           >

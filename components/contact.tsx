@@ -95,7 +95,7 @@ export function Contact() {
     setSubmitStatus("idle");
     setErrorMessage("");
 
-    const accessKey = process.env.NEXT_PUBLIC_FORM_ACCESS_KEY || "756fd8d4-0237-4f66-98e7-d55c15c5eef9";
+    const accessKey = process.env.NEXT_PUBLIC_FORM_ACCESS_KEY || process.env.FORM_ACCESS_KEY || "756fd8d4-0237-4f66-98e7-d55c15c5eef9";
 
     try {
       // 1. Primary Dispatch: Web3Forms API

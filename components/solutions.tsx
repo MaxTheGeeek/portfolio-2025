@@ -5,19 +5,8 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { 
   Bot, 
-  Mic, 
-  Cpu, 
   ArrowRight, 
-  CheckCircle2, 
-  Zap, 
-  ShieldCheck, 
-  Activity,
-  Layers,
-  Sparkles,
-  ExternalLink,
-  MessageSquare,
-  Terminal,
-  Server
+  ShieldCheck 
 } from "lucide-react";
 import { scrollToSection } from "@/lib/scroll";
 
@@ -47,37 +36,37 @@ export function Solutions() {
           What I build for <span className="italic text-[#fcb96e]">organizations & clients</span>
         </h2>
         <p className="text-base sm:text-lg text-[#9ca3af] leading-relaxed">
-          Eliminating toy demonstrations in favor of verifiable, low-latency AI pipelines and production enterprise software designed for continuous operations.
+          Direct engineering collaboration from architectural design and local model integration through to production deployment and operational handover.
         </p>
       </div>
 
       {/* Featured Client Deliverables: Both Chatbot Images Prominently Displayed */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
-        {/* Deliverable 1: FindDev Chatbot */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        {/* Deliverable 1: Reloco Chatbot (Strictly without GmbH) */}
         <motion.div
           initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.5 }}
-          className="rounded-2xl border border-white/10 bg-[#111317] overflow-hidden shadow-2xl flex flex-col hover:border-[#d99b53]/40 transition-all duration-300 group"
+          className="rounded-none border border-[#232730] bg-[#111317] overflow-hidden shadow-2xl flex flex-col hover:border-[#d99b53]/40 transition-all duration-300 group"
         >
           {/* Top Bar */}
-          <div className="flex items-center justify-between px-5 py-3.5 bg-[#16191f] border-b border-white/10">
+          <div className="flex items-center justify-between px-5 py-3.5 bg-[#16191f] border-b border-[#232730]">
             <div className="flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-[#d99b53]" />
-              <span className="text-xs font-mono font-medium text-[#f3f4f6]">FindDev · Production Delivery</span>
+              <span className="text-xs font-mono font-medium text-[#f3f4f6]">Reloco · Client Project</span>
             </div>
-            <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-[11px] font-mono flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              Live Deployment
+            <span className="px-2.5 py-0.5 rounded-none bg-amber-500/10 border border-amber-500/30 text-amber-400 text-[11px] font-mono flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+              In Progress
             </span>
           </div>
 
           {/* Screenshot Display */}
           <div className="relative aspect-[16/10] w-full bg-[#0c0e12] overflow-hidden">
             <Image
-              src="/client-projects/chatbot.jpeg"
-              alt="FindDev Intelligent Customer Service Chatbot"
+              src="/client-projects/chatbot-2.jpeg"
+              alt="Reloco Intelligent Relocation Support & Inquiry Bot"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
@@ -85,11 +74,11 @@ export function Solutions() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#111317] via-transparent to-transparent opacity-50" />
             <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between">
-              <span className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-[#0c0e12]/90 border border-white/15 text-[#f3f4f6] backdrop-blur-md">
-                Grounded RAG & Support Engine
+              <span className="px-2.5 py-1 rounded-none text-[11px] font-mono bg-[#0c0e12]/90 border border-white/15 text-[#f3f4f6] backdrop-blur-md">
+                Self-Hosted Local LLM
               </span>
-              <span className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-[#0c0e12]/90 border border-white/15 text-[#fcb96e] backdrop-blur-md">
-                FindDev Platform
+              <span className="px-2.5 py-1 rounded-none text-[11px] font-mono bg-[#0c0e12]/90 border border-white/15 text-[#fcb96e] backdrop-blur-md">
+                Reloco Platform
               </span>
             </div>
           </div>
@@ -100,70 +89,70 @@ export function Solutions() {
               <div className="flex items-center gap-2 mb-2">
                 <Bot className="w-4 h-4 text-[#d99b53]" />
                 <span className="text-[11px] font-mono uppercase tracking-wider text-[#d99b53]">
-                  Enterprise Support · Grounded RAG
+                  ENTERPRISE SUPPORT • LOCAL RAG
                 </span>
               </div>
               <h3 className="text-xl font-semibold text-[#f3f4f6] tracking-tight mb-2">
-                Intelligent Customer Service & Support Chatbot
+                Intelligent Relocation Support & Inquiry Bot
               </h3>
               <p className="text-xs text-[#9ca3af] leading-relaxed">
-                Built an always-on 24/7 grounded RAG knowledge engine. Implemented schema AST verification to eliminate AI hallucinations and ensure flawless triage and escalation to human staff.
+                Built an automated 24/7 customer support chatbot for relocation workflows. Powered by a self-hosted local LLM and semantic search via PostgreSQL (pgvector), the system retrieves grounded policy and procedural data to resolve inquiries instantly and escalate edge cases seamlessly to human agents.
               </p>
             </div>
 
-            {/* Telemetry Chips */}
-            <div className="grid grid-cols-3 gap-2.5 pt-4 border-t border-white/10">
-              <div className="p-2.5 rounded-xl bg-[#16191f] border border-white/5">
-                <div className="text-[10px] font-mono text-[#6b7280] uppercase tracking-wider">Accuracy</div>
-                <div className="text-xs font-mono font-semibold text-[#fcb96e] mt-0.5">99.8% Grounded</div>
+            {/* 3 Structured Stats (TASK-405) */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-4 border-t border-[#232730]">
+              <div className="p-3 rounded-none bg-[#16191f] border border-[#232730]">
+                <div className="text-[10px] font-mono text-[#768e9d] uppercase tracking-wider">Architecture</div>
+                <div className="text-xs font-mono font-semibold text-[#fcb96e] mt-1">On-Prem / Local</div>
               </div>
-              <div className="p-2.5 rounded-xl bg-[#16191f] border border-white/5">
-                <div className="text-[10px] font-mono text-[#6b7280] uppercase tracking-wider">Latency</div>
-                <div className="text-xs font-mono font-semibold text-[#fcb96e] mt-0.5">&lt; 420ms</div>
+              <div className="p-3 rounded-none bg-[#16191f] border border-[#232730]">
+                <div className="text-[10px] font-mono text-[#768e9d] uppercase tracking-wider">Retrieval Engine</div>
+                <div className="text-xs font-mono font-semibold text-[#fcb96e] mt-1">PostgreSQL + pgvector</div>
               </div>
-              <div className="p-2.5 rounded-xl bg-[#16191f] border border-white/5">
-                <div className="text-[10px] font-mono text-[#6b7280] uppercase tracking-wider">Guardrails</div>
-                <div className="text-xs font-mono font-semibold text-[#fcb96e] mt-0.5">Zero Hallucination</div>
+              <div className="p-3 rounded-none bg-[#16191f] border border-[#232730]">
+                <div className="text-[10px] font-mono text-[#768e9d] uppercase tracking-wider">Factual Accuracy</div>
+                <div className="text-xs font-mono font-semibold text-[#fcb96e] mt-1">Context-Grounded</div>
               </div>
             </div>
 
             {/* Action Button */}
             <button
               type="button"
-              onClick={(e) => handleSelectService("AI Customer Support Chatbot (FindDev)", e)}
-              className="w-full mt-2 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#16191f] hover:bg-[#d99b53] text-[#f3f4f6] hover:text-[#111317] border border-white/10 hover:border-[#d99b53] font-medium text-xs transition-all duration-200 cursor-pointer shadow-sm"
+              onClick={(e) => handleSelectService("Intelligent Relocation Support Bot (Reloco)", e)}
+              className="w-full mt-2 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-none bg-[#16191f] hover:bg-[#d99b53] text-[#f3f4f6] hover:text-[#111317] border border-[#232730] hover:border-[#d99b53] font-medium text-xs transition-all duration-200 cursor-pointer shadow-sm"
             >
-              <span>Discuss Customer Service Chatbot</span>
+              <span>Discuss Relocation Support Bot</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>
         </motion.div>
 
-        {/* Deliverable 2: Reloco GmbH Intake & Dispatch */}
+        {/* Deliverable 2: Real Estate Assistant (FindDev) */}
         <motion.div
           initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="rounded-2xl border border-white/10 bg-[#111317] overflow-hidden shadow-2xl flex flex-col hover:border-[#d99b53]/40 transition-all duration-300 group"
+          className="rounded-none border border-[#232730] bg-[#111317] overflow-hidden shadow-2xl flex flex-col hover:border-[#d99b53]/40 transition-all duration-300 group"
         >
           {/* Top Bar */}
-          <div className="flex items-center justify-between px-5 py-3.5 bg-[#16191f] border-b border-white/10">
+          <div className="flex items-center justify-between px-5 py-3.5 bg-[#16191f] border-b border-[#232730]">
             <div className="flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-[#d99b53]" />
-              <span className="text-xs font-mono font-medium text-[#f3f4f6]">Reloco GmbH · Production Delivery</span>
+              <span className="text-xs font-mono font-medium text-[#f3f4f6]">Real Estate Assistant · Client Project</span>
             </div>
-            <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-[11px] font-mono flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              Live Deployment
+            <span className="px-2.5 py-0.5 rounded-none bg-amber-500/10 border border-amber-500/30 text-amber-400 text-[11px] font-mono flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+              In Progress
             </span>
           </div>
 
           {/* Screenshot Display */}
           <div className="relative aspect-[16/10] w-full bg-[#0c0e12] overflow-hidden">
             <Image
-              src="/client-projects/chatbot-2.jpeg"
-              alt="Reloco GmbH Autonomous Voice Assistant and Client Intake"
+              src="/client-projects/chatbot.jpeg"
+              alt="Automated Real Estate Support & Client Intake Assistant"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
@@ -171,11 +160,11 @@ export function Solutions() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#111317] via-transparent to-transparent opacity-50" />
             <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between">
-              <span className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-[#0c0e12]/90 border border-white/15 text-[#f3f4f6] backdrop-blur-md">
-                Full-Duplex Voice & Triage
+              <span className="px-2.5 py-1 rounded-none text-[11px] font-mono bg-[#0c0e12]/90 border border-white/15 text-[#f3f4f6] backdrop-blur-md">
+                Private Inference &amp; Intake
               </span>
-              <span className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-[#0c0e12]/90 border border-white/15 text-[#fcb96e] backdrop-blur-md">
-                Reloco Ecosystem
+              <span className="px-2.5 py-1 rounded-none text-[11px] font-mono bg-[#0c0e12]/90 border border-white/15 text-[#fcb96e] backdrop-blur-md">
+                Real Estate CRM
               </span>
             </div>
           </div>
@@ -184,105 +173,161 @@ export function Solutions() {
           <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-5">
             <div>
               <div className="flex items-center gap-2 mb-2">
-                <Mic className="w-4 h-4 text-[#d99b53]" />
+                <Bot className="w-4 h-4 text-[#d99b53]" />
                 <span className="text-[11px] font-mono uppercase tracking-wider text-[#d99b53]">
-                  Production Delivery · Voice AI & Dispatch
+                  REAL ESTATE CRM • SEMANTIC INTAKE
                 </span>
               </div>
               <h3 className="text-xl font-semibold text-[#f3f4f6] tracking-tight mb-2">
-                Autonomous AI Voice Assistant & Intake Dispatch
+                Automated Real Estate Support & Client Intake Assistant
               </h3>
               <p className="text-xs text-[#9ca3af] leading-relaxed">
-                Engineered a low-latency conversational audio pipeline for automated inbound appointment dispatching, customer intake, and direct CRM synchronization with sub-second response times.
+                Engineered an on-site customer service assistant to qualify leads and answer client queries around listings and real estate services. Leveraged a high-efficiency local inference model with embedded vector search in PostgreSQL, ensuring private data handling, fast response times, and structured client inquiry handoff.
               </p>
             </div>
 
-            {/* Telemetry Chips */}
-            <div className="grid grid-cols-3 gap-2.5 pt-4 border-t border-white/10">
-              <div className="p-2.5 rounded-xl bg-[#16191f] border border-white/5">
-                <div className="text-[10px] font-mono text-[#6b7280] uppercase tracking-wider">Response</div>
-                <div className="text-xs font-mono font-semibold text-[#fcb96e] mt-0.5">&lt; 380ms Sub-Sec</div>
+            {/* 3 Structured Stats (TASK-405) */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-4 border-t border-[#232730]">
+              <div className="p-3 rounded-none bg-[#16191f] border border-[#232730]">
+                <div className="text-[10px] font-mono text-[#768e9d] uppercase tracking-wider">Local LLM</div>
+                <div className="text-xs font-mono font-semibold text-[#fcb96e] mt-1">Private Inference</div>
               </div>
-              <div className="p-2.5 rounded-xl bg-[#16191f] border border-white/5">
-                <div className="text-[10px] font-mono text-[#6b7280] uppercase tracking-wider">Uptime</div>
-                <div className="text-xs font-mono font-semibold text-[#fcb96e] mt-0.5">99.9% Production</div>
+              <div className="p-3 rounded-none bg-[#16191f] border border-[#232730]">
+                <div className="text-[10px] font-mono text-[#768e9d] uppercase tracking-wider">Fast Retrieval</div>
+                <div className="text-xs font-mono font-semibold text-[#fcb96e] mt-1">Vector Search</div>
               </div>
-              <div className="p-2.5 rounded-xl bg-[#16191f] border border-white/5">
-                <div className="text-[10px] font-mono text-[#6b7280] uppercase tracking-wider">Protocol</div>
-                <div className="text-xs font-mono font-semibold text-[#fcb96e] mt-0.5">MCP / WebSockets</div>
+              <div className="p-3 rounded-none bg-[#16191f] border border-[#232730]">
+                <div className="text-[10px] font-mono text-[#768e9d] uppercase tracking-wider">Lead Intake</div>
+                <div className="text-xs font-mono font-semibold text-[#fcb96e] mt-1">Automated Triage</div>
               </div>
             </div>
 
             {/* Action Button */}
             <button
               type="button"
-              onClick={(e) => handleSelectService("AI Voice Assistant (Reloco GmbH)", e)}
-              className="w-full mt-2 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#16191f] hover:bg-[#d99b53] text-[#f3f4f6] hover:text-[#111317] border border-white/10 hover:border-[#d99b53] font-medium text-xs transition-all duration-200 cursor-pointer shadow-sm"
+              onClick={(e) => handleSelectService("Automated Real Estate Support & Intake Assistant", e)}
+              className="w-full mt-2 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-none bg-[#16191f] hover:bg-[#d99b53] text-[#f3f4f6] hover:text-[#111317] border border-[#232730] hover:border-[#d99b53] font-medium text-xs transition-all duration-200 cursor-pointer shadow-sm"
             >
-              <span>Discuss Voice Assistant & Dispatch</span>
+              <span>Discuss Real Estate Assistant</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>
         </motion.div>
       </div>
 
-      {/* Deliverable 3: Enterprise Full-Stack & Desktop Systems */}
-      <motion.div
-        initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.5 }}
-        className="rounded-2xl border border-white/10 bg-[#111317] p-7 sm:p-8 shadow-xl mb-12 hover:border-[#d99b53]/40 transition-all duration-300"
-      >
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-          <div className="space-y-3 max-w-3xl">
-            <div className="flex items-center gap-2">
-              <Cpu className="w-4 h-4 text-[#d99b53]" />
-              <span className="text-[11px] font-mono uppercase tracking-wider text-[#d99b53]">
-                Architecture & Delivery · .NET & Next.js
-              </span>
-            </div>
-            <h3 className="text-xl sm:text-2xl font-semibold text-[#f3f4f6] tracking-tight">
-              High-Concurrency Full-Stack, Web & Native Desktop Systems
+      {/* Architecture & Systems Cards (Row of 3 Cards Below Chatbots) */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        {/* Card 1: .NET & Modern Web */}
+        <motion.div
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.45 }}
+          className="rounded-none border border-[#232730] bg-[#111317] p-6 sm:p-7 flex flex-col justify-between hover:border-[#d99b53]/40 transition-all duration-300 shadow-xl group"
+        >
+          <div>
+            <span className="text-[10px] font-mono uppercase tracking-wider text-[#d99b53] mb-2.5 block">
+              ARCHITECTURE &amp; SYSTEMS · .NET &amp; MODERN WEB
+            </span>
+            <h3 className="text-lg font-serif font-normal text-[#f3f4f6] tracking-tight mb-3 group-hover:text-[#fcb96e] transition-colors">
+              Robust Full-Stack Web &amp; Distributed Backend Architecture
             </h3>
-            <p className="text-xs sm:text-sm text-[#9ca3af] leading-relaxed">
-              From sub-120ms desktop WPF valuation engines to distributed Next.js, Node.js and NestJS cloud architectures. Clean software that stays fast, deterministic, and stable under intense enterprise workloads.
+            <p className="text-xs text-[#9ca3af] leading-relaxed mb-6">
+              Designing resilient backend services and responsive frontends using .NET Core, Next.js, and message queues. Focused on clean boundaries, deterministic data flow, and maintainable software built for real production workloads.
             </p>
-            <div className="flex flex-wrap items-center gap-4 pt-2">
-              <span className="inline-flex items-center gap-1.5 text-xs font-mono text-[#9ca3af]">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#d99b53]" />
-                50k+ Rows Virtualized
-              </span>
-              <span className="inline-flex items-center gap-1.5 text-xs font-mono text-[#9ca3af]">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#d99b53]" />
-                Sub-120ms Calculation
-              </span>
-              <span className="inline-flex items-center gap-1.5 text-xs font-mono text-[#9ca3af]">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#d99b53]" />
-                RabbitMQ & Decoupled Workers
-              </span>
-              <span className="inline-flex items-center gap-1.5 text-xs font-mono text-[#9ca3af]">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#d99b53]" />
-                Zero Memory Leaks
-              </span>
+            <div className="flex flex-wrap gap-1.5 pt-4 border-t border-[#232730] mb-6">
+              {["Clean Architecture & DDD", "PostgreSQL & Data Integrity", "RabbitMQ Async Queues", "Tested & Production-Ready"].map(tag => (
+                <span key={tag} className="px-2 py-0.5 rounded-none text-[10px] font-mono bg-[#16191f] border border-[#232730] text-[#9ca3af]">
+                  {tag}
+                </span>
+              ))}
             </div>
           </div>
+          <button
+            type="button"
+            onClick={(e) => handleSelectService("Robust Full-Stack Web & Distributed Backend Architecture", e)}
+            className="inline-flex items-center gap-1.5 text-xs font-mono text-[#d99b53] hover:text-[#fcb96e] transition-colors cursor-pointer group-hover:translate-x-0.5 duration-200"
+          >
+            <span>Discuss Architecture &amp; Systems</span>
+            <span>→</span>
+          </button>
+        </motion.div>
 
-          <div className="shrink-0 flex flex-col gap-3">
-            <button
-              type="button"
-              onClick={(e) => handleSelectService("Enterprise Full-Stack / Desktop Architecture", e)}
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#16191f] hover:bg-[#d99b53] text-[#f3f4f6] hover:text-[#111317] border border-white/10 hover:border-[#d99b53] font-medium text-xs transition-all duration-200 cursor-pointer shadow-sm"
-            >
-              <span>Discuss Enterprise Architecture</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </button>
+        {/* Card 2: .NET, TypeScript & Desktop */}
+        <motion.div
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.45, delay: 0.05 }}
+          className="rounded-none border border-[#232730] bg-[#111317] p-6 sm:p-7 flex flex-col justify-between hover:border-[#d99b53]/40 transition-all duration-300 shadow-xl group"
+        >
+          <div>
+            <span className="text-[10px] font-mono uppercase tracking-wider text-[#d99b53] mb-2.5 block">
+              ENGINEERING &amp; PERFORMANCE · .NET, TYPESCRIPT &amp; DESKTOP
+            </span>
+            <h3 className="text-lg font-serif font-normal text-[#f3f4f6] tracking-tight mb-3 group-hover:text-[#fcb96e] transition-colors">
+              Performant Cross-Platform &amp; Event-Driven Applications
+            </h3>
+            <p className="text-xs text-[#9ca3af] leading-relaxed mb-6">
+              Engineering low-latency desktop platforms and distributed cloud APIs across .NET and TypeScript. Built with decoupled worker pipelines, optimized memory profiles, and comprehensive integration testing.
+            </p>
+            <div className="flex flex-wrap gap-1.5 pt-4 border-t border-[#232730] mb-6">
+              {["Cross-Platform Delivery", "Event-Driven Messaging", "Optimized Resource Usage", "Deterministic Testing"].map(tag => (
+                <span key={tag} className="px-2 py-0.5 rounded-none text-[10px] font-mono bg-[#16191f] border border-[#232730] text-[#9ca3af]">
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
-      </motion.div>
+          <button
+            type="button"
+            onClick={(e) => handleSelectService("Performant Cross-Platform & Event-Driven Applications", e)}
+            className="inline-flex items-center gap-1.5 text-xs font-mono text-[#d99b53] hover:text-[#fcb96e] transition-colors cursor-pointer group-hover:translate-x-0.5 duration-200"
+          >
+            <span>Explore Technical Work</span>
+            <span>→</span>
+          </button>
+        </motion.div>
+
+        {/* Card 3: .NET, Postgres & Node */}
+        <motion.div
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.45, delay: 0.1 }}
+          className="rounded-none border border-[#232730] bg-[#111317] p-6 sm:p-7 flex flex-col justify-between hover:border-[#d99b53]/40 transition-all duration-300 shadow-xl group"
+        >
+          <div>
+            <span className="text-[10px] font-mono uppercase tracking-wider text-[#d99b53] mb-2.5 block">
+              FULL-STACK DELIVERY · .NET, POSTGRES &amp; NODE
+            </span>
+            <h3 className="text-lg font-serif font-normal text-[#f3f4f6] tracking-tight mb-3 group-hover:text-[#fcb96e] transition-colors">
+              Scalable Web Platforms &amp; Intelligent Service Integration
+            </h3>
+            <p className="text-xs text-[#9ca3af] leading-relaxed mb-6">
+              Bridging modern Next.js frontends with high-throughput .NET and Node.js backend services. Architected with vector search backends, robust API gateways, and asynchronous background worker queues.
+            </p>
+            <div className="flex flex-wrap gap-1.5 pt-4 border-t border-[#232730] mb-6">
+              {["Vector & Relational DBs", "Decoupled Async Workers", "Strict Type Safety", "End-to-End Traceability"].map(tag => (
+                <span key={tag} className="px-2 py-0.5 rounded-none text-[10px] font-mono bg-[#16191f] border border-[#232730] text-[#9ca3af]">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+          <button
+            type="button"
+            onClick={(e) => handleSelectService("Scalable Web Platforms & Intelligent Service Integration", e)}
+            className="inline-flex items-center gap-1.5 text-xs font-mono text-[#d99b53] hover:text-[#fcb96e] transition-colors cursor-pointer group-hover:translate-x-0.5 duration-200"
+          >
+            <span>Discuss Technical Architecture</span>
+            <span>→</span>
+          </button>
+        </motion.div>
+      </div>
 
       {/* Direct Architectural Transition Banner */}
-      <div className="rounded-2xl border border-white/10 bg-gradient-to-r from-[#111317] via-[#16191f] to-[#111317] p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+      <div className="rounded-none border border-[#232730] bg-gradient-to-r from-[#111317] via-[#16191f] to-[#111317] p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
         <div className="space-y-2 max-w-2xl">
           <div className="flex items-center gap-2 text-xs font-mono text-[#fcb96e]">
             <ShieldCheck className="w-4 h-4 text-[#d99b53]" />
@@ -291,15 +336,15 @@ export function Solutions() {
           <h3 className="font-serif text-xl sm:text-2xl text-[#f3f4f6] font-normal">
             Ready to deploy enterprise AI or modern software in your organization?
           </h3>
-          <p className="text-xs text-[#9ca3af] leading-relaxed">
-            Direct collaboration with Max from discovery and architectural specification through production deployment and staff handover.
+          <p className="text-xs sm:text-sm text-[#9ca3af] leading-relaxed">
+            Direct engineering collaboration from architectural design and local model integration through to production deployment and operational handover.
           </p>
         </div>
 
         <a
           href="#contact"
           onClick={(e) => handleSelectService("Enterprise Architectural Consultation", e)}
-          className="shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#d99b53] hover:bg-[#fcb96e] text-[#111317] font-semibold text-sm transition-all duration-200 shadow-md shadow-[#d99b53]/20 active:scale-[0.98] cursor-pointer"
+          className="shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-none bg-[#d99b53] hover:bg-[#fcb96e] text-[#111317] font-semibold text-sm transition-all duration-200 shadow-md shadow-[#d99b53]/20 active:scale-[0.98] cursor-pointer"
         >
           <span>Initiate an architectural discussion</span>
           <ArrowRight className="w-4 h-4" />

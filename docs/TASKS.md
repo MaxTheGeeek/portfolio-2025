@@ -106,19 +106,32 @@ Engineering task breakdown, execution phases, state tracking, and section-by-sec
 - [x] **TASK-303**: Clean production build check (`npm run build` succeeds in 1.5s with zero errors).
 
 
-## Phase 4: Refactor, UI Polish & Form Fixes
-
-- [x] **TASK-401**: Remove Resume button from navbar; remove circular profile avatar; enlarge display name.
-- [x] **TASK-402**: Globally standardize role title to "Full-Stack Engineer | Applied AI Engineer".
-- [x] **TASK-403**: Convert section top badges into plain text headings without borders while keeping font size intact.
-- [x] **TASK-404**: Reduce section titles font sizes slightly to guarantee single-line (inline) layout without breaking.
-- [x] **TASK-405**: Reduce Hero left title by 2 font sizes; enlarge Hero portrait; increase spacing between capabilities.ts and Agentic MCP.
-- [x] **TASK-406**: Fix project image mappings in Selected Works to load directly from `public/projects/`.
-- [x] **TASK-407**: Remove icons inside Spec-Driven Agentic Engineering and Concurrency cards.
-- [x] **TASK-408**: Update Academic Credentials: add FH Burgenland Master's entry, split WIFI Wien into two distinct diplomas (2020 & 2021).
-- [x] **TASK-409**: Wire contact form to Web3Forms API (`https://api.web3forms.com/submit`) using `FORM_ACCESS_KEY` from `.env.local`:
-  - Implement async submission handler in React preserving existing dark editorial styling.
-  - Handle loading, success confirmation, and error states gracefully.
-  - Verify submissions route successfully to Gmail inbox.
-- [x] **TASK-410**: End-to-end verification: test all buttons, internal anchors, external links, and perform production build check (`npm run build`).
-- [x] **TASK-411**: Implement hover-to-expand modal effect on the Hero portrait photo with backdrop blur and smooth exit on mouse leave.
+- [x] **TASK-401**: Navbar refactor: Remove Resume button; remove circular profile avatar; enlarge brand name text.
+- [x] **TASK-402**: Global role standardization: Enforce "Full-Stack Engineer | Applied AI Engineer" across all components.
+- [x] **TASK-403**: Section eyebrows & headings: Remove all pill/badge borders from section top labels; adjust section titles so they render single-line on desktop.
+- [x] **TASK-404**: Hero section refactor:
+  - Reduce hero left title by 2 font sizes.
+  - Enlarge portrait card; increase vertical spacing between capabilities.ts and Agentic MCP.
+  - Implement hover-to-expand modal effect on the portrait photo with backdrop blur and smooth mouse-leave reset.
+- [x] **TASK-405**: Enterprise AI Capabilities overhaul:
+  - Correct card mapping: Reloco (without GmbH) and Real Estate assistant.
+  - Set both bot states to "In Progress" (remove live badges).
+  - Update eyebrows, titles, descriptions, and replace legacy badges with the 3 new structured stats per card.
+  - Overhaul the 3 systems cards below chatbots (.NET/Web, Performance/Desktop, Scalable Web Platforms) and update collaboration statement.
+- [x] **TASK-406**: Selected Works overhaul:
+  - Adjust carousel image frame to display full, uncropped project screenshots.
+  - Remove micro-metric tags from all dossier slides.
+  - Populate all 10 projects using verified images from `public/projects/`.
+- [x] **TASK-407**: Technical Principles overhaul:
+  - Remove all card icons.
+  - Apply new content for Card 1 (Deterministic AI) and Card 2 (High-Throughput Backends).
+- [x] **TASK-408**: Career Journey & Credentials refactor:
+  - Update RockLogic GmbH bullet points and multi-industry experiences.
+  - Split WIFI Wien credentials into 2020 and 2021 diplomas; append FH Burgenland AI Master's program.
+- [x] **TASK-409**: Contact form integration:
+  - Connect form submission to Web3Forms API using `FORM_ACCESS_KEY` from `.env.local`.
+  - Add loading, success, and error feedback states forwarding to `maxbehzadi82@gmail.com`.
+- [x] **TASK-410**: Complete verification audit:
+  - Remove all remaining resume links and download options from the entire codebase.
+  - Test all buttons, internal anchors, and links across viewports.
+  - Verify clean compilation with `npx tsc --noEmit` and `npm run build`.

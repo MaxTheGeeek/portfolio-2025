@@ -80,7 +80,7 @@ export function TopNav() {
             aria-label="Back to top"
           >
             <div className="flex flex-col">
-              <span className="font-semibold text-lg sm:text-[20px] tracking-tight text-[#f3f4f6] group-hover:text-[#fcb96e] transition-colors leading-tight">
+              <span className="font-semibold text-[20px] sm:text-[22px] tracking-tight text-[#f3f4f6] group-hover:text-[#fcb96e] transition-colors leading-tight">
                 Max Behzadi
               </span>
               <span className="text-[11px] font-mono text-[#768e9d] hidden sm:inline leading-none mt-0.5">

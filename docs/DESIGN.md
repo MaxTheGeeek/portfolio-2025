@@ -153,9 +153,12 @@ The palette is rooted in deep, warm volcanic tones rather than hollow slate or p
 
 Never employ high-saturation neon glow effects, cyan drop-shadows, or saturated gradient text fills.
 
-## Typography
-
-Typography establishes tension between high-craft editorial thinking and uncompromising engineering precision:
+### Typography & Layout Rules
+- **Headline Adjustments**:
+  - `headline-xl` (Hero title): Scale down desktop size by 2 steps (to `44px` / line-height `52px`) to eliminate crowding[cite: 4].
+  - `headline-lg` (Section titles): Adjust down to `32px` / line-height `40px` to guarantee single-line inline presentation on desktop viewports (`>= 1024px`) without wrapping[cite: 4].
+- **Navbar Typography**:
+  - Increase brand display name typography to `20px` semi-bold display scale (`headline-sm`)[cite: 4].
 
 1. **Newsreader (Display/Headlines)**: Brings an authoritative, literary gravity to personal philosophies, mission statements, and section intros. Set with regular weight and subtle tight tracking.
 2. **Geist (Body/Narrative)**: Neutral, hyper-legible neo-grotesque sans-serif optimized for deep architectural readouts, project impact narratives, and post-mortems.
@@ -267,3 +270,11 @@ All interactive buttons, index tables, status indicators, and framing elements u
   - Retain the sharp `0px` radius border framing with `1px` subtle outline (`#232730`)[cite: 4].
 - **Vertical Spacing**:
   - Increase the vertical gap between the identity badge and telemetry indicators (`capabilities.ts` to `Agentic MCP`) from `space-sm` (`0.5rem`) to `space-md` (`1rem`) for improved breathing room[cite: 4].
+- **Section Eyebrow Labels**:
+  - Remove all capsule borders, backgrounds, and pill padding[cite: 4]. Render as unbordered monospaced text (`JetBrains Mono`, `label-sm` or `label-md`) with uppercase letter spacing (`0.06em`) in accent bronze (`#d99b53`) or muted steel (`#768e9d`)[cite: 4].
+- **Card Minimalist Reset**:
+  - Strip all icons and SVGs from Technical Principles cards[cite: 4]. Rely solely on typography, hairline borders (`1px solid #232730`), and bracketed metadata[cite: 4].
+- **Selected Works Image Frame**:
+  - Replace aggressive cropping with an aspect-ratio-preserving container that renders the full project screenshot without layout overflow[cite: 4].
+- **Hero Image Modal**:
+  - Expanded hover state: `0px` radius, 1px solid `#d99b53` stroke, `backdrop-filter: blur(12px)`, `rgba(12, 14, 18, 0.75)` backdrop[cite: 4].

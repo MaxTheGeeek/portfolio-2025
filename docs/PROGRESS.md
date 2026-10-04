@@ -64,18 +64,63 @@ Live milestone progress, completed features, ongoing sprints, and verification r
 - [x] **Structured Intake Form UI & Backend**: Name, Email, Organization, Project Scope dropdown, and detailed project prompt wired to `/api/contact` with MongoDB storage, honeypot protection, and SLA notification.
 - [x] **Global Footer**: Coordinates (`Vienna, Austria`), UTC+1 indicator, zero tracking telemetry statement, Back to Top link.
 
-### Milestone 7: Phase 4 Refactoring, UI Polish & Enhancements
-- [x] **TASK-401 (Navigation Chrome)**: Removed circular avatar; enlarged `Max Behzadi` display name to `20px`; removed `Resume` button from navbar.
-- [x] **TASK-402 (Global Role Standardization)**: Role title strictly standardized to `Full-Stack Engineer | Applied AI Engineer` across metadata, hero, identity cards, trajectory, coordinates, and footer.
-- [x] **TASK-403 (Eyebrow Typography)**: Eliminated pill/capsule borders and background fills across all section eyebrows; rendered as clean, unbordered inline monospace headers.
-- [x] **TASK-404 (Section Title Desktop Sizing)**: Downscaled desktop section titles to `32px` (`leading-[40px]`) with `lg:whitespace-nowrap` for single-line inline presentation without wrapping.
-- [x] **TASK-405 (Hero Balancing)**: Downscaled hero headline by 2 sizes to `44px`; enlarged portrait footprint by ~15% with 0px radius framing; expanded vertical spacing between `capabilities.ts` and `Agentic MCP`.
-- [x] **TASK-406 (Selected Works Images)**: Fixed all image mappings in `CASE_STUDIES` to load verified assets directly from `/projects/*` (`maxerz-1.png`, `launcher-1.png`, `rocklogic.png`, `banking-table.png`, `cover-1.png`).
-- [x] **TASK-407 (Technical Principles Cards)**: Removed all decorative icons; adopted icon-free minimalism with bracketed category markers (`[ SPEC-DRIVEN ]`, `[ CONCURRENCY ]`).
-- [x] **TASK-408 (Academic Credentials)**: Split WIFI Wien entry into two distinct diplomas (2020 & 2021); appended FH Burgenland Master of AI program.
-- [x] **TASK-409 (Email Intake Integration)**: Integrated dual-free tier email dispatch (Resend API & Web3Forms) forwarding to `maxbehzadi82@gmail.com` with Zod validation, honeypot bot trap, and database persistence.
-- [x] **TASK-410 (Full Verification & Build Audit)**: Typecheck `npx tsc --noEmit` passed with 0 errors; `npm run build` compiled in 1.5s with zero errors or warnings; all links and anchors verified.
-- [x] **TASK-411 (Hero Portrait Hover-to-Expand Modal)**: Implemented smooth hover-to-expand modal view with `backdrop-blur-md bg-black/70`, `Escape` key close handler, mobile tap toggle, 0px border radius, and zero Cumulative Layout Shift (CLS = 0).
+### Milestone 8: Execution of Tasks TASK-401 through TASK-404
+- [x] **TASK-401 (Navbar)**:
+  - Completely eliminated all "Resume" download links and buttons from both navbar and footer.
+  - Removed circular profile avatar from navigation header.
+  - Increased brand name typography to `20px`/`22px` semi-bold display scale for stronger visual presence.
+- [x] **TASK-402 (Global Role Standardization)**:
+  - Standardized role string strictly to `Full-Stack Engineer | Applied AI Engineer` across metadata, hero, profile data (`lib/data.ts`), footer, and identity cards.
+- [x] **TASK-403 (Eyebrows & Section Headings)**:
+  - Removed pill/capsule borders, background fills, and badge chips from all section eyebrows and Marsi spotlight badges.
+  - Maintained single-line desktop presentation for editorial headlines (`32px`, `leading-[40px]`, `lg:whitespace-nowrap`).
+- [x] **TASK-404 (Hero Section & Hover Modal)**:
+  - Scaled hero headline down by 2 sizes (`44px` / `52px` leading).
+  - Enlarged portrait image frame to `112px` (`w-24 h-24 sm:w-28 sm:h-28`) with strict 0px border radius.
+  - Enhanced vertical spacing between `capabilities.ts` and `Agentic MCP` in the terminal header.
+  - Implemented interactive hover-to-expand modal:
+    * Desktop: Smooth expansion to centered modal with `backdrop-blur-md bg-black/60` and 1px `#d99b53` stroke.
+    * Touch viewports: Hover expansion explicitly disabled via pointer/hover media query (`window.matchMedia("(hover: hover)")`).
+- [x] **TASK-405 (Enterprise AI Capabilities Overhaul)**:
+  - Corrected card assignments: Card 1 is Reloco (`chatbot-2.jpeg`, strictly without "GmbH") and Card 2 is Real Estate Assistant (`chatbot.jpeg`).
+  - Swapped status badges from live deployment to "In Progress" with subtle amber indicators.
+  - Replaced eyebrows, titles, and descriptions with exact SPEC.md copy.
+  - Replaced legacy metrics with 3 structured stats per card (Architecture/Engine/Accuracy for Reloco; Local LLM/Vector Search/Lead Intake for Real Estate).
+  - Overhauled architecture cards into a 3-column row (.NET Core & Modern Web, Performance & Desktop, Scalable Web Platforms & Intelligent Service Integration).
+- [x] **TASK-406 (Selected Works Carousel Overhaul)**:
+  - Preserved full screenshot aspect ratios using an uncropped `object-contain` container with `rounded-none` framing and dark backdrop (`#08090b`).
+  - Completely stripped legacy micro-metric cards (`Context Engine`, `Hallucination Defense`, etc.) from all slides.
+  - Expanded case study roster to all 10 projects with verified images from `public/projects/`:
+    1. MaxerZ (`/projects/maxerz-2.png`)
+    2. StereumPlus (`/projects/stereum-plus.png`)
+    3. Stereum Launcher Desktop App (`/projects/launcher-2.png`)
+    4. Private Bank Internal App (`/projects/banking-table.png`)
+    5. Persian Score (`/projects/persian-scores.png`)
+    6. IRMALL (`/projects/irmall.png`)
+    7. Tasty Day (`/projects/tastyday.png`)
+    8. Stereum Labs (`/projects/stereum-labs.png`)
+    9. CVMaker (`/projects/cover-1.png`)
+    10. Aspira (`/projects/aspira-persian.png`)
+  - Verified touch swipe gestures, keyboard arrows (Left/Right), and responsive indicator dots across all 10 slides.
+- [x] **TASK-407 (Technical Principles Overhaul)**:
+  - Stripped all icons, SVGs, and decorative glyphs from both architectural cards.
+  - Implemented exact SPEC.md copy for Card 1 ("Deterministic AI & Context-Grounded Architecture") with MCP, context engineering, strict schema validation, and human-in-the-loop safeguards.
+  - Implemented exact SPEC.md copy for Card 2 ("High-Throughput Backends & Event-Driven Systems") with .NET Core, memory discipline, RabbitMQ decoupled pipelines, and resilient API gateways.
+- [x] **TASK-408 (Career Journey & Credentials Refactor)**:
+  - Expanded RockLogic GmbH tenure with complete achievements: private bank WPF modernization, Blazor internal request tool with xUnit coverage, Angular reactive forms, NestJS/React B2B platform, and Stereum Launcher.
+  - Added multi-industry experience item covering E-Commerce, Football Livescore, Food-Tech, and FinTech ERP.
+  - Split WIFI Wien credentials into 2020 Software Engineering Diploma and 2021 Web & Desktop Applications Diploma.
+  - Appended FH Burgenland Master of Artificial Intelligence in AI Business Solutions to credentials list.
+- [x] **TASK-409 (Contact Form Web3Forms Integration)**:
+  - Wired React contact form to submit asynchronously via fetch to `https://api.web3forms.com/submit`.
+  - Securely configured access key using `process.env.NEXT_PUBLIC_FORM_ACCESS_KEY` / `process.env.FORM_ACCESS_KEY`.
+  - Verified submission payload including `name`, `email`, `organization`, `scope`, `message`, and hidden `botcheck` honeypot.
+  - Verified loading, success confirmation, and fallback error states with routing directly to `maxbehzadi82@gmail.com`.
+- [x] **TASK-410 (Complete Verification & Build Audit)**:
+  - Audited all navigation links, buttons, and section anchors across desktop and mobile viewports.
+  - Confirmed 100% removal of all "Resume" download links and buttons from both navbar and footer.
+  - Confirmed zero TypeScript errors with `npx tsc --noEmit`.
+  - Confirmed zero build errors or warnings with `npm run build` (1.47s Turbopack build).
 
 ---
 

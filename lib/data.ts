@@ -1,7 +1,7 @@
 export const PROFILE = {
   name: "Max",
   surname: "Behzadi",
-  title: "Full-Stack Engineer",
+  title: "Full-Stack Engineer | Applied AI Engineer",
   tagline: "Full-Stack Engineer with 8+ years of professional experience delivering production-ready applications across B2B SaaS, IaaS infrastructure, and real-time systems. Dual-stack specialist in C#/.NET and TypeScript/NestJS, utilizing AI-driven engineering, custom LLM rules, and agentic workflows.",
   location: "Vienna, Austria",
   status: "Open to opportunities",
@@ -24,7 +24,7 @@ export const NAV_NODES = [
 
 export const EXPERIENCE = [
   {
-    role: "AI Full-Stack Engineer",
+    role: "Full-Stack Engineer | Applied AI Engineer",
     company: "Freelancer",
     location: "Vienna, Austria",
     from: "Mar 2026",

@@ -5,13 +5,17 @@ Comprehensive technical and design specification for the personal portfolio of *
 ---
 
 ### Global Standardizations
-- **Role Title**: Standardize across all sections, metadata, identity cards, and footer strictly to:
+- **Role Title**: Standardize across all sections, metadata, hero, and cards strictly to:
   `Full-Stack Engineer | Applied AI Engineer`
-- **Section Eyebrows / Top Badges**:
-  - Remove all capsule borders, background fills, and badge chips from top labels (e.g., `Available for Custom AI & High-Performance Systems`).
-  - Render them as clean, unbordered text titles while keeping the original font size intact.
-- **Section Headlines / Titles**:
-  - Adjust font sizes slightly downward where necessary so that long titles (e.g., `Engineering over stochastic guesswork.`) remain inline on a single line on desktop and do not wrap awkwardly.
+- **Section Eyebrow Badges**:
+  - Remove all capsule borders, background pill styling, and chip containers from section top badges (e.g., `Available for Custom AI & High-Performance Systems`).
+  - Render them as clean, unbordered inline text while preserving original font sizes.
+- **Section Titles**:
+  - Adjust section title font sizes slightly downward so that long editorial statements (e.g., `Engineering over stochastic guesswork.`) remain inline on a single line on desktop without wrapping.
+- **Resume Access**:
+  - Completely eliminate all "Resume" download links, view buttons, and attachments across the entire portfolio (Navbar, Hero, Body, and Footer).
+
+---
 
 
 ## 1. Executive Summary & Design Vision
@@ -76,101 +80,152 @@ The portfolio establishes credibility for high-ticket client advisory and enterp
 ## 4. Component-by-Component Specifications
 
 ### Section 00: Navigation Chrome
-- **Left Column**:
-  - Remove the circular profile photo avatar next to the name.
-  - Increase the font size of the display name (`Max Behzadi`) for stronger hierarchy.
-- **Right Column**:
-  - Remove the `Resume` button/link entirely. Keep navigation links and direct intake CTA.
-
+- **Left Identity Anchor**:
+  - Remove the circular avatar container next to the name.
+  - Increase the font size of the brand name (`Max Behzadi`) for stronger hierarchy.
+- **Right Action Group**:
+  - Remove the `Resume` button/link. Keep only primary navigation anchors and the direct intake CTA.
 ---
 
 ### Section 01: Hero Section
-- **Layout:** Asymmetric 2-column layout with generous vertical rhythm.
 - **Left Column**:
-  - Reduce the primary headline size by two steps/sizes so it does not overwhelm the layout.
-- **Right Column**:
-  - Increase the size of the portrait photo card slightly.
-  - Display the standardized role: `Full-Stack Engineer | Applied AI Engineer`.
-  - Increase the vertical spacing/breathing room between `capabilities.ts` and `Agentic MCP`.
-
-  - **Interactive Portrait Modal Hover Effect**:
-  - **Trigger**: Hovering over Max's portrait image in the Hero section card initiates an expanded inspection state.
-  - **Expanded State**:
-    - The photo transitions smoothly into a centered, large modal-like view (maximum viewport dimension restrained to ~70vh / 600px width).
-    - An underlying backdrop overlay engages with a dark, high-blur effect (`backdrop-blur-md bg-black/60`) obscuring the background layout.
-    - Animation: High-performance transform/scale transitions (150ms–200ms cubic bezier) maintaining sharp `0px` radius geometry.
-  - **Dismissal**: Triggered instantly when the cursor moves off the image (`onMouseLeave`) or clicks outside, returning smoothly to its original dimensions and layout slot without causing Cumulative Layout Shift (CLS).
+  - Reduce the primary hero headline by 2 standard scale steps.
+- **Right Column (Portrait & Capabilities)**:
+  - Increase the portrait image container size slightly.
+  - Enforce role display: `Full-Stack Engineer | Applied AI Engineer`.
+  - Increase vertical breathing room between `capabilities.ts` and `Agentic MCP`.
+- **Interactive Portrait Inspection Modal**:
+  - **Trigger**: Hovering over Max's portrait image triggers an expanded inspection state.
+  - **Expanded View**: Smoothly scales to an inspection modal view (restrained to ~70vh / 600px width max).
+  - **Backdrop**: Engages a dark blurred background (`backdrop-blur-md bg-black/60`).
+  - **Geometry**: Strict `0px` radius geometry with a 1px `#d99b53` accent border.
+  - **Dismissal**: Smoothly returns to default layout on mouse leave (`onMouseLeave`) or `Escape` key press without causing Cumulative Layout Shift (CLS). Disabled on mobile touch devices.
   - **Accessibility**: Include standard keyboard accessibility (`Escape` key dismisses expanded state) and disable hover expansion on touch devices to avoid layout freeze.
 
 ---
 
 ### Section 02: Enterprise AI Capabilities ("What I build for organizations & clients")
-- **Header:**
-  - Eyebrow: `ENTERPRISE AI CAPABILITIES`
-  - Headline: `What I build for organizations & clients`
-  - Subhead: "Eliminating toy demonstrations in favor of verifiable, low-latency AI pipelines and production enterprise software designed for continuous operations."
-- **Grid Layout (50/50 Split):**
-  - **Left Showcase:**
-    - High-fidelity visual component displaying full-duplex conversational voice nodes, real-time waveform spectrum analysis, and telemetry telemetry overlays (`Latency < 400ms`, `99.9% Reliability`).
-    - Title: `Full-Duplex Conversational Voice Systems`.
-    - Description: "Real-time audio streaming nodes integrating Whisper transcription, LLM reasoning, speech synthesis, and live CRM function execution without stutter or human perceptible pause."
-  - **Right Deliverables Cards (Editorial Stacking):**
-    - **Deliverable 1 (Reloco GmbH):**
-      - Tag: `Production Delivery` · `Voice AI`
-      - Title: `Autonomous AI Voice Assistant`
-      - Details: "Engineered a low-latency conversational audio pipeline for automated inbound appointment dispatching, customer intake, and direct CRM synchronization with sub-second response times."
-    - **Deliverable 2 (FindDev):**
-      - Tag: `Enterprise Support` · `Grounded RAG`
-      - Title: `Intelligent Customer Service & Support Chatbot`
-      - Details: "Built an always-on 24/7 grounded RAG knowledge engine. Implemented schema AST verification to eliminate AI hallucinations and ensure flawless triage and escalation to human staff."
-    - **Deliverable 3 (Custom Enterprise Systems):**
-      - Tag: `Architecture & Delivery` · `.NET & Next.js`
-      - Title: `High-Concurrency Full-Stack & Desktop Systems`
-      - Details: "From sub-120ms desktop WPF valuation engines to distributed Next.js and NestJS cloud architectures. Clean software that stays fast under intense workloads."
-      - Link: `Initiate an architectural discussion for your organization →`
+- **Header Statement**:
+  - Replace direct collaboration copy with:
+    *"Direct engineering collaboration from architectural design and local model integration through to production deployment and operational handover."*
 
+- **Card 1 (Reloco)**:
+  - Brand Name: `Reloco` (strictly without "GmbH").
+  - Status: Marked as `In Progress` / development pipeline (neither bot is live/deployed).
+  - Eyebrow: `ENTERPRISE SUPPORT • LOCAL RAG`
+  - Title: `Intelligent Relocation Support & Inquiry Bot`
+  - Description:
+    "Built an automated 24/7 customer support chatbot for relocation workflows. Powered by a self-hosted local LLM and semantic search via PostgreSQL (pgvector), the system retrieves grounded policy and procedural data to resolve inquiries instantly and escalate edge cases seamlessly to human agents."
+  - Metric Pills (replace legacy latency/uptime cards):
+    * Stat 1: `On-Prem / Local (Architecture)`
+    * Stat 2: `PostgreSQL + pgvector (Retrieval Engine)`
+    * Stat 3: `Context-Grounded (Factual Accuracy)`
+
+- **Card 2 (Real Estate Assistant / FindDev)**:
+  - Status: Marked as `In Progress` / development pipeline.
+  - Eyebrow: `REAL ESTATE CRM • SEMANTIC INTAKE`
+  - Title: `Automated Real Estate Support & Client Intake Assistant`
+  - Description:
+    "Engineered an on-site customer service assistant to qualify leads and answer client queries around listings and real estate services. Leveraged a high-efficiency local inference model with embedded vector search in PostgreSQL, ensuring private data handling, fast response times, and structured client inquiry handoff."
+  - Metric Pills (replace legacy cards):
+    * Stat 1: `Private Inference (Local LLM)`
+    * Stat 2: `Vector Search (Fast Retrieval)`
+    * Stat 3: `Automated Triage (Lead Intake)`
+
+- **Architecture & Systems Cards (Row of 3 Cards Below Chatbots)**:
+  - **Card 1**:
+    * Eyebrow: `ARCHITECTURE & SYSTEMS · .NET & MODERN WEB`
+    * Title: `Robust Full-Stack Web & Distributed Backend Architecture`
+    * Description: "Designing resilient backend services and responsive frontends using .NET Core, Next.js, and message queues. Focused on clean boundaries, deterministic data flow, and maintainable software built for real production workloads."
+    * Badges: `Clean Architecture & DDD`, `PostgreSQL & Data Integrity`, `RabbitMQ Async Queues`, `Tested & Production-Ready`
+    * CTA: `Discuss Architecture & Systems →`
+  - **Card 2**:
+    * Eyebrow: `ENGINEERING & PERFORMANCE · .NET, TYPESCRIPT & DESKTOP`
+    * Title: `Performant Cross-Platform & Event-Driven Applications`
+    * Description: "Engineering low-latency desktop platforms and distributed cloud APIs across .NET and TypeScript. Built with decoupled worker pipelines, optimized memory profiles, and comprehensive integration testing."
+    * Badges: `Cross-Platform Delivery`, `Event-Driven Messaging`, `Optimized Resource Usage`, `Deterministic Testing`
+    * CTA: `Explore Technical Work →`
+  - **Card 3**:
+    * Eyebrow: `FULL-STACK DELIVERY · .NET, POSTGRES & NODE`
+    * Title: `Scalable Web Platforms & Intelligent Service Integration`
+    * Description: "Bridging modern Next.js frontends with high-throughput .NET and Node.js backend services. Architected with vector search backends, robust API gateways, and asynchronous background worker queues."
+    * Badges: `Vector & Relational DBs`, `Decoupled Async Workers`, `Strict Type Safety`, `End-to-End Traceability`
+    * CTA: `Discuss Technical Architecture →`
 ---
 
 ### Section 03: Selected Works (Engineering Dossier)
-- **Asset Rendering**:
-  - Fix image sources for all project items to load valid assets directly from `public/projects/`.
-  - Map each project title/slug to its corresponding image filename inside `/projects/*`.
-
+- **Image Display Framing**:
+  - Adjust the image container on the right side so the complete screenshot is visible without aggressive cropping or hidden content.
+- **Metric Cards Removal**:
+  - Remove all micro-metric boxes (`Context Engine`, `Hallucination Defense`, `Token Streaming`, `Persistence`) from every project item.
+- **Project Roster (10 Projects from `public/projects/`)**:
+  1. `MaxerZ` (2026) | AI-Powered Desktop App | Image: `/projects/maxerz-2.png` | Stack: `C#, .NET 8, Angular, MAUI`
+  2. `StereumPlus` | IaaS Server Provisioning Platform | Image: `/projects/stereum-plus.png` | Stack: `Next.js, NestJS, TypeScript, RabbitMQ, BullMQ, PostgreSQL, TypeORM`
+  3. `Stereum Launcher Desktop App` | ETH Node Monitoring | Image: `/projects/launcher-2.png` | Stack: `Vue.js, Node.js, WebSocket, Ansible, Electron.js`
+  4. `Private Bank Internal App` | Enterprise Financial Platform | Image: `/projects/banking-table.png` | Stack: `WPF, Angular, C#, .NET Framework, Crystal Reports`
+  5. `Persian Score` | Football Live Scores Platform | Image: `/projects/persian-scores.png` | Stack: `Next.js, TypeScript, Supabase, Socket.io / WebSocket`
+  6. `IRMALL` | Persian E-Commerce & Retail Platform | Image: `/projects/irmall.png` | Stack: `React, Contentful CRM, Node.js, PostgreSQL`
+  7. `Tasty Day` | Diet Food Ordering & Recipe Startup | Image: `/projects/tastyday.png` | Stack: `HTML, CSS, JavaScript, jQuery`
+  8. `Stereum Labs` | AI-Powered Observability for Ethereum Nodes | Image: `/projects/stereum-labs.png` | Stack: `Next.js, NestJS, TypeScript, RabbitMQ, BullMQ, PostgreSQL, TypeORM`
+  9. `CVMaker` | Professional Resume Builder & ATS Platform | Image: `/projects/cover-1.png` | Stack: `Next.js, NestJS, TypeScript, OpenRouter API, Groq API`
+  10. `Aspira` | Industrial Accounting Desktop App | Image: `/projects/aspira-persian.png` | Stack: `MVVM, C#, WPF, .NET Framework, NHibernate, LINQ`
 ---
 
 ### Section 04: Technical Principles
-- **Card Styling**:
-  - Remove all ornamental icons from both the **Spec-Driven Agentic Engineering** card and the **High Concurrency & Memory Discipline** card to maintain an austere, editorial aesthetic.
-
+- **Card Icon Removal**:
+  - Remove all ornamental icons/SVGs from both cards.
+- **Revised Card 1**:
+  - Badges: `[ DETERMINISTIC AI ] · STRUCTURED RAG & MCP INTEGRATION`
+  - Title: `Deterministic AI & Context-Grounded Architecture`
+  - Sub-Header: `MODEL CONTEXT PROTOCOL (MCP) · SCHEMA VALIDATION · SEMANTIC RETRIEVAL`
+  - Description: "AI agents and LLM assistants are only as dependable as the boundary contracts enclosing them. I design resilient workflows using Model Context Protocol (MCP) servers, domain-specific retrieval-augmented generation (RAG), and strict output parsing to keep language models predictable, secure, and grounded in actual business logic."
+  - Key Principles:
+    * `01 Context Engineering`: Precise context pruning and hybrid vector search via PostgreSQL (pgvector) ensure relevant, grounded retrieval without context pollution.
+    * `02 Strict Schema Validation`: Model outputs are enforced through validated typed schemas before triggering downstream services or database mutations.
+    * `03 Human-in-the-Loop Safeguards`: High-impact business actions and state mutations require explicit verification and structured audit logging.
+  - Bottom Pills: `[ MCP PROTOCOL ] · [ EMBEDDING PIPELINES ] · [ BOUNDED EXECUTION ]`
+- **Revised Card 2**:
+  - Badges: `[ CONCURRENCY & RELIABILITY ] · BACKEND PERFORMANCE`
+  - Title: `High-Throughput Backends & Event-Driven Systems`
+  - Sub-Header: `.NET CORE · ASYNCHRONOUS PIPELINES · MESSAGE BROKERS`
+  - Description: "Building distributed systems and data-intensive services requires strict architectural boundaries and predictable resource utilization. I build decoupled, high-performance backends with asynchronous message brokers, efficient memory handling, and clean database query design to ensure systems remain stable under real-world traffic."
+  - Key Principles:
+    * `01 Memory & Resource Discipline`: Leveraging modern .NET idioms (memory pooling, efficient stream processing, and unbuffered I/O) to keep GC pressure and latency minimal.
+    * `02 Decoupled Event Pipelines`: Offloading heavy compute and third-party integrations to asynchronous background workers using RabbitMQ.
+    * `03 Resilient API Gateways`: Implementing circuit breakers, structured rate limiting, and graceful degradation across web APIs and microservices.
+  - Bottom Pills: `[ EVENT-DRIVEN ] · [ RABBITMQ / QUEUES ] · [ PERFORMANCE DISCIPLINE ]`
 ---
 
-### Section 05: Trajectory & Credentials
+### Section 05: Career Journey & Credentials
+- **RockLogic GmbH Entry**:
+  - Title & Scope: `RockLogic GmbH | Jan 2022 to Mar 2026 | Vienna, Austria`
+  - Role: `Full-Stack Engineer`
+  - Achievements:
+    * Modernized a private bank application with C#/.NET, WPF, and MVVM, including asynchronous processing of large financial datasets and reporting engine integration.
+    * Built reusable components with validation and error handling while respecting data privacy requirements.
+    * Developed an internal request management tool with Blazor, ASP.NET Core Web API, Entity Framework Core, and SQL Server. Implemented CRUD operations, DTOs, server-side validation, role-based access, and xUnit test coverage.
+    * Extended Angular features using Reactive Forms, RxJS, and REST APIs; contributed to code reviews and technical documentation.
+    * Developed B2B platform features and backend services with React, TypeScript, NestJS, and PostgreSQL for Ethereum infrastructure telemetry.
+    * Developed Stereum Launcher features for Ethereum nodes using Vue.js, Node.js, and Electron.
+- **Multi-Industry Experience Entry (Third Item)**:
+  - Title: `Multi-Industry Full-Stack Development`
+  - Achievements:
+    * `E-Commerce & Retail`: Online store architecture built with React, Next.js, Tailwind CSS, and Node.js.
+    * `Sports Telemetry`: Football live scores platform leveraging Next.js, TypeScript, Supabase, WebSockets, and Node.js.
+    * `Food & Nutrition Platform`: Diet food ordering and recipe platform with ingredient gallery using JavaScript and HTML5.
+    * `FinTech & Desktop`: Industrial accounting desktop application built with C#, .NET Framework, WPF, MVVM, and NHibernate/LINQ.
 - **Academic & Technical Credentials**:
-  - Split the WIFI Wien engineering diplomas into two separate chronological entries:
-    1. `2020`: Software Engineering Diploma — WIFI Wien
-    2. `2021`: Web & Desktop Applications Diploma (OOP, PHP, Laravel) — WIFI Wien
-  - Append the master's program at the end of the credentials list:
-    - `Student at FH Burgenland - Master of Artificial Intelligence in AI Business Solutions`
-
+  - Split WIFI Wien into two distinct diplomas:
+    * `2020`: Software Engineering Diploma — WIFI Wien
+    * `2021`: Web & Desktop Applications Diploma (OOP, PHP, Laravel) — WIFI Wien
+  - Append Master's Program:
+    * `Student at FH Burgenland - Master of Artificial Intelligence in AI Business Solutions`
 ---
 
-### Section 06: Technical Consultation & Direct Intake
-- **Integration Engine**: Web3Forms API (`https://api.web3forms.com/submit`)
-- **Submission Architecture**: Client-side asynchronous `fetch()` handler inside the React contact component without full-page reload.
-- **Environment & Key Security**:
-  - The access key is injected via environment configuration: `process.env.NEXT_PUBLIC_FORM_ACCESS_KEY` (or accessed via a server-side proxy route `/api/contact` using `process.env.FORM_ACCESS_KEY` to keep the key private).
-- **Form Payload**:
-  - `access_key`: Form access key from environment variables.
-  - `name`: Sender's name (required).
-  - `email`: Sender's email (required).
-  - `organization`: Company / Organization (optional).
-  - `scope`: Project scope category.
-  - `message`: Project inquiry message (required).
-  - `botcheck`: Hidden honeypot field to trap spam bots.
-- **UI States & Feedback**:
-  - `Submitting`: Button disabled with inline loading feedback.
-  - `Success`: Replaces or supplements input fields with a confirmation message and direct confirmation note.
-  - `Error`: Inline error notification advising direct email fallback to `maxbehzadi82@gmail.com`.
+### Section 06: Technical Intake & Form Integration
+- **Backend Service**: Web3Forms API (`https://api.web3forms.com/submit`).
+- **Configuration**: `FORM_ACCESS_KEY` configured in `.env.local` (and set in Vercel environment variables).
+- **Behavior**: Asynchronous React form submission preventing full-page reloads, with explicit loading, success, and error feedback states forwarding directly to `maxbehzadi82@gmail.com`.
 
 ---
 

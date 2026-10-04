@@ -11,6 +11,23 @@ export function Hero() {
   const [activeTab, setActiveTab] = useState<"spec" | "voice" | "concurrency">("spec");
   const [isExpanded, setIsExpanded] = useState(false);
 
+  const isTouchDevice = () => {
+    if (typeof window === "undefined") return false;
+    return window.matchMedia("(pointer: coarse)").matches || !window.matchMedia("(hover: hover)").matches;
+  };
+
+  const handlePortraitMouseEnter = () => {
+    if (!isTouchDevice()) {
+      setIsExpanded(true);
+    }
+  };
+
+  const handlePortraitMouseLeave = () => {
+    if (!isTouchDevice()) {
+      setIsExpanded(false);
+    }
+  };
+
   // Keyboard accessibility: Close portrait modal on Escape key
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -109,28 +126,32 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="lg:col-span-5 flex flex-col gap-6"
         >
-          {/* Portrait & Profile Summary Bar - Footprint Increased by ~15% */}
-          <div className="flex items-center gap-4 p-5 rounded-none bg-[#111317] border border-[#232730] shadow-xl">
+          {/* Portrait & Profile Summary Bar - Footprint Increased */}
+          <div className="flex items-center gap-4 sm:gap-5 p-5 sm:p-6 rounded-none bg-[#111317] border border-[#232730] shadow-xl">
             <div 
-              className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-none overflow-hidden border border-[#232730] shrink-0 shadow-md cursor-pointer group transition-all duration-200 hover:border-[#d99b53]"
-              onMouseEnter={() => setIsExpanded(true)}
-              onMouseLeave={() => setIsExpanded(false)}
-              onClick={() => setIsExpanded(prev => !prev)}
-              title="Hover or tap to expand portrait"
+              className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-none overflow-hidden border border-[#232730] shrink-0 shadow-md cursor-pointer group transition-all duration-200 hover:border-[#d99b53]"
+              onMouseEnter={handlePortraitMouseEnter}
+              onMouseLeave={handlePortraitMouseLeave}
+              onClick={() => {
+                if (!isTouchDevice()) {
+                  setIsExpanded(prev => !prev);
+                }
+              }}
+              title="Hover to inspect portrait"
             >
               <Image
                 src="/me.jpg"
                 alt="Max Behzadi"
                 fill
                 priority
-                sizes="96px"
+                sizes="112px"
                 className="object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2">
-                <h3 className="text-base font-semibold text-[#f3f4f6] truncate">Max Behzadi</h3>
+                <h3 className="text-base sm:text-lg font-semibold text-[#f3f4f6] truncate">Max Behzadi</h3>
                 <span className="inline-flex items-center gap-1 px-1.5 py-0.5 text-[10px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                   Active
@@ -147,19 +168,19 @@ export function Hero() {
 
           {/* Mini Capabilities Badge Card */}
           <div className="rounded-none border border-[#232730] bg-[#16191f] overflow-hidden shadow-xl">
-            {/* Terminal Window Header */}
-            <div className="flex items-center justify-between px-4 py-3 bg-black/40 border-b border-[#232730]">
+            {/* Terminal Window Header - Vertical spacing enhanced */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between px-4 py-3.5 bg-black/40 border-b border-[#232730] gap-3">
               <div className="flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-white/20" />
                 <span className="w-2 h-2 rounded-full bg-white/20" />
                 <span className="w-2 h-2 rounded-full bg-white/20" />
                 <span className="text-[11px] font-mono text-[#768e9d] ml-2">capabilities.ts</span>
               </div>
-              <div className="flex items-center gap-1">
+              <div className="flex items-center gap-1.5">
                 <button
                   type="button"
                   onClick={() => setActiveTab("spec")}
-                  className={`px-2 py-0.5 text-[10px] font-mono transition-colors cursor-pointer ${
+                  className={`px-2.5 py-1 text-[10px] font-mono transition-colors cursor-pointer ${
                     activeTab === "spec" ? "bg-[#d99b53]/20 text-[#fcb96e] font-semibold" : "text-[#9ca3af] hover:text-white"
                   }`}
                 >
@@ -284,8 +305,12 @@ export function Hero() {
             exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={() => setIsExpanded(false)}
-            onMouseLeave={() => setIsExpanded(false)}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur-md bg-black/70 cursor-pointer pointer-events-auto"
+            onMouseLeave={() => {
+              if (!isTouchDevice()) {
+                setIsExpanded(false);
+              }
+            }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur-md bg-black/60 cursor-pointer pointer-events-auto"
             aria-modal="true"
             role="dialog"
           >
@@ -293,8 +318,8 @@ export function Hero() {
               initial={shouldReduceMotion ? false : { scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={shouldReduceMotion ? undefined : { scale: 0.9, opacity: 0 }}
-              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-              className="relative w-72 h-72 sm:w-96 sm:h-96 md:w-[400px] md:h-[400px] rounded-none overflow-hidden border border-[#d99b53]/60 shadow-2xl bg-[#0c0e12]"
+              transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="relative w-72 h-72 sm:w-96 sm:h-96 md:w-[420px] md:h-[420px] rounded-none overflow-hidden border border-[#d99b53] shadow-2xl bg-[#0c0e12]"
               onClick={(e) => e.stopPropagation()}
             >
               <Image

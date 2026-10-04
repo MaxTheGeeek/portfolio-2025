@@ -7,12 +7,8 @@ import {
   Briefcase, 
   GraduationCap, 
   MapPin, 
-  Calendar, 
-  Award, 
   CheckCircle2, 
-  Heart,
-  Sparkles,
-  Compass
+  Heart
 } from "lucide-react";
 
 interface TimelineItem {
@@ -40,27 +36,31 @@ const TIMELINE: TimelineItem[] = [
     ]
   },
   {
-    period: "2024 — 2026",
-    role: "Full-Stack & Telemetry Systems Engineer",
+    period: "Jan 2022 — Mar 2026",
+    role: "Full-Stack Engineer",
     company: "RockLogic GmbH",
     location: "Vienna, Austria",
-    description: "Spearheaded core engineering and telemetry infrastructure across Stereum (50,000+ active Ethereum node setups globally) and rocklogic.at. Developed zero-downtime client switching algorithms, dynamic resource throttling, and automated Grafana API telemetry pipelines.",
+    description: "Spearheaded core software engineering, distributed telemetry systems, and internal enterprise tooling across Stereum and client platforms in Vienna.",
     highlights: [
-      "Engineered decoupled message bus architectures with RabbitMQ and background workers",
-      "Automated multi-node cluster monitoring dashboards with sub-100ms TTFB edge caching",
-      "Stabilized high-load client applications across desktop and Linux server environments"
+      "Modernized a private bank application with C#/.NET, WPF, and MVVM, including asynchronous processing of large financial datasets and reporting engine integration.",
+      "Built reusable components with validation and error handling while respecting data privacy requirements.",
+      "Developed an internal request management tool with Blazor, ASP.NET Core Web API, Entity Framework Core, and SQL Server. Implemented CRUD operations, DTOs, server-side validation, role-based access, and xUnit test coverage.",
+      "Extended Angular features using Reactive Forms, RxJS, and REST APIs; contributed to code reviews and technical documentation.",
+      "Developed B2B platform features and backend services with React, TypeScript, NestJS, and PostgreSQL for Ethereum infrastructure telemetry.",
+      "Developed Stereum Launcher features for Ethereum nodes using Vue.js, Node.js, and Electron."
     ]
   },
   {
-    period: "Prior Years",
-    role: "Desktop Systems & Financial Tooling Developer",
-    company: "Enterprise Financial Systems",
-    location: "Vienna, Austria",
-    description: "Architected mission-critical desktop portfolio valuation suites and financial instruments. Solved rendering bottlenecks on massive data streams by implementing WPF UI virtualization and zero-allocation memory algorithms.",
+    period: "Prior Professional Experience",
+    role: "Full-Stack Developer",
+    company: "Multi-Industry Full-Stack Development",
+    location: "Vienna & International",
+    description: "Multi-industry software development across e-commerce, real-time sports telemetry, food-tech, and desktop financial accounting.",
     highlights: [
-      "Engineered VirtualizingStackPanel algorithms rendering 50,000+ rows at 60 FPS",
-      "Reduced portfolio calculation latency from 850ms to sub-120ms with Span<T> and thread pooling",
-      "Integrated secure accounting compliance modules and Crystal Reports generation"
+      "E-Commerce & Retail: Online store architecture built with React, Next.js, Tailwind CSS, and Node.js.",
+      "Sports Telemetry: Football live scores platform leveraging Next.js, TypeScript, Supabase, WebSockets, and Node.js.",
+      "Food & Nutrition Platform: Diet food ordering and recipe platform with ingredient gallery using JavaScript and HTML5.",
+      "FinTech & Desktop: Industrial accounting desktop application built with C#, .NET Framework, WPF, MVVM, and NHibernate/LINQ."
     ]
   }
 ];
@@ -114,7 +114,7 @@ export function Trajectory() {
           Career Journey
         </span>
         <h2 className="font-serif text-2xl sm:text-[32px] sm:leading-[40px] font-normal text-[#f3f4f6] tracking-tight mb-4">
-          Trajectory & <span className="italic text-[#fcb96e]">Foundation</span>
+          Trajectory &amp; <span className="italic text-[#fcb96e]">Foundation</span>
         </h2>
         <p className="text-base sm:text-lg text-[#9ca3af] leading-relaxed">
           Over eight years building scalable desktop software, distributed node infrastructure, and applied AI systems in Vienna.
@@ -137,10 +137,10 @@ export function Trajectory() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.4, delay: idx * 0.08 }}
-                className={`rounded-2xl border p-6 sm:p-7 relative transition-all duration-200 ${
+                className={`rounded-none border p-6 sm:p-7 relative transition-all duration-200 ${
                   item.isCurrent
                     ? "bg-[#16191f] border-[#d99b53]/40 shadow-xl"
-                    : "bg-[#111317] border-white/10 shadow-lg hover:border-white/20"
+                    : "bg-[#111317] border-[#232730] shadow-lg hover:border-[#d99b53]/30"
                 }`}
               >
                 {/* Header Row */}
@@ -150,7 +150,7 @@ export function Trajectory() {
                       {item.period}
                     </span>
                     {item.isCurrent && (
-                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-mono bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 font-semibold">
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-none text-[10px] font-mono bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 font-semibold">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                         Active Focus
                       </span>
@@ -163,10 +163,10 @@ export function Trajectory() {
                 </div>
 
                 {/* Role & Company */}
-                <h4 className="text-lg font-semibold text-[#f3f4f6] tracking-tight mb-1">
+                <h4 className="text-lg font-serif font-normal text-[#f3f4f6] tracking-tight mb-1">
                   {item.role}
                 </h4>
-                <div className="text-xs font-mono text-[#9ca3af] mb-3">
+                <div className="text-xs font-mono text-[#d99b53] mb-3">
                   {item.company}
                 </div>
 
@@ -176,11 +176,11 @@ export function Trajectory() {
                 </p>
 
                 {/* Highlights List */}
-                <ul className="space-y-1.5 pt-3 border-t border-white/5">
+                <ul className="space-y-2 pt-3 border-t border-[#232730]">
                   {item.highlights.map((h, hIdx) => (
-                    <li key={hIdx} className="text-xs text-[#d1d5db] flex items-start gap-2">
+                    <li key={hIdx} className="text-xs text-[#d1d5db] flex items-start gap-2.5">
                       <CheckCircle2 className="w-3.5 h-3.5 text-[#d99b53] shrink-0 mt-0.5" />
-                      <span>{h}</span>
+                      <span className="leading-relaxed">{h}</span>
                     </li>
                   ))}
                 </ul>
@@ -193,14 +193,14 @@ export function Trajectory() {
         <div className="lg:col-span-5 space-y-6">
           <h3 className="text-xs font-mono uppercase tracking-wider text-[#fcb96e] mb-4 flex items-center gap-2">
             <GraduationCap className="w-3.5 h-3.5" />
-            <span>Academic & Technical Credentials</span>
+            <span>Academic &amp; Technical Credentials</span>
           </h3>
 
-          <div className="rounded-2xl border border-white/10 bg-[#111317] p-6 sm:p-7 shadow-xl space-y-6">
+          <div className="rounded-none border border-[#232730] bg-[#111317] p-6 sm:p-7 shadow-xl space-y-6">
             {ACCREDITATIONS.map((acc, i) => (
               <div 
                 key={i} 
-                className={`pb-5 ${i !== ACCREDITATIONS.length - 1 ? "border-b border-white/10" : ""}`}
+                className={`pb-5 ${i !== ACCREDITATIONS.length - 1 ? "border-b border-[#232730]" : ""}`}
               >
                 <div className="flex items-center justify-between gap-2 mb-1">
                   <span className="text-[11px] font-mono text-[#d99b53] uppercase tracking-wider">
@@ -231,7 +231,7 @@ export function Trajectory() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.5 }}
-        className="rounded-2xl border border-white/10 bg-[#111317] overflow-hidden shadow-2xl"
+        className="rounded-none border border-[#232730] bg-[#111317] overflow-hidden shadow-2xl"
         id="marsi"
       >
         <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
@@ -246,7 +246,7 @@ export function Trajectory() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#111317] via-transparent to-transparent opacity-60 lg:hidden" />
             <div className="absolute top-3 left-3">
-              <span className="px-2.5 py-1 rounded-full text-[10px] font-mono bg-[#0c0e12]/80 border border-white/15 text-[#fcb96e] backdrop-blur-md">
+              <span className="px-2 py-0.5 rounded-none text-[10px] font-mono bg-[#0c0e12]/90 border border-[#232730] text-[#fcb96e] backdrop-blur-md">
                 Vienna Studio Life
               </span>
             </div>
@@ -256,11 +256,11 @@ export function Trajectory() {
           <div className="lg:col-span-7 p-6 sm:p-10 flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-mono bg-[#d99b53]/15 border border-[#d99b53]/30 text-[#fcb96e]">
+                <span className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-[0.06em] text-[#d99b53]">
                   <Heart className="w-3.5 h-3.5 text-[#d99b53] fill-[#d99b53]" />
                   <span>Chief Morale Officer · Marsi</span>
                 </span>
-                <span className="text-xs font-mono text-[#6b7280]">Vienna, Austria</span>
+                <span className="text-xs font-mono text-[#6b7280]">· Vienna, Austria</span>
               </div>
 
               <h4 className="font-serif text-2xl sm:text-3xl text-[#f3f4f6] font-normal tracking-tight mb-4">
@@ -272,9 +272,9 @@ export function Trajectory() {
               </p>
             </div>
 
-            <div className="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-[#6b7280]">
+            <div className="pt-4 border-t border-[#232730] flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-[#6b7280]">
               <span>Role: Active On-Site Studio Companion</span>
-              <span className="text-[#fcb96e]">Status: Well-exercised & Calm</span>
+              <span className="text-[#fcb96e]">Status: Well-exercised &amp; Calm</span>
             </div>
           </div>
         </div>
